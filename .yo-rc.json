@@ -1,0 +1,38 @@
+{
+  "generator-ngx-library": {
+    "version": "5.7.1",
+    "authorName": "anthonynahas",
+    "authorEmail": "anthony.na@hotmail.de",
+    "githubUsername": "anthonynahas",
+    "githubRepoName": "ngx-material-password-strength",
+    "projectName": "ngx-material-password-strength",
+    "projectVersion": "0.0.1",
+    "projectDescription": "Material password strength meter to indicate how secure is the provided password",
+    "projectKeywords": [
+      "ngx",
+      " angular",
+      " material",
+      " password",
+      " password-strength",
+      " strength-meter"
+    ],
+    "ngVersion": "5.0.0",
+    "ngModules": [
+      "core",
+      "common"
+    ],
+    "otherDependencies": [],
+    "dependenciesRange": "^",
+    "ngPrefix": "my-lib",
+    "testingFramework": "karma",
+    "useGreenkeeper": true,
+    "useCompodoc": true,
+    "enforceNgGitCommitMsg": true,
+    "exclusions": [
+      "demo/src/jestGlobalMocks.ts",
+      "demo/src/setupJest.ts",
+      "config/jestGlobalMocks.ts",
+      "config/setupJest.ts"
+    ]
+  }
+}
