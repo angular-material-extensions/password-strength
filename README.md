@@ -11,7 +11,7 @@
 [![Greenkeeper Badge](https://badges.greenkeeper.io/anthonynahas/ngx-material-password-strength.svg)](https://greenkeeper.io/)
 
 <p align="center">
-  <img height="256px" width="256px" alt="ngx-material-password-strength" style="text-align: center;"
+  <img alt="ngx-material-password-strength" style="text-align: center;"
    src="assets/ngx-material-password-strength/ngx-material-password-strength_demo.gif">
 </p>
 
