@@ -19,6 +19,12 @@ export class PasswordStrengthComponent implements OnInit, OnChanges {
   @Input()
   externalError: boolean;
 
+  containAtLeastEightChars: boolean;
+  containAtLeastOneLowerCaseLetter: boolean;
+  containAtLeastOneUpperCaseLetter: boolean;
+  containAtLeastOneDigit: boolean;
+  containAtLeastOneSpecialChar: boolean;
+
   private _strength: number;
 
   private _color: string;
