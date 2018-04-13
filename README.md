@@ -5,11 +5,15 @@
 # ngx-material-password-strength - Material password strength meter to indicate how secure is the provided password
 
 [![npm version](https://badge.fury.io/js/ngx-material-password-strength.svg)](https://badge.fury.io/js/ngx-material-password-strength),
-[![Build Status](https://travis-ci.org/anthonynahas/ngx-material-password-strength.svg?branch=master)](https://travis-ci.org/anthonynahas/ngx-material-password-strength)
 [![Coverage Status](https://coveralls.io/repos/github/anthonynahas/ngx-material-password-strength/badge.svg?branch=master)](https://coveralls.io/github/anthonynahas/ngx-material-password-strength?branch=master)
 [![dependency Status](https://david-dm.org/anthonynahas/ngx-material-password-strength/status.svg)](https://david-dm.org/anthonynahas/ngx-material-password-strength)
 [![devDependency Status](https://david-dm.org/anthonynahas/ngx-material-password-strength/dev-status.svg?branch=master)](https://david-dm.org/anthonynahas/ngx-material-password-strength#info=devDependencies)
 [![Greenkeeper Badge](https://badges.greenkeeper.io/anthonynahas/ngx-material-password-strength.svg)](https://greenkeeper.io/)
+
+<p align="center">
+  <img height="256px" width="256px" alt="ngx-material-password-strength" style="text-align: center;"
+   src="assets/ngx-material-password-strength/ngx-material-password-strength_demo.gif">
+</p>
 
 ## Demo
 
