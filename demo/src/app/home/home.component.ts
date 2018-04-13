@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Title }     from '@angular/platform-browser';
+import {Component, OnInit} from '@angular/core';
+import {Title} from '@angular/platform-browser';
+import {MatSlideToggleChange} from '@angular/material';
 
 @Component({
   selector: 'app-home',
@@ -8,10 +9,18 @@ import { Title }     from '@angular/platform-browser';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private titleService:Title) { }
+  password: string;
+  inputType = 'password';
+
+  constructor(private titleService: Title) {
+  }
 
   ngOnInit() {
     this.titleService.setTitle('Home | ngx-material-password-strength');
+  }
+
+  onSlideToggleChange(event: MatSlideToggleChange) {
+    event.checked ? this.inputType = 'text' : this.inputType = 'password';
   }
 
 }

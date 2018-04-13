@@ -9,6 +9,7 @@ import {HomeModule} from './home/home.module';
 import {AppComponent} from './app.component';
 import {environment} from '../environments/environment';
 import {ServiceWorkerModule} from '@angular/service-worker';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import {ServiceWorkerModule} from '@angular/service-worker';
     // the page.
     BrowserModule.withServerTransition({appId: 'ngx-material-password-strength-demo-id'}),
     ServiceWorkerModule.register('/ngsw-worker.js', {enabled: environment.production}),
+    BrowserAnimationsModule,
     FormsModule,
     HttpModule,
     AppRoutingModule,

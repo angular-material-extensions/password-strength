@@ -5,26 +5,31 @@ import {NgbCollapseModule} from '@ng-bootstrap/ng-bootstrap';
 import {HeaderComponent} from './header/header.component';
 import {FooterComponent} from './footer/footer.component';
 import {ContentWrapperComponent} from './content-wrapper/content-wrapper.component';
-import {MatCardModule, MatInputModule, MatProgressBarModule} from '@angular/material';
+import {MatCardModule, MatInputModule, MatProgressBarModule, MatSlideToggleModule} from '@angular/material';
 import {FlexLayoutModule} from '@angular/flex-layout';
+import {NgxMaterialPasswordStrengthModule} from 'ngx-material-password-strength';
 
 @NgModule({
   imports: [
     RouterModule,
     NgbCollapseModule.forRoot(),
+    NgxMaterialPasswordStrengthModule.forRoot(),
     FlexLayoutModule,
     MatCardModule,
     MatInputModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatSlideToggleModule
   ],
   exports: [
     HeaderComponent,
     FooterComponent,
     ContentWrapperComponent,
+    NgxMaterialPasswordStrengthModule,
     FlexLayoutModule,
     MatCardModule,
     MatInputModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatSlideToggleModule
   ],
   declarations: [HeaderComponent, FooterComponent, ContentWrapperComponent],
   providers: [],
