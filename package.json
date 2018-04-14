@@ -45,7 +45,7 @@
     "@angular/platform-server": "5.2.9",
     "@compodoc/gulp-compodoc": "0.0.9",
     "@types/jasmine": "2.5.41",
-    "@types/lodash": "4.14.106",
+    "@types/lodash": "4.14.107",
     "@types/node": "9.6.5",
     "angular-cli-ghpages": "0.5.2",
     "angular2-template-loader": "0.6.2",
