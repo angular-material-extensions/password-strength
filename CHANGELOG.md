@@ -1,3 +1,14 @@
+<a name="1.0.2"></a>
+## [1.0.2](https://github.com/anthonynahas/ngx-material-password-strength/compare/v1.0.1...v1.0.2) (2018-04-14)
+
+
+### Bug Fixes
+
+* **project:** downgraded jasmine core and karma jasmine html reporter ([a253c7e](https://github.com/anthonynahas/ngx-material-password-strength/commit/a253c7e))
+* **tests:** downgraded webpack to v3.8.1 ([a726ab7](https://github.com/anthonynahas/ngx-material-password-strength/commit/a726ab7))
+
+
+
 <a name="1.0.1"></a>
 ## [1.0.1](https://github.com/anthonynahas/ngx-material-password-strength/compare/v1.0.0...v1.0.1) (2018-04-13)
 
