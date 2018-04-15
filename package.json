@@ -31,15 +31,15 @@
     "check-travis": " travis-status --repo=anthonynahas/ngx-material-password-strength --branch=master --fail-pending || echo 'Not yet passing'"
   },
   "dependencies": {
-    "@angular/common": "5.2.9",
-    "@angular/core": "5.2.9"
+    "@angular/animations": "^5.2.9",
+    "@angular/cdk": "^5.2.4",
+    "@angular/common": "^5.2.9",
+    "@angular/core": "^5.2.9",
+    "@angular/material": "^5.2.4"
   },
   "devDependencies": {
-    "@angular/animations": "5.2.9",
-    "@angular/cdk": "5.2.4",
     "@angular/compiler": "5.2.9",
     "@angular/compiler-cli": "5.2.9",
-    "@angular/material": "5.2.4",
     "@angular/platform-browser": "5.2.9",
     "@angular/platform-browser-dynamic": "5.2.9",
     "@angular/platform-server": "5.2.9",
