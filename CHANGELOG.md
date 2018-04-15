@@ -1,3 +1,13 @@
+<a name="1.0.3"></a>
+## [1.0.3](https://github.com/anthonynahas/ngx-material-password-strength/compare/v1.0.2...v1.0.3) (2018-04-15)
+
+
+### Bug Fixes
+
+* **ngx-material-password-strength:** added peerDependencies ([e3fa48b](https://github.com/anthonynahas/ngx-material-password-strength/commit/e3fa48b))
+
+
+
 <a name="1.0.2"></a>
 ## [1.0.2](https://github.com/anthonynahas/ngx-material-password-strength/compare/v1.0.1...v1.0.2) (2018-04-14)
 
