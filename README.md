@@ -129,6 +129,11 @@ To lint all `*.ts` files:
 $ npm run lint
 ```
 
+## Other Angular Libraries
+- [ngx-auth-firebaseui](https://github.com/AnthonyNahas/ngx-auth-firebaseui)
+- [ngx-material-pages](https://github.com/AnthonyNahas/ngx-material-pages)
+
+
 ## License
 
 Copyright (c) 2018 anthonynahas. Licensed under the MIT License (MIT)
