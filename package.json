@@ -60,7 +60,7 @@
     "del": "3.0.0",
     "gulp": "3.9.1",
     "gulp-bump": "3.1.0",
-    "gulp-conventional-changelog": "1.1.23",
+    "gulp-conventional-changelog": "1.1.24",
     "gulp-coveralls": "0.1.4",
     "gulp-file": "0.4.0",
     "gulp-git": "2.5.2",
