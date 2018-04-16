@@ -40,11 +40,13 @@
   "devDependencies": {
     "@angular/compiler": "5.2.9",
     "@angular/compiler-cli": "5.2.9",
+    "@angular/forms": "5.2.9",
     "@angular/platform-browser": "5.2.9",
     "@angular/platform-browser-dynamic": "5.2.9",
     "@angular/platform-server": "5.2.9",
     "@compodoc/gulp-compodoc": "0.0.9",
     "@types/jasmine": "2.5.41",
+    "@types/jest": "21.1.9",
     "@types/lodash": "4.14.107",
     "@types/node": "9.6.5",
     "angular-cli-ghpages": "0.5.2",
@@ -72,6 +74,9 @@
     "is-docker": "1.1.0",
     "istanbul-instrumenter-loader": "3.0.1",
     "jasmine-core": "2.8.0",
+    "jest": "22.0.4",
+    "jest-cli": "^22.4.3",
+    "jest-preset-angular": "5.0.0",
     "karma": "2.0.0",
     "karma-chrome-launcher": "2.2.0",
     "karma-coverage": "1.1.1",
@@ -108,6 +113,22 @@
   },
   "engines": {
     "node": ">=6.0.0"
+  },
+  "jest": {
+    "preset": "jest-preset-angular",
+    "roots": [
+      "<rootDir>/src/"
+    ],
+    "coverageReporters": [
+      "lcov",
+      "text"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/config",
+      "/dist/"
+    ],
+    "setupTestFrameworkScriptFile": "<rootDir>/config/setupJest.ts"
   },
   "greenkeeper": {
     "ignore": [
