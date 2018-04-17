@@ -23,6 +23,7 @@ const pump = require('pump');
 
 /** Testing/Code Coverage */
 const gulpCoveralls = require('gulp-coveralls');
+const jestCli = require('jest-cli');
 
 /** To order tasks */
 const runSequence = require('run-sequence');
@@ -571,8 +572,15 @@ gulp.task('deploy:demo', (cb) => {
 // Test Tasks
 /////////////////////////////////////////////////////////////////////////////
 gulp.task('test', (cb) => {
-  const ENV = process.env.NODE_ENV = process.env.ENV = 'test';
-  startKarmaServer(false, true, cb);
+  let isTravis = !!process.env.TRAVIS;
+  return jestCli.runCLI({
+    config: require('./package.json').jest,
+    coverage: true,
+    runInBand: isTravis,
+    ci: isTravis
+  }, ".").then(({results}) => {
+    if (!results.success) throw new Error('There are test failures!');
+  });
 });
 
 gulp.task('test:ci', ['clean'], (cb) => {
@@ -580,11 +588,37 @@ gulp.task('test:ci', ['clean'], (cb) => {
 });
 
 gulp.task('test:watch', (cb) => {
+  return jestCli.runCLI({config: require('./package.json').jest, watch: true}, ".").then(({results}) => {
+    if (!results.success) throw new Error('There are test failures!');
+  });
+});
+
+gulp.task('test:watch-no-cc', (cb) => {//no coverage (useful for debugging failing tests in browser)
+  return jestCli.runCLI({
+    config: require('./package.json').jest,
+    watch: true,
+    coverage: false
+  }, ".").then(({results}) => {
+    if (!results.success) throw new Error('There are test failures!');
+  });
+});
+
+
+gulp.task('test:karma', (cb) => {
+  const ENV = process.env.NODE_ENV = process.env.ENV = 'test';
+  startKarmaServer(false, true, cb);
+});
+
+gulp.task('test:karma:ci', ['clean'], (cb) => {
+  runSequence('compile', 'test');
+});
+
+gulp.task('test:karma:watch', (cb) => {
   const ENV = process.env.NODE_ENV = process.env.ENV = 'test';
   startKarmaServer(true, true, cb);
 });
 
-gulp.task('test:watch-no-cc', (cb) => {//no coverage (useful for debugging failing tests in browser)
+gulp.task('test:karma:watch-no-cc', (cb) => {//no coverage (useful for debugging failing tests in browser)
   const ENV = process.env.NODE_ENV = process.env.ENV = 'test';
   startKarmaServer(true, false, cb);
 });
