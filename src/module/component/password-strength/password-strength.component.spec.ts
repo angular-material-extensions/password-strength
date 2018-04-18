@@ -3,10 +3,12 @@ import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 import {Colors, PasswordStrengthComponent} from './password-strength.component';
 import {MatProgressBarModule} from '@angular/material';
 import {SimpleChange} from '@angular/core';
+import {NgxCombinationGeneratorService} from 'ngx-combination-generator';
 
 describe('PasswordStrengthComponent', () => {
   let component: PasswordStrengthComponent;
   let fixture: ComponentFixture<PasswordStrengthComponent>;
+  const generator = new NgxCombinationGeneratorService();
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -69,16 +71,42 @@ describe('PasswordStrengthComponent', () => {
     });
   });
 
-  it('should strength = 40 and color = warn when the password fulfills 2 criteria ', () => {
-    const combinations = ['Aa', 'aA', '1a', 'A!'];
-    // const combinations = generator(chars, 2, 3);
-    console.log('combinations = ', combinations);
-    combinations.forEach(combination => {
-      component.password = combination;
-      console.log('combination = ', combination);
+  it('should strength = 40 and color = accent when the password ave at least 8 chars with lower case letters',
+    () => {
+      component.password = 'abcdefgw';
       component.calculatePasswordStrength();
       expect(component.strength).toBe(40);
       expect(component.color).toBe(Colors.accent);
     });
-  });
+
+  it('should strength = 40 and color = accent when the password fulfills 2 criteria ',
+    () => {
+      const charsList = ['a', 'A', '1', '!'];
+      const combinations = generator.loadCombinationList(charsList, 2, 2, true);
+      console.log('combinations = ', combinations);
+      combinations.forEach(combination => {
+        component.password = combination;
+        console.log('combination = ', combination);
+        component.calculatePasswordStrength();
+        expect(component.strength).toBe(40);
+        expect(component.color).toBe(Colors.accent);
+      });
+    });
+
+  it('should strength = 60 and color = accent when the password fulfills 3 criteria ',
+    () => {
+      const charsList = ['a', 'A', '1', '!', '1234567'];
+      const combinations = generator.loadCombinationList(charsList, 3, 3, true);
+      console.log('combinations = ', combinations);
+
+      combinations.forEach(combination => {
+        console.log('combination = ', combination);
+        const repeats = /(.)\1/;
+        console.log('repeats = ', repeats.test(combination));
+        component.password = combination;
+        component.calculatePasswordStrength();
+        // expect(component.strength).toBe(60);
+        // expect(component.color).toBe(Colors.accent);
+      });
+    });
 });
