@@ -1,4 +1,4 @@
-import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
+import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
 
 export enum Colors {
   primary = 'primary',
@@ -19,6 +19,9 @@ export class PasswordStrengthComponent implements OnInit, OnChanges {
   @Input()
   externalError: boolean;
 
+  @Output()
+  onStrengthChanged: EventEmitter<number> = new EventEmitter<number>();
+
   containAtLeastEightChars: boolean;
   containAtLeastOneLowerCaseLetter: boolean;
   containAtLeastOneUpperCaseLetter: boolean;
@@ -36,7 +39,6 @@ export class PasswordStrengthComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log('on change: ', changes);
     if (changes.externalError && changes.externalError.firstChange) {
       this._color = Colors.primary;
       return;
@@ -46,9 +48,8 @@ export class PasswordStrengthComponent implements OnInit, OnChanges {
       return;
     }
     this.password && this.password.length > 0 ?
-      this.calculatePasswordStrength() : this._strength = 0;
+      this.calculatePasswordStrength() : this.reset();
   }
-
 
   get strength(): number {
     return this._strength ? this._strength : 0;
@@ -66,29 +67,33 @@ export class PasswordStrengthComponent implements OnInit, OnChanges {
   }
 
   private _containAtLeastEightChars(): boolean {
-    return this.password.length >= 8;
+    this.containAtLeastEightChars = this.password.length >= 8;
+    return this.containAtLeastEightChars;
   }
 
   private _containAtLeastOneLowerCaseLetter(): boolean {
-    return RegExp(/^(?=.*?[a-z])/).test(this.password);
+    this.containAtLeastOneLowerCaseLetter = RegExp(/^(?=.*?[a-z])/).test(this.password);
+    return this.containAtLeastOneLowerCaseLetter;
   }
 
   private _containAtLeastOneUpperCaseLetter(): boolean {
-    return RegExp(/^(?=.*?[A-Z])/).test(this.password);
+    this.containAtLeastOneUpperCaseLetter = RegExp(/^(?=.*?[A-Z])/).test(this.password);
+    return this.containAtLeastOneUpperCaseLetter;
   }
 
   private _containAtLeastOneDigit(): boolean {
-    return RegExp(/^(?=.*?[0-9])/).test(this.password);
+    this.containAtLeastOneDigit = RegExp(/^(?=.*?[0-9])/).test(this.password);
+    return this.containAtLeastOneDigit;
   }
 
   private _containAtLeastOneSpecialChar(): boolean {
-    return RegExp(/^(?=.*?[" !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~"])/).test(this.password);
+    this.containAtLeastOneSpecialChar = RegExp(/^(?=.*?[" !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~"])/).test(this.password);
+    return this.containAtLeastOneSpecialChar;
   }
 
   calculatePasswordStrength() {
     const requirements: Array<boolean> = [];
     const unit = 100 / 5;
-
 
     requirements.push(
       this._containAtLeastEightChars(),
@@ -97,10 +102,16 @@ export class PasswordStrengthComponent implements OnInit, OnChanges {
       this._containAtLeastOneDigit(),
       this._containAtLeastOneSpecialChar());
 
-    console.log('requirements = ', requirements);
-
     this._strength = requirements.filter(v => v).length * unit;
+    this.onStrengthChanged.emit(this.strength);
+  }
 
-    console.log('strength = ', this._strength);
+  reset() {
+    this._strength = 0;
+    this.containAtLeastEightChars =
+      this.containAtLeastOneLowerCaseLetter =
+        this.containAtLeastOneUpperCaseLetter =
+          this.containAtLeastOneDigit =
+            this.containAtLeastOneSpecialChar = false;
   }
 }
