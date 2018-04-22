@@ -21,7 +21,8 @@
       "prefix": "app",
       "serviceWorker": true,
       "styles": [
-        "styles.scss"
+        "styles.scss",
+        "../node_modules/material-design-icons/iconfont/material-icons.css"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",
@@ -47,7 +48,8 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "styles.scss"
+        "styles.scss",
+        "../node_modules/material-design-icons/iconfont/material-icons.css"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",

@@ -1,3 +1,25 @@
-.getting-started{
-    margin-top: 1.0rem;
+.getting-started {
+  margin-top: 1.0rem;
+}
+
+.mat-button {
+  white-space: normal !important;
+}
+
+.full-width {
+  width: 100%;
+}
+
+ngx-material-pages {
+  button:focus {
+    outline: none;
+  }
+
+  video {
+    max-width: 100%;
+  }
+
+  .comment-container {
+    margin: 1rem;
+  }
 }

@@ -11,6 +11,7 @@ export class HomeComponent implements OnInit {
 
   password: string;
   inputType = 'password';
+  showDetails: boolean;
 
   constructor(private titleService: Title) {
   }
