@@ -47,6 +47,21 @@ describe('PasswordStrengthComponent', () => {
     });
     fixture.detectChanges();
     expect(calculatePasswordStrengthSpy).not.toHaveBeenCalled();
+    expect(component.color).toBe(Colors.primary);
+  });
+
+  it('should not calculate the strength of the password when externalError is provided', () => {
+    const calculatePasswordStrengthSpy = jest.spyOn(component, 'calculatePasswordStrength');
+    component.password = 'testPass123!';
+    component.externalError = true;
+    component.ngOnChanges({
+      password: new SimpleChange('testPass', component.password, false),
+      externalError: new SimpleChange(false, component.externalError, false)
+    });
+    fixture.detectChanges();
+    expect(calculatePasswordStrengthSpy).not.toHaveBeenCalled();
+    // todo: 19.4.18 - to check
+    // expect(component.color).toBe(Colors.warn);
   });
 
   it('should calculate the strength of the password', () => {
@@ -95,18 +110,55 @@ describe('PasswordStrengthComponent', () => {
 
   it('should strength = 60 and color = accent when the password fulfills 3 criteria ',
     () => {
-      const charsList = ['a', 'A', '1', '!', '1234567'];
+      const charsList = ['a', 'A', '9', '!', '123456'];
       const combinations = generator.loadCombinationList(charsList, 3, 3, true);
       console.log('combinations = ', combinations);
 
       combinations.forEach(combination => {
-        console.log('combination = ', combination);
-        const repeats = /(.)\1/;
-        console.log('repeats = ', repeats.test(combination));
-        component.password = combination;
-        component.calculatePasswordStrength();
-        // expect(component.strength).toBe(60);
-        // expect(component.color).toBe(Colors.accent);
+        const isCharDuplicate = new RegExp(/^.*(.).*\1.*$/);
+        console.log('repeats = ', isCharDuplicate.test(combination), ' for --> ', combination);
+        if (!isCharDuplicate.test(combination)) {
+          component.password = combination;
+          component.calculatePasswordStrength();
+          expect(component.strength).toBeGreaterThanOrEqual(60);
+          expect(component.color).toBe(Colors.accent);
+        }
+      });
+    });
+
+  it('should strength at least 80 and color = accent or primary when the password fulfills 4 criteria ',
+    () => {
+      const charsList = ['a', 'A', '9', '!', 'bcdef'];
+      const combinations = generator.loadCombinationList(charsList, 4, 4, true);
+      console.log('combinations = ', combinations);
+
+      combinations.forEach(combination => {
+        const isCharDuplicate = new RegExp(/^.*(.).*\1.*$/);
+        console.log('repeats = ', isCharDuplicate.test(combination), ' for --> ', combination);
+        if (!isCharDuplicate.test(combination)) {
+          component.password = combination;
+          component.calculatePasswordStrength();
+          expect(component.strength).toBeGreaterThanOrEqual(80);
+          component.strength > 80 ? expect(component.color).toBe(Colors.primary) : expect(component.color).toBe(Colors.accent);
+        }
+      });
+    });
+
+  it('should strength equal 100 and color = primary  when the password fulfills all 5 criteria ',
+    () => {
+      const charsList = ['a', 'A', '9', '!', 'bcdef'];
+      const combinations = generator.loadCombinationList(charsList, 5, 5, true);
+      console.log('combinations = ', combinations);
+
+      combinations.forEach(combination => {
+        const isCharDuplicate = new RegExp(/^.*(.).*\1.*$/);
+        console.log('repeats = ', isCharDuplicate.test(combination), ' for --> ', combination);
+        if (!isCharDuplicate.test(combination)) {
+          component.password = combination;
+          component.calculatePasswordStrength();
+          expect(component.strength).toBe(100);
+          expect(component.color).toBe(Colors.primary);
+        }
       });
     });
 });
