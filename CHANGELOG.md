@@ -1,3 +1,19 @@
+<a name="1.0.6"></a>
+## [1.0.6](https://github.com/anthonynahas/ngx-material-password-strength/compare/v1.0.5...v1.0.6) (2018-04-22)
+
+
+### Bug Fixes
+
+* **ngx-material-password-strength:** removed unwanted imports ([d7c2200](https://github.com/anthonynahas/ngx-material-password-strength/commit/d7c2200))
+* **project:** removed unwanted components and services ([b1cb12a](https://github.com/anthonynahas/ngx-material-password-strength/commit/b1cb12a))
+
+
+### Features
+
+* **ngx-material-password-strength:** added onStrengthChanged output ([b0bc979](https://github.com/anthonynahas/ngx-material-password-strength/commit/b0bc979))
+
+
+
 <a name="1.0.5"></a>
 ## [1.0.5](https://github.com/anthonynahas/ngx-material-password-strength/compare/v1.0.4...v1.0.5) (2018-04-18)
 
