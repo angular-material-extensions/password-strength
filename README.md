@@ -132,6 +132,7 @@ $ npm run lint
 ## Other Angular Libraries
 - [ngx-auth-firebaseui](https://github.com/AnthonyNahas/ngx-auth-firebaseui)
 - [ngx-material-pages](https://github.com/AnthonyNahas/ngx-material-pages)
+- [ngx-combination-generator](https://github.com/AnthonyNahas/combination-generator)
 
 
 ## License
