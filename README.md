@@ -24,11 +24,16 @@ View all the directives in action at https://anthonynahas.github.io/ngx-material
 ## Dependencies
 * [Angular](https://angular.io) (*requires* Angular 2 or higher, tested with 2.0.0)
 
-### Requirements:
+### Requirements (peer dependencies):
 - [angular material ](https://www.npmjs.com/package/@angular/material)
 - [angular material theme](https://material.angular.io/guide/getting-started#step-4-include-a-theme)
 - [angular cdk ](https://www.npmjs.com/package/@angular/cdk)
+- [angular animations ](https://www.npmjs.com/package/@angular/animations)
 - if you need a built in theme --> please let me know
+
+```bash
+npm i @angular/cdk @angular/material @angular/animations 
+```
 
 
 ## Installation
@@ -114,6 +119,8 @@ In the following example, we integration a material input container with `ngx-ma
 ```
 
 [learn more about mat-input-container](https://material.angular.io/components/input/overview)
+
+### Please checkout the full documentation [here](https://anthonynahas.github.io/ngx-material-passowrd-strength/doc/index.html) or follow the official [tutorial](https://anthonynahas.github.io/ngx-material-password-strength/getting-started) 
 
 ## Development
 
