@@ -26,6 +26,7 @@
   "private": true,
   "scripts": {
     "build": "gulp build",
+    "lint": "gulp lint",
     "test": " gulp test",
     "demo": " gulp build:demo",
     "check-travis": " travis-status --repo=anthonynahas/ngx-material-password-strength --branch=master --fail-pending || echo 'Not yet passing'"
