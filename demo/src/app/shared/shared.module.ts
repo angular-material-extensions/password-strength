@@ -11,7 +11,10 @@ import {
   MatIconModule,
   MatInputModule,
   MatProgressBarModule,
-  MatSlideToggleModule, MatSnackBarModule, MatTooltipModule, MatButtonModule
+  MatSlideToggleModule,
+  MatSnackBarModule,
+  MatTooltipModule,
+  MatButtonModule
 } from '@angular/material';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {NgxMaterialPasswordStrengthModule} from 'ngx-material-password-strength';
@@ -26,7 +29,7 @@ import {NgxMaterialPagesModule} from 'ngx-material-pages';
     NgbCollapseModule.forRoot(),
     NgxMaterialPasswordStrengthModule.forRoot(),
     NgxMaterialPagesModule.forRoot(),
-    DisqusModule.forRoot('ngx-material-pages'),
+    DisqusModule.forRoot('ngx-material-password-strength'),
     HighlightModule.forRoot(),
     FormsModule,
     ReactiveFormsModule,
