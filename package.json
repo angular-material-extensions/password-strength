@@ -1,7 +1,7 @@
 {
   "name": "ngx-material-password-strength",
   "description": "Material password strength meter to indicate how secure is the provided password",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "homepage": "https://github.com/anthonynahas/ngx-material-password-strength",
   "author": {
     "name": "anthonynahas",
