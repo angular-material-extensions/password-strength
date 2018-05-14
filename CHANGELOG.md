@@ -1,3 +1,8 @@
+<a name="2.0.0"></a>
+# [2.0.0](https://github.com/anthonynahas/ngx-material-password-strength/compare/v1.0.7...v2.0.0) (2018-05-14)
+
+
+
 <a name="1.0.7"></a>
 ## [1.0.7](https://github.com/anthonynahas/ngx-material-password-strength/compare/v1.0.6...v1.0.7) (2018-05-10)
 
