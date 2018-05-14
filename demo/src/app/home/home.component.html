@@ -34,7 +34,7 @@
 
       <mat-card-content>
         <div fxFlex>
-          <mat-input-container floatPlaceholder="auto" style="width: 100%">
+          <mat-form-field floatPlaceholder="auto" style="width: 100%">
             <input matInput #password
                    [type]="inputType"
                    required
@@ -42,7 +42,7 @@
             <mat-hint align="end" aria-live="polite">
               {{password.value.length}} / 25
             </mat-hint>
-          </mat-input-container>
+          </mat-form-field>
           <ngx-material-password-strength #passwordComponent
                                           [password]="password.value">
           </ngx-material-password-strength>

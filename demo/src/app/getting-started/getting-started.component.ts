@@ -110,7 +110,7 @@ export class GettingStartedComponent implements OnInit {
   componentExample = `<ngx-material-password-strength  [password]="password.value">
                       </ngx-material-password-strength>`;
 
-  example = `<mat-input-container floatPlaceholder="auto" style="width: 100%">
+  example = `<mat-form-field floatPlaceholder="auto" style="width: 100%">
                 <input matInput #password
                        [type]="inputType"
                        required
@@ -118,7 +118,7 @@ export class GettingStartedComponent implements OnInit {
                 <mat-hint align="end" aria-live="polite">
                   {{password.value.length}} / 25
                 </mat-hint>
-              </mat-input-container>
+              </mat-form-field>
               <ngx-material-password-strength #passwordComponent
                                               [password]="password.value">
               </ngx-material-password-strength>`;
