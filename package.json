@@ -89,7 +89,7 @@
     "karma-sourcemap-loader": "0.3.7",
     "karma-webpack": "3.0.0",
     "lodash": "4.17.5",
-    "ngx-combination-generator": "^1.0.2",
+    "ngx-combination-generator": "^2.0.0",
     "node-sass": "4.9.0",
     "postcss": "6.0.22",
     "postcss-strip-inline-comments": "0.1.5",
