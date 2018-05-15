@@ -36,7 +36,7 @@
     "@angular/cdk": "6.0.2",
     "@angular/common": "6.0.1",
     "@angular/core": "6.0.1",
-    "@angular/material": "6.0.1"
+    "@angular/material": "6.0.2"
   },
   "devDependencies": {
     "@angular-devkit/schematics": "^0.6.1",
