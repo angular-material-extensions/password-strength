@@ -14,7 +14,12 @@
 
 <p align="center">
   <img alt="ngx-material-password-strength" style="text-align: center;"
-   src="assets/ngx-material-password-strength/ngx-material-password-strength_demo.gif">
+   src="assets/ngx-material-password-strength/demo_v2.0.1_2.gif">
+</p>
+
+<p align="center">
+  <img alt="ngx-material-password-strength" style="text-align: center;"
+   src="assets/ngx-material-password-strength/demo_v2.0.1.gif">
 </p>
 
 ## Demo
@@ -86,6 +91,15 @@ export class OtherModule {
 }
 ```
 
+## API
+
+| option | bind  |  type  |   default    | description  |
+|:-------------------|:--------:|:------:|:------------:|:-------------------------------------------------------------------------------------------------|    
+| password           | Input()  | string    | - |  the password to calculate its strength
+| externalError      | Input()  | boolean   | false | used to change the color of the password to warn if an external error occurs
+| onStrengthChanged  | Output() | number    | - | emits the strength of the provided password in % e.g: 20%, 40%, 60%, 80% or 100%
+
+
 ## Usage
 
 add the `ngx-material-password-strength` element to your template:
@@ -103,20 +117,40 @@ In the following example, we integration a material input container with `ngx-ma
 
 ```html
 <div>
-  <mat-form-field floatPlaceholder="auto" style="width: 100%">
-         <input matInput #password
-                [type]="inputType"
-                required
-                placeholder="Password">
-         <mat-hint align="end" aria-live="polite">
-           {{password.value.length}} / 25
-         </mat-hint>
-       </mat-form-field>
-       <ngx-material-password-strength
-         [password]="password.value">
-       </ngx-material-password-strength>
+  <mat-form-field appearance="outline" style="width: 100%" [color]="passwordComponent.color">
+              <mat-label>Password</mat-label>
+              <input matInput #password
+                     [type]="inputType"
+                     required
+                     placeholder="Password">
+              <mat-hint align="end" aria-live="polite">
+                {{password.value.length}} / 25
+              </mat-hint>
+            </mat-form-field>
+  
+            <ngx-material-password-strength #passwordComponent
+                                            (onStrengthChanged)="onStrengthChanged($event)"
+                                            [password]="password.value">
+            </ngx-material-password-strength>
      </div>
 ```
+
+Example of how to use the emitted strength of the password in your template
+```html
+<div fxLayout="row" fxLayoutGap="10px">
+                <div *ngIf="passwordComponent.strength === 100; then done else error">
+                </div>
+                <ng-template #done>
+                  <mat-icon color="primary">done</mat-icon>
+                </ng-template>
+                <ng-template #error>
+                  <mat-icon color="warn">error</mat-icon>
+                </ng-template>
+                <div>
+                  <p>Password's strength = {{passwordComponent.strength}} %100</p>
+                </div>
+              </div>
+``
 
 [learn more about mat-form-field](https://material.angular.io/components/input/overview)
 
