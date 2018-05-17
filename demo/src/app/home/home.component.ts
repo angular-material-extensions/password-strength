@@ -12,12 +12,17 @@ export class HomeComponent implements OnInit {
   password: string;
   inputType = 'password';
   showDetails: boolean;
+  color = '';
 
   constructor(private titleService: Title) {
   }
 
   ngOnInit() {
     this.titleService.setTitle('Home | ngx-material-password-strength');
+  }
+
+  onStrengthChanged(strength: number) {
+    console.log("password strength = ", strength);
   }
 
   onSlideToggleChange(event: MatSlideToggleChange) {
