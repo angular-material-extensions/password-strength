@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
-import {AbstractControl} from '@angular/forms';
+import {AbstractControl, FormControl, Validators} from '@angular/forms';
 
 export enum Colors {
   primary = 'primary',
@@ -24,6 +24,9 @@ export class PasswordStrengthComponent implements OnInit, OnChanges {
 
   @Input()
   password: string;
+
+  @Input()
+  validators: Criteria[] = Object.keys(Criteria).map(key => Criteria[key]);
 
   @Input()
   externalError: boolean;
@@ -51,6 +54,11 @@ export class PasswordStrengthComponent implements OnInit, OnChanges {
     this.criteriaMap.set(Criteria.at_least_one_upper_case_char, RegExp(/^(?=.*?[A-Z])/));
     this.criteriaMap.set(Criteria.at_least_one_digit_char, RegExp(/^(?=.*?[0-9])/));
     this.criteriaMap.set(Criteria.at_least_one_special_char, RegExp(/^(?=.*?[" !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~"])/));
+
+    this.passwordFormControl = new FormControl('',
+      [...this.validators.map(criteria => Validators.pattern(this.criteriaMap.get(criteria)))]);
+
+    console.log('this.passwordFormControl', this.passwordFormControl.validator);
   }
 
   ngOnInit(): void {
