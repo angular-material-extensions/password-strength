@@ -1,9 +1,18 @@
 import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
+import {AbstractControl} from '@angular/forms';
 
 export enum Colors {
   primary = 'primary',
   accent = 'accent',
   warn = 'warn'
+}
+
+export enum Criteria {
+  at_least_eight_chars,
+  at_least_one_lower_case_char,
+  at_least_one_upper_case_char,
+  at_least_one_digit_char,
+  at_least_one_special_char,
 }
 
 @Component({
@@ -22,17 +31,26 @@ export class PasswordStrengthComponent implements OnInit, OnChanges {
   @Output()
   onStrengthChanged: EventEmitter<number> = new EventEmitter<number>();
 
+  criteriaMap = new Map<Criteria, RegExp>();
+
   containAtLeastEightChars: boolean;
   containAtLeastOneLowerCaseLetter: boolean;
   containAtLeastOneUpperCaseLetter: boolean;
   containAtLeastOneDigit: boolean;
   containAtLeastOneSpecialChar: boolean;
 
+  passwordFormControl: AbstractControl;
+
   private _strength: number;
 
   private _color: string;
 
   constructor() {
+    this.criteriaMap.set(Criteria.at_least_eight_chars, RegExp(/^.{8,63}$/));
+    this.criteriaMap.set(Criteria.at_least_one_lower_case_char, RegExp(/^(?=.*?[a-z])/));
+    this.criteriaMap.set(Criteria.at_least_one_upper_case_char, RegExp(/^(?=.*?[A-Z])/));
+    this.criteriaMap.set(Criteria.at_least_one_digit_char, RegExp(/^(?=.*?[0-9])/));
+    this.criteriaMap.set(Criteria.at_least_one_special_char, RegExp(/^(?=.*?[" !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~"])/));
   }
 
   ngOnInit(): void {
@@ -72,22 +90,34 @@ export class PasswordStrengthComponent implements OnInit, OnChanges {
   }
 
   private _containAtLeastOneLowerCaseLetter(): boolean {
-    this.containAtLeastOneLowerCaseLetter = RegExp(/^(?=.*?[a-z])/).test(this.password);
+    this.containAtLeastOneLowerCaseLetter =
+      this.criteriaMap
+        .get(Criteria.at_least_one_lower_case_char)
+        .test(this.password);
     return this.containAtLeastOneLowerCaseLetter;
   }
 
   private _containAtLeastOneUpperCaseLetter(): boolean {
-    this.containAtLeastOneUpperCaseLetter = RegExp(/^(?=.*?[A-Z])/).test(this.password);
+    this.containAtLeastOneUpperCaseLetter =
+      this.criteriaMap
+        .get(Criteria.at_least_one_upper_case_char)
+        .test(this.password);
     return this.containAtLeastOneUpperCaseLetter;
   }
 
   private _containAtLeastOneDigit(): boolean {
-    this.containAtLeastOneDigit = RegExp(/^(?=.*?[0-9])/).test(this.password);
+    this.containAtLeastOneDigit =
+      this.criteriaMap
+        .get(Criteria.at_least_one_digit_char)
+        .test(this.password);
     return this.containAtLeastOneDigit;
   }
 
   private _containAtLeastOneSpecialChar(): boolean {
-    this.containAtLeastOneSpecialChar = RegExp(/^(?=.*?[" !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~"])/).test(this.password);
+    this.containAtLeastOneSpecialChar =
+      this.criteriaMap
+        .get(Criteria.at_least_one_special_char)
+        .test(this.password);
     return this.containAtLeastOneSpecialChar;
   }
 
