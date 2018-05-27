@@ -53,20 +53,24 @@
                                             [password]="password.value">
             </ngx-material-password-strength>
 
+            <!--Password's strength info-->
             <ngx-material-password-strength-info
               *ngIf="showDetails"
               [passwordComponent]="passwordComponent">
             </ngx-material-password-strength-info>
+
           </div>
         </mat-card-content>
       </mat-card>
+
+      <!--NGX-MATERIAL-PASSWORD-STRENGTH WITH VALIDATION AND FORM CONTROLLER-->
 
       <mat-card fxFlex style="margin-top: 3rem">
         <mat-card-title>ngx-material-password-strength
         </mat-card-title>
         <mat-card-subtitle fxLayout="row" fxLayoutGap="10px">
           <mat-slide-toggle (change)="onSlideToggleChange($event)">Show Password</mat-slide-toggle>
-          <mat-slide-toggle [(ngModel)]="showDetails">Show Password Details</mat-slide-toggle>
+          <mat-slide-toggle [(ngModel)]="showDetails2">Show Password Details</mat-slide-toggle>
         </mat-card-subtitle>
 
         <mat-card-content>
@@ -96,95 +100,12 @@
                                             [password]="passwordWithValidation.value">
             </ngx-material-password-strength>
 
-            <mat-card *ngIf="showDetails" fxFlex fxLayout="row" fxLayoutAlign="center">
-              <mat-card-content fxLayout="column" fxLayoutAlign="start">
+            <!--Password's strength info-->
+            <ngx-material-password-strength-info
+              *ngIf="showDetails2"
+              [passwordComponent]="passwordComponentWithValidation">
+            </ngx-material-password-strength-info>
 
-                <div fxLayout="row" fxLayoutGap="10px">
-                  <div *ngIf="passwordComponentWithValidation.containAtLeastOneLowerCaseLetter; then done else error">
-                  </div>
-                  <ng-template #done>
-                    <mat-icon color="primary">done</mat-icon>
-                  </ng-template>
-                  <ng-template #error>
-                    <mat-icon color="warn">error</mat-icon>
-                  </ng-template>
-                  <div>
-                    <p>contains at least one lower character</p>
-                  </div>
-                </div>
-
-                <div fxLayout="row" fxLayoutGap="10px">
-                  <div *ngIf="passwordComponentWithValidation.containAtLeastOneUpperCaseLetter; then done else error">
-                  </div>
-                  <ng-template #done>
-                    <mat-icon color="primary">done</mat-icon>
-                  </ng-template>
-                  <ng-template #error>
-                    <mat-icon color="warn">error</mat-icon>
-                  </ng-template>
-                  <div>
-                    <p>contains at least one upper character</p>
-                  </div>
-                </div>
-
-                <div fxLayout="row" fxLayoutGap="10px">
-                  <div *ngIf="passwordComponentWithValidation.containAtLeastOneDigit; then done else error">
-                  </div>
-                  <ng-template #done>
-                    <mat-icon color="primary">done</mat-icon>
-                  </ng-template>
-                  <ng-template #error>
-                    <mat-icon color="warn">error</mat-icon>
-                  </ng-template>
-                  <div>
-                    <p>contains at least one digit character</p>
-                  </div>
-                </div>
-
-                <div fxLayout="row" fxLayoutGap="10px">
-                  <div *ngIf="passwordComponentWithValidation.containAtLeastOneSpecialChar; then done else error">
-                  </div>
-                  <ng-template #done>
-                    <mat-icon color="primary">done</mat-icon>
-                  </ng-template>
-                  <ng-template #error>
-                    <mat-icon color="warn">error</mat-icon>
-                  </ng-template>
-                  <div>
-                    <p>contains at least one special character</p>
-                  </div>
-                </div>
-
-                <div fxLayout="row" fxLayoutGap="10px">
-                  <div *ngIf="passwordComponentWithValidation.containAtLeastEightChars; then done else error">
-                  </div>
-                  <ng-template #done>
-                    <mat-icon color="primary">done</mat-icon>
-                  </ng-template>
-                  <ng-template #error>
-                    <mat-icon color="warn">error</mat-icon>
-                  </ng-template>
-                  <div>
-                    <p>contains at least eight characters</p>
-                  </div>
-                </div>
-
-                <div fxLayout="row" fxLayoutGap="10px">
-                  <div *ngIf="passwordComponentWithValidation.strength === 100; then done else error">
-                  </div>
-                  <ng-template #done>
-                    <mat-icon color="primary">done</mat-icon>
-                  </ng-template>
-                  <ng-template #error>
-                    <mat-icon color="warn">error</mat-icon>
-                  </ng-template>
-                  <div>
-                    <p>Password's strength = {{passwordComponentWithValidation.strength}} %100</p>
-                  </div>
-                </div>
-
-              </mat-card-content>
-            </mat-card>
           </div>
         </mat-card-content>
       </mat-card>

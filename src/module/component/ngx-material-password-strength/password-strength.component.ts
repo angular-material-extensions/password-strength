@@ -57,8 +57,6 @@ export class PasswordStrengthComponent implements OnInit, OnChanges {
 
     this.passwordFormControl = new FormControl('',
       [...this.validators.map(criteria => Validators.pattern(this.criteriaMap.get(criteria)))]);
-
-    console.log('this.passwordFormControl', this.passwordFormControl.validator);
   }
 
   ngOnInit(): void {
