@@ -53,95 +53,10 @@
                                             [password]="password.value">
             </ngx-material-password-strength>
 
-            <mat-card *ngIf="showDetails" fxFlex fxLayout="row" fxLayoutAlign="center">
-              <mat-card-content fxLayout="column" fxLayoutAlign="start">
-
-                <div fxLayout="row" fxLayoutGap="10px">
-                  <div *ngIf="passwordComponent.containAtLeastOneLowerCaseLetter; then done else error">
-                  </div>
-                  <ng-template #done>
-                    <mat-icon color="primary">done</mat-icon>
-                  </ng-template>
-                  <ng-template #error>
-                    <mat-icon color="warn">error</mat-icon>
-                  </ng-template>
-                  <div>
-                    <p>contains at least one lower character</p>
-                  </div>
-                </div>
-
-                <div fxLayout="row" fxLayoutGap="10px">
-                  <div *ngIf="passwordComponent.containAtLeastOneUpperCaseLetter; then done else error">
-                  </div>
-                  <ng-template #done>
-                    <mat-icon color="primary">done</mat-icon>
-                  </ng-template>
-                  <ng-template #error>
-                    <mat-icon color="warn">error</mat-icon>
-                  </ng-template>
-                  <div>
-                    <p>contains at least one upper character</p>
-                  </div>
-                </div>
-
-                <div fxLayout="row" fxLayoutGap="10px">
-                  <div *ngIf="passwordComponent.containAtLeastOneDigit; then done else error">
-                  </div>
-                  <ng-template #done>
-                    <mat-icon color="primary">done</mat-icon>
-                  </ng-template>
-                  <ng-template #error>
-                    <mat-icon color="warn">error</mat-icon>
-                  </ng-template>
-                  <div>
-                    <p>contains at least one digit character</p>
-                  </div>
-                </div>
-
-                <div fxLayout="row" fxLayoutGap="10px">
-                  <div *ngIf="passwordComponent.containAtLeastOneSpecialChar; then done else error">
-                  </div>
-                  <ng-template #done>
-                    <mat-icon color="primary">done</mat-icon>
-                  </ng-template>
-                  <ng-template #error>
-                    <mat-icon color="warn">error</mat-icon>
-                  </ng-template>
-                  <div>
-                    <p>contains at least one special character</p>
-                  </div>
-                </div>
-
-                <div fxLayout="row" fxLayoutGap="10px">
-                  <div *ngIf="passwordComponent.containAtLeastEightChars; then done else error">
-                  </div>
-                  <ng-template #done>
-                    <mat-icon color="primary">done</mat-icon>
-                  </ng-template>
-                  <ng-template #error>
-                    <mat-icon color="warn">error</mat-icon>
-                  </ng-template>
-                  <div>
-                    <p>contains at least eight characters</p>
-                  </div>
-                </div>
-
-                <div fxLayout="row" fxLayoutGap="10px">
-                  <div *ngIf="passwordComponent.strength === 100; then done else error">
-                  </div>
-                  <ng-template #done>
-                    <mat-icon color="primary">done</mat-icon>
-                  </ng-template>
-                  <ng-template #error>
-                    <mat-icon color="warn">error</mat-icon>
-                  </ng-template>
-                  <div>
-                    <p>Password's strength = {{passwordComponent.strength}} %100</p>
-                  </div>
-                </div>
-
-              </mat-card-content>
-            </mat-card>
+            <ngx-material-password-strength-info
+              *ngIf="showDetails"
+              [passwordComponent]="passwordComponent">
+            </ngx-material-password-strength-info>
           </div>
         </mat-card-content>
       </mat-card>
@@ -158,7 +73,7 @@
 
           <div fxFlex>
 
-            <mat-form-field appearance="outline" style="width: 100%" >
+            <mat-form-field appearance="outline" style="width: 100%">
               <mat-label>Password</mat-label>
               <input matInput #passwordWithValidation
                      [type]="inputType"
