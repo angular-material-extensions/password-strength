@@ -1,6 +1,6 @@
 import {CommonModule} from '@angular/common';
 import {NgModule, ModuleWithProviders} from '@angular/core';
-import {MatProgressBarModule} from '@angular/material';
+import {MatCardModule, MatIconModule, MatProgressBarModule} from '@angular/material';
 
 import {PasswordStrengthComponent} from './component/ngx-material-password-strength/password-strength.component';
 import {
@@ -17,7 +17,9 @@ export {
 @NgModule({
   imports: [
     CommonModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatCardModule,
+    MatIconModule
   ],
   exports: [PasswordStrengthComponent, NgxMaterialPasswordStrengthInfoComponent],
   declarations: [PasswordStrengthComponent, NgxMaterialPasswordStrengthInfoComponent]
