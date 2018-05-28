@@ -279,6 +279,12 @@ e.g:
 </div>
 ```
 
+this will looks like -->
+
+<p align="center">
+  <img alt="ngx-material-password-strength" style="text-align: center;"
+   src="assets/ngx-material-password-strength/v2.1.0/demo_with_validation.gif">
+</p>
 
 ### Please checkout the full documentation [here](https://anthonynahas.github.io/ngx-material-passowrd-strength/doc/index.html) or follow the official [tutorial](https://anthonynahas.github.io/ngx-material-password-strength/getting-started) 
 
