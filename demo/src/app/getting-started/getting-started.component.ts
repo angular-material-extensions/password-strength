@@ -12,6 +12,44 @@ import {MatSlideToggleChange, MatSnackBar} from '@angular/material';
 })
 export class GettingStartedComponent implements OnInit {
 
+  links: { name: string, description?: string, url: string, icon?: string }[] = [
+    {
+      name: 'ngx-auth-firebaseui',
+      icon: 'account_circle',
+      description: 'Angular Material UI component for firebase authentication',
+      url: 'https://github.com/AnthonyNahas/ngx-auth-firebaseui'
+    },
+    {
+      name: 'ngx-material-pages',
+      icon: 'list',
+      description: 'Open source library for angular apps to illustrate custom material pages content with' +
+      ' steps (ideal for tutorials and explanations purposes)',
+      url: 'https://github.com/AnthonyNahas/ngx-material-pages'
+    },
+    {
+      name: 'ngx-material-contact',
+      icon: 'create',
+      description: 'Angular Library to manage contacts and users with a material design ',
+      url: 'https://github.com/AnthonyNahas/ngx-material-contacts'
+    },
+    {
+      name: 'ngx-combination-generator',
+      icon: 'fingerprint',
+      description: 'Angular Library built on the top of the combination +' +
+      'generator package of @udjamaflip in order to generate all possible (unique) permutations of a' +
+      ' provided list of characters.',
+      url: 'https://github.com/AnthonyNahas/ngx-auth-firebaseui'
+    },
+    {
+      name: 'ngx-material-faq',
+      icon: 'help',
+      description: 'Angular Library built with material design in order to provide a reusable faq (frequently asked questions) ' +
+      'component for every project. Ask, Answer and List ',
+      url: 'https://github.com/AnthonyNahas/ngx-material-faq'
+    }
+
+  ];
+
   ngVersion = `    _                      _                 ____ _     ___
                  / \\   _ __   __ _ _   _| | __ _ _ __     / ___| |   |_ _|
                 / △ \\ | '_ \\ / _\` | | | | |/ _\` | '__|   | |   | |    | |

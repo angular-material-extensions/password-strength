@@ -14,7 +14,7 @@ import {
   MatSlideToggleModule,
   MatSnackBarModule,
   MatTooltipModule,
-  MatButtonModule
+  MatButtonModule, MatToolbarModule, MatTableModule, MatTabsModule, MatListModule
 } from '@angular/material';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {NgxMaterialPasswordStrengthModule} from 'ngx-material-password-strength';
@@ -42,7 +42,10 @@ import {NgxMaterialPagesModule} from 'ngx-material-pages';
     MatSlideToggleModule,
     MatSnackBarModule,
     MatTooltipModule,
-    MatButtonModule
+    MatButtonModule,
+    MatToolbarModule,
+    MatTabsModule,
+    MatListModule
   ],
   exports: [
     HeaderComponent,
@@ -64,6 +67,9 @@ import {NgxMaterialPagesModule} from 'ngx-material-pages';
     MatSnackBarModule,
     MatTooltipModule,
     MatButtonModule,
+    MatToolbarModule,
+    MatTabsModule,
+    MatListModule
   ],
   declarations: [HeaderComponent, FooterComponent, ContentWrapperComponent],
   providers: [],

@@ -504,7 +504,7 @@
         </ngx-material-page-outlook>
         <ngx-material-page-content>
           <mat-card-title>Library's components</mat-card-title>
-          <mat-card-subtitle>This library consists of 1 main component.</mat-card-subtitle>
+          <mat-card-subtitle>This library consists of 2 components.</mat-card-subtitle>
           <mat-card-content>
 
             <div class="comment-container">
@@ -549,7 +549,7 @@
 
             <mat-card-content>
               <div fxFlex>
-                <mat-form-field floatPlaceholder="auto" style="width: 100%">
+                <mat-form-field appearance="outline" style="width: 100%">
                   <input matInput #password
                          [type]="inputType"
                          required
@@ -558,78 +558,14 @@
                     {{password.value.length}} / 25
                   </mat-hint>
                 </mat-form-field>
+
                 <ngx-material-password-strength #passwordComponent
                                                 [password]="password.value">
                 </ngx-material-password-strength>
-                <mat-card *ngIf="showDetails" fxFlex fxLayout="row" fxLayoutAlign="center">
-                  <mat-card-content fxLayout="column" fxLayoutAlign="start">
-                    <div fxLayout="row" fxLayoutGap="10px">
-                      <div *ngIf="passwordComponent.containAtLeastOneLowerCaseLetter; then done else error">
-                      </div>
-                      <ng-template #done>
-                        <mat-icon color="primary">done</mat-icon>
-                      </ng-template>
-                      <ng-template #error>
-                        <mat-icon color="warn">error</mat-icon>
-                      </ng-template>
-                      <div>
-                        <p>contains at least one lower character</p>
-                      </div>
-                    </div>
-                    <div fxLayout="row" fxLayoutGap="10px">
-                      <div *ngIf="passwordComponent.containAtLeastOneUpperCaseLetter; then done else error">
-                      </div>
-                      <ng-template #done>
-                        <mat-icon color="primary">done</mat-icon>
-                      </ng-template>
-                      <ng-template #error>
-                        <mat-icon color="warn">error</mat-icon>
-                      </ng-template>
-                      <div>
-                        <p>contains at least one upper character</p>
-                      </div>
-                    </div>
-                    <div fxLayout="row" fxLayoutGap="10px">
-                      <div *ngIf="passwordComponent.containAtLeastOneDigit; then done else error">
-                      </div>
-                      <ng-template #done>
-                        <mat-icon color="primary">done</mat-icon>
-                      </ng-template>
-                      <ng-template #error>
-                        <mat-icon color="warn">error</mat-icon>
-                      </ng-template>
-                      <div>
-                        <p>contains at least one digit character</p>
-                      </div>
-                    </div>
-                    <div fxLayout="row" fxLayoutGap="10px">
-                      <div *ngIf="passwordComponent.containAtLeastOneSpecialChar; then done else error">
-                      </div>
-                      <ng-template #done>
-                        <mat-icon color="primary">done</mat-icon>
-                      </ng-template>
-                      <ng-template #error>
-                        <mat-icon color="warn">error</mat-icon>
-                      </ng-template>
-                      <div>
-                        <p>contains at least one special character</p>
-                      </div>
-                    </div>
-                    <div fxLayout="row" fxLayoutGap="10px">
-                      <div *ngIf="passwordComponent.containAtLeastEightChars; then done else error">
-                      </div>
-                      <ng-template #done>
-                        <mat-icon color="primary">done</mat-icon>
-                      </ng-template>
-                      <ng-template #error>
-                        <mat-icon color="warn">error</mat-icon>
-                      </ng-template>
-                      <div>
-                        <p>contains at least eight characters</p>
-                      </div>
-                    </div>
-                  </mat-card-content>
-                </mat-card>
+
+                <ngx-material-password-strength-info *ngIf="showDetails"
+                                                     [passwordComponent]="passwordComponent">
+                </ngx-material-password-strength-info>
               </div>
             </mat-card-content>
           </mat-card>
@@ -644,6 +580,7 @@
         </ngx-material-page-outlook>
         <ngx-material-page-content>
           <mat-card-title-group><a href="https://github.com/AnthonyNahas/ngx-material-password-strength"
+                                   target="_blank"
                                    mat-button
                                    color="primary">Clone the repo</a></mat-card-title-group>
           <mat-card-title>Interested? Try it out on your machine
@@ -659,6 +596,34 @@
                     [cbContent]="'git clone https://github.com/AnthonyNahas/ngx-material-password-strength.git'"
                     matTooltip="copy"
                     (click)="showCopyMessage('git clone https://github.com/AnthonyNahas/ngx-material-password-strength.git')">
+              <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
+            </button>
+          </div>
+          <div class="comment-container">
+            <p>install the dependencies</p>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="space-between">
+                 <pre><code highlight
+                            [code]="'$ npm i'"></code></pre>
+            <button mat-icon-button
+                    ngxClipboard
+                    [cbContent]="'npm i'"
+                    matTooltip="copy"
+                    (click)="showCopyMessage('npm i')">
+              <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
+            </button>
+          </div>
+          <div class="comment-container">
+            <p>Link ngx-material-password-strength's package</p>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="space-between">
+                 <pre><code highlight
+                            [code]="'$ gulp link'"></code></pre>
+            <button mat-icon-button
+                    ngxClipboard
+                    [cbContent]="'gulp link'"
+                    matTooltip="copy"
+                    (click)="showCopyMessage('gulp link')">
               <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
             </button>
           </div>
@@ -710,6 +675,61 @@
         </ngx-material-page-content>
       </ngx-material-page-loader>
 
+      <ngx-material-page-loader>
+        <ngx-material-page-outlook title="Finally">
+        </ngx-material-page-outlook>
+
+        <ngx-material-page-content>
+          <div class="comment-container">
+            <p>This project was originally developed for
+              <a href="https://www.npmjs.com/package/ngx-auth-firebaseui"
+                 mat-button
+                 color="primary">ngx-auth-firebaseui</a>
+              Since client side password validation is required by many projects, I decided to hold
+              the code in an angular library! Please support this project by starring it on
+              <a href="https://github.com/AnthonyNahas/ngx-material-password-strength"
+                 target="_blank"
+                 mat-button
+                 color="primary">Github</a>
+            </p>
+          </div>
+
+          <mat-card style="margin-top: 3rem">
+            <mat-card-title>Other Angular libraries by
+              <a href="https://github.com/AnthonyNahas"
+                 target="_blank"
+                 mat-button
+                 color="primary">Anthony Nahas
+              </a>
+            </mat-card-title>
+            <mat-card-subtitle>Go and find out some cool stuff built with angular and material design
+            </mat-card-subtitle>
+
+            <img matCardImage height="256px" width="256px"
+                 src="https://cdn.rawgit.com/anthonynahas/ngx-material-password-strength/master/demo/src/assets/logo.svg">
+            <mat-card-content>
+              <mat-nav-list>
+                <a mat-list-item *ngFor="let link of links; last as last" [href]="link.url" target="_blank">
+                  <mat-icon mat-list-icon>{{link.icon}}</mat-icon>
+                  <span mat-line>{{ link.name }}</span>
+                  <span mat-line class="demo-secondary-text"> {{link.description}} </span>
+                  <mat-divider inset *ngIf="!last"></mat-divider>
+                </a>
+              </mat-nav-list>
+            </mat-card-content>
+            <!--<mat-card-actions align="start">-->
+            <!--share-->
+            <!--<button mat-button (click)="onAction1">Action1</button>-->
+            <!---->
+            <!--</mat-card-actions>-->
+            <!--<mat-card-footer>-->
+            <!--&lt;!&ndash;Share&ndash;&gt;-->
+            <!--</mat-card-footer>-->
+          </mat-card>
+
+        </ngx-material-page-content>
+
+      </ngx-material-page-loader>
 
     </ngx-material-pages>
 
