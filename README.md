@@ -2,7 +2,7 @@
   <img height="256px" width="256px" style="text-align: center;" src="https://cdn.rawgit.com/anthonynahas/ngx-material-password-strength/master/demo/src/assets/logo.svg">
 </p>
 
-# ngx-material-password-strength - Material password strength meter to indicate how secure is the provided password
+# ngx-material-password-strength - Material password strength meter to indicate how secure is the provided password - Angular v6 supported
 
 [![npm version](https://badge.fury.io/js/ngx-material-password-strength.svg)](https://badge.fury.io/js/ngx-material-password-strength),
 [![npm](https://img.shields.io/badge/demo-online-ed1c46.svg)](https://anthonynahas.github.io/ngx-material-password-strength)
@@ -22,24 +22,86 @@
    src="assets/ngx-material-password-strength/demo_v2.0.1.gif">
 </p>
 
+## Table of Contents
+- [Demo](#demo)
+- [Library's components](#components)
+- [Requirements](#requirements)
+- [Dependencies](#dependencies)
+- [Installation](#installation)
+- [API](#api)
+- [Documentation](#documentation)
+- [Usage](#usage)
+- [Run Demo App Locally](#run-demo-app-locally)
+- [Development](#development)
+- [Other Angular Libraries](#other-angular-libraries)
+- [Support](#support)
+- [License](#license)
+
+<a name="demo"/>
+
 ## Demo
 
 View all the directives in action at https://anthonynahas.github.io/ngx-material-password-strength
 
-## Dependencies
-* [Angular](https://angular.io) (*requires* Angular 2 or higher, tested with 2.0.0)
+<a name="components"/>
 
-### Requirements (peer dependencies):
+## Library's components
+- `<ngx-material-password-strength>` used to calculate and display the strength of a provided password
+
+1. strength score less than 20%
+
+<p align="center">
+  <img alt="ngx-material-password-strength score less than 20%" style="text-align: center;"
+   src="assets/ngx-material-password-strength/v2.1.0/scrore_lesst_than_20.png">
+</p>
+
+2. strength score less than 40%
+
+<p align="center">
+  <img alt="ngx-material-password-strength score less than 40%" style="text-align: center;"
+   src="assets/ngx-material-password-strength/v2.1.0/scrore_lesst_than_40.png">
+</p>
+
+1. strength score less than 100%
+
+<p align="center">
+  <img alt="ngx-material-password-strength score less than 100%" style="text-align: center;"
+   src="assets/ngx-material-password-strength/v2.1.0/scrore_lesst_than_100.png">
+</p>
+
+- `<ngx-material-password-strength-info>` used to display more information about the strength of a provided password
+
+<p align="center">
+  <img alt="ngx-material-password-strength's info" style="text-align: center;"
+   src="assets/ngx-material-password-strength/v2.1.0/ngx-material-strength-password-info.png">
+</p>
+
+---
+
+<a name="requirements"/>
+
+## Requirements (peer dependencies):
+- [angular animations ](https://www.npmjs.com/package/@angular/animations)
+- [angular forms ](https://www.npmjs.com/package/@angular/forms)
+- [angular cdk ](https://www.npmjs.com/package/@angular/cdk)
 - [angular material ](https://www.npmjs.com/package/@angular/material)
 - [angular material theme](https://material.angular.io/guide/getting-started#step-4-include-a-theme)
-- [angular cdk ](https://www.npmjs.com/package/@angular/cdk)
-- [angular animations ](https://www.npmjs.com/package/@angular/animations)
-- if you need a built in theme --> please let me know
 
 ```bash
 npm i @angular/cdk @angular/material @angular/animations 
 ```
 
+---
+
+<a name="dependencies"/>
+
+## Dependencies
+* [Angular](https://angular.io) (*requires* Angular 2 or higher, tested with 2.0.0)
+
+
+---
+
+<a name="installation"/>
 
 ## Installation
 Install above dependencies via *npm*. 
@@ -91,7 +153,11 @@ export class OtherModule {
 }
 ```
 
+<a name="api"/>
+
 ## API
+
+### `<ngx-material-password-strength>` used to calculate and display the strength of a provided password
 
 | option | bind  |  type  |   default    | description  |
 |:-------------------|:--------:|:------:|:------------:|:-------------------------------------------------------------------------------------------------|    
@@ -99,6 +165,16 @@ export class OtherModule {
 | externalError      | Input()  | boolean   | false | used to change the color of the password to warn if an external error occurs
 | onStrengthChanged  | Output() | number    | - | emits the strength of the provided password in % e.g: 20%, 40%, 60%, 80% or 100%
 
+### `<ngx-material-password-strength-info>` used to display more information about the strength of a provided password
+
+| option | bind  |  type  |   default    | description  |
+|:-------------------|:--------:|:------:|:------------:|:-------------------------------------------------------------------------------------------------|    
+| passwordComponent           | Input()  | PasswordStrengthComponent    | - |  the password component used in the template in order to display more info related to the provided password
+
+
+<a name="documentation"/>
+
+## [Documentation](https://anthonynahas.github.io/ngx-material-password-strength/doc/index.html)
 
 ## Usage
 
@@ -110,10 +186,10 @@ add the `ngx-material-password-strength` element to your template:
           </ngx-material-password-strength>
 ```
 
-This will display only the material password strength meter in form of a progress without any input conatiner
-or else.
+This will display only the material password strength meter in form of a progress without any input fields
+or similar.
 
-In the following example, we integration a material input container with `ngx-material-password-strength` 's component.
+#### In the following example, we integration a material input container with `ngx-material-password-strength` 's component.
 
 ```html
 <div>
@@ -135,7 +211,10 @@ In the following example, we integration a material input container with `ngx-ma
      </div>
 ```
 
-Example of how to use the emitted strength of the password in your template
+[learn more about mat-form-field](https://material.angular.io/components/input/overview)
+
+#### Example of how to use the emitted strength of the password in your template
+
 ```html
 <div fxLayout="row" fxLayoutGap="10px">
                 <div *ngIf="passwordComponent.strength === 100; then done else error">
@@ -150,11 +229,110 @@ Example of how to use the emitted strength of the password in your template
                   <p>Password's strength = {{passwordComponent.strength}} %100</p>
                 </div>
               </div>
-``
+```
 
-[learn more about mat-form-field](https://material.angular.io/components/input/overview)
+#### Client Side password's validation using a built in angular formController
+
+1. add an input element to your template with an appropriate ngx-material-password-strength's component
+2. hold a reference of the ngx-material-password-strength's component by adding `passwordComponentWithValidation` (or whatever you want) inside the element
+
+e.g: 
+
+```html
+ <ngx-material-password-strength #passwordComponentWithValidation
+                                  [password]="passwordWithValidation.value">
+```
+
+3. bind the form controller of the ngx-material-password-strength to the input element 
+  - you can access the form controller of ngx-material-password-strength using the chile view --> `passwordComponentWithValidation.passwordFormControl`
+  - bind the form controller to an input element --> `[formControl]="passwordComponentWithValidation.passwordFormControl"`
+
+4. Full example - see below
+
+```html
+<div>
+  <mat-form-field appearance="outline" style="width: 100%">
+    <mat-label>Password</mat-label>
+    <input matInput #passwordWithValidation
+           [type]="inputType"
+           required
+           [formControl]="passwordComponentWithValidation.passwordFormControl"
+           placeholder="Password">
+    <mat-hint align="end" aria-live="polite">
+      {{passwordWithValidation.value.length}} / 25
+    </mat-hint>
+    <mat-error *ngIf="passwordComponentWithValidation.passwordFormControl.hasError('required')">
+      Password is required
+    </mat-error>
+    <mat-error *ngIf="passwordComponentWithValidation.passwordFormControl.hasError('pattern')">
+      Password is not valid
+    </mat-error>
+  </mat-form-field>
+  <ngx-material-password-strength #passwordComponentWithValidation
+                                  (onStrengthChanged)="onStrengthChanged($event)"
+                                  [password]="passwordWithValidation.value">
+  </ngx-material-password-
+  <!--Password's strength info-->
+  <ngx-material-password-strength-info
+    [passwordComponent]="passwordComponentWithValidation">
+  </ngx-material-password-stren
+</div>
+```
+
 
 ### Please checkout the full documentation [here](https://anthonynahas.github.io/ngx-material-passowrd-strength/doc/index.html) or follow the official [tutorial](https://anthonynahas.github.io/ngx-material-password-strength/getting-started) 
+
+## Run Demo App Locally
+
+- [clone this repo](https://github.com/AnthonyNahas/ngx-material-password-strength.git) by running
+```bash
+$ git clone https://github.com/AnthonyNahas/ngx-material-password-strength.git
+```
+
+- link the ngx-material-password-strength package
+```bash
+$ gulp link
+```
+
+use gulp locally
+```bash
+$ npx gulp link
+```
+
+for some mac os users, you may use the sudo command with gulp
+use gulp with sudo
+```bash
+$ sudo gulp link
+```
+or locally 
+```bash
+$ sudo npx gulp link
+```
+
+- navigate to the demo app directory
+```bash
+$ cd demo
+```
+
+- install the dependencies
+```bash
+$ npm i
+```
+
+- run/start/serve the app
+```bash
+$ npm run start
+```
+or
+```bash
+$ ng serve --open
+```
+- the app is now hosted by `http://localhost:4200/`
+
+----
+
+
+<a name="development"/>
 
 ## Development
 
@@ -170,11 +348,23 @@ To lint all `*.ts` files:
 $ npm run lint
 ```
 
+<a name="other-angular-libraries"/>
+
 ## Other Angular Libraries
-- [ngx-auth-firebaseui](https://github.com/AnthonyNahas/ngx-auth-firebaseui)
+- [ngx-material-password-strength](https://github.com/AnthonyNahas/ngx-material-password-strength)
 - [ngx-material-pages](https://github.com/AnthonyNahas/ngx-material-pages)
+- [ngx-material-contacts](https://github.com/AnthonyNahas/ngx-material-contacts)
+- [ngx-material-faq](https://github.com/AnthonyNahas/ngx-material-faq)
 - [ngx-combination-generator](https://github.com/AnthonyNahas/combination-generator)
 
+<a name="support"/>
+
+## Support
+Drop an email to: [Anthony Nahas](mailto:anthony.na@hotmail.de) and I will help you!
+
+---
+
+<a name="license"/>
 
 ## License
 
