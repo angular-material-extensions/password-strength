@@ -1,3 +1,23 @@
+<a name="2.1.0"></a>
+# [2.1.0](https://github.com/anthonynahas/ngx-material-password-strength/compare/v2.0.0...v2.1.0) (2018-05-28)
+
+
+### Bug Fixes
+
+* **package:** update [@angular](https://github.com/angular)/cdk to version 6.0.2 ([be249e6](https://github.com/anthonynahas/ngx-material-password-strength/commit/be249e6))
+* **package:** update [@angular](https://github.com/angular)/cdk to version 6.1.0 ([7675800](https://github.com/anthonynahas/ngx-material-password-strength/commit/7675800))
+* **package:** update [@angular](https://github.com/angular)/material to version 6.0.2 ([e34f93d](https://github.com/anthonynahas/ngx-material-password-strength/commit/e34f93d))
+* **package:** update [@angular](https://github.com/angular)/material to version 6.1.0 ([b55cbe0](https://github.com/anthonynahas/ngx-material-password-strength/commit/b55cbe0))
+
+
+### Features
+
+* **package:** added flexlayout pattern to ngx-material-password-strength-info's component ([1ac8e9f](https://github.com/anthonynahas/ngx-material-password-strength/commit/1ac8e9f))
+* **package:** added new component: ngx-material-password-strength-info ([f5ae1de](https://github.com/anthonynahas/ngx-material-password-strength/commit/f5ae1de))
+* **password:** added password form control and the appropriate validators ([cd5cb1f](https://github.com/anthonynahas/ngx-material-password-strength/commit/cd5cb1f))
+
+
+
 <a name="2.0.0"></a>
 # [2.0.0](https://github.com/anthonynahas/ngx-material-password-strength/compare/v1.0.7...v2.0.0) (2018-05-14)
 
