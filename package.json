@@ -57,7 +57,7 @@
     "awesome-typescript-loader": "3.3.0",
     "codelyzer": "4.0.0",
     "commitplease": "3.2.0",
-    "conventional-github-releaser": "2.0.2",
+    "conventional-github-releaser": "3.0.0",
     "core-js": "2.5.7",
     "css-loader": "0.28.11",
     "cssnano": "3.10.0",
