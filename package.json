@@ -37,7 +37,7 @@
     "@angular/common": "6.0.3",
     "@angular/core": "6.0.3",
     "@angular/forms": "6.0.3",
-    "@angular/material": "6.1.0"
+    "@angular/material": "6.2.0"
   },
   "devDependencies": {
     "@angular-devkit/schematics": "^0.6.1",
