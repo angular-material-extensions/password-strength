@@ -6,11 +6,15 @@
 
 [![npm version](https://badge.fury.io/js/ngx-material-password-strength.svg)](https://badge.fury.io/js/ngx-material-password-strength),
 [![npm](https://img.shields.io/badge/demo-online-ed1c46.svg)](https://anthonynahas.github.io/ngx-material-password-strength)
+[![Join the chat at https://gitter.im/angular-material-extensions/Lobby](https://badges.gitter.im/angular-material-extensions/Lobby.svg)](https://gitter.im/angular-material-extensions/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Coverage Status](https://coveralls.io/repos/github/anthonynahas/ngx-material-password-strength/badge.svg?branch=master)](https://coveralls.io/github/anthonynahas/ngx-material-password-strength?branch=master)
 [![dependency Status](https://david-dm.org/anthonynahas/ngx-material-password-strength/status.svg)](https://david-dm.org/anthonynahas/ngx-material-password-strength)
 [![devDependency Status](https://david-dm.org/anthonynahas/ngx-material-password-strength/dev-status.svg?branch=master)](https://david-dm.org/anthonynahas/ngx-material-password-strength#info=devDependencies)
 [![Greenkeeper Badge](https://badges.greenkeeper.io/anthonynahas/ngx-material-password-strength.svg)](https://greenkeeper.io/)
 [![license](https://img.shields.io/github/license/anthonynahas/ngx-material-password-strength.svg?style=flat-square)](https://github.com/AnthonyNahas/ngx-material-password-strength/blob/master/LICENSE)
+
+> This project has been moved to [@angular-material-extensions/password-strength](https://github.com/angular-material-extensions/password-strength)
+
 
 <p align="center">
   <img alt="ngx-material-password-strength" style="text-align: center;"
@@ -21,21 +25,6 @@
   <img alt="ngx-material-password-strength" style="text-align: center;"
    src="assets/ngx-material-password-strength/demo_v2.0.1.gif">
 </p>
-
-## Table of Contents
-- [Demo](#demo)
-- [Library's components](#components)
-- [Requirements](#requirements)
-- [Dependencies](#dependencies)
-- [Installation](#installation)
-- [API](#api)
-- [Documentation](#documentation)
-- [Usage](#usage)
-- [Run Demo App Locally](#run-demo-app-locally)
-- [Development](#development)
-- [Other Angular Libraries](#other-angular-libraries)
-- [Support](#support)
-- [License](#license)
 
 <a name="demo"/>
 
@@ -96,7 +85,7 @@ npm i @angular/cdk @angular/material @angular/animations
 <a name="dependencies"/>
 
 ## Dependencies
-* [Angular](https://angular.io) (*requires* Angular 2 or higher, tested with 2.0.0)
+* [Angular](https://angular.io) (*requires* Angular 2 or higher, tested with 6.0.4)
 
 
 ---
@@ -359,9 +348,9 @@ $ npm run lint
 ## Other Angular Libraries
 - [ngx-material-password-strength](https://github.com/AnthonyNahas/ngx-material-password-strength)
 - [ngx-material-pages](https://github.com/AnthonyNahas/ngx-material-pages)
-- [ngx-material-contacts](https://github.com/AnthonyNahas/ngx-material-contacts)
-- [ngx-material-faq](https://github.com/AnthonyNahas/ngx-material-faq)
-- [ngx-combination-generator](https://github.com/AnthonyNahas/combination-generator)
+- [@angular-material-extensions/contacts](https://github.com/angular-material-extensions/contacts)
+- [@angular-material-extensions/faq](https://github.com/angular-material-extensions/faq)
+- [@angular-material-extensions/combination-generator](https://github.com/angular-material-extensions/combination-generator)
 
 <a name="support"/>
 
