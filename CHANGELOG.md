@@ -1,3 +1,14 @@
+<a name="2.1.1"></a>
+## [2.1.1](https://github.com/anthonynahas/ngx-material-password-strength/compare/v2.1.0...v2.1.1) (2018-06-16)
+
+
+### Bug Fixes
+
+* **package:** update [@angular](https://github.com/angular)/cdk to version 6.2.0 ([0a35a88](https://github.com/anthonynahas/ngx-material-password-strength/commit/0a35a88))
+* **package:** update [@angular](https://github.com/angular)/material to version 6.2.0 ([3024220](https://github.com/anthonynahas/ngx-material-password-strength/commit/3024220))
+
+
+
 <a name="2.1.0"></a>
 # [2.1.0](https://github.com/anthonynahas/ngx-material-password-strength/compare/v2.0.0...v2.1.0) (2018-05-28)
 
