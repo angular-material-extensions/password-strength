@@ -2,12 +2,12 @@ import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
 import {MatPasswordStrengthInfoComponent} from './mat-password-strength-info.component';
 import {MatCardModule, MatIconModule} from '@angular/material';
-import {PasswordStrengthComponent} from '../ngx-material-password-strength/password-strength.component';
+import {MatPasswordStrengthComponent} from '../mat-password-strength/mat-password-strength.component';
 
 describe('NgxMaterialPasswordStrengthInfoComponent', () => {
   let component: MatPasswordStrengthInfoComponent;
   let fixture: ComponentFixture<MatPasswordStrengthInfoComponent>;
-  const passwordStrengthComponent: PasswordStrengthComponent = new PasswordStrengthComponent();
+  const passwordStrengthComponent: MatPasswordStrengthComponent = new MatPasswordStrengthComponent();
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({

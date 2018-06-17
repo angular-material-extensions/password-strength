@@ -16,11 +16,11 @@ export enum Criteria {
 }
 
 @Component({
-  selector: 'ngx-material-password-strength',
-  templateUrl: './password-strength.component.html',
-  styleUrls: ['./password-strength.component.scss']
+  selector: 'mat-password-strength',
+  templateUrl: './mat-password-strength.component.html',
+  styleUrls: ['./mat-password-strength.component.scss']
 })
-export class PasswordStrengthComponent implements OnInit, OnChanges {
+export class MatPasswordStrengthComponent implements OnInit, OnChanges {
 
   @Input()
   password: string;

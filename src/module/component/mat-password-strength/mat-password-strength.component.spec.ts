@@ -1,25 +1,25 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import {Colors, PasswordStrengthComponent} from './password-strength.component';
+import {Colors, MatPasswordStrengthComponent} from './mat-password-strength.component';
 import {MatProgressBarModule} from '@angular/material';
 import {SimpleChange} from '@angular/core';
 import {NgxCombinationGeneratorService} from 'ngx-combination-generator';
 
 describe('PasswordStrengthComponent', () => {
-  let component: PasswordStrengthComponent;
-  let fixture: ComponentFixture<PasswordStrengthComponent>;
+  let component: MatPasswordStrengthComponent;
+  let fixture: ComponentFixture<MatPasswordStrengthComponent>;
   const generator = new NgxCombinationGeneratorService();
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [MatProgressBarModule],
-      declarations: [PasswordStrengthComponent]
+      declarations: [MatPasswordStrengthComponent]
     })
       .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PasswordStrengthComponent);
+    fixture = TestBed.createComponent(MatPasswordStrengthComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

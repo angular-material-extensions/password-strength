@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {PasswordStrengthComponent} from '../ngx-material-password-strength/password-strength.component';
+import {MatPasswordStrengthComponent} from '../mat-password-strength/mat-password-strength.component';
 
 @Component({
   selector: 'mat-password-strength-info',
@@ -9,7 +9,7 @@ import {PasswordStrengthComponent} from '../ngx-material-password-strength/passw
 export class MatPasswordStrengthInfoComponent implements OnInit {
 
   @Input()
-  passwordComponent: PasswordStrengthComponent;
+  passwordComponent: MatPasswordStrengthComponent;
 
   constructor() {
   }
