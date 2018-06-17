@@ -4,14 +4,14 @@ import {MatCardModule, MatIconModule, MatProgressBarModule} from '@angular/mater
 
 import {PasswordStrengthComponent} from './component/ngx-material-password-strength/password-strength.component';
 import {
-  NgxMaterialPasswordStrengthInfoComponent
-} from './component/ngx-material-password-strength-info/ngx-material-password-strength-info.component';
+  MatPasswordStrengthInfoComponent
+} from './component/mat-password-strength-info/mat-password-strength-info.component';
 
 // Export module's public API
 export {PasswordStrengthComponent} from './component/ngx-material-password-strength/password-strength.component';
 export {
-  NgxMaterialPasswordStrengthInfoComponent
-} from './component/ngx-material-password-strength-info/ngx-material-password-strength-info.component';
+  MatPasswordStrengthInfoComponent
+} from './component/mat-password-strength-info/mat-password-strength-info.component';
 
 
 @NgModule({
@@ -21,13 +21,13 @@ export {
     MatCardModule,
     MatIconModule
   ],
-  exports: [PasswordStrengthComponent, NgxMaterialPasswordStrengthInfoComponent],
-  declarations: [PasswordStrengthComponent, NgxMaterialPasswordStrengthInfoComponent]
+  exports: [PasswordStrengthComponent, MatPasswordStrengthInfoComponent],
+  declarations: [PasswordStrengthComponent, MatPasswordStrengthInfoComponent]
 })
-export class NgxMaterialPasswordStrengthModule {
+export class MatPasswordStrengthModule {
   static forRoot(): ModuleWithProviders {
     return {
-      ngModule: NgxMaterialPasswordStrengthModule,
+      ngModule: MatPasswordStrengthModule,
       providers: []
     };
   }

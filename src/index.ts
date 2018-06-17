@@ -1,1 +1,1 @@
-export * from './module/ngx-material-password-strength.module';
+export * from './module/mat-password-strength.module';
