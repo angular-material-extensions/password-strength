@@ -1,6 +1,6 @@
 import { NgxMaterialPasswordStrengthDemoPage } from './app.po';
 
-describe('ngx-material-ngx-material-password-strength-demo App', () => {
+describe('ngx-material-mat-password-strength-demo App', () => {
   let page: NgxMaterialPasswordStrengthDemoPage;
 
   beforeEach(() => {

@@ -10,7 +10,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "postinstall": "npm link ngx-material-password-strength"
+    "postinstall": "npm link @angular-material-extensions/password-strength"
   },
   "private": true,
   "dependencies": {

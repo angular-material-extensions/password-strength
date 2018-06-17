@@ -559,13 +559,13 @@
                   </mat-hint>
                 </mat-form-field>
 
-                <ngx-material-password-strength #passwordComponent
-                                                [password]="password.value">
-                </ngx-material-password-strength>
+                <mat-password-strength #passwordComponent
+                                       [password]="password.value">
+                </mat-password-strength>
 
-                <ngx-material-password-strength-info *ngIf="showDetails"
-                                                     [passwordComponent]="passwordComponent">
-                </ngx-material-password-strength-info>
+                <mat-password-strength-info *ngIf="showDetails"
+                                            [passwordComponent]="passwordComponent">
+                </mat-password-strength-info>
               </div>
             </mat-card-content>
           </mat-card>

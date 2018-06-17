@@ -145,8 +145,8 @@ export class GettingStartedComponent implements OnInit {
                                                 export class OtherModule {
                                                 }`;
 
-  componentExample = `<ngx-material-password-strength  [password]="password.value">
-                      </ngx-material-password-strength>`;
+  componentExample = `<mat-password-strength  [password]="password.value">
+                      </mat-password-strength>`;
 
   example = `<mat-form-field floatPlaceholder="auto" style="width: 100%">
                 <input matInput #password
@@ -157,9 +157,9 @@ export class GettingStartedComponent implements OnInit {
                   {{password.value.length}} / 25
                 </mat-hint>
               </mat-form-field>
-              <ngx-material-password-strength #passwordComponent
+              <mat-password-strength #passwordComponent
                                               [password]="password.value">
-              </ngx-material-password-strength>`;
+              </mat-password-strength>`;
 
   password: string;
   inputType = 'password';
@@ -170,7 +170,7 @@ export class GettingStartedComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.titleService.setTitle('Getting Started | ngx-material-password-strength');
+    this.titleService.setTitle('Getting Started | mat-password-strength');
   }
 
   onSlideToggleChange(event: MatSlideToggleChange) {

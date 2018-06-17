@@ -78,16 +78,16 @@
             </mat-form-field>
 
             <!--ngx-material-password-strength's main component-->
-            <ngx-material-password-strength #passwordComponent
-                                            (onStrengthChanged)="onStrengthChanged($event)"
-                                            [password]="password.value">
-            </ngx-material-password-strength>
+            <mat-password-strength #passwordComponent
+                                   (onStrengthChanged)="onStrengthChanged($event)"
+                                   [password]="password.value">
+            </mat-password-strength>
 
             <!--Password's strength info-->
-            <ngx-material-password-strength-info
+            <mat-password-strength-info
               *ngIf="showDetails"
               [passwordComponent]="passwordComponent">
-            </ngx-material-password-strength-info>
+            </mat-password-strength-info>
 
           </div>
         </mat-card-content>
@@ -158,16 +158,16 @@
           </mat-form-field>
 
           <!--ngx-material-password-strength's main component-->
-          <ngx-material-password-strength #passwordComponentWithValidation
-                                          (onStrengthChanged)="onStrengthChanged($event)"
-                                          [password]="passwordWithValidation.value">
-          </ngx-material-password-strength>
+          <mat-password-strength #passwordComponentWithValidation
+                                 (onStrengthChanged)="onStrengthChanged($event)"
+                                 [password]="passwordWithValidation.value">
+          </mat-password-strength>
 
           <!--Password's strength info-->
-          <ngx-material-password-strength-info
+          <mat-password-strength-info
             *ngIf="showDetails2"
             [passwordComponent]="passwordComponentWithValidation">
-          </ngx-material-password-strength-info>
+          </mat-password-strength-info>
 
         </mat-card-content>
 

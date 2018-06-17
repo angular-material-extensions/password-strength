@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.titleService.setTitle('Home | ngx-material-password-strength');
+    this.titleService.setTitle('Home | mat-password-strength');
   }
 
   onStrengthChanged(strength: number) {
@@ -101,16 +101,16 @@ export class HomeComponent implements OnInit {
           </mat-form-field>
 
           <!--ngx-material-password-strength's main component-->
-          <ngx-material-password-strength #passwordComponent
+          <mat-password-strength #passwordComponent
                                           (onStrengthChanged)="onStrengthChanged($event)"
                                           [password]="password.value">
-          </ngx-material-password-strength>
+          </mat-password-strength>
 
           <!--Password's strength info-->
-          <ngx-material-password-strength-info
+          <mat-password-strength-info
             *ngIf="showDetails"
             [passwordComponent]="passwordComponent">
-          </ngx-material-password-strength-info>
+          </mat-password-strength-info>
 
         </div>
       </mat-card-content>
@@ -143,16 +143,16 @@ export class HomeComponent implements OnInit {
           </mat-form-field>
 
           <!--ngx-material-password-strength's main component-->
-          <ngx-material-password-strength #passwordComponentWithValidation
+          <mat-password-strength #passwordComponentWithValidation
                                           (onStrengthChanged)="onStrengthChanged($event)"
                                           [password]="passwordWithValidation.value">
-          </ngx-material-password-strength>
+          </mat-password-strength>
 
           <!--Password's strength info-->
-          <ngx-material-password-strength-info
+          <mat-password-strength-info
             *ngIf="showDetails2"
             [passwordComponent]="passwordComponentWithValidation">
-          </ngx-material-password-strength-info>
+          </mat-password-strength-info>
 
       </mat-card-content>`;
 
