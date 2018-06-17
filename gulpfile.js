@@ -78,8 +78,8 @@ const argv = yargs
   .argv;
 
 const config = {
-  libraryName: 'ngx-material-password-strength',
-  unscopedLibraryName: 'ngx-material-password-strength',
+  libraryName: '@angular-material-extensions/password-strength',
+  unscopedLibraryName: 'password-strength',
   allSrc: 'src/**/*',
   allTs: 'src/**/!(*.spec).ts',
   allSass: 'src/**/*.+(scss|sass)',

@@ -1,15 +1,15 @@
 {
-  "name": "ngx-material-password-strength",
+  "name": "@angular-material-extensions/password-strength",
   "description": "Material password strength meter to indicate how secure is the provided password",
   "version": "2.1.1",
-  "homepage": "https://github.com/anthonynahas/ngx-material-password-strength",
+  "homepage": "https://github.com/angular-material-extensions/password-strength",
   "author": {
     "name": "anthonynahas",
     "url": "https://github.com/anthonynahas"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/anthonynahas/ngx-material-password-strength.git"
+    "url": "git://github.com/angular-material-extensions/password-strength.git"
   },
   "license": "MIT",
   "keywords": [
@@ -21,7 +21,7 @@
     " strength-meter"
   ],
   "bugs": {
-    "url": "https://github.com/anthonynahas/ngx-material-password-strength/issues"
+    "url": "https://github.com/angular-material-extensions/password-strength/issues"
   },
   "private": true,
   "scripts": {
@@ -29,7 +29,7 @@
     "lint": "gulp lint",
     "test": " gulp test",
     "demo": " gulp build:demo",
-    "check-travis": " travis-status --repo=anthonynahas/ngx-material-password-strength --branch=master --fail-pending || echo 'Not yet passing'"
+    "check-travis": " travis-status --repo=angular-material-extensions/password-strength --branch=master --fail-pending || echo 'Not yet passing'"
   },
   "dependencies": {
     "@angular/animations": "6.0.5",
@@ -57,7 +57,7 @@
     "awesome-typescript-loader": "5.0.0",
     "codelyzer": "4.3.0",
     "commitplease": "3.2.0",
-    "conventional-github-releaser": "3.1.2",
+    "conventional-github-releaser": "2.0.2",
     "core-js": "2.5.7",
     "css-loader": "0.28.11",
     "cssnano": "3.10.0",
@@ -99,7 +99,7 @@
     "rollup-plugin-commonjs": "9.1.3",
     "rollup-plugin-node-resolve": "3.3.0",
     "rollup-plugin-sourcemaps": "0.4.2",
-    "rollup-plugin-uglify": "4.0.0",
+    "rollup-plugin-uglify": "3.0.0",
     "run-sequence": "2.2.1",
     "rxjs": "6.2.1",
     "sass-loader": "7.0.3",
@@ -151,7 +151,11 @@
       "awesome-typescript-loader",
       "codelyzer",
       "@angular/animations",
-      "@types/jasmine"
+      "@types/jasmine",
+      "@types/jest",
+      "@types/node",
+      "conventional-github-releaser",
+      "rollup-plugin-uglify"
     ]
   },
   "commitplease": {

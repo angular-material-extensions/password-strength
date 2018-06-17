@@ -5,7 +5,9 @@
     "target": "es2015",
     "rootDir": "./",
     "baseUrl": "",
-    "types": [ "node"]
+    "types": [
+      "node"
+    ]
   },
   "files": [
     "./index.ts"
@@ -14,8 +16,8 @@
     "strictMetadataEmit": true,
     "skipTemplateCodegen": true,
     "genDir": "../tmp/lib-gen-dir/",
-    "flatModuleOutFile": "ngx-material-password-strength.js",
-    "flatModuleId": "ngx-material-password-strength",
+    "flatModuleOutFile": "password-strength.js",
+    "flatModuleId": "@angular-material-extensions/password-strength",
     "annotateForClosureCompiler": true
   }
 }
