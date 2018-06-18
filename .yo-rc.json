@@ -4,8 +4,8 @@
     "authorName": "anthonynahas",
     "authorEmail": "anthony.na@hotmail.de",
     "githubUsername": "anthonynahas",
-    "githubRepoName": "ngx-material-password-strength",
-    "projectName": "ngx-material-password-strength",
+    "githubRepoName": "@angular-material-extensions/password-strength",
+    "projectName": "@angular-material-extensions/password-strength",
     "projectVersion": "0.0.1",
     "projectDescription": "Material password strength meter to indicate how secure is the provided password",
     "projectKeywords": [
