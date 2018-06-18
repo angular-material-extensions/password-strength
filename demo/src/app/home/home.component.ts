@@ -59,7 +59,7 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.titleService.setTitle('Home | ngx-material-password-strength');
+    this.titleService.setTitle('Home | @angular-material-extensions/password-strength');
   }
 
   onStrengthChanged(strength: number) {
@@ -74,7 +74,7 @@ export class HomeComponent implements OnInit {
 
   html1 = `<mat-card fxFlex>
       <mat-card-title>
-        ngx-material-password-strength
+        @angular-material-extensions/password-strength
       </mat-card-title>
       <mat-card-subtitle>
         stand alone password component
@@ -100,7 +100,7 @@ export class HomeComponent implements OnInit {
             </mat-hint>
           </mat-form-field>
 
-          <!--ngx-material-password-strength's main component-->
+          <!--@angular-material-extensions/password-strength's main component-->
           <mat-password-strength #passwordComponent
                                           (onStrengthChanged)="onStrengthChanged($event)"
                                           [password]="password.value">
@@ -142,7 +142,7 @@ export class HomeComponent implements OnInit {
 
           </mat-form-field>
 
-          <!--ngx-material-password-strength's main component-->
+          <!--@angular-material-extensions/password-strength's main component-->
           <mat-password-strength #passwordComponentWithValidation
                                           (onStrengthChanged)="onStrengthChanged($event)"
                                           [password]="passwordWithValidation.value">

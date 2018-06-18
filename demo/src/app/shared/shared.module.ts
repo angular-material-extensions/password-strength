@@ -6,18 +6,21 @@ import {HeaderComponent} from './header/header.component';
 import {FooterComponent} from './footer/footer.component';
 import {ContentWrapperComponent} from './content-wrapper/content-wrapper.component';
 import {
+  MatButtonModule,
   MatCardModule,
   MatDividerModule,
   MatIconModule,
   MatInputModule,
+  MatListModule,
   MatProgressBarModule,
   MatSlideToggleModule,
   MatSnackBarModule,
-  MatTooltipModule,
-  MatButtonModule, MatToolbarModule, MatTableModule, MatTabsModule, MatListModule
+  MatTabsModule,
+  MatToolbarModule,
+  MatTooltipModule
 } from '@angular/material';
 import {FlexLayoutModule} from '@angular/flex-layout';
-import {NgxMaterialPasswordStrengthModule} from 'mat-password-strength';
+import {MatPasswordStrengthModule} from '@angular-material-extensions/password-strength';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {DisqusModule} from 'ngx-disqus';
 import {HighlightModule} from 'ngx-highlightjs';
@@ -27,7 +30,7 @@ import {NgxMaterialPagesModule} from 'ngx-material-pages';
   imports: [
     RouterModule,
     NgbCollapseModule.forRoot(),
-    NgxMaterialPasswordStrengthModule.forRoot(),
+    MatPasswordStrengthModule.forRoot(),
     NgxMaterialPagesModule.forRoot(),
     DisqusModule.forRoot('mat-password-strength'),
     HighlightModule.forRoot(),
@@ -51,7 +54,7 @@ import {NgxMaterialPagesModule} from 'ngx-material-pages';
     HeaderComponent,
     FooterComponent,
     ContentWrapperComponent,
-    NgxMaterialPasswordStrengthModule,
+    MatPasswordStrengthModule,
     NgxMaterialPagesModule,
     DisqusModule,
     HighlightModule,

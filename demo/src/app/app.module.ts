@@ -20,7 +20,7 @@ import {MatInputModule} from '@angular/material';
     // Add .withServerTransition() to support Universal rendering.
     // The application ID can be any identifier which is unique on
     // the page.
-    BrowserModule.withServerTransition({appId: 'ngx-material-password-strength-demo-id'}),
+    BrowserModule.withServerTransition({appId: '@angular-material-extensions/password-strength-demo-id'}),
     ServiceWorkerModule.register('/ngsw-worker.js', {enabled: environment.production}),
     BrowserAnimationsModule,
     FormsModule,

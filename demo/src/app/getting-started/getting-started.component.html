@@ -7,7 +7,7 @@
 <section class="getting-started">
   <div class="container">
 
-    <ngx-material-pages title="ngx-material-password-strength">
+    <ngx-material-pages title="@angular-material-extensions/password-strength">
 
       <!--1-->
       <ngx-material-page-loader>
@@ -143,10 +143,10 @@
         <ngx-material-page-content>
           <mat-card-title>Animations + Material + CDK</mat-card-title>
           <div class="comment-container">
-            <p><a href="https://www.npmjs.com/package/ngx-material-password-strength"
+            <p><a href="https://www.npmjs.com/package/@angular-material-extensions/password-strength"
                   mat-button
                   color="primary">
-              ngx-material-password-strength
+              @angular-material-extensions/password-strength
             </a>
               is built on the top of
               <a href="https://www.npmjs.com/package/@angular/material"
@@ -158,7 +158,7 @@
                  mat-button
                  color="primary">
                 angular component development kit
-              </a> ! That's why we need to install them as peer dependencies to the ngx-material-password-strength
+              </a> ! That's why we need to install them as peer dependencies to the @angular-material-extensions/password-strength
               module.
             </p>
           </div>
@@ -402,18 +402,18 @@
           </mat-card-title>
           <div class="comment-container">
             Open a new terminal and run the following command to get
-            <a href="https://www.npmjs.com/package/ngx-material-password-strength" mat-button
-               color="primary">ngx-material-password-strength</a>
+            <a href="https://www.npmjs.com/package/@angular-material-extensions/password-strength" mat-button
+               color="primary">@angular-material-extensions/password-strength</a>
             from npm
           </div>
           <div fxLayout="row" fxLayoutAlign="space-between">
             <pre><code highlight
-                       [code]="'$ npm i -s ngx-material-password-strength'"></code></pre>
+                       [code]="'$ npm i -s @angular-material-extensions/password-strength'"></code></pre>
             <button mat-icon-button
                     ngxClipboard
-                    [cbContent]="'npm i -s ngx-material-password-strength'"
+                    [cbContent]="'npm i -s @angular-material-extensions/password-strength'"
                     matTooltip="copy"
-                    (click)="showCopyMessage('npm i -s ngx-material-password-strength')">
+                    (click)="showCopyMessage('npm i -s @angular-material-extensions/password-strength')">
               <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
             </button>
           </div>
@@ -432,7 +432,7 @@
             <mat-card-subtitle>
               Note:If you are using SystemJS, you should adjust your configuration to point to the UMD
               bundle. In your systemjs config file, map needs to tell the System loader where to look for
-              ngx-material-password-strength
+              @angular-material-extensions/password-strength
             </mat-card-subtitle>
             <mat-card-content>
               <div fxLayout="row" fxLayoutAlign="space-between">
@@ -453,45 +453,45 @@
           </div>
           <div fxLayout="row" fxLayoutAlign="space-between">
                  <pre><code highlight
-                            [code]="importNgxMaterialPasswordStrengthModule"></code></pre>
+                            [code]="importMatPasswordStrengthModule"></code></pre>
             <button mat-icon-button
                     ngxClipboard
-                    [cbContent]="importNgxMaterialPasswordStrengthModule"
+                    [cbContent]="importMatPasswordStrengthModule"
                     matTooltip="copy"
-                    (click)="showCopyMessage(importNgxMaterialPasswordStrengthModule)">
+                    (click)="showCopyMessage(importMatPasswordStrengthModule)">
               <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
             </button>
           </div>
           <div class="comment-container">
             <p>The only remaining part is to list the imported module in your application module. The exact method
               will be slightly different for the root (top-level) module for which you should end up with the code
-              similar to (notice NgxMaterialPasswordStrengthModule .forRoot()):
+              similar to (notice MatPasswordStrengthModule .forRoot()):
 
               NB: please do not forget to import the angular animations module in your root component too!
               (usally app.component.ts)</p>
           </div>
           <div fxLayout="row" fxLayoutAlign="space-between">
                  <pre><code highlight
-                            [code]="importNgxMaterialPasswordStrengthModuleInAppModule"></code></pre>
+                            [code]="importMatPasswordStrengthModuleInAppModule"></code></pre>
             <button mat-icon-button
                     ngxClipboard
-                    [cbContent]="importNgxMaterialPasswordStrengthModuleInAppModule"
+                    [cbContent]="importMatPasswordStrengthModuleInAppModule"
                     matTooltip="copy"
-                    (click)="showCopyMessage(importNgxMaterialPasswordStrengthModuleInAppModule)">
+                    (click)="showCopyMessage(importMatPasswordStrengthModuleInAppModule)">
               <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
             </button>
           </div>
           <div class="comment-container">
-            <p>Other modules in your application can simply import NgxMaterialPasswordStrengthModule:</p>
+            <p>Other modules in your application can simply import MatPasswordStrengthModule:</p>
           </div>
           <div fxLayout="row" fxLayoutAlign="space-between">
                  <pre><code highlight
-                            [code]="importNgxMaterialPasswordStrengthModuleInOtherModule"></code></pre>
+                            [code]="importMatPasswordStrengthModuleInOtherModule"></code></pre>
             <button mat-icon-button
                     ngxClipboard
-                    [cbContent]="importNgxMaterialPasswordStrengthModuleInOtherModule"
+                    [cbContent]="importMatPasswordStrengthModuleInOtherModule"
                     matTooltip="copy"
-                    (click)="showCopyMessage(importNgxMaterialPasswordStrengthModuleInOtherModule)">
+                    (click)="showCopyMessage(importMatPasswordStrengthModuleInOtherModule)">
               <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
             </button>
           </div>
@@ -540,7 +540,7 @@
           </div>
 
           <mat-card fxFlex>
-            <mat-card-title>ngx-material-password-strength
+            <mat-card-title>@angular-material-extensions/password-strength
             </mat-card-title>
             <mat-card-subtitle>
               <mat-slide-toggle (change)="onSlideToggleChange($event)">Show Password</mat-slide-toggle>
@@ -579,7 +579,7 @@
           <img style="width: 50px; height: 50px" src="assets/icons/github.svg">
         </ngx-material-page-outlook>
         <ngx-material-page-content>
-          <mat-card-title-group><a href="https://github.com/AnthonyNahas/ngx-material-password-strength"
+          <mat-card-title-group><a href="https://github.com/AnthonyNahas/@angular-material-extensions/password-strength"
                                    target="_blank"
                                    mat-button
                                    color="primary">Clone the repo</a></mat-card-title-group>
@@ -590,12 +590,12 @@
           </div>
           <div fxLayout="row" fxLayoutAlign="space-between">
                  <pre><code highlight
-                            [code]="'git clone https://github.com/AnthonyNahas/ngx-material-password-strength.git'"></code></pre>
+                            [code]="'git clone https://github.com/AnthonyNahas/@angular-material-extensions/password-strength.git'"></code></pre>
             <button mat-icon-button
                     ngxClipboard
-                    [cbContent]="'git clone https://github.com/AnthonyNahas/ngx-material-password-strength.git'"
+                    [cbContent]="'git clone https://github.com/AnthonyNahas/@angular-material-extensions/password-strength.git'"
                     matTooltip="copy"
-                    (click)="showCopyMessage('git clone https://github.com/AnthonyNahas/ngx-material-password-strength.git')">
+                    (click)="showCopyMessage('git clone https://github.com/AnthonyNahas/@angular-material-extensions/password-strength.git')">
               <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
             </button>
           </div>
@@ -614,7 +614,7 @@
             </button>
           </div>
           <div class="comment-container">
-            <p>Link ngx-material-password-strength's package</p>
+            <p>Link @angular-material-extensions/password-strength's package</p>
           </div>
           <div fxLayout="row" fxLayoutAlign="space-between">
                  <pre><code highlight
@@ -687,7 +687,7 @@
                  color="primary">ngx-auth-firebaseui</a>
               Since client side password validation is required by many projects, I decided to hold
               the code in an angular library! Please support this project by starring it on
-              <a href="https://github.com/AnthonyNahas/ngx-material-password-strength"
+              <a href="https://github.com/AnthonyNahas/@angular-material-extensions/password-strength"
                  target="_blank"
                  mat-button
                  color="primary">Github</a>
@@ -706,7 +706,7 @@
             </mat-card-subtitle>
 
             <img matCardImage height="256px" width="256px"
-                 src="https://cdn.rawgit.com/anthonynahas/ngx-material-password-strength/master/demo/src/assets/logo.svg">
+                 src="https://cdn.rawgit.com/anthonynahas/@angular-material-extensions/password-strength/master/demo/src/assets/logo.svg">
             <mat-card-content>
               <mat-nav-list>
                 <a mat-list-item *ngFor="let link of links; last as last" [href]="link.url" target="_blank">

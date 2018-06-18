@@ -118,17 +118,17 @@ export class GettingStartedComponent implements OnInit {
   // 6
 
   systemJSModuleImport = `map: {
-  'ngx-material-password-strength': 'node_modules/ngx-material-password-strength/bundles/ngx-material-password-strength.umd.js',
+  '@angular-material-extensions/password-strength': 'node_modules/@angular-material-extensions/password-strength/bundles/@angular-material-extensions/password-strength.umd.js',
   }`;
 
-  importNgxMaterialPasswordStrengthModule = `import { NgxMaterialPasswordStrengthModule } from 'ngx-material-password-strength';`;
+  importMatPasswordStrengthModule = `import { MatPasswordStrengthModule } from '@angular-material-extensions/password-strength';`;
 
-  importNgxMaterialPasswordStrengthModuleInAppModule = `import { NgxMaterialPasswordStrengthModule } from 'ngx-material-password-strength';
+  importMatPasswordStrengthModuleInAppModule = `import { MatPasswordStrengthModule } from '@angular-material-extensions/password-strength';
                                               import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
                                               @NgModule({
                                                 declarations: [AppComponent, ...],
-                                                imports: [NgxMaterialPasswordStrengthModule.forRoot(),
+                                                imports: [MatPasswordStrengthModule.forRoot(),
                                                 BrowserAnimationsModule,
                                                  ...],
                                                 bootstrap: [AppComponent]
@@ -136,11 +136,11 @@ export class GettingStartedComponent implements OnInit {
                                               export class AppModule {
                                               }`;
 
-  importNgxMaterialPasswordStrengthModuleInOtherModule = `import { NgxMaterialPasswordStrengthModule } from 'ngx-material-password-strength';
+  importMatPasswordStrengthModuleInOtherModule = `import { MatPasswordStrengthModule } from '@angular-material-extensions/password-strength';
 
                                                 @NgModule({
                                                   declarations: [OtherComponent, ...],
-                                                  imports: [NgxMaterialPasswordStrengthModule, ...],
+                                                  imports: [MatPasswordStrengthModule, ...],
                                                 })
                                                 export class OtherModule {
                                                 }`;
