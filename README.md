@@ -1,5 +1,7 @@
 <p align="center">
-  <img height="256px" width="256px" style="text-align: center;" src="https://cdn.rawgit.com/angular-material-extensions/password-strength/master/demo/src/assets/logo.svg">
+  <img alt="angular-material-extensions's logo"
+   height="256px" width="256px" style="text-align: center;" 
+   src="https://cdn.rawgit.com/angular-material-extensions/password-strength/master/assets/angular-material-extensions-logo.svg">
 </p>
 
 # @angular-material-extensions/password-strength - Material password strength meter to indicate how secure is the provided password - Angular v6 supported
@@ -15,7 +17,6 @@
 [![license](https://img.shields.io/github/license/angular-material-extensions/password-strength.svg?style=flat-square)](https://github.com/angular-material-extensions/password-strength/blob/master/LICENSE)
 
 > This project has been transferred from [ngx-material-password-strength](https://www.npmjs.com/package/ngx-material-password-strength) to [@angular-material-extensions/password-strength](https://github.com/angular-material-extensions/password-strength)
-
 
 <p align="center">
   <img alt="@angular-material-extensions/password-strength" style="text-align: center;"
