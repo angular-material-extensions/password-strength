@@ -33,11 +33,11 @@
   },
   "dependencies": {
     "@angular/animations": "^6.1.0",
-    "@angular/cdk": "^6.4.1",
+    "@angular/cdk": "^6.4.2",
     "@angular/common": "^6.1.0",
     "@angular/core": "^6.1.0",
     "@angular/forms": "^6.1.0",
-    "@angular/material": "^6.4.1"
+    "@angular/material": "^6.4.2"
   },
   "devDependencies": {
     "@angular-devkit/schematics": "^0.7.1",
@@ -53,7 +53,7 @@
     "@types/node": "^10.5.4",
     "angular-cli-ghpages": "^0.5.2",
     "angular2-template-loader": "0.6.2",
-    "autoprefixer": "^9.0.1",
+    "autoprefixer": "^9.0.2",
     "awesome-typescript-loader": "^5.2.0",
     "codelyzer": "^4.4.2",
     "commitplease": "3.2.0",
