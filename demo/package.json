@@ -6,6 +6,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "serve:prod": "ng serve --prod",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -52,7 +53,7 @@
     "@nguniversal/module-map-ngfactory-loader": "^6.0.0",
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "~2.0.3",
-    "@types/node": "^10.5.4",
+    "@types/node": "^10.5.5",
     "codelyzer": "^4.4.2",
     "express": "^4.16.3",
     "jasmine-core": "~3.1.0",
