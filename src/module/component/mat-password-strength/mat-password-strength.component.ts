@@ -22,14 +22,18 @@ export enum Criteria {
 })
 export class MatPasswordStrengthComponent implements OnInit, OnChanges {
 
-  @Input()
-  password: string;
+  @Input() password: string;
+  @Input() validators: Criteria[] = Object.keys(Criteria).map(key => Criteria[key]);
+  @Input() externalError: boolean;
 
-  @Input()
-  validators: Criteria[] = Object.keys(Criteria).map(key => Criteria[key]);
+  @Input() enableLengthRule = true;
+  @Input() enableLowerCaseLetterRule = true;
+  @Input() enableUpperCaseLetterRule = true;
+  @Input() enableDigitRule = true;
+  @Input() enableSpecialCharRule = true;
 
-  @Input()
-  externalError: boolean;
+  @Input() min = 8;
+  @Input() max = 30;
 
   @Output()
   onStrengthChanged: EventEmitter<number> = new EventEmitter<number>();
@@ -48,18 +52,13 @@ export class MatPasswordStrengthComponent implements OnInit, OnChanges {
 
   private _color: string;
 
-  constructor() {
-    this.criteriaMap.set(Criteria.at_least_eight_chars, RegExp(/^.{8,63}$/));
-    this.criteriaMap.set(Criteria.at_least_one_lower_case_char, RegExp(/^(?=.*?[a-z])/));
-    this.criteriaMap.set(Criteria.at_least_one_upper_case_char, RegExp(/^(?=.*?[A-Z])/));
-    this.criteriaMap.set(Criteria.at_least_one_digit_char, RegExp(/^(?=.*?[0-9])/));
-    this.criteriaMap.set(Criteria.at_least_one_special_char, RegExp(/^(?=.*?[" !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~"])/));
 
-    this.passwordFormControl = new FormControl('',
-      [...this.validators.map(criteria => Validators.pattern(this.criteriaMap.get(criteria)))]);
+  constructor() {
+    this.setRulesAndValidators();
   }
 
   ngOnInit(): void {
+    this.setRulesAndValidators();
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -125,6 +124,27 @@ export class MatPasswordStrengthComponent implements OnInit, OnChanges {
         .get(Criteria.at_least_one_special_char)
         .test(this.password);
     return this.containAtLeastOneSpecialChar;
+  }
+
+  setRulesAndValidators() {
+    if (this.enableLengthRule) {
+      this.criteriaMap.set(Criteria.at_least_eight_chars, RegExp(`^.{${this.min},${this.max}$`));
+    }
+    if (this.enableLowerCaseLetterRule) {
+      this.criteriaMap.set(Criteria.at_least_one_lower_case_char, RegExp(/^(?=.*?[a-z])/));
+    }
+    if (this.enableUpperCaseLetterRule) {
+      this.criteriaMap.set(Criteria.at_least_one_upper_case_char, RegExp(/^(?=.*?[A-Z])/));
+    }
+    if (this.enableDigitRule) {
+      this.criteriaMap.set(Criteria.at_least_one_digit_char, RegExp(/^(?=.*?[0-9])/));
+    }
+    if (this.enableSpecialCharRule) {
+      this.criteriaMap.set(Criteria.at_least_one_special_char, RegExp(/^(?=.*?[" !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~"])/));
+    }
+
+    this.passwordFormControl = new FormControl('',
+      [...this.validators.map(criteria => Validators.pattern(this.criteriaMap.get(criteria)))]);
   }
 
   calculatePasswordStrength() {
