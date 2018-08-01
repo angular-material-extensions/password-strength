@@ -46,16 +46,11 @@ export class MatPasswordStrengthComponent implements OnInit, OnChanges {
   containAtLeastOneDigit: boolean;
   containAtLeastOneSpecialChar: boolean;
 
-  passwordFormControl: AbstractControl;
+  passwordFormControl: AbstractControl = new FormControl();
 
   private _strength: number;
 
   private _color: string;
-
-
-  constructor() {
-    this.setRulesAndValidators();
-  }
 
   ngOnInit(): void {
     this.setRulesAndValidators();
@@ -149,16 +144,20 @@ export class MatPasswordStrengthComponent implements OnInit, OnChanges {
 
   calculatePasswordStrength() {
     const requirements: Array<boolean> = [];
-    const unit = 100 / 5;
+    const unit = 100 / this.criteriaMap.size;
+
+    console.log('this.criteriaMap.size = ', this.criteriaMap.size);
+    console.log('unit = ', unit);
 
     requirements.push(
-      this._containAtLeastEightChars(),
-      this._containAtLeastOneLowerCaseLetter(),
-      this._containAtLeastOneUpperCaseLetter(),
-      this._containAtLeastOneDigit(),
-      this._containAtLeastOneSpecialChar());
+      this.enableLengthRule ? this._containAtLeastEightChars() : false,
+      this.enableLowerCaseLetterRule ? this._containAtLeastOneLowerCaseLetter() : false,
+      this.enableUpperCaseLetterRule ? this._containAtLeastOneUpperCaseLetter() : false,
+      this.enableDigitRule ? this._containAtLeastOneDigit() : false,
+      this.enableSpecialCharRule ? this._containAtLeastOneSpecialChar() : false);
 
     this._strength = requirements.filter(v => v).length * unit;
+    console.log('length = ', this._strength / unit);
     this.onStrengthChanged.emit(this.strength);
   }
 
