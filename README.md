@@ -103,10 +103,10 @@ View all the directives and components in action at [https://angular-material-ex
 <a name="peerDependencies"/>
 
 ## Requirements (peer dependencies):
-- [angular animations v6.0.5](https://www.npmjs.com/package/@angular/animations)
-- [angular forms v6.0.5](https://www.npmjs.com/package/@angular/forms)
-- [angular cdk v6.2.1](https://www.npmjs.com/package/@angular/cdk)
-- [angular material v6.2.1](https://www.npmjs.com/package/@angular/material)
+- [angular animations v6.1.0](https://www.npmjs.com/package/@angular/animations)
+- [angular forms v6.1.0](https://www.npmjs.com/package/@angular/forms)
+- [angular cdk v6.4.2](https://www.npmjs.com/package/@angular/cdk)
+- [angular material v6.4.2](https://www.npmjs.com/package/@angular/material)
 - [angular material theme](https://material.angular.io/guide/getting-started#step-4-include-a-theme)
 
 ```bash
@@ -349,10 +349,9 @@ this will looks like -->
 ## [Documentation](https://angular-material-extensions.github.io/password-strength/doc/index.html)
 
 Please checkout the full documentation [here](https://angular-material-extensions.github.io//password-strength/doc/index.html) 
-or follow the official [tutorial](https://angular-material-extensions.github.io//password-strength/getting-started)
+or follow the official [tutorial](https://angular-material-extensions.github.io/password-strength/getting-started)
 
 --- 
-
 
 <a name="run-demo-app-locally"/>
 
@@ -364,23 +363,9 @@ $ git clone https://github.com/angular-material-extensions/password-strength.git
 ```
 
 - link the **@angular-material-extensions/password-strength** package
-use gulp globally
+
 ```bash
 $ gulp link
-```
-
-use gulp locally
-```bash
-$ npx gulp link
-```
-for some mac os users, you may use the sudo command with gulp
-use gulp with sudo
-```bash
-$ sudo gulp link
-```
-or locally 
-```bash
-$ sudo npx gulp link
 ```
 
 - navigate to the demo app directory
@@ -437,11 +422,13 @@ $ npm run lint
 
 ## Other Angular Libraries
 - [ngx-auth-firebaseui](https://github.com/AnthonyNahas/ngx-auth-firebaseui)
+- [ngx-linkifyjs](https://github.com/AnthonyNahas/ngx-linkifyjs)
+- [@angular-material-extensions/link-preview](https://github.com/angular-material-extensions/link-preview)
+- [@angular-material-extensions/google-maps-autocomplete](https://github.com/angular-material-extensions/google-maps-autocomplete)
 - [@angular-material-extensions/pages](https://github.com/angular-material-extensions/pages)
 - [@angular-material-extensions/contacts](https://github.com/angular-material-extensions/contacts)
 - [@angular-material-extensions/faq](https://github.com/angular-material-extensions/faq)
 - [@angular-material-extensions/cards](https://github.com/angular-material-extensions/cards)
-- [@angular-material-extensions/google-maps-autocomplete](https://github.com/angular-material-extensions/google-maps-autocomplete)
 - [@angular-material-extensions/combination-generator](https://github.com/angular-material-extensions/combination-generator)
 
 ---
@@ -457,6 +444,8 @@ $ npm run lint
  Built by and for developers :heart: we will help you :punch:
 
 ---
+
+<a name="license"/>
 
 ## License
 

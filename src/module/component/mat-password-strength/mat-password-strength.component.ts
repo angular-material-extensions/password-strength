@@ -17,6 +17,7 @@ export enum Criteria {
 
 @Component({
   selector: 'mat-password-strength',
+  exportAs: 'matPasswordStrength',
   templateUrl: './mat-password-strength.component.html',
   styleUrls: ['./mat-password-strength.component.scss']
 })
