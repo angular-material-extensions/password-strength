@@ -32,8 +32,8 @@ describe('PasswordStrengthComponent', () => {
     expect(component.password).toBeUndefined();
   });
 
-  it('should have a primary color and strength equal to 0 when no password is provided', () => {
-    expect(component.color).toBe(Colors.primary);
+  it('should have a warn color and strength equal to 0 when no password is provided', () => {
+    expect(component.color).toBe(Colors.warn);
     expect(component.strength).toBe(0);
   });
 
@@ -47,7 +47,7 @@ describe('PasswordStrengthComponent', () => {
     });
     fixture.detectChanges();
     expect(calculatePasswordStrengthSpy).not.toHaveBeenCalled();
-    expect(component.color).toBe(Colors.primary);
+    expect(component.color).toBe(Colors.warn);
   });
 
   it('should not calculate the strength of the password when externalError is provided', () => {
@@ -161,4 +161,6 @@ describe('PasswordStrengthComponent', () => {
         }
       });
     });
+
+
 });
