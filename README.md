@@ -219,14 +219,23 @@ export class OtherModule {
 | option | bind  |  type  |   default    | description  |
 |:-------------------|:--------:|:------:|:------------:|:-------------------------------------------------------------------------------------------------|    
 | password           | Input()  | string    | - |  the password to calculate its strength
+| validators           | Input()  | Criteria[]    | see inside the class ;) |  custom form validator used to validate the password
 | externalError      | Input()  | boolean   | false | used to change the color of the password to warn if an external error occurs
+| enableLengthRule      | Input()  | boolean   | true | whether to validate the length of the password
+| enableLowerCaseLetterRule      | Input()  | boolean   | true | whether a lowercase letter is optional
+| enableUpperCaseLetterRule      | Input()  | boolean   | true | whether a uppercase letter is optional
+| enableDigitRule      | Input()  | boolean   | true | whether a digit char is optional
+| enableSpecialCharRule      | Input()  | boolean   | true | whether a special char is optional
+| min      | Input()  | number   | 8 | the minimum length of the password
+| max      | Input()  | number   | 30 | the maximum length of the password
 | onStrengthChanged  | Output() | number    | - | emits the strength of the provided password in % e.g: 20%, 40%, 60%, 80% or 100%
 
 ### `<mat-password-strength-info>` used to display more information about the strength of a provided password
 
 | option | bind  |  type  |   default    | description  |
 |:-------------------|:--------:|:------:|:------------:|:-------------------------------------------------------------------------------------------------|    
-| passwordComponent           | Input()  | PasswordStrengthComponent    | - |  the password component used in the template in order to display more info related to the provided password
+| passwordComponent    | Input()  | PasswordStrengthComponent    | - |  the password component used in the template in order to display more info related to the provided password
+| enableScoreInfo      | Input()  | boolean    | false |  whether to show the password's score in %
 
 ---
 
@@ -272,18 +281,18 @@ or similar.
 
 ```html
 <div fxLayout="row" fxLayoutGap="10px">
-                <div *ngIf="passwordComponent.strength === 100; then done else error">
-                </div>
-                <ng-template #done>
-                  <mat-icon color="primary">done</mat-icon>
-                </ng-template>
-                <ng-template #error>
-                  <mat-icon color="warn">error</mat-icon>
-                </ng-template>
-                <div>
-                  <p>Password's strength = {{passwordComponent.strength}} %100</p>
-                </div>
-              </div>
+   <div *ngIf="passwordComponent.strength === 100; then done else error">
+   </div>
+   <ng-template #done>
+     <mat-icon color="primary">done</mat-icon>
+   </ng-template>
+   <ng-template #error>
+     <mat-icon color="warn">error</mat-icon>
+   </ng-template>
+   <div>
+     <p>Password's strength = {{passwordComponent.strength}} %100</p>
+   </div>
+</div>
 ```
 
 #### Client Side password's validation using a built in angular formController
@@ -343,6 +352,9 @@ this will looks like -->
 </p>
 
 --- 
+
+
+for more examples please visit this URL : [(https://angular-material-extensions.github.io/password-strength/examples]((https://angular-material-extensions.github.io/password-strength/examples)
 
 <a name="documentation"/>
 
@@ -423,6 +435,7 @@ $ npm run lint
 ## Other Angular Libraries
 - [ngx-auth-firebaseui](https://github.com/AnthonyNahas/ngx-auth-firebaseui)
 - [ngx-linkifyjs](https://github.com/AnthonyNahas/ngx-linkifyjs)
+- [@firebaseui/ng-bootstrap](https://github.com/firebaseui/ng-bootstrap)
 - [@angular-material-extensions/link-preview](https://github.com/angular-material-extensions/link-preview)
 - [@angular-material-extensions/google-maps-autocomplete](https://github.com/angular-material-extensions/google-maps-autocomplete)
 - [@angular-material-extensions/pages](https://github.com/angular-material-extensions/pages)
