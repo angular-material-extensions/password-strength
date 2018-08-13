@@ -49,7 +49,7 @@ export class MatPasswordStrengthComponent implements OnInit, OnChanges {
 
   passwordFormControl: AbstractControl = new FormControl();
 
-  private _strength: number;
+  private _strength = 0;
 
   private _color: string;
 
@@ -58,16 +58,13 @@ export class MatPasswordStrengthComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log('!changes.password.isFirstChange()', changes.password.isFirstChange());
+
     if ((changes.externalError && changes.externalError.firstChange) || changes.password.isFirstChange()) {
-      console.log('ngOnChanges if');
       return;
     } else if (changes.externalError && changes.externalError.currentValue) {
-      console.log('ngOnChanges else if');
       this._color = Colors.warn;
       return;
     } else {
-      console.log('ngOnChanges else');
       this.password && this.password.length > 0 ?
         this.calculatePasswordStrength() : this.reset();
     }
@@ -78,7 +75,7 @@ export class MatPasswordStrengthComponent implements OnInit, OnChanges {
   }
 
   get color(): string {
-    console.log('on color requested: ', this.strength);
+
     if (this._strength <= 20) {
       return Colors.warn;
     } else if (this._strength <= 80) {
@@ -148,16 +145,14 @@ export class MatPasswordStrengthComponent implements OnInit, OnChanges {
       this.passwordFormControl.setValidators(Validators.pattern(this.criteriaMap.get(criteria)));
     })
 
-    // this.passwordFormControl = new FormControl('',
-    // [...this.validators.map(criteria => Validators.pattern(this.criteriaMap.get(criteria)))]);
   }
 
   calculatePasswordStrength() {
     const requirements: Array<boolean> = [];
     const unit = 100 / this.criteriaMap.size;
 
-    console.log('this.criteriaMap.size = ', this.criteriaMap.size);
-    console.log('unit = ', unit);
+    // console.log('this.criteriaMap.size = ', this.criteriaMap.size);
+    // console.log('unit = ', unit);
 
     requirements.push(
       this.enableLengthRule ? this._containAtLeastEightChars() : false,
@@ -167,7 +162,7 @@ export class MatPasswordStrengthComponent implements OnInit, OnChanges {
       this.enableSpecialCharRule ? this._containAtLeastOneSpecialChar() : false);
 
     this._strength = requirements.filter(v => v).length * unit;
-    console.log('length = ', this._strength / unit);
+    // console.log('length = ', this._strength / unit);
     this.onStrengthChanged.emit(this.strength);
   }
 
