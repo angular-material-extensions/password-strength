@@ -162,7 +162,8 @@
         <!--Password's strength info-->
         <mat-password-strength-info
           *ngIf="toggle4.checked"
-          [passwordComponent]="passwordComponent4">
+          [passwordComponent]="passwordComponent4"
+          [enableScoreInfo]="true">
         </mat-password-strength-info>
       </mat-card-content>
 

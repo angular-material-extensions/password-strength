@@ -12,4 +12,7 @@ export class MatPasswordStrengthInfoComponent {
   @Input()
   passwordComponent: MatPasswordStrengthComponent;
 
+  @Input()
+  enableScoreInfo = false;
+
 }
