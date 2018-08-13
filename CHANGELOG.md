@@ -1,3 +1,25 @@
+<a name="3.1.0"></a>
+# [3.1.0](https://github.com/angular-material-extensions/password-strength/compare/v3.0.0...v3.1.0) (2018-08-13)
+
+
+### Bug Fixes
+
+* **package:** add validators in runtime instead to create new formController ([6a9650b](https://github.com/angular-material-extensions/password-strength/commit/6a9650b))
+* **package:** add validators in runtime instead to create new formController ([2457a1b](https://github.com/angular-material-extensions/password-strength/commit/2457a1b))
+* **package:** fixed the calculation of the strength (unit transform) ([798ced0](https://github.com/angular-material-extensions/password-strength/commit/798ced0))
+
+
+### Features
+
+* **demo:** add ngx-markdown for code examples ([1e38cea](https://github.com/angular-material-extensions/password-strength/commit/1e38cea))
+* **demo:** added examples module to explore the library ([3a86a5a](https://github.com/angular-material-extensions/password-strength/commit/3a86a5a))
+* **package:** added new optional input args for the component [#68](https://github.com/angular-material-extensions/password-strength/issues/68) ([b70cb74](https://github.com/angular-material-extensions/password-strength/commit/b70cb74))
+* **package:** only show the enabled rules in the info component [#68](https://github.com/angular-material-extensions/password-strength/issues/68) ([4b82c63](https://github.com/angular-material-extensions/password-strength/commit/4b82c63))
+* **package:** optional input to hide the password score in the info component [#68](https://github.com/angular-material-extensions/password-strength/issues/68) ([eac59c6](https://github.com/angular-material-extensions/password-strength/commit/eac59c6))
+* **pwa:** added manifest.json file to the demo app ([0e77f7e](https://github.com/angular-material-extensions/password-strength/commit/0e77f7e))
+
+
+
 <a name="3.0.0"></a>
 # [3.0.0](https://github.com/angular-material-extensions/password-strength/compare/v2.1.1...v3.0.0) (2018-06-18)
 
