@@ -1,0 +1,178 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1>Explore the library and try these examples <3</h1>
+  </div>
+</div>
+
+<section class="home">
+  <div class="container">
+
+    <mat-card>
+      <mat-card-title>#1</mat-card-title>
+      <mat-card-subtitle>stand alone password component, digit char is optional</mat-card-subtitle>
+
+      <mat-slide-toggle #toggle1>Show Password Details</mat-slide-toggle>
+
+      <mat-card-content>
+        <!--password input filed-->
+        <mat-form-field appearance="outline" style="width: 100%" [color]="passwordComponent1.color">
+          <mat-label>Password</mat-label>
+          <input matInput #password
+                 type="password"
+                 placeholder="Password">
+          <mat-hint align="end" aria-live="polite">
+            {{password.value.length}} / {{passwordComponent1.max}}
+          </mat-hint>
+        </mat-form-field>
+
+        <!--@angular-material-extensions/password-strength's main component-->
+        <mat-password-strength #passwordComponent1
+                               [enableDigitRule]="false"
+                               (onStrengthChanged)="onStrengthChanged($event)"
+                               [password]="password.value">
+        </mat-password-strength>
+        <!--Password's strength info-->
+        <mat-password-strength-info
+          *ngIf="toggle1.checked"
+          [passwordComponent]="passwordComponent1">
+        </mat-password-strength-info>
+      </mat-card-content>
+
+      <mat-card class="mt-2">
+        <mat-card-title>code</mat-card-title>
+        <mat-card-content>
+          <markdown src="assets/md/examples/e1.md"></markdown>
+        </mat-card-content>
+      </mat-card>
+    </mat-card>
+
+
+    <!-- #2 -->
+    <mat-card class="mt-4">
+      <mat-card-title>#2</mat-card-title>
+      <mat-card-subtitle>stand alone password component, special char and lower case are optional</mat-card-subtitle>
+
+      <mat-slide-toggle #toggle2>Show Password Details</mat-slide-toggle>
+
+      <mat-card-content>
+        <!--password input filed-->
+        <mat-form-field appearance="outline" style="width: 100%" [color]="passwordComponent2.color">
+          <mat-label>Password</mat-label>
+          <input matInput #password2
+                 type="password"
+                 placeholder="Password">
+          <mat-hint align="end" aria-live="polite">
+            {{password2.value.length}} / {{passwordComponent2.max}}
+          </mat-hint>
+        </mat-form-field>
+
+        <!--@angular-material-extensions/password-strength's main component-->
+        <mat-password-strength #passwordComponent2
+                               [enableLowerCaseLetterRule]="false"
+                               [enableSpecialCharRule]="false"
+                               (onStrengthChanged)="onStrengthChanged($event)"
+                               [password]="password2.value">
+        </mat-password-strength>
+        <!--Password's strength info-->
+        <mat-password-strength-info
+          *ngIf="toggle2.checked"
+          [passwordComponent]="passwordComponent2">
+        </mat-password-strength-info>
+      </mat-card-content>
+
+      <mat-card class="mt-2">
+        <mat-card-title>code</mat-card-title>
+        <mat-card-content>
+          <markdown src="assets/md/examples/e2.md"></markdown>
+        </mat-card-content>
+      </mat-card>
+    </mat-card>
+
+    <!-- #3 -->
+    <mat-card class="mt-4">
+      <mat-card-title>#3</mat-card-title>
+      <mat-card-subtitle>stand alone password component, the length of the password and an upper case char are
+        optional
+      </mat-card-subtitle>
+
+      <mat-slide-toggle #toggle3>Show Password Details</mat-slide-toggle>
+
+      <mat-card-content>
+        <!--password input filed-->
+        <mat-form-field appearance="outline" style="width: 100%" [color]="passwordComponent3.color">
+          <mat-label>Password</mat-label>
+          <input matInput #password3
+                 type="password"
+                 placeholder="Password">
+          <mat-hint align="end" aria-live="polite">
+            {{password3.value.length}} / {{passwordComponent3.max}}
+          </mat-hint>
+        </mat-form-field>
+
+        <!--@angular-material-extensions/password-strength's main component-->
+        <mat-password-strength #passwordComponent3
+                               [enableLengthRule]="false"
+                               [enableUpperCaseLetterRule]="false"
+                               (onStrengthChanged)="onStrengthChanged($event)"
+                               [password]="password3.value">
+        </mat-password-strength>
+        <!--Password's strength info-->
+        <mat-password-strength-info
+          *ngIf="toggle3.checked"
+          [passwordComponent]="passwordComponent3">
+        </mat-password-strength-info>
+      </mat-card-content>
+
+      <mat-card class="mt-2">
+        <mat-card-title>code</mat-card-title>
+        <mat-card-content>
+          <markdown src="assets/md/examples/e3.md"></markdown>
+        </mat-card-content>
+      </mat-card>
+    </mat-card>
+
+    <!-- #4 -->
+    <mat-card class="mt-4">
+      <mat-card-title>#4</mat-card-title>
+      <mat-card-subtitle>stand alone password component, min length = 6 and the max is = 12
+        optional
+      </mat-card-subtitle>
+
+      <mat-slide-toggle #toggle4>Show Password Details</mat-slide-toggle>
+
+      <mat-card-content>
+        <!--password input filed-->
+        <mat-form-field appearance="outline" style="width: 100%" [color]="passwordComponent4.color">
+          <mat-label>Password</mat-label>
+          <input matInput #password4
+                 type="password"
+                 placeholder="Password">
+          <mat-hint align="end" aria-live="polite">
+            {{password4.value.length}} / {{passwordComponent4.max}}
+          </mat-hint>
+        </mat-form-field>
+
+        <!--@angular-material-extensions/password-strength's main component-->
+        <mat-password-strength #passwordComponent4
+                               [min]="6"
+                               [max]="12"
+                               (onStrengthChanged)="onStrengthChanged($event)"
+                               [password]="password4.value">
+        </mat-password-strength>
+        <!--Password's strength info-->
+        <mat-password-strength-info
+          *ngIf="toggle4.checked"
+          [passwordComponent]="passwordComponent4">
+        </mat-password-strength-info>
+      </mat-card-content>
+
+      <mat-card class="mt-2">
+        <mat-card-title>code</mat-card-title>
+        <mat-card-content>
+          <markdown src="assets/md/examples/e4.md"></markdown>
+        </mat-card-content>
+      </mat-card>
+    </mat-card>
+
+  </div>
+</section>

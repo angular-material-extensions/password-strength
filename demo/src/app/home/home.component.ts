@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewEncapsulation} from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {Title} from '@angular/platform-browser';
 import {MatSlideToggleChange} from '@angular/material';
 
@@ -10,6 +10,9 @@ import {MatSlideToggleChange} from '@angular/material';
 })
 export class HomeComponent implements OnInit {
 
+  constructor(private titleService: Title) {
+  }
+
   password: string;
   inputType = 'password';
   showDetails: boolean;
@@ -18,21 +21,6 @@ export class HomeComponent implements OnInit {
   viewSource: boolean;
   viewSource2: boolean;
   color = '';
-
-  constructor(private titleService: Title) {
-  }
-
-  ngOnInit() {
-    this.titleService.setTitle('Home | mat-password-strength');
-  }
-
-  onStrengthChanged(strength: number) {
-    console.log('password strength = ', strength);
-  }
-
-  onSlideToggleChange(event: MatSlideToggleChange) {
-    event.checked ? this.inputType = 'text' : this.inputType = 'password';
-  }
 
   ts = `import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {Title} from '@angular/platform-browser';
@@ -155,5 +143,17 @@ export class HomeComponent implements OnInit {
           </mat-password-strength-info>
 
       </mat-card-content>`;
+
+  ngOnInit() {
+    this.titleService.setTitle('Home | mat-password-strength');
+  }
+
+  onStrengthChanged(strength: number) {
+    console.log('password strength = ', strength);
+  }
+
+  onSlideToggleChange(event: MatSlideToggleChange) {
+    event.checked ? this.inputType = 'text' : this.inputType = 'password';
+  }
 
 }

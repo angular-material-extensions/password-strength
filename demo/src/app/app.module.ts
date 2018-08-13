@@ -9,8 +9,9 @@ import {HomeModule} from './home/home.module';
 import {AppComponent} from './app.component';
 import {environment} from '../environments/environment';
 import {ServiceWorkerModule} from '@angular/service-worker';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {MatInputModule} from '@angular/material';
+import {MarkdownModule} from 'ngx-markdown';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import {MatInputModule} from '@angular/material';
     // the page.
     BrowserModule.withServerTransition({appId: '@angular-material-extensions/password-strength-demo-id'}),
     ServiceWorkerModule.register('/ngsw-worker.js', {enabled: environment.production}),
+    MarkdownModule.forRoot({loader: HttpClient}),
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,

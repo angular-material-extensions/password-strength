@@ -79,7 +79,7 @@
 
             <!--@angular-material-extensions/password-strength's main component-->
             <mat-password-strength #passwordComponent
-                                   [enableDigitRule]="false"
+                                   [enableDigitRule]="true"
                                    (onStrengthChanged)="onStrengthChanged($event)"
                                    [password]="password.value">
             </mat-password-strength>
