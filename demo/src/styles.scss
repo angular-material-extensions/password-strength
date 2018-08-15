@@ -40,7 +40,8 @@ $breakpoints: $grid-breakpoints;
   }
 }
 
-mat-toolbar {
+
+mat-toolbar, mat-slide-toggle {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
