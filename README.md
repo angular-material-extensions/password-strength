@@ -10,7 +10,7 @@
 [![npm demo](https://img.shields.io/badge/demo-online-ed1c46.svg)](https://angular-material-extensions.github.io/password-strength)
 [![Join the chat at https://gitter.im/angular-material-extensions/Lobby](https://badges.gitter.im/angular-material-extensions/Lobby.svg)](https://gitter.im/angular-material-extensions/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![CircleCI branch](https://img.shields.io/circleci/project/github/angular-material-extensions/password-strength/master.svg?label=circleci)](https://circleci.com/gh/angular-material-extensions/password-strength)
-[![Coverage Status](https://coveralls.io/repos/github/angular-material-extensions/password-strength/badge.svg?branch=master)](https://coveralls.io/github/angular-material-extensions/password-strength?branch=master)
+[![codecov](https://codecov.io/gh/angular-material-extensions/password-strength/branch/master/graph/badge.svg)](https://codecov.io/gh/angular-material-extensions/password-strength)
 [![dependency Status](https://david-dm.org/angular-material-extensions/password-strength/status.svg)](https://david-dm.org/angular-material-extensions/password-strength)
 [![devDependency Status](https://david-dm.org/angular-material-extensions/password-strength/dev-status.svg?branch=master)](https://david-dm.org/angular-material-extensions/password-strength#info=devDependencies)
 [![Greenkeeper Badge](https://badges.greenkeeper.io/angular-material-extensions/password-strength.svg)](https://greenkeeper.io/)
