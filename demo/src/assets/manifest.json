@@ -1,9 +1,9 @@
 {
   "name": "@angular-material-extensions/password-strength",
   "short_name": "material-password-strength",
-  "theme_color": "#0f9340",
-  "background_color": "#3756da",
-  "display": "browser",
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
+  "display": "standalone",
   "Scope": "/",
   "start_url": "/",
   "icons": [
