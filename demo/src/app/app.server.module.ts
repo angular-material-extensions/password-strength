@@ -3,7 +3,7 @@ import {ServerModule} from '@angular/platform-server';
 
 import {AppModule} from './app.module';
 import {AppComponent} from './app.component';
-import { ModuleMapLoaderModule } from '@nguniversal/module-map-ngfactory-loader';
+import {ModuleMapLoaderModule} from '@nguniversal/module-map-ngfactory-loader';
 
 @NgModule({
   imports: [
@@ -17,4 +17,5 @@ import { ModuleMapLoaderModule } from '@nguniversal/module-map-ngfactory-loader'
   // imported AppModule, it needs to be repeated here.
   bootstrap: [AppComponent],
 })
-export class AppServerModule { }
+export class AppServerModule {
+}
