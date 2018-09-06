@@ -10,6 +10,7 @@
 [![npm demo](https://img.shields.io/badge/demo-online-ed1c46.svg)](https://angular-material-extensions.github.io/password-strength)
 [![Join the chat at https://gitter.im/angular-material-extensions/Lobby](https://badges.gitter.im/angular-material-extensions/Lobby.svg)](https://gitter.im/angular-material-extensions/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![CircleCI branch](https://img.shields.io/circleci/project/github/angular-material-extensions/password-strength/master.svg?label=circleci)](https://circleci.com/gh/angular-material-extensions/password-strength)
+[![Build Status](https://travis-ci.org/angular-material-extensions/password-strength.svg?branch=master)](https://travis-ci.org/angular-material-extensions/password-strength)
 [![codecov](https://codecov.io/gh/angular-material-extensions/password-strength/branch/master/graph/badge.svg)](https://codecov.io/gh/angular-material-extensions/password-strength)
 [![dependency Status](https://david-dm.org/angular-material-extensions/password-strength/status.svg)](https://david-dm.org/angular-material-extensions/password-strength)
 [![devDependency Status](https://david-dm.org/angular-material-extensions/password-strength/dev-status.svg?branch=master)](https://david-dm.org/angular-material-extensions/password-strength#info=devDependencies)
@@ -19,13 +20,8 @@
 > This project has been transferred from [ngx-material-password-strength](https://www.npmjs.com/package/ngx-material-password-strength) to [@angular-material-extensions/password-strength](https://github.com/angular-material-extensions/password-strength)
 
 <p align="center">
-  <img alt="@angular-material-extensions/password-strength" style="text-align: center;"
-   src="https://raw.githubusercontent.com/angular-material-extensions/password-strength/HEAD/assets/demo_v2.0.1_2.gif">
-</p>
-
-<p align="center">
-  <img alt="@angular-material-extensions/password-strength" style="text-align: center;"
-   src="https://raw.githubusercontent.com/angular-material-extensions/password-strength/HEAD/assets/demo_v2.0.1.gif">
+  <img alt="@angular-material-extensions/password-strength demonstration" style="text-align: center;"
+   src="https://raw.githubusercontent.com/angular-material-extensions/password-strength/HEAD/assets/v3.2.0/demo.gif">
 </p>
 
 ## Built by and for developers :heart:
@@ -63,21 +59,21 @@ View all the directives and components in action at [https://angular-material-ex
 ## Library's components
 - `<mat-password-strength>` used to calculate and display the strength of a provided password
 
-1. strength score less than 20%
+1. strength score <=  20%
 
 <p align="center">
   <img alt="@angular-material-extensions/password-strength score less than 20%" style="text-align: center;"
    src="https://raw.githubusercontent.com/angular-material-extensions/password-strength/HEAD/assets/v2.1.0/scrore_lesst_than_20.png">
 </p>
 
-2. strength score less than 40%
+2. strength score <= 80%
 
 <p align="center">
   <img alt="@angular-material-extensions/password-strength score less than 40%" style="text-align: center;"
    src="https://raw.githubusercontent.com/angular-material-extensions/password-strength/HEAD/assets/v2.1.0/scrore_lesst_than_40.png">
 </p>
 
-1. strength score less than 100%
+1. strength score > 80%
 
 <p align="center">
   <img alt="@angular-material-extensions/password-strength score less than 100%" style="text-align: center;"
@@ -96,18 +92,20 @@ View all the directives and components in action at [https://angular-material-ex
 <a name="dependencies"/>
 
 ## Dependencies
-* [Angular](https://angular.io) (*requires* Angular 2 or higher) developed and tested with `6.0.5`
+* [Angular](https://angular.io) developed and tested with `6.1.7`
 
 ---
 
 <a name="peerDependencies"/>
 
 ## Requirements (peer dependencies):
-- [angular animations v6.1.0](https://www.npmjs.com/package/@angular/animations)
-- [angular forms v6.1.0](https://www.npmjs.com/package/@angular/forms)
-- [angular cdk v6.4.2](https://www.npmjs.com/package/@angular/cdk)
-- [angular material v6.4.2](https://www.npmjs.com/package/@angular/material)
+- [angular animations v6.1.7](https://www.npmjs.com/package/@angular/animations)
+- [angular forms v6.1.7](https://www.npmjs.com/package/@angular/forms)
+- [angular cdk v6.4.7](https://www.npmjs.com/package/@angular/cdk)
+- [angular material v6.4.7](https://www.npmjs.com/package/@angular/material)
+
 - [angular material theme](https://material.angular.io/guide/getting-started#step-4-include-a-theme)
+- [angular material icons](https://material.angular.io/guide/getting-started#step-6-optional-add-material-icons)
 
 ```bash
 npm i @angular/cdk @angular/material @angular/animations @angular/forms 
@@ -408,27 +406,11 @@ $ ng serve --open
 1. clone this [repo](https://github.com/angular-material-extensions/password-strength.git)
 2. Install the dependencies by running `npm i`
 3. build the library `npm run build` or `gulp build`
-To generate all `*.js`, `*.d.ts` and `*.metadata.json` files:
-
-```bash
-$ npm run build
-```
-
-4. Link the library 
-  - on windows `gulp link` or locally `npx gulp link`
-  - on mac/linux `sudo gulp link` or locally `sudo npx gulp link`
-  
+4. Link the library `gulp link`
  5. Navigate to the demo app's directory
   - `cd demo`
   _ `npm i`
   _ `npm start`
-
-extras
-To lint all `*.ts` files:
-
-```bash
-$ npm run lint
-```
 
 <a name="other-angular-libraries"/>
 
@@ -441,11 +423,9 @@ $ npm run lint
 - [@angular-material-extensions/pages](https://github.com/angular-material-extensions/pages)
 - [@angular-material-extensions/contacts](https://github.com/angular-material-extensions/contacts)
 - [@angular-material-extensions/faq](https://github.com/angular-material-extensions/faq)
-- [@angular-material-extensions/cards](https://github.com/angular-material-extensions/cards)
 - [@angular-material-extensions/combination-generator](https://github.com/angular-material-extensions/combination-generator)
 
 ---
-
 
 <a name="support"/>
 
@@ -455,6 +435,12 @@ $ npm run lint
 + let us chat on [Gitter](https://gitter.im/angular-material-extensions/Lobby)
  
  Built by and for developers :heart: we will help you :punch:
+
+---
+
+![jetbrains logo](https://raw.githubusercontent.com/angular-material-extensions/password-strength/HEAD/assets/jetbrains-variant-4_logos/jetbrains-variant-4.png)
+
+This project is supported by [jetbrains](https://www.jetbrains.com/) with 1 ALL PRODUCTS PACK OS LICENSE incl. [webstorm](https://www.jetbrains.com/webstorm)
 
 ---
 
