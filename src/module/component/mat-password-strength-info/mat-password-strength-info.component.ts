@@ -1,8 +1,7 @@
 import {Component, Input} from '@angular/core';
 import {MatPasswordStrengthComponent} from '../mat-password-strength/mat-password-strength.component';
-import {animate, animateChild, stagger, style, transition, trigger, useAnimation} from '@angular/animations';
-import {query} from '@angular/animations';
-import {flipInY, shake} from '../../animations';
+import {animate, animateChild, keyframes, query, stagger, style, transition, trigger, useAnimation} from '@angular/animations';
+import {shake} from '../../animations/index';
 
 @Component({
   selector: 'mat-password-strength-info',
@@ -33,8 +32,40 @@ import {flipInY, shake} from '../../animations';
       ]),
     ]),
     trigger('positiveState', [
-      transition(':enter', useAnimation(flipInY)),
-      // transition(':leave', useAnimation(flipInY)),
+      transition(':enter', [
+        style({'backface-visibility': 'visible'}),
+        animate(
+          '{{ timing }}s {{ delay }}s ease-in',
+          keyframes([
+            style({
+              opacity: 0,
+              transform:
+                'perspective(400px) rotate3d({{ rotateX }}, {{ rotateY }}, 0, 90deg)',
+              offset: 0,
+            }),
+            style({
+              opacity: 1,
+              transform:
+                'perspective(400px) rotate3d({{ rotateX }}, {{ rotateY }}, 0, -20deg)',
+              offset: 0.4,
+            }),
+            style({
+              transform:
+                'perspective(400px) rotate3d({{ rotateX }}, {{ rotateY }}, 0, 10deg)',
+              offset: 0.6,
+            }),
+            style({
+              transform:
+                'perspective(400px) rotate3d({{ rotateX }}, {{ rotateY }}, 0, -5deg)',
+              offset: 0.8,
+            }),
+            style({
+              transform: 'perspective(400px) rotate3d(0, 0, 0, 0)',
+              offset: 1,
+            }),
+          ])
+        ),
+      ], {params: {timing: 1, delay: 0, rotateX: 1, rotateY: 0}}),
     ]),
     trigger('negativeState', [
       transition(':enter', useAnimation(shake)),

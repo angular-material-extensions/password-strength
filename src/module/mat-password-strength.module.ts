@@ -13,7 +13,6 @@ export {
   MatPasswordStrengthInfoComponent
 } from './component/mat-password-strength-info/mat-password-strength-info.component';
 
-
 @NgModule({
   imports: [
     CommonModule,
