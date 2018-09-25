@@ -1,3 +1,13 @@
+<a name="3.2.0"></a>
+# [3.2.0](https://github.com/angular-material-extensions/password-strength/compare/v3.1.0...v3.2.0) (2018-09-25)
+
+
+### Features
+
+* **package:** added animations to the `mat-password-strength-info` component ([cff9fda](https://github.com/angular-material-extensions/password-strength/commit/cff9fda))
+
+
+
 <a name="3.1.0"></a>
 # [3.1.0](https://github.com/angular-material-extensions/password-strength/compare/v3.0.0...v3.1.0) (2018-08-13)
 
