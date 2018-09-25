@@ -12,6 +12,8 @@
   "angularCompilerOptions": {
     "strictMetadataEmit": true,
     "skipTemplateCodegen": true,
+    "fullTemplateTypeCheck": true,
+    "strictInjectionParameters": true,
     "genDir": "../tmp/lib-gen-dir/",
     "flatModuleOutFile": "password-strength.js",
     "flatModuleId": "@angular-material-extensions/password-strength",
