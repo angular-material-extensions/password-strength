@@ -92,15 +92,15 @@ View all the directives and components in action at [https://angular-material-ex
 <a name="dependencies"/>
 
 ## Dependencies
-* [Angular](https://angular.io) developed and tested with `6.1.7`
+* [Angular](https://angular.io) developed and tested with `6.1.78`
 
 ---
 
 <a name="peerDependencies"/>
 
 ## Requirements (peer dependencies):
-- [angular animations v6.1.7](https://www.npmjs.com/package/@angular/animations)
-- [angular forms v6.1.7](https://www.npmjs.com/package/@angular/forms)
+- [angular animations v6.1.8](https://www.npmjs.com/package/@angular/animations)
+- [angular forms v6.1.8](https://www.npmjs.com/package/@angular/forms)
 - [angular cdk v6.4.7](https://www.npmjs.com/package/@angular/cdk)
 - [angular material v6.4.7](https://www.npmjs.com/package/@angular/material)
 
