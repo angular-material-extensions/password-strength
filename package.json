@@ -75,7 +75,7 @@
     "html-loader": "0.5.5",
     "is-docker": "1.1.0",
     "istanbul-instrumenter-loader": "3.0.1",
-    "jasmine-core": "^3.2.1",
+    "jasmine-core": "^3.3.0",
     "jest": "^23.6.0",
     "jest-cli": "^23.6.0",
     "jest-preset-angular": "^6.0.1",
