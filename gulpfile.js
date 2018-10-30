@@ -552,7 +552,7 @@ gulp.task('serve:demo-ssr', ['build:demo'], () => {
 });
 
 gulp.task('build:demo-ssr', ['build:demo'], () => {
-  return execDemoCmd(`build --preserve-symlinks --prod --aot --build-optimizer --app ssr --output-hashing=none`, {cwd: `${config.demoDir}`})
+  return execDemoCmd(`run password-strength:server:production`, {cwd: `${config.demoDir}`})
     .then(exitCode => {
         if (exitCode === 0) {
           execCmd('webpack', '--config webpack.server.config.js --progress --colors', {cwd: `${config.demoDir}`}, `/${config.demoDir}`)
