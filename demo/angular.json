@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "bsr": {
+    "password-strength": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -65,21 +65,21 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "bsr:build"
+            "browserTarget": "password-strength:build"
           },
           "configurations": {
             "hmr": {
-              "browserTarget": "bsr:build:hmr"
+              "browserTarget": "password-strength:build:hmr"
             },
             "production": {
-              "browserTarget": "bsr:build:production"
+              "browserTarget": "password-strength:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "bsr:build"
+            "browserTarget": "password-strength:build"
           }
         },
         "test": {
@@ -116,13 +116,23 @@
           "builder": "@angular-devkit/build-angular:server",
           "options": {
             "outputPath": "dist/server",
-            "main": "main.server.ts",
-            "tsConfig": "tsconfig.server.json"
+            "main": "src/main.server.ts",
+            "tsConfig": "src/tsconfig.server.json"
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ]
+            }
           }
         }
       }
     },
-    "bsr-e2e": {
+    "password-strength-e2e": {
       "root": "",
       "sourceRoot": "",
       "projectType": "application",
@@ -131,7 +141,7 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "./protractor.conf.js",
-            "devServerTarget": "bsr:serve"
+            "devServerTarget": "password-strength:serve"
           }
         },
         "lint": {
@@ -148,7 +158,7 @@
       }
     }
   },
-  "defaultProject": "bsr",
+  "defaultProject": "password-strength",
   "schematics": {
     "@schematics/angular:component": {
       "prefix": "app",

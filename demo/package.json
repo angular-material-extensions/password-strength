@@ -5,13 +5,24 @@
   "description": "Demo app for @angular-material-extensions/password-strength",
   "scripts": {
     "ng": "ng",
+    "build": "ng build",
+    "build:doc": "cd ../ && gulp build:doc",
+    "build:prod": "ng build --prod ",
+    "build:client-and-server-bundles": "ng build --prod &&  ng run password-strength:server:production",
+    "build:prerender": "npm run build:client-and-server-bundles && npm run webpack:server && npm run generate:prerender",
+    "build:ssr": "npm run build:client-and-server-bundles && npm run webpack:server",
+    "compile:server": "tsc -p server.tsconfig.json",
+    "deploy:firebase": "npm run build:prod && npm run build:doc && firebase deploy",
+    "e2e": "ng e2e",
+    "generate:prerender": "cd dist && node prerender",
+    "lint": "ng lint",
+    "test": "ng test",
+    "postinstall": "npm link @angular-material-extensions/password-strength",
     "start": "ng serve",
     "serve:prod": "ng serve --prod",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e",
-    "postinstall": "npm link @angular-material-extensions/password-strength"
+    "serve:prerender": "cd dist/browser && http-server",
+    "serve:ssr": "node dist/server",
+    "webpack:server": "webpack --config webpack.server.config.js --progress --colors"
   },
   "private": true,
   "dependencies": {
@@ -46,7 +57,7 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.7.5",
-    "@angular/cli": "^6.2.3",
+    "@angular/cli": "^6.2.4",
     "@angular/compiler-cli": "6.1.8",
     "@angular/language-service": "6.1.8",
     "@angularclass/hmr": "~2.1.3",

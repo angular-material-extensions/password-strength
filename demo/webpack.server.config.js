@@ -2,16 +2,17 @@ const path = require('path');
 const webpack = require('webpack');
 
 module.exports = {
+  mode: 'none',
   entry: {
     // This is our Express server for Dynamic universal
     server: './server.ts',
     // This is an examples of Static prerendering (generative)
     prerender: './prerender.ts'
   },
-  resolve: { extensions: ['.js', '.ts'] },
   target: 'node',
-  // this makes sure we include node_modules and other 3rd party libraries
-  externals: [/(node_modules|main\..*\.js)/],
+  resolve: { extensions: ['.ts', '.js'] },
+  // Make sure we include all node_modules etc
+  externals: [/node_modules/],
   output: {
     path: path.join(__dirname, 'dist'),
     filename: '[name].js'
