@@ -4,7 +4,7 @@
    src="https://cdn.rawgit.com/angular-material-extensions/password-strength/master/assets/angular-material-extensions-logo.svg">
 </p>
 
-# @angular-material-extensions/password-strength - Material password strength meter to indicate how secure is the provided password - Angular v6 supported
+# @angular-material-extensions/password-strength - Material password strength meter to indicate how secure is the provided password - Angular V7 supported
 
 [![npm version](https://badge.fury.io/js/%40angular-material-extensions%2Fpassword-strength.svg)](https://badge.fury.io/js/%40angular-material-extensions%2Fpassword-strength)
 [![npm demo](https://img.shields.io/badge/demo-online-ed1c46.svg)](https://angular-material-extensions.github.io/password-strength)
@@ -92,19 +92,19 @@ View all the directives and components in action at [https://angular-material-ex
 <a name="dependencies"/>
 
 ## Dependencies
-* [Angular](https://angular.io) developed and tested with `6.1.78`
+* [Angular](https://angular.io) developed and tested with `7.0.2`
 
 ---
 
 <a name="peerDependencies"/>
 
 ## Requirements (peer dependencies):
-- [angular animations v6.1.8](https://www.npmjs.com/package/@angular/animations)
-- [angular forms v6.1.8](https://www.npmjs.com/package/@angular/forms)
-- [angular cdk v6.4.7](https://www.npmjs.com/package/@angular/cdk)
-- [angular material v6.4.7](https://www.npmjs.com/package/@angular/material)
+- [angular animations v7.0.2](https://www.npmjs.com/package/@angular/animations)
+- [angular forms v7.0.2](https://www.npmjs.com/package/@angular/forms)
+- [angular cdk v7.0.2](https://www.npmjs.com/package/@angular/cdk)
+- [angular material v7.0.2](https://www.npmjs.com/package/@angular/material)
 
-- [angular material theme](https://material.angular.io/guide/getting-started#step-4-include-a-theme)
+- [angular material theme](https://material.angular.io/guide/getting-started#step-4-include-a-theme) 
 - [angular material icons](https://material.angular.io/guide/getting-started#step-6-optional-add-material-icons)
 
 ```bash
