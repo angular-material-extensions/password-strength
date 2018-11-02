@@ -54,7 +54,7 @@ export class MatPasswordStrengthComponent implements OnInit, OnChanges {
   private _color: string;
 
   ngOnInit(): void {
-    setTimeout(this.setRulesAndValidators(), 100);
+    this.setRulesAndValidators();
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -122,7 +122,7 @@ export class MatPasswordStrengthComponent implements OnInit, OnChanges {
     return this.containAtLeastOneSpecialChar;
   }
 
-  setRulesAndValidators() {
+  setRulesAndValidators(): void {
     if (this.enableLengthRule) {
       this.criteriaMap.set(Criteria.at_least_eight_chars, RegExp(`^.{${this.min},${this.max}$`));
     }
