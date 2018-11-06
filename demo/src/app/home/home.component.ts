@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, OnInit, ViewEncapsulation} from '@angular/core';
+import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {Title} from '@angular/platform-browser';
 import {MatSlideToggleChange} from '@angular/material';
 
