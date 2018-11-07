@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
+import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
 import {AbstractControl, FormControl, Validators} from '@angular/forms';
 
 export enum Colors {
@@ -19,7 +19,8 @@ export enum Criteria {
   selector: 'mat-password-strength',
   exportAs: 'matPasswordStrength',
   templateUrl: './mat-password-strength.component.html',
-  styleUrls: ['./mat-password-strength.component.scss']
+  styleUrls: ['./mat-password-strength.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MatPasswordStrengthComponent implements OnInit, OnChanges {
 
