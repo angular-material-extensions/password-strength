@@ -253,6 +253,25 @@ or similar.
 
 #### In the following example, we integration a material input container with `@angular-material-extensions/password-strength` 's component.
 
+NOTE: In order to repaint the mat-form-field correctly after changing the value of the password's strength, please consider
+to change the detection strategy for the parent component --> 
+
+```typescript
+import {ChangeDetectionStrategy, Component, OnInit, ViewEncapsulation} from '@angular/core';
+import {Title} from '@angular/platform-browser';
+import {MatSlideToggleChange} from '@angular/material';
+import {MatPasswordStrengthComponent} from '@angular-material-extensions/password-strength';
+
+@Component({
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.scss'],
+  encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush
+})
+export class HomeComponent implements OnInit {}
+```
+
 ```html
 <div>
   <mat-form-field appearance="outline" style="width: 100%" [color]="passwordComponent.color">
