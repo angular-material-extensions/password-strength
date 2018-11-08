@@ -1,4 +1,18 @@
-<a name="3.2.0"></a>
+# [3.3.0](https://github.com/angular-material-extensions/password-strength/compare/v3.2.0...v3.3.0) (2018-11-08)
+
+
+### Bug Fixes
+
+* **demo:** added changeDetectionStrategy.OnPush for the target component [#104](https://github.com/angular-material-extensions/password-strength/issues/104) ([e3486bc](https://github.com/angular-material-extensions/password-strength/commit/e3486bc))
+
+
+### Features
+
+* **package:** changed the change detection's strategy to onPush ([2bc84d1](https://github.com/angular-material-extensions/password-strength/commit/2bc84d1))
+* **package:** support of angular v7 ([44e7998](https://github.com/angular-material-extensions/password-strength/commit/44e7998))
+
+
+
 # [3.2.0](https://github.com/angular-material-extensions/password-strength/compare/v3.1.0...v3.2.0) (2018-09-25)
 
 
@@ -8,7 +22,6 @@
 
 
 
-<a name="3.1.0"></a>
 # [3.1.0](https://github.com/angular-material-extensions/password-strength/compare/v3.0.0...v3.1.0) (2018-08-13)
 
 
@@ -30,12 +43,10 @@
 
 
 
-<a name="3.0.0"></a>
 # [3.0.0](https://github.com/angular-material-extensions/password-strength/compare/v2.1.1...v3.0.0) (2018-06-18)
 
 
 
-<a name="2.1.1"></a>
 ## [2.1.1](https://github.com/angular-material-extensions/password-strength/compare/v2.1.0...v2.1.1) (2018-06-16)
 
 
@@ -46,7 +57,6 @@
 
 
 
-<a name="2.1.0"></a>
 # [2.1.0](https://github.com/angular-material-extensions/password-strength/compare/v2.0.0...v2.1.0) (2018-05-28)
 
 
@@ -66,17 +76,14 @@
 
 
 
-<a name="2.0.0"></a>
 # [2.0.0](https://github.com/angular-material-extensions/password-strength/compare/v1.0.7...v2.0.0) (2018-05-14)
 
 
 
-<a name="1.0.7"></a>
 ## [1.0.7](https://github.com/angular-material-extensions/password-strength/compare/v1.0.6...v1.0.7) (2018-05-10)
 
 
 
-<a name="1.0.6"></a>
 ## [1.0.6](https://github.com/angular-material-extensions/password-strength/compare/v1.0.5...v1.0.6) (2018-04-22)
 
 
@@ -92,12 +99,10 @@
 
 
 
-<a name="1.0.5"></a>
 ## [1.0.5](https://github.com/angular-material-extensions/password-strength/compare/v1.0.4...v1.0.5) (2018-04-18)
 
 
 
-<a name="1.0.4"></a>
 ## [1.0.4](https://github.com/angular-material-extensions/password-strength/compare/v1.0.2...v1.0.4) (2018-04-15)
 
 
@@ -107,7 +112,6 @@
 
 
 
-<a name="1.0.2"></a>
 ## [1.0.2](https://github.com/angular-material-extensions/password-strength/compare/v1.0.1...v1.0.2) (2018-04-14)
 
 
@@ -118,7 +122,6 @@
 
 
 
-<a name="1.0.1"></a>
 ## [1.0.1](https://github.com/angular-material-extensions/password-strength/compare/v1.0.0...v1.0.1) (2018-04-13)
 
 
@@ -134,7 +137,6 @@
 
 
 
-<a name="1.0.0"></a>
 # [1.0.0](https://github.com/angular-material-extensions/password-strength/compare/b3ef465...v1.0.0) (2018-04-12)
 
 
