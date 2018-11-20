@@ -75,6 +75,29 @@ describe('PasswordStrengthComponent', () => {
     expect(calculatePasswordStrengthSpy).toHaveBeenCalled();
   });
 
+  it('should have min input', () => {
+    const calculatePasswordStrengthSpy = jest.spyOn(component, 'calculatePasswordStrength');
+    component.ngOnInit();
+    // default values
+    expect(component.min).toEqual(8);
+    expect(component.containAtLeastMinChars).toBeUndefined();
+    component.min = 5;
+    component.password = '1234';
+    component.ngOnChanges({
+      min: new SimpleChange(component.min, 5, false),
+      password: new SimpleChange(undefined, component.password, false),
+    });
+    fixture.detectChanges();
+    expect(calculatePasswordStrengthSpy).toHaveBeenCalled();
+    expect(component.containAtLeastMinChars).toBeFalsy();
+    component.password = '12345';
+    component.ngOnChanges({
+      password: new SimpleChange('1234', component.password, false),
+    });
+    fixture.detectChanges();
+    expect(component.containAtLeastMinChars).toBeTruthy();
+  });
+
   it('should strength = 20 and color = warn when the password only contain one char ', () => {
     const testChars = ['A', '1', 'a', '.'];
     testChars.forEach(char => {

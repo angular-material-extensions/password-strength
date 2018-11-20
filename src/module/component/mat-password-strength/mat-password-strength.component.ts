@@ -42,7 +42,7 @@ export class MatPasswordStrengthComponent implements OnInit, OnChanges {
 
   criteriaMap = new Map<Criteria, RegExp>();
 
-  containAtLeastEightChars: boolean;
+  containAtLeastMinChars: boolean;
   containAtLeastOneLowerCaseLetter: boolean;
   containAtLeastOneUpperCaseLetter: boolean;
   containAtLeastOneDigit: boolean;
@@ -86,9 +86,9 @@ export class MatPasswordStrengthComponent implements OnInit, OnChanges {
     }
   }
 
-  private _containAtLeastEightChars(): boolean {
-    this.containAtLeastEightChars = this.password.length >= this.min;
-    return this.containAtLeastEightChars;
+  private _containAtLeastMinChars(): boolean {
+    this.containAtLeastMinChars = this.password.length >= this.min;
+    return this.containAtLeastMinChars;
   }
 
   private _containAtLeastOneLowerCaseLetter(): boolean {
@@ -148,7 +148,7 @@ export class MatPasswordStrengthComponent implements OnInit, OnChanges {
 
   }
 
-  calculatePasswordStrength() {
+  calculatePasswordStrength(): void {
     const requirements: Array<boolean> = [];
     const unit = 100 / this.criteriaMap.size;
 
@@ -156,7 +156,7 @@ export class MatPasswordStrengthComponent implements OnInit, OnChanges {
     // console.log('unit = ', unit);
 
     requirements.push(
-      this.enableLengthRule ? this._containAtLeastEightChars() : false,
+      this.enableLengthRule ? this._containAtLeastMinChars() : false,
       this.enableLowerCaseLetterRule ? this._containAtLeastOneLowerCaseLetter() : false,
       this.enableUpperCaseLetterRule ? this._containAtLeastOneUpperCaseLetter() : false,
       this.enableDigitRule ? this._containAtLeastOneDigit() : false,
@@ -169,7 +169,7 @@ export class MatPasswordStrengthComponent implements OnInit, OnChanges {
 
   reset() {
     this._strength = 0;
-    this.containAtLeastEightChars =
+    this.containAtLeastMinChars =
       this.containAtLeastOneLowerCaseLetter =
         this.containAtLeastOneUpperCaseLetter =
           this.containAtLeastOneDigit =
