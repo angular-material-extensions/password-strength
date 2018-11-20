@@ -1,3 +1,7 @@
+## [3.3.1](https://github.com/angular-material-extensions/password-strength/compare/v3.3.0...v3.3.1) (2018-11-20)
+
+
+
 # [3.3.0](https://github.com/angular-material-extensions/password-strength/compare/v3.2.0...v3.3.0) (2018-11-08)
 
 
