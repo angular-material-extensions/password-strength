@@ -87,7 +87,7 @@ export class MatPasswordStrengthComponent implements OnInit, OnChanges {
   }
 
   private _containAtLeastEightChars(): boolean {
-    this.containAtLeastEightChars = this.password.length >= 8;
+    this.containAtLeastEightChars = this.password.length >= this.min;
     return this.containAtLeastEightChars;
   }
 
