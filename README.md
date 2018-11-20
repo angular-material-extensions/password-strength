@@ -99,10 +99,10 @@ View all the directives and components in action at [https://angular-material-ex
 <a name="peerDependencies"/>
 
 ## Requirements (peer dependencies):
-- [angular animations v7.0.2](https://www.npmjs.com/package/@angular/animations)
-- [angular forms v7.0.2](https://www.npmjs.com/package/@angular/forms)
-- [angular cdk v7.0.2](https://www.npmjs.com/package/@angular/cdk)
-- [angular material v7.0.2](https://www.npmjs.com/package/@angular/material)
+- [angular animations v7.x](https://www.npmjs.com/package/@angular/animations)
+- [angular forms v7.x](https://www.npmjs.com/package/@angular/forms)
+- [angular cdk v7.x](https://www.npmjs.com/package/@angular/cdk)
+- [angular material v7.x](https://www.npmjs.com/package/@angular/material)
 
 - [angular material theme](https://material.angular.io/guide/getting-started#step-4-include-a-theme) 
 - [angular material icons](https://material.angular.io/guide/getting-started#step-6-optional-add-material-icons)
