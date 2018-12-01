@@ -65,7 +65,7 @@
     "@nguniversal/module-map-ngfactory-loader": "^7.0.2",
     "@types/jasmine": "^2.8.12",
     "@types/jasminewd2": "^2.0.6",
-    "@types/node": "^10.12.10",
+    "@types/node": "^10.12.11",
     "codelyzer": "^4.5.0",
     "express": "^4.16.4",
     "jasmine-core": "~3.1.0",
@@ -81,7 +81,7 @@
     "ts-loader": "^5.3.1",
     "ts-node": "^7.0.1",
     "tslint": "~5.11.0",
-    "typescript": "^3.1.6",
+    "typescript": "^3.2.1",
     "webpack-cli": "^3.1.2",
     "webpack-node-externals": "~1.7.2"
   }
