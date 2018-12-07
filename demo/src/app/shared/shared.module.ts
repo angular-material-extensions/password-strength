@@ -25,6 +25,19 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {DisqusModule} from 'ngx-disqus';
 import {HighlightModule} from 'ngx-highlightjs';
 import {NgxMaterialPagesModule} from 'ngx-material-pages';
+import {TranslateModule} from '@ngx-translate/core';
+
+import typescript from 'highlight.js/lib/languages/typescript';
+import scss from 'highlight.js/lib/languages/scss';
+import xml from 'highlight.js/lib/languages/xml';
+
+export function hljsLanguages() {
+  return [
+    {name: 'typescript', func: typescript},
+    {name: 'scss', func: scss},
+    {name: 'xml', func: xml}
+  ];
+}
 
 @NgModule({
   imports: [
@@ -33,7 +46,9 @@ import {NgxMaterialPagesModule} from 'ngx-material-pages';
     MatPasswordStrengthModule.forRoot(),
     NgxMaterialPagesModule.forRoot(),
     DisqusModule.forRoot('mat-password-strength'),
-    // HighlightModule.forRoot(),
+    HighlightModule.forRoot({
+      languages: hljsLanguages
+    }),
     FormsModule,
     ReactiveFormsModule,
     FlexLayoutModule,
@@ -57,7 +72,7 @@ import {NgxMaterialPagesModule} from 'ngx-material-pages';
     MatPasswordStrengthModule,
     NgxMaterialPagesModule,
     DisqusModule,
-    // HighlightModule,
+    HighlightModule,
     FormsModule,
     ReactiveFormsModule,
     FlexLayoutModule,
@@ -72,7 +87,8 @@ import {NgxMaterialPagesModule} from 'ngx-material-pages';
     MatButtonModule,
     MatToolbarModule,
     MatTabsModule,
-    MatListModule
+    MatListModule,
+    TranslateModule
   ],
   declarations: [HeaderComponent, FooterComponent, ContentWrapperComponent],
   providers: [],
