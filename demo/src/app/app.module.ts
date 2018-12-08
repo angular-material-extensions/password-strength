@@ -11,7 +11,15 @@ import {environment} from '../environments/environment';
 import {ServiceWorkerModule} from '@angular/service-worker';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {MatInputModule} from '@angular/material';
+import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {MarkdownModule} from 'ngx-markdown';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+
+// AoT requires an exported function for factories
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
+
 
 @NgModule({
   declarations: [
@@ -24,6 +32,13 @@ import {MarkdownModule} from 'ngx-markdown';
     BrowserModule.withServerTransition({appId: '@angular-material-extensions/password-strength-demo-id'}),
     ServiceWorkerModule.register('/ngsw-worker.js', {enabled: environment.production}),
     MarkdownModule.forRoot({loader: HttpClient}),
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    }),
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,

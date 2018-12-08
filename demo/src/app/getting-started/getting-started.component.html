@@ -21,7 +21,7 @@
           </mat-card-title>
           <mat-card>
             <mat-card-content fxLayout="row" fxLayoutAlign="space-between">
-              <!--<pre><code highlight [code]="'$ node -v'"></code></pre>-->
+              <pre><code [highlight]="'$ node -v'"></code></pre>
               <button mat-icon-button
                       ngxClipboard
                       [cbContent]="'node -v'"
@@ -34,7 +34,7 @@
           </mat-card>
           <mat-card>
             <mat-card-content fxLayout="row" fxLayoutAlign="space-between">
-              <!--<pre><code highlight [code]="'$ npm -v'"></code></pre>-->
+              <pre><code [highlight]="'$ npm -v'"></code></pre>
               <button mat-icon-button
                       ngxClipboard
                       [cbContent]="'node -v'"
@@ -56,7 +56,7 @@
             </mat-card-subtitle>
             <mat-card-content>
               <div fxLayout="row" fxLayoutAlign="space-between">
-                <!--<pre><code highlight [code]="'$ ng -v'"></code></pre>-->
+                <pre><code [highlight]="'$ ng -v'"></code></pre>
                 <button mat-icon-button
                         ngxClipboard
                         [cbContent]="'ng -v'"
@@ -67,13 +67,13 @@
               </div>
               <p>If angular cli is installed on you machine, you should get something like this</p>
 
-              <!--<pre><code highlight [code]="ngVersion"></code></pre>-->
+              <pre><code [highlight]="ngVersion"></code></pre>
 
               <p>If not please run the following command to install angular cli globally in order to create an angular
                 project</p>
 
               <div fxLayout="row" fxLayoutAlign="space-between">
-                <!--<pre><code highlight [code]="'$ npm install -g @angular/cli'"></code></pre>-->
+                <pre><code [highlight]="'$ npm install -g @angular/cli'"></code></pre>
                 <button mat-icon-button
                         ngxClipboard
                         [cbContent]="'npm install -g @angular/cli'"
@@ -96,7 +96,7 @@
           <p>If you have already a setup angular project, you can skip this step, otherwise you can generate a project
             via the angular cli by running the following</p>
           <div fxLayout="row" fxLayoutAlign="space-between">
-            <!--<pre><code highlight [code]="'$ ng new yourappname'"></code></pre>-->
+            <pre><code [highlight]="'$ ng new yourappname'"></code></pre>
             <button mat-icon-button
                     ngxClipboard
                     [cbContent]="'ng new yourappname'"
@@ -163,7 +163,7 @@
             </p>
           </div>
           <div fxLayout="row" fxLayoutAlign="space-between">
-            <!--<pre><code highlight [code]="'$ npm i -s @angular/material @angular/cdk'"></code></pre>-->
+            <pre><code [highlight]="'$ npm i -s @angular/material @angular/cdk'"></code></pre>
             <button mat-icon-button
                     ngxClipboard
                     [cbContent]="'npm i -s @angular/material @angular/cdk'"
@@ -189,7 +189,7 @@
             </p>
           </div>
           <div fxLayout="row" fxLayoutAlign="space-between">
-            <!--<pre><code highlight [code]="'$ npm i -s @angular/animations'"></code></pre>-->
+            <pre><code [highlight]="'$ npm i -s @angular/animations'"></code></pre>
             <button mat-icon-button
                     ngxClipboard
                     [cbContent]="'npm i -s @angular/animations'"
@@ -210,7 +210,7 @@
           </div>
           <mat-card>
             <mat-card-content>
-              <!--<pre><code highlight [code]="importBrowserAnimationsModule"></code></pre>-->
+              <pre><code [highlight]="importBrowserAnimationsModule"></code></pre>
             </mat-card-content>
           </mat-card>
           <mat-card-footer fxLayoutAlign="center">
@@ -232,7 +232,7 @@
               in your style.css file.</p>
           </div>
           <div fxLayout="row" fxLayoutAlign="space-between">
-            <!--<pre><code highlight [code]="importMaterialThemeSCSS"></code></pre>-->
+            <pre><code [highlight]="importMaterialThemeSCSS"></code></pre>
             <button mat-icon-button
                     ngxClipboard
                     [cbContent]="importMaterialThemeSCSS"
@@ -262,7 +262,7 @@
             <mat-card-subtitle>Custom material theme</mat-card-subtitle>
             <mat-card-content>
               <div fxLayout="row" fxLayoutAlign="space-between">
-                <!--<pre><code highlight [code]="customMaterialTheme"></code></pre>-->
+                <pre><code [highlight]="customMaterialTheme"></code></pre>
                 <button mat-icon-button
                         ngxClipboard
                         [cbContent]="customMaterialTheme"
@@ -290,11 +290,11 @@
             <p>The easiest way to load the material design icons is to provide the
               following link in your
             <p>
-            <!--<pre><code highlight [code]="'index.html '"></code></pre>-->
+            <pre><code [highlight]="'index.html '"></code></pre>
             <p>file </p>
           </div>
           <div fxLayout="row" fxLayoutAlign="space-between">
-            <!--<pre><code highlight [code]="materialIconsLink"></code></pre>-->
+            <pre><code [highlight]="materialIconsLink"></code></pre>
             <button mat-icon-button
                     ngxClipboard
                     [cbContent]="materialIconsLink"
@@ -319,7 +319,7 @@
                                      mat-button color="primary">material design icons' npm module</a></p>
           </div>
           <div fxLayout="row" fxLayoutAlign="space-between">
-            <!--<pre><code highlight [code]="'$ npm i -s material-design-icons'"></code></pre>-->
+            <pre><code [highlight]="'$ npm i -s material-design-icons'"></code></pre>
             <button mat-icon-button
                     ngxClipboard
                     [cbContent]="'npm i -s material-design-icons'"
@@ -331,7 +331,7 @@
           <div class="comment-container">
             <p>After that, you need to update you
             <p>
-            <!--<pre><code highlight [code]="'angular-cli.json'"></code></pre>-->
+            <!--<pre><code highlight [highlight]="'angular-cli.json'"></code></pre>-->
             <p>files. Under the styles sections, add
               the path of the material design icons in order to be imported to your distribution files
               when you build your app. <i>See below</i></p>
@@ -340,8 +340,7 @@
             <p>First of all, copy the path of the material design icons</p>
           </div>
           <div fxLayout="row" fxLayoutAlign="space-between">
-            <!--<pre><code highlight-->
-                       <!--[code]="'../node_modules/material-design-icons/iconfont/material-icons.css'"></code></pre>-->
+            <pre><code [highlight]="'../node_modules/material-design-icons/iconfont/material-icons.css'"></code></pre>
             <button mat-icon-button
                     ngxClipboard
                     [cbContent]="'../node_modules/material-design-icons/iconfont/material-icons.css'"
@@ -355,7 +354,7 @@
           </div>
           <mat-card-subtitle>Before</mat-card-subtitle>
           <div fxLayout="row" fxLayoutAlign="space-between">
-            <!--<pre><code highlight [code]="stylesBeforeImportMDI"></code></pre>-->
+            <pre><code [highlight]="stylesBeforeImportMDI"></code></pre>
             <button mat-icon-button
                     ngxClipboard
                     [cbContent]="stylesBeforeImportMDI"
@@ -366,7 +365,7 @@
           </div>
           <mat-card-subtitle>After</mat-card-subtitle>
           <div fxLayout="row" fxLayoutAlign="space-between">
-            <!--<pre><code highlight [code]="stylesAfterImportMDI"></code></pre>-->
+            <pre><code [highlight]="stylesAfterImportMDI"></code></pre>
             <button mat-icon-button
                     ngxClipboard
                     [cbContent]="stylesAfterImportMDI"
@@ -405,8 +404,7 @@
             from npm
           </div>
           <div fxLayout="row" fxLayoutAlign="space-between">
-            <!--<pre><code highlight-->
-                       <!--[code]="'$ npm i -s @angular-material-extensions/password-strength'"></code></pre>-->
+            <pre><code [highlight]="'$ npm i -s @angular-material-extensions/password-strength'"></code></pre>
             <button mat-icon-button
                     ngxClipboard
                     [cbContent]="'npm i -s @angular-material-extensions/password-strength'"
@@ -434,7 +432,7 @@
             </mat-card-subtitle>
             <mat-card-content>
               <div fxLayout="row" fxLayoutAlign="space-between">
-                 <!--<pre><code highlight [code]="systemJSModuleImport"></code></pre>-->
+                 <pre><code [highlight]="systemJSModuleImport"></code></pre>
                 <button mat-icon-button
                         ngxClipboard
                         [cbContent]="systemJSModuleImport"
@@ -449,7 +447,7 @@
             <p>Once installed you need to import the main module:</p>
           </div>
           <div fxLayout="row" fxLayoutAlign="space-between">
-                 <!--<pre><code highlight [code]="importMatPasswordStrengthModule"></code></pre>-->
+                 <pre><code [highlight]="importMatPasswordStrengthModule"></code></pre>
             <button mat-icon-button
                     ngxClipboard
                     [cbContent]="importMatPasswordStrengthModule"
@@ -467,7 +465,7 @@
               (usally app.component.ts)</p>
           </div>
           <div fxLayout="row" fxLayoutAlign="space-between">
-                 <!--<pre><code highlight [code]="importMatPasswordStrengthModuleInAppModule"></code></pre>-->
+                 <pre><code [highlight]="importMatPasswordStrengthModuleInAppModule"></code></pre>
             <button mat-icon-button
                     ngxClipboard
                     [cbContent]="importMatPasswordStrengthModuleInAppModule"
@@ -480,7 +478,7 @@
             <p>Other modules in your application can simply import MatPasswordStrengthModule:</p>
           </div>
           <div fxLayout="row" fxLayoutAlign="space-between">
-                 <!--<pre><code highlight [code]="importMatPasswordStrengthModuleInOtherModule"></code></pre>-->
+                 <pre><code [highlight]="importMatPasswordStrengthModuleInOtherModule"></code></pre>
             <button mat-icon-button
                     ngxClipboard
                     [cbContent]="importMatPasswordStrengthModuleInOtherModule"
@@ -504,7 +502,7 @@
             <div class="comment-container">
               <p>Add the following to your template</p>
 
-              <!--<pre><code highlight [code]="componentExample"></code></pre>-->
+              <pre><code [highlight]="componentExample"></code></pre>
 
             </div>
           </mat-card-content>
@@ -513,7 +511,7 @@
             <mat-card-title>Example</mat-card-title>
             <mat-card-content>
               <div fxLayout="row" fxLayoutAlign="space-between">
-                 <!--<pre><code highlight [code]="example"></code></pre>-->
+                 <pre><code [highlight]="example"></code></pre>
                 <button mat-icon-button
                         ngxClipboard
                         [cbContent]="example"
@@ -581,8 +579,7 @@
             <p>Clone this repo by running this following command</p>
           </div>
           <div fxLayout="row" fxLayoutAlign="space-between">
-                 <!--<pre><code highlight-->
-                            <!--[code]="'git clone https://github.com/AnthonyNahas/@angular-material-extensions/password-strength.git'"></code></pre>-->
+                 <pre><code [highlight]="'git clone https://github.com/AnthonyNahas/@angular-material-extensions/password-strength.git'"></code></pre>
             <button mat-icon-button
                     ngxClipboard
                     [cbContent]="'git clone https://github.com/AnthonyNahas/@angular-material-extensions/password-strength.git'"
@@ -595,7 +592,7 @@
             <p>install the dependencies</p>
           </div>
           <div fxLayout="row" fxLayoutAlign="space-between">
-                 <!--<pre><code highlight [code]="'$ npm i'"></code></pre>-->
+                 <pre><code [highlight]="'$ npm i'"></code></pre>
             <button mat-icon-button
                     ngxClipboard
                     [cbContent]="'npm i'"
@@ -608,7 +605,7 @@
             <p>Link @angular-material-extensions/password-strength's package</p>
           </div>
           <div fxLayout="row" fxLayoutAlign="space-between">
-                 <!--<pre><code highlight [code]="'$ gulp link'"></code></pre>-->
+                 <pre><code [highlight]="'$ gulp link'"></code></pre>
             <button mat-icon-button
                     ngxClipboard
                     [cbContent]="'gulp link'"
@@ -621,7 +618,7 @@
             <p>navigate to the demo directory</p>
           </div>
           <div fxLayout="row" fxLayoutAlign="space-between">
-                 <!--<pre><code highlight [code]="'$ cd demo'"></code></pre>-->
+                 <pre><code [highlight]="'$ cd demo'"></code></pre>
             <button mat-icon-button
                     ngxClipboard
                     [cbContent]="'cd demo'"
@@ -634,7 +631,7 @@
             <p>install the dependencies</p>
           </div>
           <div fxLayout="row" fxLayoutAlign="space-between">
-                 <!--<pre><code highlight [code]="'$ npm i'"></code></pre>-->
+                 <pre><code [highlight]="'$ npm i'"></code></pre>
             <button mat-icon-button
                     ngxClipboard
                     [cbContent]="'npm i'"
@@ -647,7 +644,7 @@
             <p>start the app</p>
           </div>
           <div fxLayout="row" fxLayoutAlign="space-between">
-                 <!--<pre><code highlight [code]="'$ ng serve &#45;&#45;open'"></code></pre>-->
+                 <pre><code [highlight]="'$ ng serve --open'"></code></pre>
             <button mat-icon-button
                     ngxClipboard
                     [cbContent]="'ng serve --open'"
