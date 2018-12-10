@@ -535,7 +535,7 @@ gulp.task('build:demo', () => {
 });
 
 gulp.task('build:demo:prod', () => {
-  return execDemoCmd(`build --preserve-symlinks --prod --aot --build-optimizer --base-href /@angular-material-extensions/password-strength/ --deploy-url /@angular-material-extensions/password-strength/`, {cwd: `${config.demoDir}`});
+  return execDemoCmd(`build --preserve-symlinks --prod --aot --build-optimizer --base-href /password-strength/ --deploy-url /password-strength/`, {cwd: `${config.demoDir}`});
 });
 
 gulp.task('serve:demo-ssr', ['build:demo'], () => {
@@ -569,7 +569,7 @@ gulp.task('push:demo', () => {
 });
 
 gulp.task('deploy:demo', (cb) => {
-  runSequence('build:demo', 'build:doc', 'push:demo', cb);
+  runSequence('build:demo:prod', 'build:doc', 'push:demo', cb);
 });
 
 
