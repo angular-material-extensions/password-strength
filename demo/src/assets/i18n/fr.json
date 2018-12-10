@@ -1,0 +1,7 @@
+{
+  "LOWER_CASE_CRITERIA_MSG" : "contient au moins un caractère inférieur",
+  "UPPER_CASE_CRITERIA_MSG" : "contient au moins un caractère supérieur",
+  "DIGITS_CRITERIA_MSG" : "contient au moins un chiffre",
+  "SPECIAL_CHARS_CRITERIA_MSG" : "contient au moins un caractère spécial",
+  "MIN_CHARS_CRITERIA_MSG" : "contient au moins {{value}} caractères"
+}
