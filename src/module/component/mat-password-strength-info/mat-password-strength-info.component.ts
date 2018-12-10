@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {MatPasswordStrengthComponent} from '../mat-password-strength/mat-password-strength.component';
 import {animate, animateChild, keyframes, query, stagger, style, transition, trigger, useAnimation} from '@angular/animations';
 import {shake} from '../../animations/index';
@@ -72,12 +72,33 @@ import {shake} from '../../animations/index';
     ]),
   ],
 })
-export class MatPasswordStrengthInfoComponent {
+export class MatPasswordStrengthInfoComponent implements OnInit {
 
   @Input()
   passwordComponent: MatPasswordStrengthComponent;
 
   @Input()
   enableScoreInfo = false;
+
+  @Input()
+  lowerCaseCriteriaMsg = 'contains at least one lower character';
+
+  @Input()
+  upperCaseCriteriaMsg = 'contains at least one upper character';
+
+  @Input()
+  digitsCriteriaMsg = 'contains at least one digit character';
+
+  @Input()
+  specialCharsCriteriaMsg = 'contains at least one special character';
+
+  @Input()
+  minCharsCriteriaMsg: string;
+
+  ngOnInit(): void {
+    if (!this.minCharsCriteriaMsg) {
+      this.minCharsCriteriaMsg = `contains at least ${this.passwordComponent.min} characters`
+    }
+  }
 
 }
