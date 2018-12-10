@@ -66,6 +66,7 @@ export function hljsLanguages() {
     MatListModule
   ],
   exports: [
+    TranslateModule,
     HeaderComponent,
     FooterComponent,
     ContentWrapperComponent,
@@ -88,7 +89,6 @@ export function hljsLanguages() {
     MatToolbarModule,
     MatTabsModule,
     MatListModule,
-    TranslateModule
   ],
   declarations: [HeaderComponent, FooterComponent, ContentWrapperComponent],
   providers: [],
