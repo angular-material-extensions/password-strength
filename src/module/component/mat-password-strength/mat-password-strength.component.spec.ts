@@ -102,7 +102,7 @@ describe('PasswordStrengthComponent', () => {
     const testChars = ['A', '1', 'a', '.'];
     testChars.forEach(char => {
       component.password = char;
-      console.log('char = ', char);
+      // console.log('char = ', char);
       component.calculatePasswordStrength();
       expect(component.strength).toBe(20);
       expect(component.color).toBe(Colors.warn);
@@ -121,10 +121,10 @@ describe('PasswordStrengthComponent', () => {
     () => {
       const charsList = ['a', 'A', '1', '!'];
       const combinations = generator.loadCombinationList(charsList, 2, 2, true);
-      console.log('combinations = ', combinations);
+      // console.log('combinations = ', combinations);
       combinations.forEach(combination => {
         component.password = combination;
-        console.log('combination = ', combination);
+        // console.log('combination = ', combination);
         component.calculatePasswordStrength();
         expect(component.strength).toBe(40);
         expect(component.color).toBe(Colors.accent);
@@ -135,11 +135,11 @@ describe('PasswordStrengthComponent', () => {
     () => {
       const charsList = ['a', 'A', '9', '!', '123456'];
       const combinations = generator.loadCombinationList(charsList, 3, 3, true);
-      console.log('combinations = ', combinations);
+      // console.log('combinations = ', combinations);
 
       combinations.forEach(combination => {
         const isCharDuplicate = new RegExp(/^.*(.).*\1.*$/);
-        console.log('repeats = ', isCharDuplicate.test(combination), ' for --> ', combination);
+        // console.log('repeats = ', isCharDuplicate.test(combination), ' for --> ', combination);
         if (!isCharDuplicate.test(combination)) {
           component.password = combination;
           component.calculatePasswordStrength();
@@ -153,11 +153,11 @@ describe('PasswordStrengthComponent', () => {
     () => {
       const charsList = ['a', 'A', '9', '!', 'bcdef'];
       const combinations = generator.loadCombinationList(charsList, 4, 4, true);
-      console.log('combinations = ', combinations);
+      // console.log('combinations = ', combinations);
 
       combinations.forEach(combination => {
         const isCharDuplicate = new RegExp(/^.*(.).*\1.*$/);
-        console.log('repeats = ', isCharDuplicate.test(combination), ' for --> ', combination);
+        // console.log('repeats = ', isCharDuplicate.test(combination), ' for --> ', combination);
         if (!isCharDuplicate.test(combination)) {
           component.password = combination;
           component.calculatePasswordStrength();
@@ -171,11 +171,11 @@ describe('PasswordStrengthComponent', () => {
     () => {
       const charsList = ['a', 'A', '9', '!', 'bcdef'];
       const combinations = generator.loadCombinationList(charsList, 5, 5, true);
-      console.log('combinations = ', combinations);
+      // console.log('combinations = ', combinations);
 
       combinations.forEach(combination => {
         const isCharDuplicate = new RegExp(/^.*(.).*\1.*$/);
-        console.log('repeats = ', isCharDuplicate.test(combination), ' for --> ', combination);
+        // console.log('repeats = ', isCharDuplicate.test(combination), ' for --> ', combination);
         if (!isCharDuplicate.test(combination)) {
           component.password = combination;
           component.calculatePasswordStrength();

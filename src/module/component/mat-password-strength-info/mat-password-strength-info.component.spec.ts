@@ -4,6 +4,7 @@ import {MatPasswordStrengthInfoComponent} from './mat-password-strength-info.com
 import {MatCardModule, MatIconModule} from '@angular/material';
 import {MatPasswordStrengthComponent} from '../mat-password-strength/mat-password-strength.component';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
+import {By} from '@angular/platform-browser';
 
 describe('NgxMaterialPasswordStrengthInfoComponent', () => {
   let component: MatPasswordStrengthInfoComponent;
@@ -35,5 +36,15 @@ describe('NgxMaterialPasswordStrengthInfoComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should the input password component be defined', () => {
+    expect(component.passwordComponent).toBeDefined();
+  });
+
+  it('should render the appropriate div', () => {
+    const div = fixture.debugElement.query(By.all());
+
+    console.log('div:', div);
   });
 });
