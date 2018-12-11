@@ -233,8 +233,13 @@ export class OtherModule {
 
 | option | bind  |  type  |   default    | description  |
 |:-------------------|:--------:|:------:|:------------:|:-------------------------------------------------------------------------------------------------|    
-| passwordComponent    | Input()  | PasswordStrengthComponent    | - |  the password component used in the template in order to display more info related to the provided password
-| enableScoreInfo      | Input()  | boolean    | false |  whether to show the password's score in %
+| passwordComponent       | Input()  | PasswordStrengthComponent    | - |  the password component used in the template in order to display more info related to the provided password
+| enableScoreInfo         | Input()  | boolean| false |  whether to show the password's score in %
+| lowerCaseCriteriaMsg    | Input()  | string | contains at least one lower character   |  an appropriate msg for the lower case %
+| upperCaseCriteriaMsg    | Input()  | string | contains at least one upper character   |  an appropriate msg for the upper case %
+| digitsCriteriaMsg       | Input()  | string | contains at least one digit character   |  an appropriate msg for the digit case %
+| specialCharsCriteriaMsg | Input()  | string | contains at least one special character |  an appropriate msg for the special case %
+| minCharsCriteriaMsg     | Input()  | string | contains at least ${this.passwordComponent.min} characters |  an appropriate msg for the minimum number of chars %
 
 ---
 
@@ -371,6 +376,12 @@ this will looks like -->
 
 --- 
 
+#### Supporting custom messages and ngx-translate for the info component please check the example demo [here](https://angular-material-extensions.github.io/password-strength/examples/mat-password-strength-info)
+
+<p align="center">
+  <img alt="@angular-material-extensions/password-strength demonstration" style="text-align: center;"
+   src="https://raw.githubusercontent.com/angular-material-extensions/password-strength/HEAD/assets/v3.4.0/support_translations.png">
+</p>
 
 for more examples please visit this URL : [(https://angular-material-extensions.github.io/password-strength/examples]((https://angular-material-extensions.github.io/password-strength/examples)
 
