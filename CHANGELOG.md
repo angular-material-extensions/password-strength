@@ -1,3 +1,18 @@
+# [3.4.0](https://github.com/angular-material-extensions/password-strength/compare/v3.3.1...v3.4.0) (2018-12-11)
+
+
+### Bug Fixes
+
+* **demo:** updated the highlightjs module in the shared module ([8cfd22c](https://github.com/angular-material-extensions/password-strength/commit/8cfd22c))
+* **demo:** upgraded ngx-highlightjs to v3 ([420f946](https://github.com/angular-material-extensions/password-strength/commit/420f946))
+
+
+### Features
+
+* **package:** added the ability to change and adapt custom msgs for the info component ([b817bee](https://github.com/angular-material-extensions/password-strength/commit/b817bee))
+
+
+
 ## [3.3.1](https://github.com/angular-material-extensions/password-strength/compare/v3.3.0...v3.3.1) (2018-11-20)
 
 
