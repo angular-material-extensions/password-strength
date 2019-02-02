@@ -93,7 +93,7 @@ View all the directives and components in action at [https://angular-material-ex
 <a name="dependencies"/>
 
 ## Dependencies
-* [Angular](https://angular.io) developed and tested with `7.0.2`
+* [Angular](https://angular.io) developed and tested with `7.x`
 
 ---
 
