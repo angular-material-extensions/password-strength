@@ -1,3 +1,20 @@
+## [3.4.1](https://github.com/angular-material-extensions/password-strength/compare/v3.4.0...v3.4.1) (2019-02-02)
+
+
+### Bug Fixes
+
+* **demo:** updated angular cdk and material to v7.2.1 ([a000c53](https://github.com/angular-material-extensions/password-strength/commit/a000c53))
+* **demo:** updated angular to v7.2.0 ([9670929](https://github.com/angular-material-extensions/password-strength/commit/9670929))
+* **demo:** upgraded angular to v7.2.3 ([f67e718](https://github.com/angular-material-extensions/password-strength/commit/f67e718))
+* **package:** removed flex layout directives - no peer deps needed [#137](https://github.com/angular-material-extensions/password-strength/issues/137) ([1d82666](https://github.com/angular-material-extensions/password-strength/commit/1d82666))
+* **package:** updated angular to v7.1.4 ([73c4b24](https://github.com/angular-material-extensions/password-strength/commit/73c4b24))
+* **package:** updated postcss ([2e50999](https://github.com/angular-material-extensions/password-strength/commit/2e50999))
+* **package:** upgraded angular to v7.2.0 ([e2561ef](https://github.com/angular-material-extensions/password-strength/commit/e2561ef))
+* **package:** upgraded angular to v7.2.3 ([ec87bdb](https://github.com/angular-material-extensions/password-strength/commit/ec87bdb))
+* **package:** upgraded rollup to v1 and updated other deps ([3c51390](https://github.com/angular-material-extensions/password-strength/commit/3c51390))
+
+
+
 # [3.4.0](https://github.com/angular-material-extensions/password-strength/compare/v3.3.1...v3.4.0) (2018-12-11)
 
 
