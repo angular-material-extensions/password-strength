@@ -8,6 +8,7 @@
 
 [![npm version](https://badge.fury.io/js/%40angular-material-extensions%2Fpassword-strength.svg)](https://badge.fury.io/js/%40angular-material-extensions%2Fpassword-strength)
 [![npm demo](https://img.shields.io/badge/demo-online-ed1c46.svg)](https://angular-material-extensions.github.io/password-strength)
+[![docs: typedoc](https://img.shields.io/badge/docs-typedoc-4D0080.svg)](https://angular-material-extensions.github.io/password-strength/doc/index.html)
 [![Join the chat at https://gitter.im/angular-material-extensions/Lobby](https://badges.gitter.im/angular-material-extensions/Lobby.svg)](https://gitter.im/angular-material-extensions/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![CircleCI branch](https://img.shields.io/circleci/project/github/angular-material-extensions/password-strength/master.svg?label=circleci)](https://circleci.com/gh/angular-material-extensions/password-strength)
 [![Build Status](https://travis-ci.org/angular-material-extensions/password-strength.svg?branch=master)](https://travis-ci.org/angular-material-extensions/password-strength)
@@ -42,7 +43,6 @@ by starring :star: and sharing it :loudspeaker:
 - [Installation](#installation)
 - [API](#api)
 - [Usage](#usage)
-- [Documentation](#documentation)
 - [Run Demo App Locally](#run-demo-app-locally)
 - [Development](#development)
 - [Other Angular Libraries](#other-angular-libraries)
@@ -384,10 +384,6 @@ this will looks like -->
 </p>
 
 for more examples please visit this URL : [(https://angular-material-extensions.github.io/password-strength/examples]((https://angular-material-extensions.github.io/password-strength/examples)
-
-<a name="documentation"/>
-
-## [Documentation](https://angular-material-extensions.github.io/password-strength/doc/index.html)
 
 Please checkout the full documentation [here](https://angular-material-extensions.github.io//password-strength/doc/index.html) 
 or follow the official [tutorial](https://angular-material-extensions.github.io/password-strength/getting-started)
