@@ -124,7 +124,7 @@ map: {
 }
 ```
 
-` -> follow the instructions ` [here](https://cdn.rawgit.com/angular-material-extensions/password-strength/master/docs/INSTRUCTIONS.md) 
+` -> follow the instructions ` [here](https://github.com/angular-material-extensions/password-strength/tree/master/docs/INSTRUCTIONS.md) 
 
 ---
 
@@ -344,12 +344,12 @@ or follow the official [tutorial](https://angular-material-extensions.github.io/
 
 <a name="run-demo-app-locally"/>
 
-### [ Run Demo App Locally](https://cdn.rawgit.com/angular-material-extensions/password-strength/master/docs/INSTRUCTIONS_DEMO.md)
+### [ Run Demo App Locally](https://github.com/angular-material-extensions/password-strength/tree/master/docs/INSTRUCTIONS_DEMO.md)
 
 
 <a name="development"/>
 
-### [Development](https://cdn.rawgit.com/angular-material-extensions/password-strength/master/docs/INSTRUCTIONS_DEV.md)
+### [Development](https://github.com/angular-material-extensions/password-strength/tree/master/docs/INSTRUCTIONS_DEV.md)
 
 
 ## Other Angular Libraries
