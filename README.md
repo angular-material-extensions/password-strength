@@ -4,7 +4,7 @@
    src="https://cdn.rawgit.com/angular-material-extensions/password-strength/master/assets/angular-material-extensions-logo.svg">
 </p>
 
-# @angular-material-extensions/password-strength - Material password strength meter to indicate how secure is the provided password - Angular V7 supported
+# @angular-material-extensions/password-strength - Material password strength meter to indicate how secure is the provided password - Angular V7 supported incl. schematics
 
 [![npm version](https://badge.fury.io/js/%40angular-material-extensions%2Fpassword-strength.svg)](https://badge.fury.io/js/%40angular-material-extensions%2Fpassword-strength)
 [![npm demo](https://img.shields.io/badge/demo-online-ed1c46.svg)](https://angular-material-extensions.github.io/password-strength)
@@ -37,9 +37,6 @@ by starring :star: and sharing it :loudspeaker:
 - [Demo](#demo)
 - [Components](#components)
 - [Dependencies](#dependencies)
-- [Peer Dependencies](#peerDependencies)
-- [Additional Requirements - material (Include a theme)](#additional-requirements-material-theme)
-- [Additional Requirements - material icons](#additional-requirements-material-icons)
 - [Installation](#installation)
 - [API](#api)
 - [Usage](#usage)
@@ -97,70 +94,20 @@ View all the directives and components in action at [https://angular-material-ex
 
 ---
 
-<a name="peerDependencies"/>
-
-## Requirements (peer dependencies):
-- [angular animations v7.x](https://www.npmjs.com/package/@angular/animations)
-- [angular forms v7.x](https://www.npmjs.com/package/@angular/forms)
-- [angular cdk v7.x](https://www.npmjs.com/package/@angular/cdk)
-- [angular material v7.x](https://www.npmjs.com/package/@angular/material)
-
-- [angular material theme](https://material.angular.io/guide/getting-started#step-4-include-a-theme) 
-- [angular material icons](https://material.angular.io/guide/getting-started#step-6-optional-add-material-icons)
-
-```bash
-npm i @angular/cdk @angular/material @angular/animations @angular/forms 
-```
-
-or use `angular schematics` like e.g:
-
-```bash
-ng add @angular/material 
-```
-
----
-
-
-<a name="additional-requirements-material-theme"/>
-
-### Additional requirements Theme (Material Design)
-- [angular material theme](https://material.angular.io/guide/getting-started#step-4-include-a-theme)
-
-<a name="additional-requirements-material-icons"/>
-
-## Additional Requirements - Import the material design icons [learn more](https://material.angular.io/guide/getting-started#step-6-optional-add-material-icons)
-
-- The easiest way to import material design icons is to provide a link in your `index.html` file like below:
-
-```html
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-```
-
-- alternative solution:
-
-1. Install of the official npm module of the material design icons
-
-```bash
-npm i -s material-design-icons
-```
-
-2. Import them in your `angular.json` file
-
-```json
-"styles": [
-        "styles.css",
-        "../node_modules/material-design-icons/iconfont/material-icons.css"
-      ],
-```  
-
-
-----
-
 <a name="installation"/>
 
 ##  [Installation](https://angular-material-extensions.github.io/password-strength/getting-started)
 
-Install above dependencies via *npm*. 
+## 1. Install via *ng add*. (Recommended)
+
+If Angular Material Design is not setup, just run `ng add @angular/material` [learn more](https://material.angular.io/guide/getting-started)
+
+Now add the library via the `angular schematics`
+```shell
+ng add @angular-material-extensions/password-strength
+```
+
+## 2. Install via *npm*. (Alternative) 
 
 Now install `@angular-material-extensions/password-strength` via:
 ```shell
@@ -176,7 +123,12 @@ map: {
   '@angular-material-extensions/password-strength': 'node_modules/@angular-material-extensions/password-strength/bundles/password-strength.umd.js',
 }
 ```
+
+` -> follow the instructions ` [here](https://cdn.rawgit.com/angular-material-extensions/password-strength/master/docs/INSTRUCTIONS.md) 
+
 ---
+
+## Import the library
 
 Once installed you need to import the main module:
 ```js
@@ -392,54 +344,13 @@ or follow the official [tutorial](https://angular-material-extensions.github.io/
 
 <a name="run-demo-app-locally"/>
 
-## Run Demo App Locally
-
-- [clone this repo](https://github.com/angular-material-extensions/password-strength.git) by running
-```bash
-$ git clone https://github.com/angular-material-extensions/password-strength.git
-```
-
-- link the **@angular-material-extensions/password-strength** package
-
-```bash
-$ gulp link
-```
-
-- navigate to the demo app directory
-```bash
-$ cd demo
-```
-
-- install the dependencies
-```bash
-$ npm i
-```
-
-- run/start/serve the app
-```bash
-$ npm run start
-```
-or
-```bash
-$ ng serve --open
-```
-- the app is now hosted by `http://localhost:4200/`
+### [ Run Demo App Locally](https://cdn.rawgit.com/angular-material-extensions/password-strength/master/docs/INSTRUCTIONS_DEMO.md)
 
 
 <a name="development"/>
 
-## Development
+### [Development](https://cdn.rawgit.com/angular-material-extensions/password-strength/master/docs/INSTRUCTIONS_DEV.md)
 
-1. clone this [repo](https://github.com/angular-material-extensions/password-strength.git)
-2. Install the dependencies by running `npm i`
-3. build the library `npm run build` or `gulp build`
-4. Link the library `gulp link`
- 5. Navigate to the demo app's directory
-  - `cd demo`
-  _ `npm i`
-  _ `npm start`
-
-<a name="other-angular-libraries"/>
 
 ## Other Angular Libraries
 - [ngx-auth-firebaseui](https://github.com/AnthonyNahas/ngx-auth-firebaseui)
