@@ -1,3 +1,23 @@
+# [3.5.0](https://github.com/angular-material-extensions/password-strength/compare/v3.4.1...v3.5.0) (2019-03-09)
+
+
+### Bug Fixes
+
+* **demo:** updated bootstrap ([efa18b5](https://github.com/angular-material-extensions/password-strength/commit/efa18b5))
+* **demo:** updated bootstrap, highlightjs, ngx-markdown and angular material ([055d64d](https://github.com/angular-material-extensions/password-strength/commit/055d64d))
+* **demo:** upgraded angular to v7.3.1 ([13d5b04](https://github.com/angular-material-extensions/password-strength/commit/13d5b04))
+* **package:** updated dependencies ([c4c7cfc](https://github.com/angular-material-extensions/password-strength/commit/c4c7cfc))
+* **package:** upgraded angular to v7.3.1 ([7748518](https://github.com/angular-material-extensions/password-strength/commit/7748518))
+
+
+### Features
+
+* **project:** added schematics support [#145](https://github.com/angular-material-extensions/password-strength/issues/145) ([940f207](https://github.com/angular-material-extensions/password-strength/commit/940f207))
+* **project:** added schematics support [#145](https://github.com/angular-material-extensions/password-strength/issues/145) ([96c83de](https://github.com/angular-material-extensions/password-strength/commit/96c83de))
+* **project:** removed the schematics demo app  [#145](https://github.com/angular-material-extensions/password-strength/issues/145) ([40fb05d](https://github.com/angular-material-extensions/password-strength/commit/40fb05d))
+
+
+
 ## [3.4.1](https://github.com/angular-material-extensions/password-strength/compare/v3.4.0...v3.4.1) (2019-02-02)
 
 
@@ -88,8 +108,8 @@
 
 ### Bug Fixes
 
-* **package:** update [@angular](https://github.com/angular)/cdk to version 6.2.0 ([0a35a88](https://github.com/angular-material-extensions/password-strength/commit/0a35a88))
-* **package:** update [@angular](https://github.com/angular)/material to version 6.2.0 ([3024220](https://github.com/angular-material-extensions/password-strength/commit/3024220))
+* **package:** update @angular/cdk to version 6.2.0 ([0a35a88](https://github.com/angular-material-extensions/password-strength/commit/0a35a88))
+* **package:** update @angular/material to version 6.2.0 ([3024220](https://github.com/angular-material-extensions/password-strength/commit/3024220))
 
 
 
@@ -98,10 +118,10 @@
 
 ### Bug Fixes
 
-* **package:** update [@angular](https://github.com/angular)/cdk to version 6.0.2 ([be249e6](https://github.com/angular-material-extensions/password-strength/commit/be249e6))
-* **package:** update [@angular](https://github.com/angular)/cdk to version 6.1.0 ([7675800](https://github.com/angular-material-extensions/password-strength/commit/7675800))
-* **package:** update [@angular](https://github.com/angular)/material to version 6.0.2 ([e34f93d](https://github.com/angular-material-extensions/password-strength/commit/e34f93d))
-* **package:** update [@angular](https://github.com/angular)/material to version 6.1.0 ([b55cbe0](https://github.com/angular-material-extensions/password-strength/commit/b55cbe0))
+* **package:** update @angular/cdk to version 6.0.2 ([be249e6](https://github.com/angular-material-extensions/password-strength/commit/be249e6))
+* **package:** update @angular/cdk to version 6.1.0 ([7675800](https://github.com/angular-material-extensions/password-strength/commit/7675800))
+* **package:** update @angular/material to version 6.0.2 ([e34f93d](https://github.com/angular-material-extensions/password-strength/commit/e34f93d))
+* **package:** update @angular/material to version 6.1.0 ([b55cbe0](https://github.com/angular-material-extensions/password-strength/commit/b55cbe0))
 
 
 ### Features
