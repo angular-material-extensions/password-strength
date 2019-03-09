@@ -1,0 +1,9 @@
+{
+  "$schema": "~node_modules/@angular-devkit/schematics/collection-schema.json",
+  "schematics": {
+    "ng-add": {
+      "description": "Installs and injects the@angular-material-extensions/password-strength library",
+      "factory": "./ng-add/index"
+    }
+  }
+}
