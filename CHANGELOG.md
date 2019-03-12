@@ -1,3 +1,12 @@
+## [3.5.1](https://github.com/angular-material-extensions/password-strength/compare/v3.5.0...v3.5.1) (2019-03-12)
+
+
+### Bug Fixes
+
+* **package:** issue with schematics version import fixed ([3d0e759](https://github.com/angular-material-extensions/password-strength/commit/3d0e759))
+
+
+
 # [3.5.0](https://github.com/angular-material-extensions/password-strength/compare/v3.4.1...v3.5.0) (2019-03-09)
 
 
