@@ -8,16 +8,17 @@ import {
   NodeDependency,
   NodeDependencyType
 } from 'schematics-utilities';
-import * as fs from 'fs';
 
-const getPackageJsonVersion = () => {
-  // We parse the json file instead of using require because require caches
-  // multiple calls so the version number won't be updated
-  const version = JSON.parse(fs.readFileSync('./../package.json', 'utf8')).version;
-  console.log(`library version used within the schematics ${version}`);
-  return version;
-};
-
+/** Loads the full version from the given Angular package gracefully. */
+function loadPackageVersionGracefully(context: SchematicContext): string | null {
+  try {
+    context.logger.log('info', `🧟‍ @angular-material-extensions/password-strength
+     is using the following version ${require(`../../package.json`).version}`);
+    return require(`../../package.json`).version;
+  } catch {
+    return null;
+  }
+}
 
 // You don't have to export the function as default. You can also have more than one rule factory
 // per file.
@@ -27,7 +28,11 @@ export function addPackageJsonDependencies(): Rule {
     const ngCoreVersionTag = getPackageVersionFromPackageJson(host, '@angular/core');
 
     const dependencies: NodeDependency[] = [
-      {type: NodeDependencyType.Default, version: getPackageJsonVersion(), name: '@angular-material-extensions/password-strength'},
+      {
+        type: NodeDependencyType.Default,
+        version: loadPackageVersionGracefully(context) || '3.5.1',
+        name: '@angular-material-extensions/password-strength'
+      },
       {type: NodeDependencyType.Default, version: ngCoreVersionTag || '7.2.7', name: '@angular/animations'},
       {type: NodeDependencyType.Default, version: ngCoreVersionTag || '7.2.7', name: '@angular/forms'}
     ];
