@@ -60,7 +60,7 @@
     "@types/jasmine": "^2.8.14",
     "@types/jest": "^23.3.14",
     "@types/lodash": "^4.14.123",
-    "@types/node": "^10.12.30",
+    "@types/node": "^10.14.0",
     "angular-cli-ghpages": "^0.5.3",
     "angular2-template-loader": "0.6.2",
     "autoprefixer": "^9.4.10",
