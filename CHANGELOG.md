@@ -1,3 +1,21 @@
+## [3.5.2](https://github.com/angular-material-extensions/password-strength/compare/v3.5.1...v3.5.2) (2019-03-19)
+
+
+### Bug Fixes
+
+* **demo:** updated angular and material ([5fa3b78](https://github.com/angular-material-extensions/password-strength/commit/5fa3b78))
+* **demo:** updated angular to v7.2.9 ([5fa9df9](https://github.com/angular-material-extensions/password-strength/commit/5fa9df9))
+* **demo:** updated types node ([925e2ef](https://github.com/angular-material-extensions/password-strength/commit/925e2ef))
+* **demo:** updated typescript to v3.2.4 ([57e5cb2](https://github.com/angular-material-extensions/password-strength/commit/57e5cb2))
+* **package:** bump the lib version in schematics ([a1372ff](https://github.com/angular-material-extensions/password-strength/commit/a1372ff))
+* **package:** calculate the password strength on init if the password value is provided [#149](https://github.com/angular-material-extensions/password-strength/issues/149) ([644ee12](https://github.com/angular-material-extensions/password-strength/commit/644ee12))
+* **package:** updated angular flex layout ([e84ec60](https://github.com/angular-material-extensions/password-strength/commit/e84ec60))
+* **package:** updated angular material and cdk to v7.3.5 ([899f4e7](https://github.com/angular-material-extensions/password-strength/commit/899f4e7))
+* **package:** updated angular to v7.2.9 ([310aff6](https://github.com/angular-material-extensions/password-strength/commit/310aff6))
+* **package:** updated types node ([b86f04d](https://github.com/angular-material-extensions/password-strength/commit/b86f04d))
+
+
+
 ## [3.5.1](https://github.com/angular-material-extensions/password-strength/compare/v3.5.0...v3.5.1) (2019-03-12)
 
 
