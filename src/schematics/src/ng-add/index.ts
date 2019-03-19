@@ -30,7 +30,7 @@ export function addPackageJsonDependencies(): Rule {
     const dependencies: NodeDependency[] = [
       {
         type: NodeDependencyType.Default,
-        version: loadPackageVersionGracefully(context) || '3.5.1',
+        version: loadPackageVersionGracefully(context) || '3.5.2',
         name: '@angular-material-extensions/password-strength'
       },
       {type: NodeDependencyType.Default, version: ngCoreVersionTag || '7.2.7', name: '@angular/animations'},
