@@ -188,5 +188,48 @@
       </mat-card>
     </mat-card>
 
+    <!-- #4 -->
+    <mat-card class="mt-4">
+      <mat-card-title>#4</mat-card-title>
+      <mat-card-subtitle>stand alone password component with already provided value
+      </mat-card-subtitle>
+
+      <mat-slide-toggle #toggle5>Show Password Details</mat-slide-toggle>
+
+      <mat-card-content>
+        <!--password input filed-->
+        <mat-form-field appearance="outline" style="width: 100%" [color]="passwordComponent5.color">
+          <mat-label>Password</mat-label>
+          <input matInput #password5
+                 type="password"
+                 value="2Am.;!#019s'"
+                 placeholder="Password">
+          <mat-hint align="end" aria-live="polite">
+            {{password5.value.length}} / {{passwordComponent5.max}}
+          </mat-hint>
+        </mat-form-field>
+
+        <!--@angular-material-extensions/password-strength's main component-->
+        <mat-password-strength #passwordComponent5
+                               (onStrengthChanged)="onStrengthChanged($event)"
+                               [password]="password5.value">
+        </mat-password-strength>
+        <!--Password's strength info-->
+        <mat-password-strength-info
+          *ngIf="toggle5.checked"
+          [passwordComponent]="passwordComponent5"
+          [enableScoreInfo]="true">
+        </mat-password-strength-info>
+      </mat-card-content>
+
+      <mat-card class="mt-2">
+        <mat-card-title>code</mat-card-title>
+        <mat-card-content>
+          <markdown src="assets/md/examples/e5.md"></markdown>
+        </mat-card-content>
+      </mat-card>
+    </mat-card>
+
+
   </div>
 </section>
