@@ -75,6 +75,25 @@ describe('PasswordStrengthComponent', () => {
     expect(calculatePasswordStrengthSpy).toHaveBeenCalled();
   });
 
+  it('should calculate the strength of the password on int if the password is provided', () => {
+    const calculatePasswordStrengthSpy = jest.spyOn(component, 'calculatePasswordStrength');
+    component.password = '#A2lsam,#af21af1!';
+    component.ngOnInit();
+    fixture.detectChanges();
+    expect(calculatePasswordStrengthSpy).toHaveBeenCalled();
+  });
+
+  it('should calculate the strength of the password when password is directly provided', () => {
+    const calculatePasswordStrengthSpy = jest.spyOn(component, 'calculatePasswordStrength');
+    component.password = 'testPass3';
+    component.externalError = false;
+    component.ngOnChanges({
+      password: new SimpleChange( component.password, component.password, false),
+    });
+    fixture.detectChanges();
+    expect(calculatePasswordStrengthSpy).toHaveBeenCalled();
+  });
+
   it('should have min input', () => {
     const calculatePasswordStrengthSpy = jest.spyOn(component, 'calculatePasswordStrength');
     component.ngOnInit();

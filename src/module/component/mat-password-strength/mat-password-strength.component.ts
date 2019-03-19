@@ -56,15 +56,20 @@ export class MatPasswordStrengthComponent implements OnInit, OnChanges {
 
   ngOnInit(): void {
     this.setRulesAndValidators();
+    if (this.password) {
+      this.calculatePasswordStrength();
+    }
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-
+    console.log('changes: ', changes);
     if ((changes.externalError && changes.externalError.firstChange) || changes.password.isFirstChange()) {
       return;
     } else if (changes.externalError && changes.externalError.currentValue) {
       this._color = Colors.warn;
       return;
+    } else if (changes.password.previousValue === changes.password.currentValue && !changes.password.firstChange) {
+      this.calculatePasswordStrength();
     } else {
       this.password && this.password.length > 0 ?
         this.calculatePasswordStrength() : this.reset();
