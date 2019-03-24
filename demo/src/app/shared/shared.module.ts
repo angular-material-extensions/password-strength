@@ -24,12 +24,12 @@ import {MatPasswordStrengthModule} from '@angular-material-extensions/password-s
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {DisqusModule} from 'ngx-disqus';
 import {HighlightModule} from 'ngx-highlightjs';
-import {NgxMaterialPagesModule} from 'ngx-material-pages';
 import {TranslateModule} from '@ngx-translate/core';
 
 import typescript from 'highlight.js/lib/languages/typescript';
 import scss from 'highlight.js/lib/languages/scss';
 import xml from 'highlight.js/lib/languages/xml';
+import {MatPagesModule} from '@angular-material-extensions/pages';
 
 export function hljsLanguages() {
   return [
@@ -44,7 +44,7 @@ export function hljsLanguages() {
     RouterModule,
     NgbCollapseModule.forRoot(),
     MatPasswordStrengthModule.forRoot(),
-    NgxMaterialPagesModule.forRoot(),
+    MatPagesModule.forRoot(),
     DisqusModule.forRoot('mat-password-strength'),
     HighlightModule.forRoot({
       languages: hljsLanguages
@@ -71,7 +71,7 @@ export function hljsLanguages() {
     FooterComponent,
     ContentWrapperComponent,
     MatPasswordStrengthModule,
-    NgxMaterialPagesModule,
+    MatPagesModule,
     DisqusModule,
     HighlightModule,
     FormsModule,
