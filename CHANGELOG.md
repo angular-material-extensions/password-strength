@@ -1,3 +1,22 @@
+# [3.6.0](https://github.com/angular-material-extensions/password-strength/compare/v3.5.3...v3.6.0) (2019-03-25)
+
+
+### Bug Fixes
+
+* **demo:** integration of @angular-material-extensions/pages in the getting started component ([0245fda](https://github.com/angular-material-extensions/password-strength/commit/0245fda))
+* **demo:** integration of the toggle visibility in the examples module [#153](https://github.com/angular-material-extensions/password-strength/issues/153) ([ea62081](https://github.com/angular-material-extensions/password-strength/commit/ea62081))
+* **demo:** integration of the toggle visibility in the home module [#153](https://github.com/angular-material-extensions/password-strength/issues/153) ([629b19b](https://github.com/angular-material-extensions/password-strength/commit/629b19b))
+* **package:** pick always the latest version of the library as default value in schematics ([d32a5c6](https://github.com/angular-material-extensions/password-strength/commit/d32a5c6))
+* **package:** updated rollup ([17d98ea](https://github.com/angular-material-extensions/password-strength/commit/17d98ea))
+
+
+### Features
+
+* **package:** added `mat-pass-toggle-visibility` component [#153](https://github.com/angular-material-extensions/password-strength/issues/153) ([f966b1c](https://github.com/angular-material-extensions/password-strength/commit/f966b1c))
+* **package:** make the toggle optional (input - isVisible) [#153](https://github.com/angular-material-extensions/password-strength/issues/153) ([be0fcd3](https://github.com/angular-material-extensions/password-strength/commit/be0fcd3))
+
+
+
 ## [3.5.3](https://github.com/angular-material-extensions/password-strength/compare/v3.5.2...v3.5.3) (2019-03-22)
 
 
