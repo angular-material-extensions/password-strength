@@ -29,9 +29,10 @@
       <mat-card-content>
         <!--password input filed-->
         <mat-form-field appearance="outline" style="width: 100%" [color]="passwordComponent1.color">
+          <mat-pass-toggle-visibility #toggle matSuffix></mat-pass-toggle-visibility>
           <mat-label>Password</mat-label>
           <input matInput #password
-                 type="password"
+                 [type]="toggle.type"
                  placeholder="Password">
           <mat-hint align="end" aria-live="polite">
             {{password.value.length}} / {{passwordComponent1.max}}
@@ -71,8 +72,9 @@
         <!--password input filed-->
         <mat-form-field appearance="outline" style="width: 100%" [color]="passwordComponent2.color">
           <mat-label>Password</mat-label>
+          <mat-pass-toggle-visibility #toggle2 matSuffix></mat-pass-toggle-visibility>
           <input matInput #password2
-                 type="password"
+                 [type]="toggle2.type"
                  placeholder="Password">
           <mat-hint align="end" aria-live="polite">
             {{password2.value.length}} / {{passwordComponent2.max}}
@@ -114,8 +116,9 @@
         <!--password input filed-->
         <mat-form-field appearance="outline" style="width: 100%" [color]="passwordComponent3.color">
           <mat-label>Password</mat-label>
+          <mat-pass-toggle-visibility #toggle3 matSuffix></mat-pass-toggle-visibility>
           <input matInput #password3
-                 type="password"
+                 [type]="toggle3.type"
                  placeholder="Password">
           <mat-hint align="end" aria-live="polite">
             {{password3.value.length}} / {{passwordComponent3.max}}
@@ -157,8 +160,9 @@
         <!--password input filed-->
         <mat-form-field appearance="outline" style="width: 100%" [color]="passwordComponent4.color">
           <mat-label>Password</mat-label>
+          <mat-pass-toggle-visibility #toggle4 matSuffix></mat-pass-toggle-visibility>
           <input matInput #password4
-                 type="password"
+                 [type]="toggle4.type"
                  placeholder="Password">
           <mat-hint align="end" aria-live="polite">
             {{password4.value.length}} / {{passwordComponent4.max}}
@@ -190,7 +194,7 @@
 
     <!-- #4 -->
     <mat-card class="mt-4">
-      <mat-card-title>#4</mat-card-title>
+      <mat-card-title>#5</mat-card-title>
       <mat-card-subtitle>stand alone password component with already provided value
       </mat-card-subtitle>
 
@@ -200,8 +204,9 @@
         <!--password input filed-->
         <mat-form-field appearance="outline" style="width: 100%" [color]="passwordComponent5.color">
           <mat-label>Password</mat-label>
+          <mat-pass-toggle-visibility #toggle5 matSuffix></mat-pass-toggle-visibility>
           <input matInput #password5
-                 type="password"
+                 [type]="toggle5.type"
                  value="2Am.;!#019s'"
                  placeholder="Password">
           <mat-hint align="end" aria-live="polite">
