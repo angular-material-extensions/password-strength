@@ -85,6 +85,14 @@ View all the directives and components in action at [https://angular-material-ex
    src="https://raw.githubusercontent.com/angular-material-extensions/password-strength/HEAD/assets/v2.1.0/ngx-material-strength-password-info.png">
 </p>
 
+- `<mat-pass-toggle-visibility>` used to show/hide the password provided in the input element
+
+<p align="center">
+  <img alt="@angular-material-extensions/password-strength's info" style="text-align: center;"
+   src="https://raw.githubusercontent.com/angular-material-extensions/password-strength/HEAD/assets/v3.6.0/mat-pass-toggle-visibility.gif">
+</p>
+
+
 ---
 
 <a name="dependencies"/>
@@ -169,29 +177,36 @@ export class OtherModule {
 
 | option | bind  |  type  |   default    | description  |
 |:-------------------|:--------:|:------:|:------------:|:-------------------------------------------------------------------------------------------------|    
-| password           | Input()  | string    | - |  the password to calculate its strength
-| validators           | Input()  | Criteria[]    | see inside the class ;) |  custom form validator used to validate the password
-| externalError      | Input()  | boolean   | false | used to change the color of the password to warn if an external error occurs
-| enableLengthRule      | Input()  | boolean   | true | whether to validate the length of the password
-| enableLowerCaseLetterRule      | Input()  | boolean   | true | whether a lowercase letter is optional
-| enableUpperCaseLetterRule      | Input()  | boolean   | true | whether a uppercase letter is optional
-| enableDigitRule      | Input()  | boolean   | true | whether a digit char is optional
-| enableSpecialCharRule      | Input()  | boolean   | true | whether a special char is optional
-| min      | Input()  | number   | 8 | the minimum length of the password
-| max      | Input()  | number   | 30 | the maximum length of the password
+| password           | `Input() `  | string    | - |  the password to calculate its strength
+| validators           | `Input() `  | Criteria[]    | see inside the class ;) |  custom form validator used to validate the password
+| externalError      | `Input() `  | boolean   | `false`  | used to change the color of the password to warn if an external error occurs
+| enableLengthRule      | `Input() `  | boolean   | true | whether to validate the length of the password
+| enableLowerCaseLetterRule      | `Input() `  | boolean   | true | whether a lowercase letter is optional
+| enableUpperCaseLetterRule      | `Input() `  | boolean   | true | whether a uppercase letter is optional
+| enableDigitRule      | `Input() `  | boolean   | true | whether a digit char is optional
+| enableSpecialCharRule      | `Input() `  | boolean   | true | whether a special char is optional
+| min      | `Input() `  | number   | 8 | the minimum length of the password
+| max      | `Input() `  | number   | 30 | the maximum length of the password
 | onStrengthChanged  | Output() | number    | - | emits the strength of the provided password in % e.g: 20%, 40%, 60%, 80% or 100%
 
 ### `<mat-password-strength-info>` used to display more information about the strength of a provided password
 
 | option | bind  |  type  |   default    | description  |
 |:-------------------|:--------:|:------:|:------------:|:-------------------------------------------------------------------------------------------------|    
-| passwordComponent       | Input()  | PasswordStrengthComponent    | - |  the password component used in the template in order to display more info related to the provided password
-| enableScoreInfo         | Input()  | boolean| false |  whether to show the password's score in %
-| lowerCaseCriteriaMsg    | Input()  | string | contains at least one lower character   |  an appropriate msg for the lower case %
-| upperCaseCriteriaMsg    | Input()  | string | contains at least one upper character   |  an appropriate msg for the upper case %
-| digitsCriteriaMsg       | Input()  | string | contains at least one digit character   |  an appropriate msg for the digit case %
-| specialCharsCriteriaMsg | Input()  | string | contains at least one special character |  an appropriate msg for the special case %
-| minCharsCriteriaMsg     | Input()  | string | contains at least ${this.passwordComponent.min} characters |  an appropriate msg for the minimum number of chars %
+| passwordComponent       | `Input() `  | PasswordStrengthComponent    | - |  the password component used in the template in order to display more info related to the provided password
+| enableScoreInfo         | `Input() `  | `boolean`| `false`  |  whether to show the password's score in %
+| lowerCaseCriteriaMsg    | `Input() `  | `string` | contains at least one lower character   |  an appropriate msg for the lower case %
+| upperCaseCriteriaMsg    | `Input() `  | `string` | contains at least one upper character   |  an appropriate msg for the upper case %
+| digitsCriteriaMsg       | `Input() `  | `string` | contains at least one digit character   |  an appropriate msg for the digit case %
+| specialCharsCriteriaMsg | `Input() `  | `string` | contains at least one special character |  an appropriate msg for the special case %
+| minCharsCriteriaMsg     | `Input() `  | `string` | contains at least ${this.passwordComponent.min} characters |  an appropriate msg for the minimum number of chars %
+
+
+### `<mat-pass-toggle-visibility>` used to show/hide the password provided in the input element
+
+| option | bind  |  type  |   default    | description  |
+|:-------------------|:--------:|:------:|:------------:|:-------------------------------------------------------------------------------------------------|    
+| isVisible  | `Input() `  | `boolean`    | `false` |  whether the password is visible or hidden
 
 ---
 
@@ -268,6 +283,28 @@ export class HomeComponent implements OnInit {}
      <p>Password's strength = {{passwordComponent.strength}} %100</p>
    </div>
 </div>
+```
+
+#### Use the toggle visibility component
+
+- add the `mat-pass-toggle-visibility` to your `mat-form-field`
+- give it a name to use it in the html file like `toggle`
+- set the type of the input to that value emitted from the `mat-pass-toggle-visibility` component  `<input matInput [type]="toggle.type"/>`
+
+```html
+<mat-form-field appearance="outline" style="width: 100%" [color]="passwordComponent.color">
+  <mat-label>Password</mat-label>
+  <!-- HERE DOWN :D-->
+  <mat-pass-toggle-visibility #toggle matSuffix></mat-pass-toggle-visibility>
+  <!-- THERE ABOVE ;)-->
+  <input matInput #password
+         [type]="toggle.type"
+         required
+         placeholder="Password">
+  <mat-hint align="end" aria-live="polite">
+    {{password.value.length}} / 25
+  </mat-hint>
+</mat-form-field>
 ```
 
 #### Client Side password's validation using a built in angular formController

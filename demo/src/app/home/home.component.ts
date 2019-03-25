@@ -14,7 +14,6 @@ export class HomeComponent implements OnInit {
   }
 
   password: string;
-  inputType = 'password';
   showDetails: boolean;
   showDetails2: boolean;
 
@@ -35,7 +34,6 @@ import {MatSlideToggleChange} from '@angular/material';
 export class HomeComponent implements OnInit {
 
   password: string;
-  inputType = 'password';
   showDetails: boolean;
   showDetails2: boolean;
 
@@ -53,10 +51,6 @@ export class HomeComponent implements OnInit {
   onStrengthChanged(strength: number) {
     console.log('password strength = ', strength);
   }
-
-  onSlideToggleChange(event: MatSlideToggleChange) {
-    event.checked ? this.inputType = 'text' : this.inputType = 'password';
-  }
 }
 `;
 
@@ -68,10 +62,9 @@ export class HomeComponent implements OnInit {
         stand alone password component
       </mat-card-subtitle>
 
-      <mat-card-subtitle fxLayout="row" fxLayoutGap="10px">
-        <mat-slide-toggle (change)="onSlideToggleChange($event)">Show Password</mat-slide-toggle>
-        <mat-slide-toggle [(ngModel)]="showDetails">Show Password Details</mat-slide-toggle>
-      </mat-card-subtitle>
+       <mat-card-subtitle>
+          <mat-slide-toggle [(ngModel)]="showDetails">Show Password Details</mat-slide-toggle>
+        </mat-card-subtitle>
 
       <mat-card-content>
         <div fxFlex>
@@ -79,8 +72,9 @@ export class HomeComponent implements OnInit {
           <!--password input filed-->
           <mat-form-field appearance="outline" style="width: 100%" [color]="passwordComponent.color">
             <mat-label>Password</mat-label>
+            <mat-pass-toggle-visibility #toggle matSuffix></mat-pass-toggle-visibility>
             <input matInput #password
-                   [type]="inputType"
+                   [type]="toggle.type"
                    required
                    placeholder="Password">
             <mat-hint align="end" aria-live="polite">
