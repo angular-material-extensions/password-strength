@@ -1,4 +1,4 @@
-import {Component, ViewEncapsulation} from '@angular/core';
+import {Component, Input, ViewEncapsulation} from '@angular/core';
 
 type Type = 'text' | 'password' ;
 
@@ -10,7 +10,9 @@ type Type = 'text' | 'password' ;
 })
 export class MatPassToggleVisibilityComponent {
 
+  @Input()
   isVisible: boolean;
+
   _type: Type = 'text';
 
   get type() {
