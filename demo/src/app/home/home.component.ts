@@ -1,7 +1,5 @@
 import {ChangeDetectionStrategy, Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {Title} from '@angular/platform-browser';
-import {MatSlideToggleChange} from '@angular/material';
-import {MatPasswordStrengthComponent} from '@angular-material-extensions/password-strength';
 
 @Component({
   selector: 'app-home',
@@ -152,10 +150,6 @@ export class HomeComponent implements OnInit {
 
   onStrengthChanged(strength: number) {
     console.log('password strength = ', strength);
-  }
-
-  onSlideToggleChange(event: MatSlideToggleChange) {
-    event.checked ? this.inputType = 'text' : this.inputType = 'password';
   }
 
 }
