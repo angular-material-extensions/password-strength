@@ -1,6 +1,6 @@
 import {CommonModule} from '@angular/common';
 import {ModuleWithProviders, NgModule} from '@angular/core';
-import {MatCardModule, MatIconModule, MatInputModule, MatProgressBarModule, MatRippleModule} from '@angular/material';
+import {MatCardModule, MatIconModule, MatProgressBarModule, MatRippleModule} from '@angular/material';
 
 import {MatPasswordStrengthComponent} from './component/mat-password-strength/mat-password-strength.component';
 import {MatPasswordStrengthInfoComponent} from './component/mat-password-strength-info/mat-password-strength-info.component';
@@ -19,7 +19,6 @@ export {MatPassToggleVisibilityComponent} from './component/mat-pass-toggle-visi
     MatProgressBarModule,
     MatCardModule,
     MatIconModule,
-    MatInputModule,
     MatRippleModule
   ],
   exports: [

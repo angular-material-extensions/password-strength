@@ -1,7 +1,7 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
 import {MatPassToggleVisibilityComponent} from './mat-pass-toggle-visibility.component';
-import {MatButtonModule, MatIconModule} from '@angular/material';
+import {MatIconModule} from '@angular/material';
 
 describe('MatPassToggleVisibilityComponent', () => {
   let component: MatPassToggleVisibilityComponent;
@@ -9,7 +9,7 @@ describe('MatPassToggleVisibilityComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [MatIconModule, MatButtonModule],
+      imports: [MatIconModule],
       declarations: [MatPassToggleVisibilityComponent]
     })
       .compileComponents();
