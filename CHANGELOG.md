@@ -1,3 +1,14 @@
+## [3.6.1](https://github.com/angular-material-extensions/password-strength/compare/v3.6.0...v3.6.1) (2019-03-26)
+
+
+### Bug Fixes
+
+* **demo:** updated angular cdk + material ([66a7c16](https://github.com/angular-material-extensions/password-strength/commit/66a7c16))
+* **package:** removed MatInputModule from the lib ([9af1ff5](https://github.com/angular-material-extensions/password-strength/commit/9af1ff5))
+* **package:** updated angular cdk + material ([d210563](https://github.com/angular-material-extensions/password-strength/commit/d210563))
+
+
+
 # [3.6.0](https://github.com/angular-material-extensions/password-strength/compare/v3.5.3...v3.6.0) (2019-03-25)
 
 
