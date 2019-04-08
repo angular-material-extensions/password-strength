@@ -179,6 +179,7 @@ export class OtherModule {
 |:-------------------|:--------:|:------:|:------------:|:-------------------------------------------------------------------------------------------------|    
 | password           | `Input() `  | string    | - |  the password to calculate its strength
 | validators           | `Input() `  | Criteria[]    | see inside the class ;) |  custom form validator used to validate the password
+| customValidator           | `Input() `  | RegExp    | - |  custom regex validator
 | externalError      | `Input() `  | boolean   | `false`  | used to change the color of the password to warn if an external error occurs
 | enableLengthRule      | `Input() `  | boolean   | true | whether to validate the length of the password
 | enableLowerCaseLetterRule      | `Input() `  | boolean   | true | whether a lowercase letter is optional
@@ -199,6 +200,7 @@ export class OtherModule {
 | upperCaseCriteriaMsg    | `Input() `  | `string` | contains at least one upper character   |  an appropriate msg for the upper case %
 | digitsCriteriaMsg       | `Input() `  | `string` | contains at least one digit character   |  an appropriate msg for the digit case %
 | specialCharsCriteriaMsg | `Input() `  | `string` | contains at least one special character |  an appropriate msg for the special case %
+| customCharsCriteriaMsg  | `Input() `  | `string`  | contains at least one custom character |  an appropriate msg for the custom validator case %
 | minCharsCriteriaMsg     | `Input() `  | `string` | contains at least ${this.passwordComponent.min} characters |  an appropriate msg for the minimum number of chars %
 
 
@@ -364,6 +366,48 @@ this will looks like -->
 </p>
 
 --- 
+
+#### custom regex validation
+
+please consider to use the `customValidator` input (see below)
+
+```html
+<mat-slide-toggle #toggle>Show Password Details</mat-slide-toggle>
+      
+ <mat-form-field appearance="outline" style="width: 100%" [color]="passwordComponent.color">
+  <mat-label>Password</mat-label>
+  <mat-pass-toggle-visibility #toggleVisbility matSuffix></mat-pass-toggle-visibility>
+  <input matInput #password
+         [type]="toggleVisbility.type"
+         placeholder="Password">
+  <mat-hint align="end" aria-live="polite">
+    {{password.value.length}} / {{passwordComponent.max}}
+  </mat-hint>
+</mat-form-field>
+ 
+        
+<mat-password-strength #passwordComponent
+  (onStrengthChanged)="onStrengthChanged($event)"
+  [password]="password.value"
+  [customValidator]="pattern">
+</mat-password-strength>
+
+<mat-password-strength-info
+  *ngIf="toggle.checked"
+  [passwordComponent]="passwordComponent6"
+  customCharsCriteriaMsg="1 german special chars is required"
+  [enableScoreInfo]="true">
+</mat-password-strength-info>
+
+```
+
+
+
+```ts
+pattern = new RegExp(/^(?=.*?[äöüÄÖÜß])/);
+```
+
+
 
 #### Supporting custom messages and ngx-translate for the info component please check the example demo [here](https://angular-material-extensions.github.io/password-strength/examples/mat-password-strength-info)
 

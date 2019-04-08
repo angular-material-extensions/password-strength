@@ -44,7 +44,5 @@ describe('NgxMaterialPasswordStrengthInfoComponent', () => {
 
   it('should render the appropriate div', () => {
     const div = fixture.debugElement.query(By.all());
-
-    console.log('div:', div);
   });
 });

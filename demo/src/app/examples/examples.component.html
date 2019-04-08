@@ -66,7 +66,7 @@
       <mat-card-title>#2</mat-card-title>
       <mat-card-subtitle>stand alone password component, special char and lower case are optional</mat-card-subtitle>
 
-      <mat-slide-toggle #toggle2>Show Password Details</mat-slide-toggle>
+      <mat-slide-toggle #toggle22>Show Password Details</mat-slide-toggle>
 
       <mat-card-content>
         <!--password input filed-->
@@ -90,7 +90,7 @@
         </mat-password-strength>
         <!--Password's strength info-->
         <mat-password-strength-info
-          *ngIf="toggle2.checked"
+          *ngIf="toggle22.checked"
           [passwordComponent]="passwordComponent2">
         </mat-password-strength-info>
       </mat-card-content>
@@ -110,7 +110,7 @@
         optional
       </mat-card-subtitle>
 
-      <mat-slide-toggle #toggle3>Show Password Details</mat-slide-toggle>
+      <mat-slide-toggle #toggle33>Show Password Details</mat-slide-toggle>
 
       <mat-card-content>
         <!--password input filed-->
@@ -134,7 +134,7 @@
         </mat-password-strength>
         <!--Password's strength info-->
         <mat-password-strength-info
-          *ngIf="toggle3.checked"
+          *ngIf="toggle33.checked"
           [passwordComponent]="passwordComponent3">
         </mat-password-strength-info>
       </mat-card-content>
@@ -154,7 +154,7 @@
         optional
       </mat-card-subtitle>
 
-      <mat-slide-toggle #toggle4>Show Password Details</mat-slide-toggle>
+      <mat-slide-toggle #toggle44>Show Password Details</mat-slide-toggle>
 
       <mat-card-content>
         <!--password input filed-->
@@ -178,7 +178,7 @@
         </mat-password-strength>
         <!--Password's strength info-->
         <mat-password-strength-info
-          *ngIf="toggle4.checked"
+          *ngIf="toggle44.checked"
           [passwordComponent]="passwordComponent4"
           [enableScoreInfo]="true">
         </mat-password-strength-info>
@@ -192,13 +192,13 @@
       </mat-card>
     </mat-card>
 
-    <!-- #4 -->
+    <!-- #5 -->
     <mat-card class="mt-4">
       <mat-card-title>#5</mat-card-title>
       <mat-card-subtitle>stand alone password component with already provided value
       </mat-card-subtitle>
 
-      <mat-slide-toggle #toggle5>Show Password Details</mat-slide-toggle>
+      <mat-slide-toggle #toggle55>Show Password Details</mat-slide-toggle>
 
       <mat-card-content>
         <!--password input filed-->
@@ -221,7 +221,7 @@
         </mat-password-strength>
         <!--Password's strength info-->
         <mat-password-strength-info
-          *ngIf="toggle5.checked"
+          *ngIf="toggle55.checked"
           [passwordComponent]="passwordComponent5"
           [enableScoreInfo]="true">
         </mat-password-strength-info>
@@ -236,5 +236,48 @@
     </mat-card>
 
 
+    <!-- #6 -->
+    <mat-card class="mt-4">
+      <mat-card-title>#6</mat-card-title>
+      <mat-card-subtitle>custom validation and should contains one of the the following chars: äöüÄÖÜß
+      </mat-card-subtitle>
+
+      <mat-slide-toggle #toggle66>Show Password Details</mat-slide-toggle>
+
+      <mat-card-content>
+        <!--password input filed-->
+        <mat-form-field appearance="outline" style="width: 100%" [color]="passwordComponent6.color">
+          <mat-label>Password</mat-label>
+          <mat-pass-toggle-visibility #toggle6 matSuffix></mat-pass-toggle-visibility>
+          <input matInput #password6
+                 [type]="toggle6.type"
+                 placeholder="Password">
+          <mat-hint align="end" aria-live="polite">
+            {{password6.value.length}} / {{passwordComponent6.max}}
+          </mat-hint>
+        </mat-form-field>
+
+        <!--@angular-material-extensions/password-strength's main component-->
+        <mat-password-strength #passwordComponent6
+                               (onStrengthChanged)="onStrengthChanged($event)"
+                               [password]="password6.value"
+                               [customValidator]="pattern">
+        </mat-password-strength>
+        <!--Password's strength info-->
+        <mat-password-strength-info
+          *ngIf="toggle66.checked"
+          [passwordComponent]="passwordComponent6"
+          customCharsCriteriaMsg="1 german special chars is required"
+          [enableScoreInfo]="true">
+        </mat-password-strength-info>
+      </mat-card-content>
+
+      <mat-card class="mt-2">
+        <mat-card-title>code</mat-card-title>
+        <mat-card-content>
+          <markdown src="assets/md/examples/e6.md"></markdown>
+        </mat-card-content>
+      </mat-card>
+    </mat-card>
   </div>
 </section>

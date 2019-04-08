@@ -13,6 +13,7 @@ export enum Criteria {
   at_least_one_upper_case_char,
   at_least_one_digit_char,
   at_least_one_special_char,
+  at_custom_chars
 }
 
 @Component({
@@ -26,6 +27,7 @@ export class MatPasswordStrengthComponent implements OnInit, OnChanges {
 
   @Input() password: string;
   @Input() validators: Criteria[] = Object.keys(Criteria).map(key => Criteria[key]);
+  @Input() customValidator: RegExp;
   @Input() externalError: boolean;
 
   @Input() enableLengthRule = true;
@@ -47,6 +49,7 @@ export class MatPasswordStrengthComponent implements OnInit, OnChanges {
   containAtLeastOneUpperCaseLetter: boolean;
   containAtLeastOneDigit: boolean;
   containAtLeastOneSpecialChar: boolean;
+  containAtCustomChars: boolean;
 
   passwordFormControl: AbstractControl = new FormControl();
 
@@ -127,6 +130,22 @@ export class MatPasswordStrengthComponent implements OnInit, OnChanges {
     return this.containAtLeastOneSpecialChar;
   }
 
+  private _containCustomChars(): boolean {
+    this.containAtCustomChars =
+      this.criteriaMap
+        .get(Criteria.at_custom_chars)
+        .test(this.password);
+    return this.containAtCustomChars;
+  }
+
+  parseCustomValidatorsRegex(value: string | RegExp = this.customValidator) {
+    if (this.customValidator instanceof RegExp) {
+      return this.customValidator;
+    } else if (typeof this.customValidator === 'string') {
+      return RegExp(this.customValidator);
+    }
+  }
+
   setRulesAndValidators(): void {
     if (this.enableLengthRule) {
       this.criteriaMap.set(Criteria.at_least_eight_chars, RegExp(`^.{${this.min},${this.max}$`));
@@ -142,6 +161,9 @@ export class MatPasswordStrengthComponent implements OnInit, OnChanges {
     }
     if (this.enableSpecialCharRule) {
       this.criteriaMap.set(Criteria.at_least_one_special_char, RegExp(/^(?=.*?[" !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~"])/));
+    }
+    if (this.customValidator) {
+      this.criteriaMap.set(Criteria.at_custom_chars, this.parseCustomValidatorsRegex());
     }
 
     this.passwordFormControl.setValidators(Validators.pattern(this.criteriaMap.get(Criteria.at_least_eight_chars)));
@@ -164,7 +186,9 @@ export class MatPasswordStrengthComponent implements OnInit, OnChanges {
       this.enableLowerCaseLetterRule ? this._containAtLeastOneLowerCaseLetter() : false,
       this.enableUpperCaseLetterRule ? this._containAtLeastOneUpperCaseLetter() : false,
       this.enableDigitRule ? this._containAtLeastOneDigit() : false,
-      this.enableSpecialCharRule ? this._containAtLeastOneSpecialChar() : false);
+      this.enableSpecialCharRule ? this._containAtLeastOneSpecialChar() : false,
+      this.customValidator ? this._containCustomChars() : false
+    );
 
     this._strength = requirements.filter(v => v).length * unit;
     // console.log('length = ', this._strength / unit);
@@ -177,6 +201,8 @@ export class MatPasswordStrengthComponent implements OnInit, OnChanges {
       this.containAtLeastOneLowerCaseLetter =
         this.containAtLeastOneUpperCaseLetter =
           this.containAtLeastOneDigit =
-            this.containAtLeastOneSpecialChar = false;
+            this.containAtCustomChars =
+              this.containAtLeastOneSpecialChar = false;
   }
+
 }

@@ -93,6 +93,9 @@ export class MatPasswordStrengthInfoComponent implements OnInit {
   specialCharsCriteriaMsg = 'contains at least one special character';
 
   @Input()
+  customCharsCriteriaMsg = 'contains at least one custom character';
+
+  @Input()
   minCharsCriteriaMsg: string;
 
   ngOnInit(): void {

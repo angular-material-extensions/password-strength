@@ -7,6 +7,8 @@ import {Component, OnInit} from '@angular/core';
 })
 export class ExamplesComponent implements OnInit {
 
+  pattern = new RegExp(/^(?=.*?[äöüÄÖÜß])/);
+
   constructor() {
   }
 
