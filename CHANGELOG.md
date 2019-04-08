@@ -1,3 +1,17 @@
+# [3.7.0](https://github.com/angular-material-extensions/password-strength/compare/v3.6.1...v3.7.0) (2019-04-08)
+
+
+### Bug Fixes
+
+* **package:** updated autoprefixer and rollup-plugin-node-resolve ([3ecbca6](https://github.com/angular-material-extensions/password-strength/commit/3ecbca6))
+
+
+### Features
+
+* **package:** added support of custom regex validation [#147](https://github.com/angular-material-extensions/password-strength/issues/147) # 155 ([4790068](https://github.com/angular-material-extensions/password-strength/commit/4790068))
+
+
+
 ## [3.6.1](https://github.com/angular-material-extensions/password-strength/compare/v3.6.0...v3.6.1) (2019-03-26)
 
 
