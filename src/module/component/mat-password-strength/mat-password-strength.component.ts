@@ -53,8 +53,8 @@ export class MatPasswordStrengthComponent implements OnInit, OnChanges {
   containAtLeastOneSpecialChar: boolean;
   containAtCustomChars: boolean;
 
-  formGroup: FormGroup;
   passwordFormControl: FormControl = new FormControl();
+  validatorsArray: ValidatorFn[] = [];
 
   private _strength = 0;
   private _color: string;
@@ -166,41 +166,44 @@ export class MatPasswordStrengthComponent implements OnInit, OnChanges {
 
   setRulesAndValidators(): void {
     console.log('on setting rules');
-    const validatorsArray: ValidatorFn[] = [];
+    this.validatorsArray.push(Validators.required);
     if (this.enableLengthRule) {
       this.criteriaMap.set(Criteria.at_least_eight_chars, RegExp(`^.{${this.min},${this.max}$`));
-      validatorsArray.push(Validators.minLength(this.min));
-      validatorsArray.push(Validators.maxLength(this.max));
+      this.validatorsArray.push(Validators.minLength(this.min));
+      this.validatorsArray.push(Validators.maxLength(this.max));
     }
     if (this.enableLowerCaseLetterRule) {
       this.criteriaMap.set(Criteria.at_least_one_lower_case_char, RegExpValidator.lowerCase);
+      this.validatorsArray.push(Validators.pattern(RegExpValidator.lowerCase))
     }
     if (this.enableUpperCaseLetterRule) {
       this.criteriaMap.set(Criteria.at_least_one_upper_case_char, RegExpValidator.upperCase);
+      this.validatorsArray.push(Validators.pattern(RegExpValidator.upperCase))
     }
     if (this.enableDigitRule) {
       this.criteriaMap.set(Criteria.at_least_one_digit_char, RegExpValidator.digit);
+      this.validatorsArray.push(Validators.pattern(RegExpValidator.digit))
     }
     if (this.enableSpecialCharRule) {
       this.criteriaMap.set(Criteria.at_least_one_special_char, RegExpValidator.specialChar);
+      this.validatorsArray.push(Validators.pattern(RegExpValidator.specialChar))
     }
     if (this.customValidator) {
       this.criteriaMap.set(Criteria.at_custom_chars, this.parseCustomValidatorsRegex());
+      this.validatorsArray.push(Validators.pattern(this.parseCustomValidatorsRegex()))
     }
 
-    // console.log('validators', this.validators);
 
     this.criteriaMap.forEach((value: any, key: string) => {
       console.log('setting validator with ', key, value);
-      validatorsArray.push(this.matPasswordStrengthValidator.validate(key, value));
+      this.validatorsArray.push(this.matPasswordStrengthValidator.validate(key, value));
       // this.passwordFormControl.setValidators(Validators.pattern(value));
       // this.passwordFormControl.setValidators(this.matPasswordStrengthValidator.validate(key, value));
       this.Validators = this.matPasswordStrengthValidator.validate(key, value);
     });
 
-    this.passwordFormControl.setValidators(Validators.compose([...validatorsArray]));
+    this.passwordFormControl.setValidators(Validators.compose([...this.validatorsArray]));
     // this.Validators = Validators.compose([validatorsArray[0].call]);
-    console.log('validatorsArray = ', validatorsArray, this.Validators);
 
   }
 
