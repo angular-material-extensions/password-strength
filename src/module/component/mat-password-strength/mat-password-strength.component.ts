@@ -1,19 +1,17 @@
 import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
-import {AbstractControl, FormControl, Validators} from '@angular/forms';
+import {AbstractControl, FormControl, FormGroup, ValidatorFn, Validators} from '@angular/forms';
+import {Criteria} from '../../enum/criteria.enum';
+import {Colors} from '../../enum/colors.enum';
+import {MatPasswordStrengthValidator} from '../../validator/mat-password-strength-validator';
+import {RegExpValidator} from '../../validator/regexp.class';
 
-export enum Colors {
-  primary = 'primary',
-  accent = 'accent',
-  warn = 'warn'
-}
-
-export enum Criteria {
-  at_least_eight_chars,
-  at_least_one_lower_case_char,
-  at_least_one_upper_case_char,
-  at_least_one_digit_char,
-  at_least_one_special_char,
-  at_custom_chars
+/** A hero's name can't match the given regular expression */
+export function forbiddenNameValidator(): ValidatorFn {
+  return (control: AbstractControl): { [key: string]: any } | null => {
+    console.log('control -> ', control);
+    const forbidden = 'nameRe.test(control.value)';
+    return forbidden ? {'forbiddenName': {value: control.value}} : null;
+  };
 }
 
 @Component({
@@ -39,8 +37,12 @@ export class MatPasswordStrengthComponent implements OnInit, OnChanges {
   @Input() min = 8;
   @Input() max = 30;
 
+  // TODO 17.04.19 @anthonynahas
+  // @Output()
+  // onColorChanged: EventEmitter<string> = new EventEmitter();
+
   @Output()
-  onStrengthChanged: EventEmitter<number> = new EventEmitter<number>();
+  onStrengthChanged: EventEmitter<number> = new EventEmitter();
 
   criteriaMap = new Map<Criteria, RegExp>();
 
@@ -51,14 +53,19 @@ export class MatPasswordStrengthComponent implements OnInit, OnChanges {
   containAtLeastOneSpecialChar: boolean;
   containAtCustomChars: boolean;
 
-  passwordFormControl: AbstractControl = new FormControl();
+  formGroup: FormGroup;
+  passwordFormControl: FormControl = new FormControl();
 
   private _strength = 0;
-
   private _color: string;
 
+  Validators: ValidatorFn;
+  matPasswordStrengthValidator = new MatPasswordStrengthValidator();
+
   ngOnInit(): void {
+    console.log('password strength comp. on init');
     this.setRulesAndValidators();
+
     if (this.password) {
       this.calculatePasswordStrength();
     }
@@ -92,6 +99,17 @@ export class MatPasswordStrengthComponent implements OnInit, OnChanges {
       return Colors.primary;
     }
   }
+
+  // get Validators(): ValidatorFn {
+  //   // this._Validators = this.matPasswordStrengthValidator.validate();
+  //   const validatorsArray: ValidatorFn[] = [];
+  //   this.validators.forEach(criteria => {
+  //     console.log('criteria -> ', criteria, this.criteriaMap.get(criteria));
+  //     validatorsArray.push(this.matPasswordStrengthValidator.validate(criteria.toString(), RegExpValidator.lowerCase))
+  //   });
+  //   this._Validators = Validators.compose([...validatorsArray]);
+  //   return this._Validators;
+  // }
 
   private _containAtLeastMinChars(): boolean {
     this.containAtLeastMinChars = this.password.length >= this.min;
@@ -147,30 +165,42 @@ export class MatPasswordStrengthComponent implements OnInit, OnChanges {
   }
 
   setRulesAndValidators(): void {
+    console.log('on setting rules');
+    const validatorsArray: ValidatorFn[] = [];
     if (this.enableLengthRule) {
       this.criteriaMap.set(Criteria.at_least_eight_chars, RegExp(`^.{${this.min},${this.max}$`));
+      validatorsArray.push(Validators.minLength(this.min));
+      validatorsArray.push(Validators.maxLength(this.max));
     }
     if (this.enableLowerCaseLetterRule) {
-      this.criteriaMap.set(Criteria.at_least_one_lower_case_char, RegExp(/^(?=.*?[a-z])/));
+      this.criteriaMap.set(Criteria.at_least_one_lower_case_char, RegExpValidator.lowerCase);
     }
     if (this.enableUpperCaseLetterRule) {
-      this.criteriaMap.set(Criteria.at_least_one_upper_case_char, RegExp(/^(?=.*?[A-Z])/));
+      this.criteriaMap.set(Criteria.at_least_one_upper_case_char, RegExpValidator.upperCase);
     }
     if (this.enableDigitRule) {
-      this.criteriaMap.set(Criteria.at_least_one_digit_char, RegExp(/^(?=.*?[0-9])/));
+      this.criteriaMap.set(Criteria.at_least_one_digit_char, RegExpValidator.digit);
     }
     if (this.enableSpecialCharRule) {
-      this.criteriaMap.set(Criteria.at_least_one_special_char, RegExp(/^(?=.*?[" !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~"])/));
+      this.criteriaMap.set(Criteria.at_least_one_special_char, RegExpValidator.specialChar);
     }
     if (this.customValidator) {
       this.criteriaMap.set(Criteria.at_custom_chars, this.parseCustomValidatorsRegex());
     }
 
-    this.passwordFormControl.setValidators(Validators.pattern(this.criteriaMap.get(Criteria.at_least_eight_chars)));
+    // console.log('validators', this.validators);
 
-    this.validators.map(criteria => {
-      this.passwordFormControl.setValidators(Validators.pattern(this.criteriaMap.get(criteria)));
-    })
+    this.criteriaMap.forEach((value: any, key: string) => {
+      console.log('setting validator with ', key, value);
+      validatorsArray.push(this.matPasswordStrengthValidator.validate(key, value));
+      // this.passwordFormControl.setValidators(Validators.pattern(value));
+      // this.passwordFormControl.setValidators(this.matPasswordStrengthValidator.validate(key, value));
+      this.Validators = this.matPasswordStrengthValidator.validate(key, value);
+    });
+
+    this.passwordFormControl.setValidators(Validators.compose([...validatorsArray]));
+    // this.Validators = Validators.compose([validatorsArray[0].call]);
+    console.log('validatorsArray = ', validatorsArray, this.Validators);
 
   }
 
@@ -195,6 +225,14 @@ export class MatPasswordStrengthComponent implements OnInit, OnChanges {
     this.onStrengthChanged.emit(this.strength);
   }
 
+  checkPasswords(group: FormGroup) { // here we have the 'passwords' group
+    const pass = group.controls.password.value;
+    const confirmPass = group.controls.confirmPass.value;
+
+    return pass === confirmPass ? null : {notSame: true}
+  }
+
+
   reset() {
     this._strength = 0;
     this.containAtLeastMinChars =
@@ -203,6 +241,21 @@ export class MatPasswordStrengthComponent implements OnInit, OnChanges {
           this.containAtLeastOneDigit =
             this.containAtCustomChars =
               this.containAtLeastOneSpecialChar = false;
+  }
+
+  lowerCaseChar(): ValidatorFn {
+    const validator = (control: AbstractControl): { [key: string]: any } => {
+      // this.isUndefinedOrEmpty(control);
+      console.log('lowerCaseChar', !RegExpValidator.lowerCase.test(control.value));
+      // control.setErrors({test: true});
+      if (!RegExpValidator.lowerCase.test(control.value)) {
+        return {
+          'lowerCase': true
+        };
+      }
+      return undefined;
+    };
+    return validator;
   }
 
 }

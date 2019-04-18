@@ -1,9 +1,10 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import {Colors, MatPasswordStrengthComponent} from './mat-password-strength.component';
+import {MatPasswordStrengthComponent} from './mat-password-strength.component';
 import {MatProgressBarModule} from '@angular/material';
 import {SimpleChange} from '@angular/core';
 import {NgxCombinationGeneratorService} from 'ngx-combination-generator';
+import {Colors} from '../../enum/colors.enum';
 
 describe('PasswordStrengthComponent', () => {
   let component: MatPasswordStrengthComponent;
