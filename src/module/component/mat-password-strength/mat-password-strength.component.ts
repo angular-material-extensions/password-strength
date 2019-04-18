@@ -24,7 +24,6 @@ export function forbiddenNameValidator(): ValidatorFn {
 export class MatPasswordStrengthComponent implements OnInit, OnChanges {
 
   @Input() password: string;
-  @Input() validators: Criteria[] = Object.keys(Criteria).map(key => Criteria[key]);
   @Input() customValidator: RegExp;
   @Input() externalError: boolean;
 
