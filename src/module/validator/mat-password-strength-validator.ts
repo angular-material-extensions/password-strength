@@ -12,9 +12,12 @@ export class MatPasswordStrengthValidator {
     const validator = (control: AbstractControl): { [key: string]: any } => {
       this.isUndefinedOrEmpty(control);
       if (!regex.test(control.value)) {
-        return {
-          key: true
-        }
+        const failed = {};
+        failed[criteria] = {
+          actualValue: control.value,
+          requiredPattern: regex
+        };
+        return failed;
       }
       return undefined;
     };
