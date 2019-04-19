@@ -52,7 +52,9 @@ export class MatPasswordStrengthComponent implements OnInit, OnChanges {
   containAtLeastOneSpecialChar: boolean;
   containAtCustomChars: boolean;
 
+  formGroup: FormGroup;
   passwordFormControl: FormControl = new FormControl();
+  passwordConfirmationFormControl: FormControl = new FormControl();
   validatorsArray: ValidatorFn[] = [];
 
   private _strength = 0;
@@ -64,6 +66,10 @@ export class MatPasswordStrengthComponent implements OnInit, OnChanges {
   ngOnInit(): void {
     console.log('password strength comp. on init');
     this.setRulesAndValidators();
+    this.formGroup = new FormGroup({
+      'password': this.passwordFormControl,
+      'confirmPass': this.passwordConfirmationFormControl,
+    }, this.checkPasswords);
 
     if (this.password) {
       this.calculatePasswordStrength();
@@ -98,17 +104,6 @@ export class MatPasswordStrengthComponent implements OnInit, OnChanges {
       return Colors.primary;
     }
   }
-
-  // get Validators(): ValidatorFn {
-  //   // this._Validators = this.matPasswordStrengthValidator.validate();
-  //   const validatorsArray: ValidatorFn[] = [];
-  //   this.validators.forEach(criteria => {
-  //     console.log('criteria -> ', criteria, this.criteriaMap.get(criteria));
-  //     validatorsArray.push(this.matPasswordStrengthValidator.validate(criteria.toString(), RegExpValidator.lowerCase))
-  //   });
-  //   this._Validators = Validators.compose([...validatorsArray]);
-  //   return this._Validators;
-  // }
 
   private _containAtLeastMinChars(): boolean {
     this.containAtLeastMinChars = this.password.length >= this.min;
@@ -165,6 +160,10 @@ export class MatPasswordStrengthComponent implements OnInit, OnChanges {
 
   setRulesAndValidators(): void {
     console.log('on setting rules');
+    this.passwordConfirmationFormControl
+      .setValidators(Validators.compose([
+        Validators.required, this.matPasswordStrengthValidator.confirm(this.password)
+      ]));
     this.validatorsArray.push(Validators.required);
     if (this.enableLengthRule) {
       this.criteriaMap.set(Criteria.at_least_eight_chars, RegExp(`^.{${this.min},${this.max}$`));
@@ -192,17 +191,12 @@ export class MatPasswordStrengthComponent implements OnInit, OnChanges {
       this.validatorsArray.push(Validators.pattern(this.parseCustomValidatorsRegex()))
     }
 
-
     this.criteriaMap.forEach((value: any, key: string) => {
-      console.log('setting validator with ', key, value);
       this.validatorsArray.push(this.matPasswordStrengthValidator.validate(key, value));
-      // this.passwordFormControl.setValidators(Validators.pattern(value));
-      // this.passwordFormControl.setValidators(this.matPasswordStrengthValidator.validate(key, value));
-      this.Validators = this.matPasswordStrengthValidator.validate(key, value);
     });
 
     this.passwordFormControl.setValidators(Validators.compose([...this.validatorsArray]));
-    // this.Validators = Validators.compose([validatorsArray[0].call]);
+    this.Validators = Validators.compose([...this.validatorsArray]);
 
   }
 
@@ -231,9 +225,8 @@ export class MatPasswordStrengthComponent implements OnInit, OnChanges {
     const pass = group.controls.password.value;
     const confirmPass = group.controls.confirmPass.value;
 
-    return pass === confirmPass ? null : {notSame: true}
+    return pass === confirmPass ? null : {notConfirmed: true}
   }
-
 
   reset() {
     this._strength = 0;
@@ -244,20 +237,4 @@ export class MatPasswordStrengthComponent implements OnInit, OnChanges {
             this.containAtCustomChars =
               this.containAtLeastOneSpecialChar = false;
   }
-
-  lowerCaseChar(): ValidatorFn {
-    const validator = (control: AbstractControl): { [key: string]: any } => {
-      // this.isUndefinedOrEmpty(control);
-      console.log('lowerCaseChar', !RegExpValidator.lowerCase.test(control.value));
-      // control.setErrors({test: true});
-      if (!RegExpValidator.lowerCase.test(control.value)) {
-        return {
-          'lowerCase': true
-        };
-      }
-      return undefined;
-    };
-    return validator;
-  }
-
 }

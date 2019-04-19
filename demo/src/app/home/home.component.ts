@@ -36,22 +36,15 @@ export class HomeComponent implements OnInit, AfterViewInit {
   ngOnInit() {
     console.log('home on init');
     this.titleService.setTitle('Home | mat-password-strength');
-    // this.passwordFormControl = this.passwordComponentWithValidation2.passwordFormControl;
-    // this.passwordFormControl = new FormControl('', this.passwordComponentWithValidation2.Validators);
-    // console.log('passwordFormControl form control = ', this.passwordFormControl);
 
     this.passwordComponentWithValidation2.passwordFormControl.valueChanges.subscribe(() => {
       console.log('passwordFormControl form control = ', this.passwordComponentWithValidation2.passwordFormControl);
     });
 
-    // this.passwordFormControl.valueChanges.subscribe(value => {
-    //   console.log('passwordFormControl form control = ', this.passwordFormControl);
-    // });
-
-    // @ts-ignore
-    this.formGroup = new FormGroup({
-      'password': this.passwordComponentWithValidation2.passwordFormControl
+    this.passwordComponentWithValidation2.passwordConfirmationFormControl.valueChanges.subscribe(() => {
+      console.log('passwordFormControl form control = ', this.passwordComponentWithValidation2.passwordConfirmationFormControl);
     });
+
   }
 
   onStrengthChanged(strength: number) {

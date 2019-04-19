@@ -24,4 +24,21 @@ export class MatPasswordStrengthValidator {
     return validator;
   }
 
+  confirm(password: string): ValidatorFn {
+    console.log('password to confirm: ', password);
+    const validator = (control: AbstractControl): { [key: string]: any } => {
+      this.isUndefinedOrEmpty(control);
+      if (control.value !== password) {
+        return {
+          notConfirmed: {
+            password: password,
+            passwordConfirmation: control.value
+          }
+        }
+      }
+      return undefined;
+    };
+    return validator;
+  }
+
 }
