@@ -3,7 +3,7 @@ import {AbstractControl, ValidatorFn} from '@angular/forms';
 export class MatPasswordStrengthValidator {
 
   isUndefinedOrEmpty(control: AbstractControl): any | undefined {
-    if (!control || control.value.length === 0) {
+    if (!control || !control.value || control.value.length === 0) {
       return undefined;
     }
   }

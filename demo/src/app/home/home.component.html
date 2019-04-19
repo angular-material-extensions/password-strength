@@ -273,10 +273,10 @@
             </mat-hint>
 
             <!-- password error msgs-->
-            <mat-error *ngIf="passwordComponentWithValidation2.passwordFormControl.hasError('required')">
-              Password is required
+            <mat-error *ngIf="passwordComponentWithValidation2.passwordConfirmationFormControl.hasError('required')">
+              Password confirmation is required
             </mat-error>
-            <mat-error *ngIf="passwordComponentWithValidation2.passwordFormControl.hasError('notConfirmed')">
+            <mat-error *ngIf="passwordComponentWithValidation2.passwordConfirmationFormControl.hasError('notConfirmed')">
               Password is not the same
             </mat-error>
 

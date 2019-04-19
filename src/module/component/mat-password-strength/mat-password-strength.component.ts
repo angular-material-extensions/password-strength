@@ -219,6 +219,10 @@ export class MatPasswordStrengthComponent implements OnInit, OnChanges {
     this._strength = requirements.filter(v => v).length * unit;
     // console.log('length = ', this._strength / unit);
     this.onStrengthChanged.emit(this.strength);
+    this.passwordConfirmationFormControl
+      .setValidators(Validators.compose([
+        Validators.required, this.matPasswordStrengthValidator.confirm(this.password)
+      ]));
   }
 
   checkPasswords(group: FormGroup) { // here we have the 'passwords' group

@@ -37,6 +37,11 @@ export class HomeComponent implements OnInit, AfterViewInit {
     console.log('home on init');
     this.titleService.setTitle('Home | mat-password-strength');
 
+    this.formGroup = new FormGroup({
+      'password': this.passwordComponentWithValidation2.passwordFormControl,
+      'confirmPass': this.passwordComponentWithValidation2.passwordConfirmationFormControl,
+    }, this.passwordComponentWithValidation2.checkPasswords);
+
     this.passwordComponentWithValidation2.passwordFormControl.valueChanges.subscribe(() => {
       console.log('passwordFormControl form control = ', this.passwordComponentWithValidation2.passwordFormControl);
     });
