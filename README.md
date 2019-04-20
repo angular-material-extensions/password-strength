@@ -173,24 +173,23 @@ export class OtherModule {
 
 ## API
 
-### `<mat-password-strength>` used to calculate and display the strength of a provided password
+### `<mat-password-strength>` used to calculate and display the strength of a provided password - [see the demo examples](https://angular-material-extensions.github.io/password-strength/examples)
 
 | option | bind  |  type  |   default    | description  |
 |:-------------------|:--------:|:------:|:------------:|:-------------------------------------------------------------------------------------------------|    
 | password           | `Input() `  | string    | - |  the password to calculate its strength
-| validators           | `Input() `  | Criteria[]    | see inside the class ;) |  custom form validator used to validate the password
 | customValidator           | `Input() `  | RegExp    | - |  custom regex validator
-| externalError      | `Input() `  | boolean   | `false`  | used to change the color of the password to warn if an external error occurs
-| enableLengthRule      | `Input() `  | boolean   | true | whether to validate the length of the password
-| enableLowerCaseLetterRule      | `Input() `  | boolean   | true | whether a lowercase letter is optional
-| enableUpperCaseLetterRule      | `Input() `  | boolean   | true | whether a uppercase letter is optional
-| enableDigitRule      | `Input() `  | boolean   | true | whether a digit char is optional
-| enableSpecialCharRule      | `Input() `  | boolean   | true | whether a special char is optional
-| min      | `Input() `  | number   | 8 | the minimum length of the password
-| max      | `Input() `  | number   | 30 | the maximum length of the password
-| onStrengthChanged  | Output() | number    | - | emits the strength of the provided password in % e.g: 20%, 40%, 60%, 80% or 100%
+| externalError      | `Input() `  | `boolean`   | `false`  | used to change the color of the password to warn if an external error occurs
+| enableLengthRule      | `Input() `  | `boolean`   | `true` | whether to validate the length of the password
+| enableLowerCaseLetterRule      | `Input() `  | `boolean`   | `true` | whether a lowercase letter is optional
+| enableUpperCaseLetterRule      | `Input() `  | `boolean`   | `true` | whether a uppercase letter is optional
+| enableDigitRule      | `Input() `  | `boolean`   | `true` | whether a digit char is optional
+| enableSpecialCharRule      | `Input() `  | `boolean`   | true | whether a special char is optional
+| min      | `Input() `  | `number`   | 8 | the minimum length of the password
+| max      | `Input() `  | `number`   | 30 | the maximum length of the password
+| onStrengthChanged  | Output() | `number`    | - | emits the strength of the provided password in % e.g: 20%, 40%, 60%, 80% or 100%
 
-### `<mat-password-strength-info>` used to display more information about the strength of a provided password
+### `<mat-password-strength-info>` used to display more information about the strength of a provided password - [see the demo examples](https://angular-material-extensions.github.io/password-strength/examples/mat-password-strength-info)
 
 | option | bind  |  type  |   default    | description  |
 |:-------------------|:--------:|:------:|:------------:|:-------------------------------------------------------------------------------------------------|    
@@ -201,7 +200,7 @@ export class OtherModule {
 | digitsCriteriaMsg       | `Input() `  | `string` | contains at least one digit character   |  an appropriate msg for the digit case %
 | specialCharsCriteriaMsg | `Input() `  | `string` | contains at least one special character |  an appropriate msg for the special case %
 | customCharsCriteriaMsg  | `Input() `  | `string`  | contains at least one custom character |  an appropriate msg for the custom validator case %
-| minCharsCriteriaMsg     | `Input() `  | `string` | contains at least ${this.passwordComponent.min} characters |  an appropriate msg for the minimum number of chars %
+| minCharsCriteriaMsg     | `Input() `  | `string` | contains at least ${this.passwordComponent.min} characters |  an appropriate msg for the minimum `number` of chars %
 
 
 ### `<mat-pass-toggle-visibility>` used to show/hide the password provided in the input element
@@ -226,7 +225,7 @@ add the `@angular-material-extensions/password-strength` element to your templat
 This will display only the material password strength meter in form of a progress without any input fields
 or similar.
 
-#### In the following example, we integration a material input container with `@angular-material-extensions/password-strength` 's component.
+### In the following example, we integration a material input container with `@angular-material-extensions/password-strength` 's component.
 
 NOTE: In order to repaint the mat-form-field correctly after changing the value of the password's strength, please consider
 to change the detection strategy for the parent component --> 
@@ -269,7 +268,7 @@ export class HomeComponent implements OnInit {}
 
 [learn more about mat-form-field](https://material.angular.io/components/input/overview)
 
-#### Example of how to use the emitted strength of the password in your template
+### Example of how to use the emitted strength of the password in your template
 
 ```html
 <div fxLayout="row" fxLayoutGap="10px">
@@ -287,7 +286,7 @@ export class HomeComponent implements OnInit {}
 </div>
 ```
 
-#### Use the toggle visibility component
+### Use the toggle visibility component
 
 - add the `mat-pass-toggle-visibility` to your `mat-form-field`
 - give it a name to use it in the html file like `toggle`
@@ -309,7 +308,7 @@ export class HomeComponent implements OnInit {}
 </mat-form-field>
 ```
 
-#### Client Side password's validation using a built in angular formController
+### Client Side password's validation using a built in angular formController
 
 1. add an input element to your template with an appropriate @angular-material-extensions/password-strength's component
 2. hold a reference of the @angular-material-extensions/password-strength's component by adding `passwordComponentWithValidation` (or whatever you want) inside the element
@@ -367,7 +366,7 @@ this will looks like -->
 
 --- 
 
-#### custom regex validation
+### custom regex validation
 
 please consider to use the `customValidator` input (see below)
 
@@ -407,9 +406,12 @@ please consider to use the `customValidator` input (see below)
 pattern = new RegExp(/^(?=.*?[äöüÄÖÜß])/);
 ```
 
+### Confirm the password with built in angular form controllers - [see the live example](https://angular-material-extensions.github.io/password-strength)
 
 
-#### Supporting custom messages and ngx-translate for the info component please check the example demo [here](https://angular-material-extensions.github.io/password-strength/examples/mat-password-strength-info)
+
+
+### Supporting custom messages and ngx-translate for the info component please check the example demo [here](https://angular-material-extensions.github.io/password-strength/examples/mat-password-strength-info)
 
 <p align="center">
   <img alt="@angular-material-extensions/password-strength demonstration" style="text-align: center;"
@@ -467,5 +469,5 @@ This project is supported by [jetbrains](https://www.jetbrains.com/) with 1 ALL 
 
 ## License
 
-Copyright (c) 2018 [Anthony Nahas](https://github.com/AnthonyNahas). Licensed under the MIT License (MIT)
+Copyright (c) 2019 [Anthony Nahas](https://github.com/AnthonyNahas). Licensed under the MIT License (MIT)
 
