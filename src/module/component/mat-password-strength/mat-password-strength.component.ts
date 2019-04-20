@@ -53,8 +53,11 @@ export class MatPasswordStrengthComponent implements OnInit, OnChanges {
   containAtCustomChars: boolean;
 
   formGroup: FormGroup;
+
+  // TO ACCESS VIA CONTENT CHILD
   passwordFormControl: FormControl = new FormControl();
   passwordConfirmationFormControl: FormControl = new FormControl();
+
   validatorsArray: ValidatorFn[] = [];
 
   private _strength = 0;
@@ -64,7 +67,6 @@ export class MatPasswordStrengthComponent implements OnInit, OnChanges {
   matPasswordStrengthValidator = new MatPasswordStrengthValidator();
 
   ngOnInit(): void {
-    console.log('password strength comp. on init');
     this.setRulesAndValidators();
     this.formGroup = new FormGroup({
       'password': this.passwordFormControl,
@@ -159,7 +161,6 @@ export class MatPasswordStrengthComponent implements OnInit, OnChanges {
   }
 
   setRulesAndValidators(): void {
-    console.log('on setting rules');
     this.passwordConfirmationFormControl
       .setValidators(Validators.compose([
         Validators.required, this.matPasswordStrengthValidator.confirm(this.password)
