@@ -1,7 +1,7 @@
-import {AfterViewInit, ChangeDetectionStrategy, Component, OnInit, ViewChild, ViewEncapsulation} from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnInit, ViewChild, ViewEncapsulation} from '@angular/core';
 import {Title} from '@angular/platform-browser';
 import {MatPasswordStrengthComponent} from '@angular-material-extensions/password-strength';
-import {FormControl, FormGroup} from '@angular/forms';
+import {FormControl} from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -10,12 +10,11 @@ import {FormControl, FormGroup} from '@angular/forms';
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class HomeComponent implements OnInit, AfterViewInit {
+export class HomeComponent implements OnInit {
 
   @ViewChild('passwordComponentWithValidation')
   passwordComponentWithValidation2: MatPasswordStrengthComponent;
 
-  formGroup: FormGroup;
   passwordFormControl: FormControl;
   x: FormControl;
 
@@ -37,11 +36,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
     console.log('home on init');
     this.titleService.setTitle('Home | mat-password-strength');
 
-    this.formGroup = new FormGroup({
-      'password': this.passwordComponentWithValidation2.passwordFormControl,
-      'confirmPass': this.passwordComponentWithValidation2.passwordConfirmationFormControl,
-    }, this.passwordComponentWithValidation2.checkPasswords);
-
     this.passwordComponentWithValidation2.passwordFormControl.valueChanges.subscribe(() => {
       console.log('passwordFormControl form control = ', this.passwordComponentWithValidation2.passwordFormControl);
     });
@@ -56,23 +50,5 @@ export class HomeComponent implements OnInit, AfterViewInit {
     // console.log('password strength = ', strength);
   }
 
-  ngAfterViewInit(): void {
-    // console.log('pass comp on ngAfterViewInit', this.passwordComponentWithValidation2);
-  }
-
-  // validate(): ValidatorFn {
-  //   const validator = (control: AbstractControl): { [key: string]: any } => {
-  //     // this.isUndefinedOrEmpty(control);
-  //     console.log('validate', !RegExpValidator.lowerCase.test(control.value));
-  //     // control.setErrors({test: true});
-  //     if (!RegExpValidator.lowerCase.test(control.value)) {
-  //       return {
-  //         'lowerCase': true
-  //       };
-  //     }
-  //     return undefined;
-  //   };
-  //   return validator;
-  // }
 
 }
