@@ -1,18 +1,10 @@
 import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
-import {AbstractControl, FormControl, FormGroup, ValidatorFn, Validators} from '@angular/forms';
+import {FormControl, ValidatorFn, Validators} from '@angular/forms';
 import {Criteria} from '../../enum/criteria.enum';
 import {Colors} from '../../enum/colors.enum';
 import {MatPasswordStrengthValidator} from '../../validator/mat-password-strength-validator';
 import {RegExpValidator} from '../../validator/regexp.class';
 
-/** A hero's name can't match the given regular expression */
-export function forbiddenNameValidator(): ValidatorFn {
-  return (control: AbstractControl): { [key: string]: any } | null => {
-    console.log('control -> ', control);
-    const forbidden = 'nameRe.test(control.value)';
-    return forbidden ? {'forbiddenName': {value: control.value}} : null;
-  };
-}
 
 @Component({
   selector: 'mat-password-strength',
@@ -52,8 +44,6 @@ export class MatPasswordStrengthComponent implements OnInit, OnChanges {
   containAtLeastOneSpecialChar: boolean;
   containAtCustomChars: boolean;
 
-  formGroup: FormGroup;
-
   // TO ACCESS VIA CONTENT CHILD
   passwordFormControl: FormControl = new FormControl();
   passwordConfirmationFormControl: FormControl = new FormControl();
@@ -68,10 +58,6 @@ export class MatPasswordStrengthComponent implements OnInit, OnChanges {
 
   ngOnInit(): void {
     this.setRulesAndValidators();
-    this.formGroup = new FormGroup({
-      'password': this.passwordFormControl,
-      'confirmPass': this.passwordConfirmationFormControl,
-    }, this.checkPasswords);
 
     if (this.password) {
       this.calculatePasswordStrength();
@@ -224,13 +210,6 @@ export class MatPasswordStrengthComponent implements OnInit, OnChanges {
       .setValidators(Validators.compose([
         Validators.required, this.matPasswordStrengthValidator.confirm(this.password)
       ]));
-  }
-
-  checkPasswords(group: FormGroup) { // here we have the 'passwords' group
-    const pass = group.controls.password.value;
-    const confirmPass = group.controls.confirmPass.value;
-
-    return pass === confirmPass ? null : {notConfirmed: true}
   }
 
   reset() {
