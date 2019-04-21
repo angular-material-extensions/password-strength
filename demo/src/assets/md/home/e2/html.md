@@ -9,7 +9,7 @@
            required
            placeholder="Password">
     <mat-hint align="end" aria-live="polite">
-      {{password.value.length}} / {{passwordComponent.max}}
+      {{password.value.length}} / 25
     </mat-hint>
   </mat-form-field>
   <!--@angular-material-extensions/password-strength's main component-->
