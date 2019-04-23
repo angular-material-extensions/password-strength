@@ -1,7 +1,6 @@
 import {ChangeDetectionStrategy, Component, OnInit, ViewChild, ViewEncapsulation} from '@angular/core';
 import {Title} from '@angular/platform-browser';
 import {MatPasswordStrengthComponent} from '@angular-material-extensions/password-strength';
-import {FormControl} from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -12,11 +11,8 @@ import {FormControl} from '@angular/forms';
 })
 export class HomeComponent implements OnInit {
 
-  @ViewChild('passwordComponentWithValidation')
-  passwordComponentWithValidation2: MatPasswordStrengthComponent;
-
-  passwordFormControl: FormControl;
-  x: FormControl;
+  @ViewChild('passwordComponentWithConfirmation')
+  passwordComponentWithConfirmation: MatPasswordStrengthComponent;
 
   constructor(private titleService: Title) {
   }
@@ -36,12 +32,12 @@ export class HomeComponent implements OnInit {
     console.log('home on init');
     this.titleService.setTitle('Home | mat-password-strength');
 
-    this.passwordComponentWithValidation2.passwordFormControl.valueChanges.subscribe(() => {
-      console.log('passwordFormControl form control = ', this.passwordComponentWithValidation2.passwordFormControl);
+    this.passwordComponentWithConfirmation.passwordFormControl.valueChanges.subscribe(() => {
+      console.log('passwordFormControl form control = ', this.passwordComponentWithConfirmation.passwordFormControl);
     });
 
-    this.passwordComponentWithValidation2.passwordConfirmationFormControl.valueChanges.subscribe(() => {
-      console.log('passwordFormControl form control = ', this.passwordComponentWithValidation2.passwordConfirmationFormControl);
+    this.passwordComponentWithConfirmation.passwordConfirmationFormControl.valueChanges.subscribe(() => {
+      console.log('passwordFormControl form control = ', this.passwordComponentWithConfirmation.passwordConfirmationFormControl);
     });
 
   }

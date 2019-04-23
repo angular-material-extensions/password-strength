@@ -147,13 +147,15 @@ export class MatPasswordStrengthComponent implements OnInit, OnChanges {
   }
 
   setRulesAndValidators(): void {
+    this.validatorsArray = [];
+    this.criteriaMap = new Map<Criteria, RegExp>();
     this.passwordConfirmationFormControl
       .setValidators(Validators.compose([
         Validators.required, this.matPasswordStrengthValidator.confirm(this.password)
       ]));
     this.validatorsArray.push(Validators.required);
     if (this.enableLengthRule) {
-      this.criteriaMap.set(Criteria.at_least_eight_chars, RegExp(`^.{${this.min},${this.max}$`));
+      this.criteriaMap.set(Criteria.at_least_eight_chars, RegExp(`^.{${this.min},${this.max}}$`));
       this.validatorsArray.push(Validators.minLength(this.min));
       this.validatorsArray.push(Validators.maxLength(this.max));
     }
@@ -206,10 +208,7 @@ export class MatPasswordStrengthComponent implements OnInit, OnChanges {
     this._strength = requirements.filter(v => v).length * unit;
     // console.log('length = ', this._strength / unit);
     this.onStrengthChanged.emit(this.strength);
-    this.passwordConfirmationFormControl
-      .setValidators(Validators.compose([
-        Validators.required, this.matPasswordStrengthValidator.confirm(this.password)
-      ]));
+    this.setRulesAndValidators();
   }
 
   reset() {

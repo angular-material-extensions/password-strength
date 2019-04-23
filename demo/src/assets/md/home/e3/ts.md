@@ -1,5 +1,6 @@
 ```typescript
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
+import {MatPasswordStrengthComponent} from '@angular-material-extensions/password-strength';
 
 @Component({
   selector: 'app-home',
@@ -8,6 +9,8 @@ import {Component, OnInit} from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  @ViewChild('passwordComponentWithConfirmation')
+  passwordComponentWithConfirmation: MatPasswordStrengthComponent;
   showDetails: boolean;
 
   ngOnInit() {

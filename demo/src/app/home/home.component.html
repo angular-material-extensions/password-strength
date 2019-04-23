@@ -91,86 +91,86 @@
         </mat-card-content>
       </mat-card>
     </div>
+
     <!--NGX-MATERIAL-PASSWORD-STRENGTH WITH VALIDATION AND FORM CONTROLLER-->
+    <div fxLayout="column" class="mt-3">
+      <mat-toolbar>
+        @angular-material-extensions/password-strength
+        <span fxFlex></span>
 
-    <!--    <div fxLayout="column" class="mt-3">-->
-    <!--      <mat-toolbar>-->
-    <!--        @angular-material-extensions/password-strength-->
-    <!--        <span fxFlex></span>-->
+        <button mat-icon-button
+                color="accent"
+                matTooltip="view source"
+                (click)="viewSource = !viewSource">
+          <mat-icon>code</mat-icon>
+        </button>
+      </mat-toolbar>
+      <mat-card>
+        <mat-card-subtitle>
+          client side password validation with angular built in form controller
+        </mat-card-subtitle>
+        <mat-card-subtitle>
+          <mat-slide-toggle [(ngModel)]="showDetails2">Show Password Details</mat-slide-toggle>
+        </mat-card-subtitle>
 
-    <!--        <button mat-icon-button-->
-    <!--                color="accent"-->
-    <!--                matTooltip="view source"-->
-    <!--                (click)="viewSource = !viewSource">-->
-    <!--          <mat-icon>code</mat-icon>-->
-    <!--        </button>-->
-    <!--      </mat-toolbar>-->
-    <!--      <mat-card>-->
-    <!--        <mat-card-subtitle>-->
-    <!--          client side password validation with angular form controller-->
-    <!--        </mat-card-subtitle>-->
-    <!--        <mat-card-subtitle>-->
-    <!--          <mat-slide-toggle [(ngModel)]="showDetails2">Show Password Details</mat-slide-toggle>-->
-    <!--        </mat-card-subtitle>-->
+        <mat-card-content *ngIf="viewSource">
+          <mat-tab-group>
+            <!--tab 1-->
+            <mat-tab>
+              <ng-template mat-tab-label>HTML</ng-template>
+              <markdown src="assets/md/home/e2/html.md"></markdown>
+            </mat-tab>
 
-    <!--        <mat-card-content *ngIf="viewSource">-->
-    <!--          <mat-tab-group>-->
-    <!--            &lt;!&ndash;tab 1&ndash;&gt;-->
-    <!--            <mat-tab>-->
-    <!--              <ng-template mat-tab-label>HTML</ng-template>-->
-    <!--              <pre><code highlight [highlight]="html2"></code></pre>-->
-    <!--            </mat-tab>-->
+            <mat-tab>
+              <ng-template mat-tab-label>TS</ng-template>
+              <markdown src="assets/md/home/e2/ts.md"></markdown>
+            </mat-tab>
+          </mat-tab-group>
+        </mat-card-content>
 
-    <!--            <mat-tab>-->
-    <!--              <ng-template mat-tab-label>TS</ng-template>-->
-    <!--              <pre><code highlight [highlight]="ts"></code></pre>-->
-    <!--            </mat-tab>-->
-    <!--          </mat-tab-group>-->
-    <!--        </mat-card-content>-->
+        <mat-card-content>
 
-    <!--        <mat-card-content>-->
+          <!--password input filed-->
+          <mat-form-field appearance="outline" style="width: 100%">
+            <mat-label>Password</mat-label>
+            <mat-pass-toggle-visibility #toggle2 matSuffix></mat-pass-toggle-visibility>
+            <input matInput #passwordWithValidation
+                   [type]="toggle2.type"
+                   required
+                   [formControl]="passwordComponentWithValidation.passwordFormControl"
+                   placeholder="Password">
 
-    <!--          &lt;!&ndash;password input filed&ndash;&gt;-->
-    <!--          <mat-form-field appearance="outline" style="width: 100%">-->
-    <!--            <mat-label>Password</mat-label>-->
-    <!--            <mat-pass-toggle-visibility #toggle2 matSuffix></mat-pass-toggle-visibility>-->
-    <!--            <input matInput #passwordWithValidation-->
-    <!--                   [type]="toggle2.type"-->
-    <!--                   required-->
-    <!--                   [formControl]="passwordComponentWithValidation2.passwordFormControl"-->
-    <!--                   placeholder="Password">-->
+            <!--password hint-->
+            <mat-hint align="end" aria-live="polite">
+              {{passwordWithValidation.value.length}} / {{passwordComponentWithValidation.max}}
+            </mat-hint>
 
-    <!--            &lt;!&ndash;password hint&ndash;&gt;-->
-    <!--            <mat-hint align="end" aria-live="polite">-->
-    <!--              {{passwordWithValidation.value.length}} / 25-->
-    <!--            </mat-hint>-->
+            <!--password error msgs-->
+            <mat-error *ngIf="passwordComponentWithValidation.passwordFormControl.hasError('required')">
+              Password is required
+            </mat-error>
+            <mat-error *ngIf="passwordComponentWithValidation.passwordFormControl.hasError('pattern')">
+              Password is not valid
+            </mat-error>
 
-    <!--            &lt;!&ndash;password error msgs&ndash;&gt;-->
-    <!--            <mat-error *ngIf="passwordComponentWithValidation2.passwordFormControl.hasError('required')">-->
-    <!--              Password is required-->
-    <!--            </mat-error>-->
-    <!--            <mat-error *ngIf="passwordComponentWithValidation2.passwordFormControl.hasError('pattern')">-->
-    <!--              Password is not valid-->
-    <!--            </mat-error>-->
+          </mat-form-field>
 
-    <!--          </mat-form-field>-->
+          <!--@angular-material-extensions/password-strength's main component-->
+          <mat-password-strength #passwordComponentWithValidation
+                                 (onStrengthChanged)="onStrengthChanged($event)"
+                                 [password]="passwordWithValidation.value">
+          </mat-password-strength>
 
-    <!--          &lt;!&ndash;@angular-material-extensions/password-strength's main component&ndash;&gt;-->
-    <!--          <mat-password-strength #passwordComponentWithValidation2-->
-    <!--                                 (onStrengthChanged)="onStrengthChanged($event)"-->
-    <!--                                 [password]="passwordWithValidation.value">-->
-    <!--          </mat-password-strength>-->
+          <!--Password's strength info-->
+          <mat-password-strength-info
+            *ngIf="showDetails2"
+            [passwordComponent]="passwordComponentWithValidation">
+          </mat-password-strength-info>
 
-    <!--          &lt;!&ndash;Password's strength info&ndash;&gt;-->
-    <!--          <mat-password-strength-info-->
-    <!--            *ngIf="showDetails2"-->
-    <!--            [passwordComponent]="passwordComponentWithValidation2">-->
-    <!--          </mat-password-strength-info>-->
+        </mat-card-content>
 
-    <!--        </mat-card-content>-->
-
-    <!--      </mat-card>-->
-    <!--    </div>-->
+      </mat-card>
+    </div>
 
     <!--    CONFIRM PASSWORD-->
     <div fxLayout="column" class="mt-3">
@@ -186,9 +186,6 @@
         </button>
       </mat-toolbar>
 
-      <!--      <form [formGroup]="passwordComponentWithValidation.formGroup">-->
-      <!--      <form [formGroup]="formGroup">-->
-      <!--      <form>-->
       <mat-card>
         <mat-card-subtitle>
           confirm your password with angular form group
@@ -223,30 +220,30 @@
             <mat-pass-toggle-visibility #toggle3 matSuffix></mat-pass-toggle-visibility>
             <input matInput #passwordWithConfirmation
                    [type]="toggle3.type"
-                   [formControl]="passwordComponentWithValidation.passwordFormControl"
+                   [formControl]="passwordComponentWithConfirmation.passwordFormControl"
                    placeholder="Password"
                    required>
 
             <!--password hint-->
             <mat-hint align="end" aria-live="polite">
-              {{passwordWithConfirmation.value.length}} / {{passwordComponentWithValidation.max}}
+              {{passwordWithConfirmation.value.length}} / {{passwordComponentWithConfirmation.max}}
             </mat-hint>
 
             <!--password error msgs-->
-            <!--              <mat-error *ngIf="passwordComponentWithValidation.passwordFormControl.invalid">-->
+            <!--              <mat-error *ngIf="passwordComponentWithConfirmation.passwordFormControl.invalid">-->
             <!--                Password is invalid-->
             <!--              </mat-error>-->
-            <mat-error *ngIf="passwordComponentWithValidation.passwordFormControl.hasError('required')">
+            <mat-error *ngIf="passwordComponentWithConfirmation.passwordFormControl.hasError('required')">
               Password is required
             </mat-error>
-            <mat-error *ngIf="passwordComponentWithValidation.passwordFormControl.hasError('pattern')">
+            <mat-error *ngIf="passwordComponentWithConfirmation.passwordFormControl.hasError('pattern')">
               Password is not valid
             </mat-error>
 
           </mat-form-field>
 
           <!--@angular-material-extensions/password-strength's main component-->
-          <mat-password-strength #passwordComponentWithValidation
+          <mat-password-strength #passwordComponentWithConfirmation
                                  (onStrengthChanged)="onStrengthChanged($event)"
                                  [password]="passwordWithConfirmation.value">
           </mat-password-strength>
@@ -254,7 +251,7 @@
           <!--Password's strength info-->
           <mat-password-strength-info
             *ngIf="showDetails3"
-            [passwordComponent]="passwordComponentWithValidation">
+            [passwordComponent]="passwordComponentWithConfirmation">
           </mat-password-strength-info>
 
           <!--password input filed-->
@@ -263,20 +260,20 @@
             <mat-pass-toggle-visibility #toggleConfirmPassword matSuffix></mat-pass-toggle-visibility>
             <input matInput #passwordToConfirm
                    [type]="toggleConfirmPassword.type"
-                   [formControl]="passwordComponentWithValidation.passwordConfirmationFormControl"
+                   [formControl]="passwordComponentWithConfirmation.passwordConfirmationFormControl"
                    placeholder="Password">
 
             <!-- password hint-->
             <mat-hint align="end" aria-live="polite">
-              {{passwordToConfirm.value.length}} / {{passwordComponentWithValidation.max}}
+              {{passwordToConfirm.value.length}} / {{passwordComponentWithConfirmation.max}}
             </mat-hint>
 
             <!-- password error msgs-->
-            <mat-error *ngIf="passwordComponentWithValidation2.passwordConfirmationFormControl.hasError('required')">
+            <mat-error *ngIf="passwordComponentWithConfirmation.passwordConfirmationFormControl.hasError('required')">
               Password confirmation is required
             </mat-error>
             <mat-error
-              *ngIf="passwordComponentWithValidation2.passwordConfirmationFormControl.hasError('notConfirmed')">
+              *ngIf="passwordComponentWithConfirmation.passwordConfirmationFormControl.hasError('notConfirmed')">
               Password is not the same
             </mat-error>
 
@@ -285,7 +282,6 @@
         </mat-card-content>
 
       </mat-card>
-      <!--      </form>-->
     </div>
   </div>
 
