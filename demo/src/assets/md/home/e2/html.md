@@ -1,26 +1,36 @@
 ```html
-<div fxFlex>
-  <!--password input filed-->
-  <mat-form-field appearance="outline" style="width: 100%" [color]="passwordComponent.color">
+ <!--password input filed-->
+  <mat-form-field appearance="outline" style="width: 100%">
     <mat-label>Password</mat-label>
-    <mat-pass-toggle-visibility #toggle matSuffix></mat-pass-toggle-visibility>
-    <input matInput #password
-           [type]="toggle.type"
+    <mat-pass-toggle-visibility #toggle2 matSuffix></mat-pass-toggle-visibility>
+    <input matInput #passwordWithValidation
+           [type]="toggle2.type"
            required
+           [formControl]="passwordComponentWithValidation.passwordFormControl"
            placeholder="Password">
-    <mat-hint align="end" aria-live="polite">
-      {{password.value.length}} / 25
-    </mat-hint>
-  </mat-form-field>
-  <!--@angular-material-extensions/password-strength's main component-->
-  <mat-password-strength #passwordComponent
-                         (onStrengthChanged)="onStrengthChanged($event)"
-                         [password]="password.value">
-  </mat-password-strength>
-  <!--Password's strength info-->
-  <mat-password-strength-info
-    *ngIf="showDetails"
-    [passwordComponent]="passwordComponent">
-  </mat-password-strength-info>
-</div>
+
+     <!--password hint-->
+     <mat-hint align="end" aria-live="polite">
+       {{passwordWithValidation.value.length}} / {{passwordComponentWithValidation.max}}
+     </mat
+     <!--password error msgs-->
+     <mat-error *ngIf="passwordComponentWithValidation.passwordFormControl.hasError('required')">
+       Password is required
+     </mat-error>
+     <mat-error *ngIf="passwordComponentWithValidation.passwordFormControl.hasError('pattern')">
+       Password is not valid
+     </mat-error>
+
+     </mat-form-field>
+
+     <!--@angular-material-extensions/password-strength's main component-->
+     <mat-password-strength #passwordComponentWithValidation
+                            (onStrengthChanged)="onStrengthChanged($event)"
+                            [password]="passwordWithValidation.value">
+     </mat-password-str   
+     <!--Password's strength info-->
+     <mat-password-strength-info
+       *ngIf="showDetails"
+       [passwordComponent]="passwordComponentWithValidation">
+     </mat-password-strength  
 ```
