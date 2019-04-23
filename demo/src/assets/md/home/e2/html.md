@@ -1,10 +1,10 @@
 ```html
  <!--password input filed-->
-  <mat-form-field appearance="outline" style="width: 100%">
+  <mat-form-field appearance="outline" [color]="passwordComponentWithValidation.color" style="width: 100%">
     <mat-label>Password</mat-label>
-    <mat-pass-toggle-visibility #toggle2 matSuffix></mat-pass-toggle-visibility>
+    <mat-pass-toggle-visibility #toggle matSuffix></mat-pass-toggle-visibility>
     <input matInput #passwordWithValidation
-           [type]="toggle2.type"
+           [type]="toggle.type"
            required
            [formControl]="passwordComponentWithValidation.passwordFormControl"
            placeholder="Password">

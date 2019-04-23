@@ -1,6 +1,6 @@
 ```html
 <!--password input filed-->
-<mat-form-field appearance="outline" style="width: 100%">
+<mat-form-field appearance="outline" [color]="passwordComponentWithConfirmation.color" style="width: 100%">
   <mat-label>Password</mat-label>
   <mat-pass-toggle-visibility #toggle3 matSuffix></mat-pass-toggle-visibility>
   <input matInput #passwordWithConfirmation
