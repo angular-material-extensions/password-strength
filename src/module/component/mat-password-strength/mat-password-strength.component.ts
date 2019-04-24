@@ -1,5 +1,6 @@
 import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
 import {FormControl, ValidatorFn, Validators} from '@angular/forms';
+import {ThemePalette} from '@angular/material';
 import {Criteria} from '../../enum/criteria.enum';
 import {Colors} from '../../enum/colors.enum';
 import {MatPasswordStrengthValidator} from '../../validator/mat-password-strength-validator';
@@ -51,7 +52,7 @@ export class MatPasswordStrengthComponent implements OnInit, OnChanges {
   validatorsArray: ValidatorFn[] = [];
 
   private _strength = 0;
-  private _color: string;
+  private _color: ThemePalette;
 
   Validators: ValidatorFn;
   matPasswordStrengthValidator = new MatPasswordStrengthValidator();
@@ -82,7 +83,7 @@ export class MatPasswordStrengthComponent implements OnInit, OnChanges {
     return this._strength ? this._strength : 0;
   }
 
-  get color(): string {
+  get color(): ThemePalette {
 
     if (this._strength <= 20) {
       return Colors.warn;
