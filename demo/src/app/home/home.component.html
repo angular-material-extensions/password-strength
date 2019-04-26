@@ -157,6 +157,7 @@
 
           <!--@angular-material-extensions/password-strength's main component-->
           <mat-password-strength #passwordComponentWithValidation
+                                 [greenStrongPassword]="true"
                                  (onStrengthChanged)="onStrengthChanged($event)"
                                  [password]="passwordWithValidation.value">
           </mat-password-strength>

@@ -19,6 +19,7 @@ export class MatPasswordStrengthComponent implements OnInit, OnChanges {
   @Input() password: string;
   @Input() customValidator: RegExp;
   @Input() externalError: boolean;
+  @Input() greenStrongPassword: boolean;
 
   @Input() enableLengthRule = true;
   @Input() enableLowerCaseLetterRule = true;
