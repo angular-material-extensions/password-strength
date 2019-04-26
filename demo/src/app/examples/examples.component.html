@@ -279,5 +279,47 @@
         </mat-card-content>
       </mat-card>
     </mat-card>
+
+<!--    #7 GREEN COLOR FOR STRONG PASSWORD-->
+    <mat-card>
+      <mat-card-title>#7</mat-card-title>
+      <mat-card-subtitle>
+        Use always the green color for a strong password
+      </mat-card-subtitle>
+
+      <mat-slide-toggle #toggle7>Show Password Details</mat-slide-toggle>
+
+      <mat-card-content>
+        <!--password input filed-->
+        <mat-form-field appearance="outline" style="width: 100%" [color]="passwordComponent7.color">
+          <mat-pass-toggle-visibility #toggle matSuffix></mat-pass-toggle-visibility>
+          <mat-label>Password</mat-label>
+          <input matInput #password
+                 [type]="toggle.type"
+                 placeholder="Password">
+          <mat-hint align="end" aria-live="polite">
+            {{password.value.length}} / {{passwordComponent7.max}}
+          </mat-hint>
+        </mat-form-field>
+
+        <!--@angular-material-extensions/password-strength's main component-->
+        <mat-password-strength #passwordComponent7
+                               class="green"
+                               [password]="password.value">
+        </mat-password-strength>
+        <!--Password's strength info-->
+        <mat-password-strength-info
+          *ngIf="toggle7.checked"
+          [passwordComponent]="passwordComponent7">
+        </mat-password-strength-info>
+      </mat-card-content>
+
+      <mat-card class="mt-2">
+        <mat-card-title>code</mat-card-title>
+        <mat-card-content>
+          <markdown src="assets/md/examples/e7.md"></markdown>
+        </mat-card-content>
+      </mat-card>
+    </mat-card>
   </div>
 </section>

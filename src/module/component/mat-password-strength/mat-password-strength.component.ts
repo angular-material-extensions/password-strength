@@ -19,7 +19,6 @@ export class MatPasswordStrengthComponent implements OnInit, OnChanges {
   @Input() password: string;
   @Input() customValidator: RegExp;
   @Input() externalError: boolean;
-  @Input() greenStrongPassword: boolean;
 
   @Input() enableLengthRule = true;
   @Input() enableLowerCaseLetterRule = true;
@@ -29,10 +28,6 @@ export class MatPasswordStrengthComponent implements OnInit, OnChanges {
 
   @Input() min = 8;
   @Input() max = 30;
-
-  // TODO 17.04.19 @anthonynahas
-  // @Output()
-  // onColorChanged: EventEmitter<string> = new EventEmitter();
 
   @Output()
   onStrengthChanged: EventEmitter<number> = new EventEmitter();
