@@ -6,6 +6,7 @@ import {HomeComponent} from './home.component';
 import {AppSharedModule} from '../shared';
 import {MatPasswordStrengthModule} from '@angular-material-extensions/password-strength';
 import {MarkdownModule} from 'ngx-markdown';
+import {MatJumbotronModule} from '@angular-material-extensions/jumbotron';
 
 @NgModule({
   imports: [
@@ -13,6 +14,7 @@ import {MarkdownModule} from 'ngx-markdown';
     HomeRoutingModule,
     AppSharedModule,
     MarkdownModule.forChild(),
+    MatJumbotronModule,
     MatPasswordStrengthModule
   ],
   declarations: [HomeComponent],

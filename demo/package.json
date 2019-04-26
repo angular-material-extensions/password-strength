@@ -27,6 +27,7 @@
   },
   "private": true,
   "dependencies": {
+    "@angular-material-extensions/jumbotron": "^1.0.1",
     "@angular-material-extensions/pages": "^2.1.0",
     "@angular/animations": "7.2.13",
     "@angular/cdk": "^7.3.7",
