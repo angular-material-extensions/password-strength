@@ -1,3 +1,51 @@
+# [3.8.0](https://github.com/angular-material-extensions/password-strength/compare/v3.7.0...v3.8.0) (2019-04-26)
+
+
+### Bug Fixes
+
+* **demo:** adjusted the docs of the lib examples in md [#163](https://github.com/angular-material-extensions/password-strength/issues/163) [#143](https://github.com/angular-material-extensions/password-strength/issues/143) ([8daf84e](https://github.com/angular-material-extensions/password-strength/commit/8daf84e))
+* **demo:** adjusted the docs of the lib examples in md [#163](https://github.com/angular-material-extensions/password-strength/issues/163) [#143](https://github.com/angular-material-extensions/password-strength/issues/143) ([e2dd41a](https://github.com/angular-material-extensions/password-strength/commit/e2dd41a))
+* **demo:** downgraded angular to v7.2.12 ([9814136](https://github.com/angular-material-extensions/password-strength/commit/9814136))
+* **demo:** downgraded the angular platform browser to v7.2.12 ([041ceb1](https://github.com/angular-material-extensions/password-strength/commit/041ceb1))
+* **demo:** integration of ngx-markdown in the home component ([fe1b56e](https://github.com/angular-material-extensions/password-strength/commit/fe1b56e))
+* **demo:** minor integration of the latest changes ([ff764e1](https://github.com/angular-material-extensions/password-strength/commit/ff764e1))
+* **demo:** re-upgrade angular without platform-browser ([b7804c0](https://github.com/angular-material-extensions/password-strength/commit/b7804c0))
+* **demo:** removed unwanted code ([f3fcfce](https://github.com/angular-material-extensions/password-strength/commit/f3fcfce))
+* **demo:** set angular material to v7.3.7 ([12f7042](https://github.com/angular-material-extensions/password-strength/commit/12f7042))
+* **demo:** updated angular and other dependencies ([2980ca2](https://github.com/angular-material-extensions/password-strength/commit/2980ca2))
+* **demo:** updated angular and other dependencies ([f93de40](https://github.com/angular-material-extensions/password-strength/commit/f93de40))
+* **demo:** updated angular compiler to v7.2.13 ([e97709b](https://github.com/angular-material-extensions/password-strength/commit/e97709b))
+* **demo:** updated angular devkit build angular to v0.13.8 ([6e48f2f](https://github.com/angular-material-extensions/password-strength/commit/6e48f2f))
+* **demo:** updated angular to v7.2.14 and other dependencies ([b03663c](https://github.com/angular-material-extensions/password-strength/commit/b03663c))
+* **demo:** updated the first example in the home component ([912db7d](https://github.com/angular-material-extensions/password-strength/commit/912db7d))
+* **package:** adjusted the alignment in the info component [#158](https://github.com/angular-material-extensions/password-strength/issues/158) ([9e86bc9](https://github.com/angular-material-extensions/password-strength/commit/9e86bc9))
+* **package:** adjusted the exports in the main module [#163](https://github.com/angular-material-extensions/password-strength/issues/163) ([11c22d8](https://github.com/angular-material-extensions/password-strength/commit/11c22d8))
+* **package:** change the type of color to themePalette ([0da93aa](https://github.com/angular-material-extensions/password-strength/commit/0da93aa))
+* **package:** enhanced the confirmation password form controller ([e0989e7](https://github.com/angular-material-extensions/password-strength/commit/e0989e7))
+* **package:** exported a reg exp class to use it across the library [#163](https://github.com/angular-material-extensions/password-strength/issues/163) # 143 ([91d5f85](https://github.com/angular-material-extensions/password-strength/commit/91d5f85))
+* **package:** exported colors and criteria enum [#163](https://github.com/angular-material-extensions/password-strength/issues/163) [#143](https://github.com/angular-material-extensions/password-strength/issues/143) ([92d76c7](https://github.com/angular-material-extensions/password-strength/commit/92d76c7))
+* **package:** improved form controllers validators [#143](https://github.com/angular-material-extensions/password-strength/issues/143) [#163](https://github.com/angular-material-extensions/password-strength/issues/163) ([d6ae437](https://github.com/angular-material-extensions/password-strength/commit/d6ae437))
+* **package:** improved the confirmation password form controller [#163](https://github.com/angular-material-extensions/password-strength/issues/163) [#143](https://github.com/angular-material-extensions/password-strength/issues/143) ([6ec1d1f](https://github.com/angular-material-extensions/password-strength/commit/6ec1d1f))
+* **package:** improved validate function in the validator class [#143](https://github.com/angular-material-extensions/password-strength/issues/143) [#163](https://github.com/angular-material-extensions/password-strength/issues/163) ([0191024](https://github.com/angular-material-extensions/password-strength/commit/0191024))
+* **package:** override the color of the `mat-password-strength` bar [#162](https://github.com/angular-material-extensions/password-strength/issues/162) ([f312dac](https://github.com/angular-material-extensions/password-strength/commit/f312dac))
+* **package:** removed logs ([c4a87fe](https://github.com/angular-material-extensions/password-strength/commit/c4a87fe))
+* **package:** removed unwanted code ([75654b7](https://github.com/angular-material-extensions/password-strength/commit/75654b7))
+* **package:** set min and max length validator for the form controller [#163](https://github.com/angular-material-extensions/password-strength/issues/163) [#143](https://github.com/angular-material-extensions/password-strength/issues/143) ([6165988](https://github.com/angular-material-extensions/password-strength/commit/6165988))
+* **package:** update the validators on changed password value [#163](https://github.com/angular-material-extensions/password-strength/issues/163) [#143](https://github.com/angular-material-extensions/password-strength/issues/143) ([c27acdb](https://github.com/angular-material-extensions/password-strength/commit/c27acdb))
+* **package:** updated angular and other dependencies ([0a31632](https://github.com/angular-material-extensions/password-strength/commit/0a31632))
+* **package:** updated angular to v7.2.14 and other dependencies ([fa99f93](https://github.com/angular-material-extensions/password-strength/commit/fa99f93))
+* **package:** updated rxjs to v6.5.1 and rxjs compat ([13ec79c](https://github.com/angular-material-extensions/password-strength/commit/13ec79c))
+* **package:** updated the dependencies ([9e033f8](https://github.com/angular-material-extensions/password-strength/commit/9e033f8))
+
+
+### Features
+
+* **demo:** integration of angular material extensions jumbotron lib [#165](https://github.com/angular-material-extensions/password-strength/issues/165) ([1166239](https://github.com/angular-material-extensions/password-strength/commit/1166239))
+* **package:** ability to use always the green color for strong password [#162](https://github.com/angular-material-extensions/password-strength/issues/162) ([46310e2](https://github.com/angular-material-extensions/password-strength/commit/46310e2))
+* **package:** added password strength validator class ([fc5f500](https://github.com/angular-material-extensions/password-strength/commit/fc5f500))
+
+
+
 # [3.7.0](https://github.com/angular-material-extensions/password-strength/compare/v3.6.1...v3.7.0) (2019-04-08)
 
 

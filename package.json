@@ -1,7 +1,7 @@
 {
   "name": "@angular-material-extensions/password-strength",
   "description": "Material password strength meter to indicate how secure is the provided password",
-  "version": "3.7.0",
+  "version": "3.8.0",
   "homepage": "https://github.com/angular-material-extensions/password-strength",
   "author": {
     "name": "anthonynahas",
