@@ -408,8 +408,25 @@ pattern = new RegExp(/^(?=.*?[äöüÄÖÜß])/);
 
 ### Confirm the password with built in angular form controllers - [see the live example](https://angular-material-extensions.github.io/password-strength)
 
+<p align="center">
+  <img alt="@angular-material-extensions/password-strength with confirmation feature" style="text-align: center;"
+   src="https://raw.githubusercontent.com/angular-material-extensions/password-strength/HEAD/assets/v3.8.0/confirm01.png">
+</p>
+
+<p align="center">
+  <img alt="@angular-material-extensions/password-strength with confirmation feature " style="text-align: center;"
+   src="https://raw.githubusercontent.com/angular-material-extensions/password-strength/HEAD/assets/v3.8.0/confirm02.png">
+</p>
 
 
+### Use always the green color for a strong password just by adding the `green` css class to the `mat-password-strength`
+
+```html
+<mat-password-strength #passwordComponent
+                       class="green"
+                       [password]="password.value">
+</mat-password-strength>
+```
 
 ### Supporting custom messages and ngx-translate for the info component please check the example demo [here](https://angular-material-extensions.github.io/password-strength/examples/mat-password-strength-info)
 
