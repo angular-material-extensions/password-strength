@@ -38,7 +38,7 @@
     "@angular/forms": "7.2.14",
     "@angular/http": "7.2.14",
     "@angular/material": "^7.3.7",
-    "@angular/platform-browser": "7.2.14",
+    "@angular/platform-browser": "7.2.12",
     "@angular/platform-browser-dynamic": "7.2.14",
     "@angular/platform-server": "7.2.14",
     "@angular/router": "7.2.14",
