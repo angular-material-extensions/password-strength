@@ -1,3 +1,18 @@
+## [3.8.1](https://github.com/angular-material-extensions/password-strength/compare/v3.8.0...v3.8.1) (2019-05-14)
+
+
+### Bug Fixes
+
+* **demo:** adjusted the second visibility toggle ([6beddcf](https://github.com/angular-material-extensions/password-strength/commit/6beddcf))
+* **demo:** downgraded angular platform browser to v7.2.12 ([95af09e](https://github.com/angular-material-extensions/password-strength/commit/95af09e))
+* **demo:** updated angular to v7.2.15 ([aa9ca5a](https://github.com/angular-material-extensions/password-strength/commit/aa9ca5a))
+* **package:** updated angular material and csk to v7.3.7 ([5769339](https://github.com/angular-material-extensions/password-strength/commit/5769339))
+* **package:** updated angular to v7.2.15 ([ce187ad](https://github.com/angular-material-extensions/password-strength/commit/ce187ad))
+* **package:** updated postcss ([f063f40](https://github.com/angular-material-extensions/password-strength/commit/f063f40))
+* **package:** updated the dependencies ([fa37170](https://github.com/angular-material-extensions/password-strength/commit/fa37170))
+
+
+
 # [3.8.0](https://github.com/angular-material-extensions/password-strength/compare/v3.7.0...v3.8.0) (2019-04-26)
 
 
