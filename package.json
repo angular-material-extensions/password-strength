@@ -50,7 +50,7 @@
     "@angular/material": "^7.3.7"
   },
   "devDependencies": {
-    "@angular-devkit/schematics": "^7.3.9",
+    "@angular-devkit/schematics": "^8.0.0",
     "@angular/compiler": "^7.2.15",
     "@angular/compiler-cli": "^7.2.15",
     "@angular/platform-browser": "^7.2.15",
