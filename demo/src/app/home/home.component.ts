@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, OnInit, ViewChild, ViewEncapsulation} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {Title} from '@angular/platform-browser';
 import {MatPasswordStrengthComponent} from '@angular-material-extensions/password-strength';
 
@@ -6,12 +6,10 @@ import {MatPasswordStrengthComponent} from '@angular-material-extensions/passwor
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
-  encapsulation: ViewEncapsulation.None,
-  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HomeComponent implements OnInit {
 
-  @ViewChild('passwordComponentWithConfirmation', { static: true })
+  @ViewChild('passwordComponentWithConfirmation', {static: true})
   passwordComponentWithConfirmation: MatPasswordStrengthComponent;
 
   constructor(private titleService: Title) {

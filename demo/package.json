@@ -1,5 +1,5 @@
 {
-  "name": "@angular-material-extensions/password-strength-demo",
+  "name": "demo",
   "version": "1.0.5",
   "license": "MIT",
   "description": "Demo app for @angular-material-extensions/password-strength",
@@ -29,6 +29,7 @@
   "dependencies": {
     "@angular-material-extensions/jumbotron": "^1.0.1",
     "@angular-material-extensions/pages": "^2.1.0",
+    "@angular-material-extensions/password-strength": "^4.0.0-beta",
     "@angular/animations": "8.0.0",
     "@angular/cdk": "^7.3.7",
     "@angular/common": "8.0.0",
