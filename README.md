@@ -30,7 +30,7 @@
 Do you have any question or suggestion ? Please do not hesitate to contact us!
 Alternatively, provide a PR | open an appropriate issue [here](https://github.com/angular-material-extensions/password-strength/issues)
 
-If did you like this project, support [angular-material-extensions](https://github.com/angular-material-extensions) 
+If you like this project, support [angular-material-extensions](https://github.com/angular-material-extensions) 
 by starring :star: and sharing it :loudspeaker:
 
 ## Table of Contents
