@@ -11,7 +11,7 @@ import {MatPasswordStrengthComponent} from '@angular-material-extensions/passwor
 })
 export class HomeComponent implements OnInit {
 
-  @ViewChild('passwordComponentWithConfirmation')
+  @ViewChild('passwordComponentWithConfirmation', { static: true })
   passwordComponentWithConfirmation: MatPasswordStrengthComponent;
 
   constructor(private titleService: Title) {
