@@ -6,7 +6,7 @@ import {AppSharedModule} from '../shared';
 import {MarkdownModule} from 'ngx-markdown';
 import {InfoCompExampleComponent} from './info-comp-example/info-comp-example.component';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
-import {MatRadioModule} from '@angular/material';
+import {MatRadioModule} from '@angular/material/radio';
 import {HttpClient} from '@angular/common/http';
 import {createTranslateLoader} from '../app.module';
 

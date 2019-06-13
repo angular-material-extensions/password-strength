@@ -1,6 +1,6 @@
-import {Component, Input} from '@angular/core';
+import {Component} from '@angular/core';
 import {TranslateService} from '@ngx-translate/core';
-import {MatRadioChange} from '@angular/material';
+import {MatRadioChange} from '@angular/material/radio';
 
 @Component({
   selector: 'app-info-comp-example',

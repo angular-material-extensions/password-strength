@@ -10,7 +10,7 @@ import {AppComponent} from './app.component';
 import {environment} from '../environments/environment';
 import {ServiceWorkerModule} from '@angular/service-worker';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
-import {MatInputModule} from '@angular/material';
+import {MatInputModule} from '@angular/material/input';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {MarkdownModule} from 'ngx-markdown';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
