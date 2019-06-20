@@ -1,3 +1,21 @@
+# [4.0.0-beta](https://github.com/angular-material-extensions/password-strength/compare/v3.8.1...v4.0.0-beta) (2019-06-13)
+
+
+### Bug Fixes
+
+* **demo:** updated the demo apps ([4dca596](https://github.com/angular-material-extensions/password-strength/commit/4dca596))
+* **demo:** updated the dependencies ([97f743f](https://github.com/angular-material-extensions/password-strength/commit/97f743f))
+* **package:** updated the dependencies ([4e3c930](https://github.com/angular-material-extensions/password-strength/commit/4e3c930))
+* **package:** updated the dependencies ([f69d858](https://github.com/angular-material-extensions/password-strength/commit/f69d858))
+* **package:** upgraded the lib to v8 ([6deecef](https://github.com/angular-material-extensions/password-strength/commit/6deecef))
+
+
+### Features
+
+* **demo2:** added new demo app with angular v8 ([e6259a5](https://github.com/angular-material-extensions/password-strength/commit/e6259a5))
+
+
+
 ## [3.8.1](https://github.com/angular-material-extensions/password-strength/compare/v3.8.0...v3.8.1) (2019-05-14)
 
 
