@@ -1,5 +1,5 @@
 import {NgModule} from '@angular/core';
-import {Routes, RouterModule} from '@angular/router';
+import {RouterModule, Routes} from '@angular/router';
 
 const routes: Routes = [
   {
@@ -9,11 +9,11 @@ const routes: Routes = [
   },
   {
     path: 'getting-started',
-    loadChildren: 'app/getting-started/getting-started.module#GettingStartedModule'
+    loadChildren: () => import('app/getting-started/getting-started.module').then(m => m.GettingStartedModule)
   },
   {
     path: 'examples',
-    loadChildren: 'app/examples/examples.module#ExamplesModule'
+    loadChildren: () => import('app/examples/examples.module').then(m => m.ExamplesModule)
   }];
 
 @NgModule({
