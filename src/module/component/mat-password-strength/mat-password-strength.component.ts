@@ -17,7 +17,6 @@ import {RegExpValidator} from '../../validator/regexp.class';
 export class MatPasswordStrengthComponent implements OnInit, OnChanges {
 
   @Input() password: string;
-  @Input() customValidator: RegExp;
   @Input() externalError: boolean;
 
   @Input() enableLengthRule = true;
@@ -28,6 +27,7 @@ export class MatPasswordStrengthComponent implements OnInit, OnChanges {
 
   @Input() min = 8;
   @Input() max = 30;
+  @Input() customValidator: RegExp;
 
   @Output()
   onStrengthChanged: EventEmitter<number> = new EventEmitter();
