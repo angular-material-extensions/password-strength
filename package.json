@@ -42,20 +42,20 @@
     "check-travis": " travis-status --repo=angular-material-extensions/password-strength --branch=master --fail-pending || echo 'Not yet passing'"
   },
   "dependencies": {
-    "@angular/animations": "^8.0.0",
-    "@angular/cdk": "^8.0.1",
-    "@angular/common": "^8.0.0",
-    "@angular/core": "^8.0.0",
-    "@angular/forms": "^8.0.0",
-    "@angular/material": "^8.0.1"
+    "@angular/animations": "^8.1.0",
+    "@angular/cdk": "^8.0.2",
+    "@angular/common": "^8.1.0",
+    "@angular/core": "^8.1.0",
+    "@angular/forms": "^8.1.0",
+    "@angular/material": "^8.0.2"
   },
   "devDependencies": {
-    "@angular-devkit/schematics": "^8.0.2",
-    "@angular/compiler": "^8.0.0",
+    "@angular-devkit/schematics": "^8.1.0",
+    "@angular/compiler": "^8.1.0",
     "@angular/compiler-cli": "^8.0.0",
-    "@angular/platform-browser": "^8.0.0",
-    "@angular/platform-browser-dynamic": "^8.0.0",
-    "@angular/platform-server": "^8.0.0",
+    "@angular/platform-browser": "^8.1.0",
+    "@angular/platform-browser-dynamic": "^8.1.0",
+    "@angular/platform-server": "^8.1.0",
     "@compodoc/gulp-compodoc": "^0.0.10",
     "@types/jasmine": "^2.8.14",
     "@types/jest": "^23.3.14",
