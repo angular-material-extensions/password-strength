@@ -43,7 +43,7 @@
     "@angular/platform-server": "8.0.0",
     "@angular/router": "8.0.0",
     "@angular/service-worker": "8.0.0",
-    "@ng-bootstrap/ng-bootstrap": "^4.2.0",
+    "@ng-bootstrap/ng-bootstrap": "^5.0.0",
     "@ngx-translate/core": "^11.0.1",
     "@ngx-translate/http-loader": "^4.0.0",
     "bootstrap": "^4.3.1",
