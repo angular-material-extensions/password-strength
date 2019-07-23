@@ -32,7 +32,7 @@ export function createTranslateLoader(http: HttpClient) {
     // Add .withServerTransition() to support Universal rendering.
     // The application ID can be any identifier which is unique on
     // the page.
-    BrowserModule.withServerTransition({appId: '@angular-material-extensions/password-strength-demo-id'}),
+    BrowserModule.withServerTransition({appId: 'demo'}),
     ServiceWorkerModule.register('/ngsw-worker.js', {enabled: environment.production}),
     MarkdownModule.forRoot({loader: HttpClient}),
     TranslateModule.forRoot({
