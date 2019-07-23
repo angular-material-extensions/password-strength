@@ -42,12 +42,12 @@
     "check-travis": " travis-status --repo=angular-material-extensions/password-strength --branch=master --fail-pending || echo 'Not yet passing'"
   },
   "dependencies": {
-    "@angular/animations": "^8.1.1",
-    "@angular/cdk": "^8.0.2",
-    "@angular/common": "^8.1.1",
-    "@angular/core": "^8.1.1",
-    "@angular/forms": "^8.1.1",
-    "@angular/material": "^8.0.2"
+    "@angular/animations": "^8.1.2",
+    "@angular/cdk": "^8.1.1",
+    "@angular/common": "^8.1.2",
+    "@angular/core": "^8.1.2",
+    "@angular/forms": "^8.1.2",
+    "@angular/material": "^8.1.1"
   },
   "devDependencies": {
     "@angular-devkit/schematics": "^8.1.1",
