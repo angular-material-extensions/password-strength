@@ -61,7 +61,7 @@
     "@types/jest": "^23.3.14",
     "@types/lodash": "^4.14.136",
     "@types/node": "^10.14.12",
-    "angular-cli-ghpages": "^0.5.3",
+    "angular-cli-ghpages": "^0.6.0",
     "angular2-template-loader": "0.6.2",
     "autoprefixer": "^9.6.1",
     "awesome-typescript-loader": "^5.2.1",
