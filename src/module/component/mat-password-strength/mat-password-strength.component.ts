@@ -29,6 +29,9 @@ export class MatPasswordStrengthComponent implements OnInit, OnChanges {
   @Input() max = 30;
   @Input() customValidator: RegExp;
 
+  @Input() warnThreshold = 21;
+  @Input() accentThreshold = 81;
+
   @Output()
   onStrengthChanged: EventEmitter<number> = new EventEmitter();
 
@@ -81,9 +84,9 @@ export class MatPasswordStrengthComponent implements OnInit, OnChanges {
 
   get color(): ThemePalette {
 
-    if (this._strength <= 20) {
+    if (this._strength < this.warnThreshold) {
       return Colors.warn;
-    } else if (this._strength <= 80) {
+    } else if (this._strength < this.accentThreshold) {
       return Colors.accent;
     } else {
       return Colors.primary;
