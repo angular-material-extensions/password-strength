@@ -180,6 +180,24 @@ describe('PasswordStrengthComponent', () => {
       });
     });
 
+  it('should strength at least 80 and color = accent when the password fulfills 4 criteria and accentThreshold set to 100',
+    () => {
+      const charsList = ['a', 'A', '9', '!', 'bcdef'];
+      const combinations = generator.loadCombinationList(charsList, 4, 4, true);
+      const accentThreshold = 100;
+
+      combinations.forEach(combination => {
+        const isCharDuplicate = new RegExp(/^.*(.).*\1.*$/);
+        if (!isCharDuplicate.test(combination)) {
+          component.password = combination;
+          component.accentThreshold = accentThreshold;
+          component.calculatePasswordStrength();
+          expect(component.strength).toBeGreaterThanOrEqual(80);
+          component.strength < accentThreshold ? expect(component.color).toBe(Colors.accent) : expect(component.color).toBe(Colors.primary);
+        }
+      });
+    });
+
   it('should strength equal 100 and color = primary  when the password fulfills all 5 criteria ',
     () => {
       const charsList = ['a', 'A', '9', '!', 'bcdef'];
