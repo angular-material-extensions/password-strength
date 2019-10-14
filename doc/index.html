@@ -199,6 +199,8 @@ export class OtherModule {
 | enableSpecialCharRule      | <code>Input()</code>  | <code>boolean</code>   | true | whether a special char is optional
 | min      | <code>Input()</code>  | <code>number</code>   | 8 | the minimum length of the password
 | max      | <code>Input()</code>  | <code>number</code>   | 30 | the maximum length of the password
+| warnThreshold      | <code>Input()</code>  | <code>number</code>   | 21 | password strength less than this number shows the warn color
+| accentThreshold      | <code>Input()</code>  | <code>number</code>   | 81 | password strength less than this number shows the accent color
 | onStrengthChanged  | Output() | <code>number</code>    | - | emits the strength of the provided password in % e.g: 20%, 40%, 60%, 80% or 100%</p>
 <h3 id="mat-password-strength-info-used-to-display-more-information-about-the-strength-of-a-provided-password---see-the-demo-examples"><code>&lt;mat-password-strength-info&gt;</code> used to display more information about the strength of a provided password - <a href="https://angular-material-extensions.github.io/password-strength/examples/mat-password-strength-info">see the demo examples</a></h3>
 <p>| option | bind  |  type  |   default    | description  |
