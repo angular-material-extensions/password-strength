@@ -1,3 +1,13 @@
+## [4.1.1](https://github.com/angular-material-extensions/password-strength/compare/v4.1.0...v4.1.1) (2019-10-27)
+
+
+### Bug Fixes
+
+* **demo:** updated angular and other deps ([29a8a42](https://github.com/angular-material-extensions/password-strength/commit/29a8a42ed5a5e1b8a279ae1973d80bddf1836b6f))
+* **package:** updated angular other deps ([d2814bd](https://github.com/angular-material-extensions/password-strength/commit/d2814bd3a68a479f88da169a53e1ec067a3cd659))
+
+
+
 # [4.1.0](https://github.com/angular-material-extensions/password-strength/compare/v4.0.1...v4.1.0) (2019-10-14)
 
 
