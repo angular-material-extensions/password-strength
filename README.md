@@ -1,7 +1,7 @@
 <p align="center">
   <img alt="angular-material-extensions's logo"
    height="256px" width="256px" style="text-align: center;" 
-   src="https://cdn.rawgit.com/angular-material-extensions/password-strength/master/assets/angular-material-extensions-logo.svg">
+   src="https://cdn.jsdelivr.net/gh/angular-material-extensions/password-strength@master/assets/angular-material-extensions-logo.svg">
 </p>
 
 # @angular-material-extensions/password-strength - Material password strength meter to indicate how secure is the provided password - Angular V8 supported incl. schematics
@@ -127,8 +127,8 @@ npm install --save @angular-material-extensions/password-strength
 >**Note**:If you are using `SystemJS`, you should adjust your configuration to point to the UMD bundle.
 In your systemjs config file, `map` needs to tell the System loader where to look for `@angular-material-extensions/password-strength`:
 ```js
-map: {
-  '@angular-material-extensions/password-strength': 'node_modules/@angular-material-extensions/password-strength/bundles/password-strength.umd.js',
+{
+  '@angular-material-extensions/password-strength';: 'node_modules/@angular-material-extensions/password-strength/bundles/password-strength.umd.js',
 }
 ```
 
