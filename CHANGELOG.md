@@ -1,3 +1,17 @@
+## [4.1.2](https://github.com/angular-material-extensions/password-strength/compare/v4.1.1...v4.1.2) (2020-01-11)
+
+
+### Bug Fixes
+
+* **demo:** change the primary material color from green to blue ([872d073](https://github.com/angular-material-extensions/password-strength/commit/872d073b0b3a1e9d7c40a70a71012ca186a6c02c))
+* **demo:** updated angular and other dependencies ([ab27d31](https://github.com/angular-material-extensions/password-strength/commit/ab27d315b4f2283cf80432df165fa80fc63d96d7))
+* **demo:** updated angular and other dependencies ([4ec3d79](https://github.com/angular-material-extensions/password-strength/commit/4ec3d795d3f4ab30055fd4cbc057ff8a9694893e))
+* **package:** updated angular and other dependencies ([a1d3efa](https://github.com/angular-material-extensions/password-strength/commit/a1d3efacb14f154a2942568bf422601e1492eddb))
+* **package:** updated angular and other dependencies ([e0f3fad](https://github.com/angular-material-extensions/password-strength/commit/e0f3fad5bac1d5a217ed52861dc0af4deac4b4ef))
+* **package:** updated rollup and webpack-cli to the latest version ([3269366](https://github.com/angular-material-extensions/password-strength/commit/3269366748cd689ef37b0e5d77e8803cfb3b0417))
+
+
+
 ## [4.1.1](https://github.com/angular-material-extensions/password-strength/compare/v4.1.0...v4.1.1) (2019-10-27)
 
 
