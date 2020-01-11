@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1572180251245,
+  "timestamp": 1578764792298,
   "index": "/password-strength/index.html",
   "assetGroups": [
     {
@@ -309,7 +309,7 @@
     "/password-strength/assets/tutorials/npm_i_material_cdk.mp4": "3b454f8357a55ff17bbc6d69ba034689a12945e7",
     "/password-strength/assets/tutorials/npm_i_ngx_material_password_strength.mp4": "c54e78c12b11fde3df2c491d9a610aa2abcffa6a",
     "/password-strength/favicon.ico": "84161b857f5c547e3699ddfbffc6d8d737542e01",
-    "/password-strength/index.html": "01854c0f05126508cc0cbc7ecc6a5ceb6b8f2887"
+    "/password-strength/index.html": "c8e0aaeec329d1f2575d3ffeced74bef9ee2212b"
   },
   "navigationUrls": [
     {
