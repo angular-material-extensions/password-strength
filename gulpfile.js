@@ -29,6 +29,7 @@ const jestCli = require('jest-cli');
 const runSequence = require('gulp4-run-sequence');
 
 /** To compile & bundle the library with Angular & Rollup */
+// TODO: Maybe this should get moved to cli like primeng? https://github.com/primefaces/primeng/blob/9.0.0-rc2/angular.json
 const ngc = (args) => new Promise((resolve, reject) => {// Promisify version of the ngc compiler
   // workaround from https://github.com/angular/angular/issues/32352
   let ngFsUtils = require('@angular/compiler-cli/src/ngtsc/file_system');
