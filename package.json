@@ -42,21 +42,21 @@
     "check-travis": " travis-status --repo=angular-material-extensions/password-strength --branch=master --fail-pending || echo 'Not yet passing'"
   },
   "dependencies": {
-    "@angular/animations": "^8.2.14",
+    "@angular/animations": "^9.0.0-rc.8",
     "@angular/cdk": "^8.2.3",
-    "@angular/common": "^8.2.14",
-    "@angular/core": "^8.2.14",
-    "@angular/forms": "^8.2.14",
+    "@angular/common": "^9.0.0-rc.8",
+    "@angular/core": "^9.0.0-rc.8",
+    "@angular/forms": "^9.0.0-rc.8",
     "@angular/material": "^8.2.3",
     "tslib": "^1.10.0"
   },
   "devDependencies": {
     "@angular-devkit/schematics": "^8.3.22",
-    "@angular/compiler": "^8.2.14",
-    "@angular/compiler-cli": "8.0.0",
-    "@angular/platform-browser": "^8.2.14",
-    "@angular/platform-browser-dynamic": "^8.2.14",
-    "@angular/platform-server": "^8.2.14",
+    "@angular/compiler": "^9.0.0-rc.8",
+    "@angular/compiler-cli": "9.0.0-rc.8",
+    "@angular/platform-browser": "^9.0.0-rc.8",
+    "@angular/platform-browser-dynamic": "^9.0.0-rc.8",
+    "@angular/platform-server": "^9.0.0-rc.8",
     "@compodoc/gulp-compodoc": "^0.0.10",
     "@types/jasmine": "^2.8.14",
     "@types/jest": "^23.3.14",
@@ -121,14 +121,14 @@
     "travis-status": "^3.0.1",
     "tsickle": "^0.34.3",
     "tslint": "~5.12.1",
-    "typescript": "~3.4.5",
+    "typescript": "~3.6.4",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10",
     "webpack-dev-middleware": "^3.7.2",
     "webpack-dev-server": "^3.10.1",
     "webpack-node-externals": "^1.7.2",
     "yargs": "^12.0.5",
-    "zone.js": "~0.9.1"
+    "zone.js": "~0.10.2"
   },
   "engines": {
     "node": ">=10.0.0"
