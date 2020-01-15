@@ -47,7 +47,8 @@
     "@angular/common": "^8.2.14",
     "@angular/core": "^8.2.14",
     "@angular/forms": "^8.2.14",
-    "@angular/material": "^8.2.3"
+    "@angular/material": "^8.2.3",
+    "tslib": "^1.10.0"
   },
   "devDependencies": {
     "@angular-devkit/schematics": "^8.3.22",
