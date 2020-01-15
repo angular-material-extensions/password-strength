@@ -26,10 +26,13 @@ const gulpCoveralls = require('gulp-coveralls');
 const jestCli = require('jest-cli');
 
 /** To order tasks */
-const runSequence = require('run-sequence');
+const runSequence = require('gulp4-run-sequence');
 
 /** To compile & bundle the library with Angular & Rollup */
 const ngc = (args) => new Promise((resolve, reject) => {// Promisify version of the ngc compiler
+  // workaround from https://github.com/angular/angular/issues/32352
+  let ngFsUtils = require('@angular/compiler-cli/src/ngtsc/file_system');
+  ngFsUtils.setFileSystem(new ngFsUtils.NodeJSFileSystem());
   let exitCode = require('@angular/compiler-cli/src/main').main(args);
   resolve(exitCode);
 });
@@ -213,7 +216,7 @@ gulp.task('clean:doc', () => {
   return del(`${config.outputDir}/doc`);
 });
 
-gulp.task('clean', ['clean:dist', 'clean:coverage', 'clean:build']);
+gulp.task('clean', gulp.series(['clean:dist', 'clean:coverage', 'clean:build']));
 
 /////////////////////////////////////////////////////////////////////////////
 // Compilation Tasks
@@ -281,9 +284,9 @@ gulp.task('compile', (cb) => {
 });
 
 // Build the 'dist' folder (without publishing it to NPM)
-gulp.task('build', ['clean'], (cb) => {
+gulp.task('build', gulp.series(['clean'], (cb) => {
   runSequence('compile', 'test', 'npm-package', 'rollup-bundle', cb);
-});
+}));
 
 gulp.task('build:schematics', () => {
   // return execDemoCmd(`build --preserve-symlinks --prod --aot --build-optimizer`, {cwd: `${config.demoDir}`});
@@ -307,14 +310,14 @@ gulp.task('build-watch-no-tests', (cb) => {
 });
 
 // Watch changes on (*.ts, *.html, *.sass) and Re-build library
-gulp.task('build:watch', ['build-watch'], () => {
+gulp.task('build:watch', gulp.series(['build-watch'], () => {
   gulp.watch([config.allTs, config.allHtml, config.allSass], ['build-watch']);
-});
+}));
 
 // Watch changes on (*.ts, *.html, *.sass) and Re-build library (without running tests)
-gulp.task('build:watch-fast', ['build-watch-no-tests'], () => {
+gulp.task('build:watch-fast', gulp.series(['build-watch-no-tests'], () => {
   gulp.watch([config.allTs, config.allHtml, config.allSass], ['build-watch-no-tests']);
-});
+}));
 
 
 /////////////////////////////////////////////////////////////////////////////
@@ -322,7 +325,7 @@ gulp.task('build:watch-fast', ['build-watch-no-tests'], () => {
 /////////////////////////////////////////////////////////////////////////////
 
 // Prepare 'dist' folder for publication to NPM
-gulp.task('npm-package', ['build:schematics'], (cb) => {
+gulp.task('npm-package', gulp.series(['build:schematics'], (cb) => {
   let pkgJson = JSON.parse(fs.readFileSync('./package.json', 'utf8'));
   let targetPkgJson = {};
   let fieldsToCopy = ['version', 'description', 'keywords', 'author', 'repository', 'license', 'bugs', 'homepage', 'schematics'];
@@ -355,7 +358,7 @@ gulp.task('npm-package', ['build:schematics'], (cb) => {
       gulpFile('package.json', JSON.stringify(targetPkgJson, null, 2)),
       gulp.dest(config.outputDir)
     ], cb);
-});
+}));
 
 // Bundles the library as UMD/FESM bundles using RollupJS
 gulp.task('rollup-bundle', (cb) => {
@@ -498,7 +501,7 @@ gulp.task('build:doc', (cb) => {
   ], cb);
 });
 
-gulp.task('serve:doc', ['clean:doc'], (cb) => {
+gulp.task('serve:doc', gulp.series(['clean:doc'], (cb) => {
   pump([
     gulp.src('src/**/*.ts'),
     gulpCompodoc({
@@ -507,7 +510,7 @@ gulp.task('serve:doc', ['clean:doc'], (cb) => {
       output: `${config.outputDir}/doc/`
     })
   ], cb);
-});
+}));
 
 
 /////////////////////////////////////////////////////////////////////////////
@@ -548,7 +551,7 @@ gulp.task('build:demo:prod', () => {
   return execDemoCmd(`build --preserve-symlinks --prod --aot --build-optimizer --base-href /password-strength/ --deploy-url /password-strength/`, {cwd: `${config.demoDir}`});
 });
 
-gulp.task('serve:demo-ssr', ['build:demo'], () => {
+gulp.task('serve:demo-ssr', gulp.series(['build:demo'], () => {
   return execDemoCmd(`build --preserve-symlinks --prod --aot --build-optimizer --app ssr --output-hashing=none`, {cwd: `${config.demoDir}`})
     .then(exitCode => {
         if (exitCode === 0) {
@@ -559,9 +562,9 @@ gulp.task('serve:demo-ssr', ['build:demo'], () => {
         }
       }
     );
-});
+}));
 
-gulp.task('build:demo-ssr', ['build:demo'], () => {
+gulp.task('build:demo-ssr', gulp.series(['build:demo'], () => {
   return execDemoCmd(`run password-strength:server:production`, {cwd: `${config.demoDir}`})
     .then(exitCode => {
         if (exitCode === 0) {
@@ -572,7 +575,7 @@ gulp.task('build:demo-ssr', ['build:demo'], () => {
         }
       }
     );
-});
+}));
 
 gulp.task('push:demo', () => {
   return execCmd('ngh', `--dir ${config.outputDemoDir} --message="chore(demo): :rocket: deploy new version"`);
@@ -598,9 +601,9 @@ gulp.task('test', (cb) => {
   });
 });
 
-gulp.task('test:ci', ['clean'], (cb) => {
+gulp.task('test:ci', gulp.series(['clean'], (cb) => {
   runSequence('compile', 'test');
-});
+}));
 
 gulp.task('test:watch', (cb) => {
   return jestCli.runCLI({config: require('./package.json').jest, watch: true}, ".").then(({results}) => {
@@ -624,9 +627,9 @@ gulp.task('test:karma', (cb) => {
   startKarmaServer(false, true, cb);
 });
 
-gulp.task('test:karma:ci', ['clean'], (cb) => {
+gulp.task('test:karma:ci', gulp.series(['clean'], (cb) => {
   runSequence('compile', 'test');
-});
+}));
 
 gulp.task('test:karma:watch', (cb) => {
   const ENV = process.env.NODE_ENV = process.env.ENV = 'test';
@@ -705,9 +708,9 @@ gulp.task('create-new-tag', (cb) => {
 });
 
 // Build and then Publish 'dist' folder to NPM
-gulp.task('npm-publish', ['build'], () => {
+gulp.task('npm-publish', gulp.series(['build'], () => {
   return execExternalCmd('npm', `publish ${config.outputDir} --access public`)
-});
+}));
 
 // Perfom pre-release checks (no actual release)
 gulp.task('pre-release', cb => {
@@ -768,7 +771,7 @@ gulp.task('coveralls', (cb) => {
     ], cb);
 });
 
-gulp.task('default', ['build']);
+gulp.task('default', gulp.series(['build']));
 
 // Load additional tasks
 gulpHub(['./config/gulp-tasks/*.js']);

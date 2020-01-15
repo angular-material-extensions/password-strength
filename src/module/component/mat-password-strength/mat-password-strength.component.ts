@@ -1,6 +1,6 @@
 import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
 import {FormControl, ValidatorFn, Validators} from '@angular/forms';
-import {ThemePalette} from '@angular/material';
+import {ThemePalette} from '@angular/material/core';
 import {Criteria} from '../../enum/criteria.enum';
 import {Colors} from '../../enum/colors.enum';
 import {MatPasswordStrengthValidator} from '../../validator/mat-password-strength-validator';
