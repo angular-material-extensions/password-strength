@@ -1,7 +1,8 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
 import {MatPasswordStrengthInfoComponent} from './mat-password-strength-info.component';
-import {MatCardModule, MatIconModule} from '@angular/material';
+import {MatCardModule} from '@angular/material/card';
+import {MatIconModule} from '@angular/material/icon';
 import {MatPasswordStrengthComponent} from '../mat-password-strength/mat-password-strength.component';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 import {By} from '@angular/platform-browser';
