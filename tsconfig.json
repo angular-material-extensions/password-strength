@@ -17,7 +17,13 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@angular-material-extensions/password-strength": [
+        "dist/angular-material-extensions/password-strength/angular-material-extensions-password-strength",
+        "dist/angular-material-extensions/password-strength"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
