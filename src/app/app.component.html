@@ -235,17 +235,17 @@
     align-items: center;
     font-size: 12px;
     padding: 3px 10px;
-    border: 1px solid rgba(27,31,35,.2);
+    border: 1px solid rgba(27, 31, 35, .2);
     border-radius: 3px;
-    background-image: linear-gradient(-180deg,#fafbfc,#eff3f6 90%);
+    background-image: linear-gradient(-180deg, #fafbfc, #eff3f6 90%);
     margin-left: 4px;
     font-weight: 600;
-    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   }
 
   .github-star-badge:hover {
-    background-image: linear-gradient(-180deg,#f0f3f6,#e6ebf1 90%);
-    border-color: rgba(27,31,35,.35);
+    background-image: linear-gradient(-180deg, #f0f3f6, #e6ebf1 90%);
+    border-color: rgba(27, 31, 35, .35);
     background-position: -.5em;
   }
 
@@ -267,7 +267,7 @@
   /* Responsive Styles */
   @media screen and (max-width: 767px) {
 
-    .card-container > *:not(.circle-link) ,
+    .card-container > *:not(.circle-link),
     .terminal {
       width: 100%;
     }
@@ -379,7 +379,8 @@
   <p>Here are some links to help you get started:</p>
 
   <div class="card-container">
-    <a class="card" href="https://github.com/angular-material-extensions/password-strength" rel="noopener" target="_blank">
+    <a class="card" href="https://github.com/angular-material-extensions/password-strength" rel="noopener"
+       target="_blank">
       <svg height="24" version="1.1" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
         <path
           d="M12,2C6.48,2 2,6.48 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12C22,6.48 17.52,2 12,2Z"/>
@@ -434,17 +435,260 @@
   <!-- Usage -->
   <h2>Usage</h2>
 
-  <mat-card class="card-container-example">
-    <mat-card-content>
+  <div class="password-container" fxLayout="column">
+    <mat-toolbar *ngIf="true" style="max-width: 100%">
+      @angular-material-extensions/password-strength
+      <span fxFlex></span>
 
-    </mat-card-content>
-  </mat-card>
+      <button mat-icon-button
+              color="accent"
+              matTooltip="view source"
+              (click)="viewSource2 = !viewSource2">
+        <mat-icon>code</mat-icon>
+      </button>
+    </mat-toolbar>
+    <mat-card>
+      <mat-card-subtitle>
+        stand alone password component
+      </mat-card-subtitle>
 
-  <!--    <mat-password-strength color="primary" [fabButtons]="fabButtons" direction="top"></mat-password-strength>-->
-<!--  <mat-password-strength class="fix-bottom-right" color="primary" [fabButtons]="fabCountries" direction="top"></mat-password-strength>-->
 
+      <mat-card-content *ngIf="viewSource2">
+        <mat-tab-group>
+          <!--tab 1-->
+          <mat-tab>
+            <ng-template mat-tab-label>HTML</ng-template>
+            <!--            <markdown src="assets/md/home/e1/html.md"></markdown>-->
+          </mat-tab>
 
-<!--    <markdown src="assets/md/html.md"></markdown>-->
+          <mat-tab>
+            <ng-template mat-tab-label>TS</ng-template>
+            <!--            <markdown src="assets/md/home/e1/ts.md"></markdown>-->
+          </mat-tab>
+        </mat-tab-group>
+      </mat-card-content>
+
+      <mat-card-subtitle>
+        <mat-slide-toggle [(ngModel)]="showDetails">Show Password Details</mat-slide-toggle>
+      </mat-card-subtitle>
+
+      <mat-card-content>
+        <!--password input filed-->
+        <mat-form-field appearance="outline" style="width: 100%" [color]="passwordComponent.color">
+          <mat-label>Password</mat-label>
+          <mat-pass-toggle-visibility #toggle matSuffix></mat-pass-toggle-visibility>
+          <input matInput #password
+                 [type]="toggle.type"
+                 required
+                 placeholder="Password">
+          <mat-hint align="end" aria-live="polite">
+            {{password.value.length}} / {{passwordComponent.max}}
+          </mat-hint>
+        </mat-form-field>
+
+        <!--@angular-material-extensions/password-strength's main component-->
+        <mat-password-strength #passwordComponent
+                               (onStrengthChanged)="onStrengthChanged($event)"
+                               [password]="password.value">
+        </mat-password-strength>
+
+        <!--Password's strength info-->
+        <mat-password-strength-info
+          *ngIf="showDetails"
+          [passwordComponent]="passwordComponent">
+        </mat-password-strength-info>
+
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <!--NGX-MATERIAL-PASSWORD-STRENGTH WITH VALIDATION AND FORM CONTROLLER-->
+  <div class="password-container" fxLayout="column">
+    <mat-toolbar>
+      @angular-material-extensions/password-strength
+      <span fxFlex></span>
+
+      <button mat-icon-button
+              color="accent"
+              matTooltip="view source"
+              (click)="viewSource = !viewSource">
+        <mat-icon>code</mat-icon>
+      </button>
+    </mat-toolbar>
+    <mat-card>
+      <mat-card-subtitle>
+        client side password validation with angular built in form controller
+      </mat-card-subtitle>
+      <mat-card-subtitle>
+        <mat-slide-toggle [(ngModel)]="showDetails2">Show Password Details</mat-slide-toggle>
+      </mat-card-subtitle>
+
+      <mat-card-content *ngIf="viewSource">
+        <mat-tab-group>
+          <!--tab 1-->
+          <mat-tab>
+            <ng-template mat-tab-label>HTML</ng-template>
+            <!--            <markdown src="assets/md/home/e2/html.md"></markdown>-->
+          </mat-tab>
+
+          <mat-tab>
+            <ng-template mat-tab-label>TS</ng-template>
+            <!--            <markdown src="assets/md/home/e2/ts.md"></markdown>-->
+          </mat-tab>
+        </mat-tab-group>
+      </mat-card-content>
+
+      <mat-card-content>
+
+        <!--password input filed-->
+        <mat-form-field appearance="outline" [color]="passwordComponentWithValidation.color" style="width: 100%">
+          <mat-label>Password</mat-label>
+          <mat-pass-toggle-visibility #toggle2 matSuffix></mat-pass-toggle-visibility>
+          <input matInput #passwordWithValidation
+                 [type]="toggle2.type"
+                 required
+                 [formControl]="passwordComponentWithValidation.passwordFormControl"
+                 placeholder="Password">
+
+          <!--password hint-->
+          <mat-hint align="end" aria-live="polite">
+            {{passwordWithValidation.value.length}} / {{passwordComponentWithValidation.max}}
+          </mat-hint>
+
+          <!--password error msgs-->
+          <mat-error *ngIf="passwordComponentWithValidation.passwordFormControl.hasError('required')">
+            Password is required
+          </mat-error>
+          <mat-error *ngIf="passwordComponentWithValidation.passwordFormControl.hasError('pattern')">
+            Password is not valid
+          </mat-error>
+
+        </mat-form-field>
+
+        <!--@angular-material-extensions/password-strength's main component-->
+        <mat-password-strength #passwordComponentWithValidation
+                               (onStrengthChanged)="onStrengthChanged($event)"
+                               [password]="passwordWithValidation.value">
+        </mat-password-strength>
+
+        <!--Password's strength info-->
+        <mat-password-strength-info
+          *ngIf="showDetails2"
+          [passwordComponent]="passwordComponentWithValidation">
+        </mat-password-strength-info>
+
+      </mat-card-content>
+
+    </mat-card>
+  </div>
+
+  <!--    CONFIRM PASSWORD-->
+  <div class="password-container"  fxLayout="column">
+    <mat-toolbar>
+      @angular-material-extensions/password-strength
+      <span fxFlex></span>
+
+      <button mat-icon-button
+              color="accent"
+              matTooltip="view source"
+              (click)="viewSource3 = !viewSource3">
+        <mat-icon>code</mat-icon>
+      </button>
+    </mat-toolbar>
+
+    <mat-card>
+      <mat-card-subtitle>
+        confirm your password with angular form group
+      </mat-card-subtitle>
+      <mat-card-subtitle>
+        <mat-slide-toggle [(ngModel)]="showDetails3"
+                          [ngModelOptions]="{standalone: true}">
+          Show Password Details
+        </mat-slide-toggle>
+      </mat-card-subtitle>
+
+      <mat-card-content *ngIf="viewSource3">
+        <mat-tab-group>
+          <!--tab 1-->
+          <mat-tab>
+            <ng-template mat-tab-label>HTML</ng-template>
+            <markdown src="assets/md/home/e1/html.md"></markdown>
+          </mat-tab>
+
+          <mat-tab>
+            <ng-template mat-tab-label>TS</ng-template>
+            <markdown src="assets/md/home/e1/ts.md"></markdown>
+          </mat-tab>
+        </mat-tab-group>
+      </mat-card-content>
+
+      <mat-card-content>
+
+        <!--password input filed-->
+        <mat-form-field appearance="outline" [color]="passwordComponentWithConfirmation.color" style="width: 100%">
+          <mat-label>Password</mat-label>
+          <mat-pass-toggle-visibility #toggle3 matSuffix></mat-pass-toggle-visibility>
+          <input matInput #passwordWithConfirmation
+                 [type]="toggle3.type"
+                 [formControl]="passwordComponentWithConfirmation.passwordFormControl"
+                 placeholder="Password"
+                 required>
+
+          <!--password hint-->
+          <mat-hint align="end" aria-live="polite">
+            {{passwordWithConfirmation.value.length}} / {{passwordComponentWithConfirmation.max}}
+          </mat-hint>
+
+          <mat-error *ngIf="passwordComponentWithConfirmation.passwordFormControl.hasError('required')">
+            Password is required
+          </mat-error>
+          <mat-error *ngIf="passwordComponentWithConfirmation.passwordFormControl.hasError('pattern')">
+            Password is not valid
+          </mat-error>
+
+        </mat-form-field>
+
+        <!--@angular-material-extensions/password-strength's main component-->
+        <mat-password-strength #passwordComponentWithConfirmation
+                               (onStrengthChanged)="onStrengthChanged($event)"
+                               [password]="passwordWithConfirmation.value">
+        </mat-password-strength>
+
+        <!--Password's strength info-->
+        <mat-password-strength-info
+          *ngIf="showDetails3"
+          [passwordComponent]="passwordComponentWithConfirmation">
+        </mat-password-strength-info>
+
+        <!--password input field for confirmation-->
+        <mat-form-field appearance="outline" class="mt-3" style="width: 100%">
+          <mat-label>Confirm Password</mat-label>
+          <mat-pass-toggle-visibility #toggleConfirmPassword matSuffix></mat-pass-toggle-visibility>
+          <input matInput #passwordToConfirm
+                 [type]="toggleConfirmPassword.type"
+                 [formControl]="passwordComponentWithConfirmation.passwordConfirmationFormControl"
+                 placeholder="Password">
+
+          <!-- password hint-->
+          <mat-hint align="end" aria-live="polite">
+            {{passwordToConfirm.value.length}} / {{passwordComponentWithConfirmation.max}}
+          </mat-hint>
+
+          <!-- password error msgs-->
+          <mat-error *ngIf="passwordComponentWithConfirmation.passwordConfirmationFormControl.hasError('required')">
+            Password confirmation is required
+          </mat-error>
+          <mat-error
+            *ngIf="passwordComponentWithConfirmation.passwordConfirmationFormControl.hasError('notConfirmed')">
+            Password is not the same
+          </mat-error>
+
+        </mat-form-field>
+
+      </mat-card-content>
+
+    </mat-card>
+  </div>
 
   <p>For more info, please read the official readme - see the links above GITHUB - DOCS - NPM</p>
 
@@ -627,7 +871,6 @@
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
 
 
 <router-outlet></router-outlet>
