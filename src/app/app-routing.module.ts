@@ -1,13 +1,21 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
+import {InitExampleComponent} from './init-example/init-example.component';
 
 
-const routes: Routes = [];
+const routes: Routes = [
+  {path: '', component: InitExampleComponent},
+  {
+    path: 'examples',
+    loadChildren: () => import('src/app/examples/examples.module').then(m => m.ExamplesModule)
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, {
     initialNavigation: 'enabled'
-})],
+  })],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

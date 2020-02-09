@@ -692,6 +692,8 @@
 
   <p>For more info, please read the official readme - see the links above GITHUB - DOCS - NPM</p>
 
+  <router-outlet></router-outlet>
+
   <!--  </div>-->
 
   <!-- Next Steps -->
@@ -714,7 +716,7 @@
         <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
       </svg>
 
-      <span>password-strength</span>
+      <span>fab-menu</span>
     </div>
 
     <div (click)="selection.value = 'dependency'" class="card card-small" tabindex="0">
@@ -745,7 +747,7 @@
   <!-- Terminal -->
   <div [ngSwitch]="selection.value" class="terminal">
     <pre *ngSwitchDefault>ng add ngx-auth-firebaseui</pre>
-    <pre *ngSwitchCase="'material'">ng add @angular-material-extensions/password-strength</pre>
+    <pre *ngSwitchCase="'material'">ng add @angular-material-extensions/fab-menu</pre>
     <pre *ngSwitchCase="'dependency'">ng add @angular-material-extensions/google-maps-autocomplete </pre>
     <pre *ngSwitchCase="'test'">ng add @angular-material-extensions/pages</pre>
     <pre *ngSwitchCase="'build'">ng add @angular-material-extensions/links-preview </pre>
@@ -872,5 +874,3 @@
 <!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
-
-<router-outlet></router-outlet>
