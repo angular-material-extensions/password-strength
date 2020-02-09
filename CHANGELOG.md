@@ -1,3 +1,11 @@
+# [6.0.0](https://github.com/angular-material-extensions/password-strength/compare/5.1.0...6.0.0) (2020-02-09)
+
+
+### Bug Fixes
+
+* **project:** support angular v9 ([6f04171](https://github.com/angular-material-extensions/password-strength/commit/6f04171dddda1606c6bd2a14315b526ea1a91d3b))
+* **project:** support angular v9 ([96397b9](https://github.com/angular-material-extensions/password-strength/commit/96397b9519a6d66e8384fdae1f5e04fd96448795))
+
 
 
 # [5.1.0](https://github.com/angular-material-extensions/password-strength/compare/5.0.0...5.1.0) (2020-02-09)
