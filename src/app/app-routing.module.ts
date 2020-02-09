@@ -6,6 +6,10 @@ import {InitExampleComponent} from './init-example/init-example.component';
 const routes: Routes = [
   {path: '', component: InitExampleComponent},
   {
+    path: 'getting-started',
+    loadChildren: () => import('src/app/getting-started/getting-started.module').then(m => m.GettingStartedModule)
+  },
+  {
     path: 'examples',
     loadChildren: () => import('src/app/examples/examples.module').then(m => m.ExamplesModule)
   }

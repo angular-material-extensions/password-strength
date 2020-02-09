@@ -1,0 +1,721 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1>Getting Started</h1>
+  </div>
+</div>
+
+<section class="getting-started">
+  <div class="container">
+
+    <mat-pages title="@angular-material-extensions/password-strength">
+
+      <!--1-->
+      <mat-page-loader>
+        <mat-page-outlook title="Setup Development Environment">
+        </mat-page-outlook>
+        <mat-page-content>
+          <mat-card-title>Please make sure that you have <a href="https://nodejs.org/en/" mat-button
+                                                            color="primary">NodeJS</a>
+            and <a href="https://www.npmjs.com/package/npm" mat-button
+                   color="primary">npm</a> running on your machine in order to be able to develop some wonderful apps.
+          </mat-card-title>
+          <mat-card>
+            <mat-card-content fxLayout="row" fxLayoutAlign="space-between">
+              <pre><code [highlight]="'$ node -v'"></code></pre>
+              <button mat-icon-button
+                      ngxClipboard
+                      [cbContent]="'node -v'"
+                      matTooltip="copy"
+                      (click)="showCopyMessage('node -v')">
+                <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
+              </button>
+            </mat-card-content>
+            <mat-divider></mat-divider>
+          </mat-card>
+          <mat-card>
+            <mat-card-content fxLayout="row" fxLayoutAlign="space-between">
+              <pre><code [highlight]="'$ npm -v'"></code></pre>
+              <button mat-icon-button
+                      ngxClipboard
+                      [cbContent]="'node -v'"
+                      matTooltip="copy"
+                      (click)="showCopyMessage('npm -v')">
+                <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
+              </button>
+            </mat-card-content>
+            <mat-divider></mat-divider>
+            <mat-card-footer fxLayoutAlign="center" style="flex-wrap: wrap">
+              <a href="https://nodejs.org/en/download/" mat-button
+                 color="primary"> If they are not already downloaded, please install Node.js and npm </a>
+            </mat-card-footer>
+          </mat-card>
+          <mat-card>
+            <mat-card-subtitle>
+              Check if <a href="https://cli.angular.io/" mat-button
+                          color="primary">angular cli </a> is already installed globally
+            </mat-card-subtitle>
+            <mat-card-content>
+              <div fxLayout="row" fxLayoutAlign="space-between">
+                <pre><code [highlight]="'$ ng -v'"></code></pre>
+                <button mat-icon-button
+                        ngxClipboard
+                        [cbContent]="'ng -v'"
+                        matTooltip="copy"
+                        (click)="showCopyMessage('ng -v')">
+                  <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
+                </button>
+              </div>
+              <p>If angular cli is installed on you machine, you should get something like this</p>
+
+              <pre><code [highlight]="ngVersion"></code></pre>
+
+              <p>If not please run the following command to install angular cli globally in order to create an angular
+                project</p>
+
+              <div fxLayout="row" fxLayoutAlign="space-between">
+                <pre><code [highlight]="'$ npm install -g @angular/cli'"></code></pre>
+                <button mat-icon-button
+                        ngxClipboard
+                        [cbContent]="'npm install -g @angular/cli'"
+                        matTooltip="copy"
+                        (click)="showCopyMessage('npm install -g @angular/cli')">
+                  <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
+                </button>
+              </div>
+            </mat-card-content>
+          </mat-card>
+        </mat-page-content>
+      </mat-page-loader>
+
+      <!--2-->
+      <mat-page-loader>
+        <mat-page-outlook title="Setup Angular App">
+        </mat-page-outlook>
+        <mat-page-content>
+          <mat-card-title> Time to begin with Angular</mat-card-title>
+          <p>If you have already a setup angular project, you can skip this step, otherwise you can generate a project
+            via the angular cli by running the following</p>
+          <div fxLayout="row" fxLayoutAlign="space-between">
+            <pre><code [highlight]="'$ ng new yourappname'"></code></pre>
+            <button mat-icon-button
+                    ngxClipboard
+                    [cbContent]="'ng new yourappname'"
+                    matTooltip="copy"
+                    (click)="showCopyMessage('ng new yourappname')">
+              <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
+            </button>
+          </div>
+          <div fxLayout="column" fxLayoutAlign="center">
+            <video *ngIf="true" controls autoplay loop>
+              <source
+                src="assets/tutorials/ng_g_appname2.mp4"
+                type="video/mp4">
+            </video>
+
+            <div class="comment-container">
+              <p>waiting......</p>
+            </div>
+
+            <video *ngIf="true" controls autoplay loop>
+              <source
+                src="assets/tutorials/ng_g_appname_done2.mp4"
+                type="video/mp4">
+            </video>
+
+            <div class="comment-container">
+              <p> When the angular cli is done with generating the project, navigate to you your app
+                and check the project structure.</p>
+            </div>
+
+            <video *ngIf="true" controls autoplay loop>
+              <source
+                src="assets/tutorials/cd_angularapp.mp4"
+                type="video/mp4">
+            </video>
+          </div>
+        </mat-page-content>
+      </mat-page-loader>
+
+      <!--3-->
+      <mat-page-loader>
+        <mat-page-outlook title="Peer dependencies">
+        </mat-page-outlook>
+        <mat-page-content>
+          <mat-card-title>Animations + Material + CDK</mat-card-title>
+          <div class="comment-container">
+            <p><a href="https://www.npmjs.com/package/@angular-material-extensions/password-strength"
+                  mat-button
+                  color="primary">
+              @angular-material-extensions/password-strength
+            </a>
+              is built on the top of
+              <a href="https://www.npmjs.com/package/@angular/material"
+                 mat-button
+                 color="primary">
+                angular material
+              </a> and
+              <a href="https://www.npmjs.com/package/@angular/cdk"
+                 mat-button
+                 color="primary">
+                angular component development kit
+              </a> ! That's why we need to install them as peer dependencies to the @angular-material-extensions/password-strength
+              module.
+            </p>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="space-between">
+            <pre><code [highlight]="'$ npm i -s @angular/material @angular/cdk'"></code></pre>
+            <button mat-icon-button
+                    ngxClipboard
+                    [cbContent]="'npm i -s @angular/material @angular/cdk'"
+                    matTooltip="copy"
+                    (click)="showCopyMessage('npm i -s @angular/material @angular/cdk')">
+              <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
+            </button>
+          </div>
+          <div fxLayoutAlign="center">
+            <video *ngIf="true" controls autoplay loop>
+              <source
+                src="assets/tutorials/npm_i_material_cdk.mp4"
+                type="video/mp4">
+            </video>
+          </div>
+          <div class="comment-container">
+            <p>
+              Furthermore, <a href="https://www.npmjs.com/package/@angular/animations"
+                              mat-button
+                              color="primary">
+              angular animations
+            </a> is required too to provide advanced transitions between the components.
+            </p>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="space-between">
+            <pre><code [highlight]="'$ npm i -s @angular/animations'"></code></pre>
+            <button mat-icon-button
+                    ngxClipboard
+                    [cbContent]="'npm i -s @angular/animations'"
+                    matTooltip="copy"
+                    (click)="showCopyMessage('npm i -s @angular/animations')">
+              <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
+            </button>
+          </div>
+          <div fxLayoutAlign="center">
+            <video *ngIf="true" controls autoplay loop>
+              <source
+                src="assets/tutorials/npm_i_animations.mp4"
+                type="video/mp4">
+            </video>
+          </div>
+          <div class="comment-container">
+            <p>Now it's time to import the animations module.</p>
+          </div>
+          <mat-card>
+            <mat-card-content>
+              <pre><code [highlight]="importBrowserAnimationsModule"></code></pre>
+            </mat-card-content>
+          </mat-card>
+          <mat-card-footer fxLayoutAlign="center">
+            <a href="https://material.angular.io/guide/getting-started#step-2-animations"
+               mat-button color="primary">Learn more</a>
+          </mat-card-footer>
+        </mat-page-content>
+      </mat-page-loader>
+
+      <!--4-->
+      <mat-page-loader>
+        <mat-page-outlook title="Material Theme">
+        </mat-page-outlook>
+        <mat-page-content>
+          <mat-card-title>Styling and more...</mat-card-title>
+          <div class="comment-container">
+            <p>In order to use angular material/ material design, we need include at least one theme.
+              To get started, you can just import one of the prebuilt material themes from the angular material module
+              in your style.css file.</p>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="space-between">
+            <pre><code [highlight]="importMaterialThemeSCSS"></code></pre>
+            <button mat-icon-button
+                    ngxClipboard
+                    [cbContent]="importMaterialThemeSCSS"
+                    matTooltip="copy"
+                    (click)="showCopyMessage(importMaterialThemeSCSS)">
+              <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
+            </button>
+          </div>
+          <div fxLayoutAlign="center">
+            <video *ngIf="true" controls autoplay loop>
+              <source
+                src="assets/tutorials/import_theme.mp4"
+                type="video/mp4">
+            </video>
+          </div>
+          <div class="comment-container">
+            <p>Or create your own material theme and import it in the style.css file</p>
+          </div>
+          <div fxLayoutAlign="center">
+            <video *ngIf="true" controls autoplay loop>
+              <source
+                src="assets/tutorials/import_custom_theme.mp4"
+                type="video/mp4">
+            </video>
+          </div>
+          <mat-card>
+            <mat-card-subtitle>Custom material theme</mat-card-subtitle>
+            <mat-card-content>
+              <div fxLayout="row" fxLayoutAlign="space-between">
+                <pre><code [highlight]="customMaterialTheme"></code></pre>
+                <button mat-icon-button
+                        ngxClipboard
+                        [cbContent]="customMaterialTheme"
+                        matTooltip="copy"
+                        (click)="showCopyMessage(customMaterialTheme)">
+                  <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
+                </button>
+              </div>
+            </mat-card-content>
+          </mat-card>
+          <div fxLayoutAlign="center">
+            <a href="https://material.angular.io/guide/theming"
+               mat-button color="primary">Learn more about angular material themes</a>
+          </div>
+        </mat-page-content>
+      </mat-page-loader>
+
+      <!--5-->
+      <mat-page-loader>
+        <mat-page-outlook title="Material Icons">
+        </mat-page-outlook>
+        <mat-page-content>
+          <mat-card-title>Linking the icons</mat-card-title>
+          <div class="comment-container">
+            <p>The easiest way to load the material design icons is to provide the
+              following link in your
+            <p>
+            <pre><code [highlight]="'index.html '"></code></pre>
+            <p>file </p>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="space-between">
+            <pre><code [highlight]="materialIconsLink"></code></pre>
+            <button mat-icon-button
+                    ngxClipboard
+                    [cbContent]="materialIconsLink"
+                    matTooltip="copy"
+                    (click)="showCopyMessage(materialIconsLink)">
+              <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
+            </button>
+          </div>
+          <div fxLayoutAlign="center">
+            <video *ngIf="true" controls autoplay loop>
+              <source
+                src="assets/tutorials/link_material_design_icons.mp4"
+                type="video/mp4">
+            </video>
+          </div>
+          <div class="comment-container">
+            <p>Or, if you want to host the material design icons by yourself, please follow these two steps.</p>
+          </div>
+
+          <div class="comment-container">
+            <p>First, install the <a href="https://www.npmjs.com/package/material-design-icons"
+                                     mat-button color="primary">material design icons' npm module</a></p>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="space-between">
+            <pre><code [highlight]="'$ npm i -s material-design-icons'"></code></pre>
+            <button mat-icon-button
+                    ngxClipboard
+                    [cbContent]="'npm i -s material-design-icons'"
+                    matTooltip="copy"
+                    (click)="showCopyMessage('npm i -s material-design-icons')">
+              <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
+            </button>
+          </div>
+          <div class="comment-container">
+            <p>After that, you need to update you
+            <p>
+            <!--<pre><code highlight [highlight]="'angular-cli.json'"></code></pre>-->
+            <p>files. Under the styles sections, add
+              the path of the material design icons in order to be imported to your distribution files
+              when you build your app. <i>See below</i></p>
+          </div>
+          <div class="comment-container">
+            <p>First of all, copy the path of the material design icons</p>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="space-between">
+            <pre><code [highlight]="'../node_modules/material-design-icons/iconfont/material-icons.css'"></code></pre>
+            <button mat-icon-button
+                    ngxClipboard
+                    [cbContent]="'../node_modules/material-design-icons/iconfont/material-icons.css'"
+                    matTooltip="copy"
+                    (click)="showCopyMessage('../node_modules/material-design-icons/iconfont/material-icons.css')">
+              <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
+            </button>
+          </div>
+          <div class="comment-container">
+            <p>Adjust your angular-cli.json file</p>
+          </div>
+          <mat-card-subtitle>Before</mat-card-subtitle>
+          <div fxLayout="row" fxLayoutAlign="space-between">
+            <pre><code [highlight]="stylesBeforeImportMDI"></code></pre>
+            <button mat-icon-button
+                    ngxClipboard
+                    [cbContent]="stylesBeforeImportMDI"
+                    matTooltip="copy"
+                    (click)="showCopyMessage(stylesBeforeImportMDI)">
+              <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
+            </button>
+          </div>
+          <mat-card-subtitle>After</mat-card-subtitle>
+          <div fxLayout="row" fxLayoutAlign="space-between">
+            <pre><code [highlight]="stylesAfterImportMDI"></code></pre>
+            <button mat-icon-button
+                    ngxClipboard
+                    [cbContent]="stylesAfterImportMDI"
+                    matTooltip="copy"
+                    (click)="showCopyMessage(stylesAfterImportMDI)">
+              <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
+            </button>
+          </div>
+          <div fxLayoutAlign="center">
+            <video *ngIf="true" controls autoplay loop>
+              <source
+                src="assets/tutorials/material_design_icons_self_hosting.mp4"
+                type="video/mp4">
+            </video>
+          </div>
+          <div class="comment-container">
+            <p>Great! You are done with the basics
+              <mat-icon color="accent">done</mat-icon>
+            </p>
+          </div>
+        </mat-page-content>
+      </mat-page-loader>
+
+      <!--6-->
+      <mat-page-loader>
+        <mat-page-outlook title="Installation">
+        </mat-page-outlook>
+        <mat-page-content>
+          <mat-card-title>Here we go
+            <mat-icon>flight_takeoff</mat-icon>
+          </mat-card-title>
+          <div class="comment-container">
+            Open a new terminal and run the following command to get
+            <a href="https://www.npmjs.com/package/@angular-material-extensions/password-strength" mat-button
+               color="primary">@angular-material-extensions/password-strength</a>
+            from npm
+          </div>
+          <div fxLayout="row" fxLayoutAlign="space-between">
+            <pre><code [highlight]="'$ npm i -s @angular-material-extensions/password-strength'"></code></pre>
+            <button mat-icon-button
+                    ngxClipboard
+                    [cbContent]="'npm i -s @angular-material-extensions/password-strength'"
+                    matTooltip="copy"
+                    (click)="showCopyMessage('npm i -s @angular-material-extensions/password-strength')">
+              <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
+            </button>
+          </div>
+          <div fxLayoutAlign="center">
+            <video *ngIf="true" controls autoplay loop>
+              <source
+                src="assets/tutorials/npm_i_ngx_material_password_strength.mp4"
+                type="video/mp4">
+            </video>
+          </div>
+          <div class="comment-container">
+            <p>Now you just need to import the library </p>
+          </div>
+          <mat-card>
+            <mat-card-title>SystemJS</mat-card-title>
+            <mat-card-subtitle>
+              Note:If you are using SystemJS, you should adjust your configuration to point to the UMD
+              bundle. In your systemjs config file, map needs to tell the System loader where to look for
+              @angular-material-extensions/password-strength
+            </mat-card-subtitle>
+            <mat-card-content>
+              <div fxLayout="row" fxLayoutAlign="space-between">
+                 <pre><code [highlight]="systemJSModuleImport"></code></pre>
+                <button mat-icon-button
+                        ngxClipboard
+                        [cbContent]="systemJSModuleImport"
+                        matTooltip="copy"
+                        (click)="showCopyMessage(systemJSModuleImport)">
+                  <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
+                </button>
+              </div>
+            </mat-card-content>
+          </mat-card>
+          <div class="comment-container">
+            <p>Once installed you need to import the main module:</p>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="space-between">
+                 <pre><code [highlight]="importMatPasswordStrengthModule"></code></pre>
+            <button mat-icon-button
+                    ngxClipboard
+                    [cbContent]="importMatPasswordStrengthModule"
+                    matTooltip="copy"
+                    (click)="showCopyMessage(importMatPasswordStrengthModule)">
+              <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
+            </button>
+          </div>
+          <div class="comment-container">
+            <p>The only remaining part is to list the imported module in your application module. The exact method
+              will be slightly different for the root (top-level) module for which you should end up with the code
+              similar to (notice MatPasswordStrengthModule .forRoot()):
+
+              NB: please do not forget to import the angular animations module in your root component too!
+              (usally app.component.ts)</p>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="space-between">
+                 <pre><code [highlight]="importMatPasswordStrengthModuleInAppModule"></code></pre>
+            <button mat-icon-button
+                    ngxClipboard
+                    [cbContent]="importMatPasswordStrengthModuleInAppModule"
+                    matTooltip="copy"
+                    (click)="showCopyMessage(importMatPasswordStrengthModuleInAppModule)">
+              <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
+            </button>
+          </div>
+          <div class="comment-container">
+            <p>Other modules in your application can simply import MatPasswordStrengthModule:</p>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="space-between">
+                 <pre><code [highlight]="importMatPasswordStrengthModuleInOtherModule"></code></pre>
+            <button mat-icon-button
+                    ngxClipboard
+                    [cbContent]="importMatPasswordStrengthModuleInOtherModule"
+                    matTooltip="copy"
+                    (click)="showCopyMessage(importMatPasswordStrengthModuleInOtherModule)">
+              <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
+            </button>
+          </div>
+        </mat-page-content>
+      </mat-page-loader>
+
+      <!--7-->
+      <mat-page-loader>
+        <mat-page-outlook title="Usage">
+        </mat-page-outlook>
+        <mat-page-content>
+          <mat-card-title>Library's components</mat-card-title>
+          <mat-card-subtitle>This library consists of 2 components.</mat-card-subtitle>
+          <mat-card-content>
+
+            <div class="comment-container">
+              <p>Add the following to your template</p>
+
+              <pre><code [highlight]="componentExample"></code></pre>
+
+            </div>
+          </mat-card-content>
+
+          <mat-card>
+            <mat-card-title>Example</mat-card-title>
+            <mat-card-content>
+              <div fxLayout="row" fxLayoutAlign="space-between">
+                 <pre><code [highlight]="example"></code></pre>
+                <button mat-icon-button
+                        ngxClipboard
+                        [cbContent]="example"
+                        matTooltip="copy"
+                        (click)="showCopyMessage(example)">
+                  <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
+                </button>
+              </div>
+            </mat-card-content>
+          </mat-card>
+
+          <div class="comment-container">
+            <p>
+              Try it out 🤓
+            </p>
+          </div>
+
+          <mat-card fxFlex>
+            <mat-card-title>@angular-material-extensions/password-strength
+            </mat-card-title>
+            <mat-card-subtitle>
+              <mat-slide-toggle (change)="onSlideToggleChange($event)">Show Password</mat-slide-toggle>
+              <mat-slide-toggle [(ngModel)]="showDetails">Show Password Details</mat-slide-toggle>
+            </mat-card-subtitle>
+
+            <mat-card-content>
+              <div fxFlex>
+                <mat-form-field appearance="outline" style="width: 100%">
+                  <input matInput #password
+                         [type]="inputType"
+                         required
+                         placeholder="Password">
+                  <mat-hint align="end" aria-live="polite">
+                    {{password.value.length}} / 25
+                  </mat-hint>
+                </mat-form-field>
+
+                <mat-password-strength #passwordComponent
+                                       [password]="password.value">
+                </mat-password-strength>
+
+                <mat-password-strength-info *ngIf="showDetails"
+                                            [passwordComponent]="passwordComponent">
+                </mat-password-strength-info>
+              </div>
+            </mat-card-content>
+          </mat-card>
+
+        </mat-page-content>
+      </mat-page-loader>
+
+      <!--8-->
+      <mat-page-loader>
+        <mat-page-outlook title="Run demo locally">
+          <img style="width: 50px; height: 50px" src="assets/icons/github.svg">
+        </mat-page-outlook>
+        <mat-page-content>
+          <mat-card-title-group><a href="https://github.com/AnthonyNahas/@angular-material-extensions/password-strength"
+                                   target="_blank"
+                                   mat-button
+                                   color="primary">Clone the repo</a></mat-card-title-group>
+          <mat-card-title>Interested? Try it out on your machine
+          </mat-card-title>
+          <div class="comment-container">
+            <p>Clone this repo by running this following command</p>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="space-between">
+                 <pre><code [highlight]="'git clone https://github.com/AnthonyNahas/@angular-material-extensions/password-strength.git'"></code></pre>
+            <button mat-icon-button
+                    ngxClipboard
+                    [cbContent]="'git clone https://github.com/AnthonyNahas/@angular-material-extensions/password-strength.git'"
+                    matTooltip="copy"
+                    (click)="showCopyMessage('git clone https://github.com/AnthonyNahas/@angular-material-extensions/password-strength.git')">
+              <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
+            </button>
+          </div>
+          <div class="comment-container">
+            <p>install the dependencies</p>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="space-between">
+                 <pre><code [highlight]="'$ npm i'"></code></pre>
+            <button mat-icon-button
+                    ngxClipboard
+                    [cbContent]="'npm i'"
+                    matTooltip="copy"
+                    (click)="showCopyMessage('npm i')">
+              <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
+            </button>
+          </div>
+          <div class="comment-container">
+            <p>Link @angular-material-extensions/password-strength's package</p>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="space-between">
+                 <pre><code [highlight]="'$ gulp link'"></code></pre>
+            <button mat-icon-button
+                    ngxClipboard
+                    [cbContent]="'gulp link'"
+                    matTooltip="copy"
+                    (click)="showCopyMessage('gulp link')">
+              <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
+            </button>
+          </div>
+          <div class="comment-container">
+            <p>navigate to the demo directory</p>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="space-between">
+                 <pre><code [highlight]="'$ cd demo'"></code></pre>
+            <button mat-icon-button
+                    ngxClipboard
+                    [cbContent]="'cd demo'"
+                    matTooltip="copy"
+                    (click)="showCopyMessage('cd demo')">
+              <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
+            </button>
+          </div>
+          <div class="comment-container">
+            <p>install the dependencies</p>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="space-between">
+                 <pre><code [highlight]="'$ npm i'"></code></pre>
+            <button mat-icon-button
+                    ngxClipboard
+                    [cbContent]="'npm i'"
+                    matTooltip="copy"
+                    (click)="showCopyMessage('npm i')">
+              <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
+            </button>
+          </div>
+          <div class="comment-container">
+            <p>start the app</p>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="space-between">
+                 <pre><code [highlight]="'$ ng serve --open'"></code></pre>
+            <button mat-icon-button
+                    ngxClipboard
+                    [cbContent]="'ng serve --open'"
+                    matTooltip="copy"
+                    (click)="showCopyMessage('ng serve --open')">
+              <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
+            </button>
+          </div>
+          <div class="comment-container">
+            <p>the app is now hosted on http://localhost:4200/</p>
+          </div>
+        </mat-page-content>
+      </mat-page-loader>
+
+      <mat-page-loader>
+        <mat-page-outlook title="Finally">
+        </mat-page-outlook>
+
+        <mat-page-content>
+          <div class="comment-container">
+            <p>This project was originally developed for
+              <a href="https://www.npmjs.com/package/ngx-auth-firebaseui"
+                 mat-button
+                 color="primary">ngx-auth-firebaseui</a>
+              Since client side password validation is required by many projects, I decided to hold
+              the code in an angular library! Please support this project by starring it on
+              <a href="https://github.com/AnthonyNahas/@angular-material-extensions/password-strength"
+                 target="_blank"
+                 mat-button
+                 color="primary">Github</a>
+            </p>
+          </div>
+
+          <mat-card style="margin-top: 3rem">
+            <mat-card-title>Other Angular libraries by
+              <a href="https://github.com/AnthonyNahas"
+                 target="_blank"
+                 mat-button
+                 color="primary">Anthony Nahas
+              </a>
+            </mat-card-title>
+            <mat-card-subtitle>Go and find out some cool stuff built with angular and material design
+            </mat-card-subtitle>
+
+            <img matCardImage height="256px" width="256px"
+                 src="https://cdn.rawgit.com/anthonynahas/@angular-material-extensions/password-strength/master/demo/src/assets/logo.svg">
+            <mat-card-content>
+              <mat-nav-list>
+                <a mat-list-item *ngFor="let link of links; last as last" [href]="link.url" target="_blank">
+                  <mat-icon mat-list-icon>{{link.icon}}</mat-icon>
+                  <span mat-line>{{ link.name }}</span>
+                  <span mat-line class="demo-secondary-text"> {{link.description}} </span>
+                  <mat-divider inset *ngIf="!last"></mat-divider>
+                </a>
+              </mat-nav-list>
+            </mat-card-content>
+            <!--<mat-card-actions align="start">-->
+            <!--share-->
+            <!--<button mat-button (click)="onAction1">Action1</button>-->
+            <!---->
+            <!--</mat-card-actions>-->
+            <!--<mat-card-footer>-->
+            <!--&lt;!&ndash;Share&ndash;&gt;-->
+            <!--</mat-card-footer>-->
+          </mat-card>
+
+        </mat-page-content>
+
+      </mat-page-loader>
+
+    </mat-pages>
+
+  </div>
+</section>
