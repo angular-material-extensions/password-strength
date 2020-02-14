@@ -55,7 +55,7 @@
     "ngx-clipboard": "^12.3.0",
     "ngx-disqus": "^2.4.3",
     "ngx-highlightjs": "^3.0.3",
-    "ngx-markdown": "^8.2.1",
+    "ngx-markdown": "^9.0.0",
     "rxjs": "^6.5.4",
     "rxjs-compat": "^6.5.4",
     "zone.js": "~0.9.1"
