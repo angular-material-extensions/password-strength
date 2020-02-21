@@ -52,7 +52,7 @@
     "highlight.js": "^9.17.1",
     "include-media": "^1.4.9",
     "material-design-icons": "^3.0.1",
-    "ngx-clipboard": "^12.3.0",
+    "ngx-clipboard": "^13.0.0",
     "ngx-disqus": "^2.4.3",
     "ngx-highlightjs": "^3.0.3",
     "ngx-markdown": "^8.2.1",
