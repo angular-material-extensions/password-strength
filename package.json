@@ -117,7 +117,7 @@
     "schematics-utilities": "^1.1.3",
     "source-map-loader": "^0.2.4",
     "to-string-loader": "1.1.5",
-    "travis-status": "^3.0.1",
+    "travis-status": "^5.0.0",
     "tsickle": "^0.34.3",
     "tslint": "~5.12.1",
     "typescript": "~3.4.5",
