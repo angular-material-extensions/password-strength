@@ -34,6 +34,7 @@ If you like this project, support [angular-material-extensions](https://github.c
 by starring :star: and sharing it :loudspeaker:
 
 ## Table of Contents
+- [Who is using this library ?](#who_is_using_this_library)
 - [Demo](#demo)
 - [Components](#components)
 - [Dependencies](#dependencies)
@@ -45,6 +46,21 @@ by starring :star: and sharing it :loudspeaker:
 - [Other Angular Libraries](#other-angular-libraries)
 - [Support](#support)
 - [License](#license)
+
+
+<a name="who_is_using_this_library"/>
+
+## Who is using this library ?
+
+#### (Google Cloud Platform)[]
+
+<p align="center">
+  <img alt="angular-material-extensions's logo"
+   height="256px" width="256px" style="text-align: center;" 
+   src="https://cdn.rawgit.com/angular-material-extensions/password-strength/master/assets/used_by/google-cloud-google-cloud-platform.png">
+</p>
+
+
 
 <a name="demo"/>
 
