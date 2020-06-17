@@ -4,7 +4,7 @@
    src="https://cdn.jsdelivr.net/gh/angular-material-extensions/password-strength@master/assets/angular-material-extensions-logo.svg">
 </p>
 
-# @angular-material-extensions/password-strength - Material password strength meter to indicate how secure is the provided password - Angular V8 supported incl. schematics
+# @angular-material-extensions/password-strength - Material password strength meter to indicate how secure is the provided password - Angular V9 supported incl. schematics
 
 [![npm version](https://badge.fury.io/js/%40angular-material-extensions%2Fpassword-strength.svg)](https://badge.fury.io/js/%40angular-material-extensions%2Fpassword-strength)
 [![npm demo](https://img.shields.io/badge/demo-online-ed1c46.svg)](https://angular-material-extensions.github.io/password-strength)
@@ -19,7 +19,8 @@
 [![license](https://img.shields.io/github/license/angular-material-extensions/password-strength.svg?style=flat-square)](https://github.com/angular-material-extensions/password-strength/blob/master/LICENSE)
 [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/gdi2290/awesome-angular)
 
-> This project has been transferred from [ngx-material-password-strength](https://www.npmjs.com/package/ngx-material-password-strength) to [@angular-material-extensions/password-strength](https://github.com/angular-material-extensions/password-strength)
+> Please use the latest version of this library --> V6 which is supporting angular V9
+> @angular-material-extensions/password-strength@5.0.0 should be skipped --> @angular-material-extensions/password-strength@5.1.0 ---> @angular-material-extensions/password-strength@6.0.0 is better
 
 <p align="center">
   <img alt="@angular-material-extensions/password-strength demonstration" style="text-align: center;"
@@ -34,7 +35,6 @@ If you like this project, support [angular-material-extensions](https://github.c
 by starring :star: and sharing it :loudspeaker:
 
 ## Table of Contents
-- [Who is using this library ?](#who_is_using_this_library)
 - [Demo](#demo)
 - [Components](#components)
 - [Dependencies](#dependencies)
@@ -46,21 +46,6 @@ by starring :star: and sharing it :loudspeaker:
 - [Other Angular Libraries](#other-angular-libraries)
 - [Support](#support)
 - [License](#license)
-
-
-<a name="who_is_using_this_library"/>
-
-## Who is using this library ?
-
-#### (Google Cloud Platform)[]
-
-<p align="center">
-  <img alt="angular-material-extensions's logo"
-   height="256px" width="256px" style="text-align: center;" 
-   src="https://cdn.rawgit.com/angular-material-extensions/password-strength/master/assets/used_by/google-cloud-google-cloud-platform.png">
-</p>
-
-
 
 <a name="demo"/>
 
@@ -114,7 +99,7 @@ View all the directives and components in action at [https://angular-material-ex
 <a name="dependencies"/>
 
 ## Dependencies
-* [Angular](https://angular.io) developed and tested with `7.x`
+* [Angular](https://angular.io) developed and tested with `9.x`
 
 ---
 
@@ -476,6 +461,7 @@ or follow the official [tutorial](https://angular-material-extensions.github.io/
 - [@firebaseui/ng-bootstrap](https://github.com/firebaseui/ng-bootstrap)
 - [@angular-material-extensions/google-maps-autocomplete](https://github.com/angular-material-extensions/google-maps-autocomplete)
 - [@angular-material-extensions/select-country](https://github.com/angular-material-extensions/select-country)
+- [@angular-material-extensions/fab-menu](https://github.com/angular-material-extensions/fab-menu)
 - [@angular-material-extensions/link-preview](https://github.com/angular-material-extensions/link-preview)
 - [@angular-material-extensions/pages](https://github.com/angular-material-extensions/pages)
 - [@angular-material-extensions/contacts](https://github.com/angular-material-extensions/contacts)

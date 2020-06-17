@@ -1,0 +1,876 @@
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
+<!-- * * * * * * * to get started with your project! * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<style>
+  :host {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 14px;
+    color: #333;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 8px 0;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .spacer {
+    flex: 1;
+  }
+
+  .toolbar {
+    height: 60px;
+    margin: -8px;
+    display: flex;
+    align-items: center;
+    background-color: #1976d2;
+    color: white;
+    font-weight: 600;
+  }
+
+  .toolbar img {
+    margin: 0 16px;
+  }
+
+  .toolbar #twitter-logo {
+    height: 40px;
+    margin: 0 16px;
+  }
+
+  .toolbar #twitter-logo:hover {
+    opacity: 0.8;
+  }
+
+  .content {
+    display: flex;
+    margin: 32px auto;
+    padding: 0 16px;
+    max-width: 960px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  svg.material-icons {
+    height: 24px;
+    width: auto;
+  }
+
+  svg.material-icons:not(:last-child) {
+    margin-right: 8px;
+  }
+
+  .card svg.material-icons path {
+    fill: #888;
+  }
+
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 16px;
+  }
+
+  .card {
+    border-radius: 4px;
+    border: 1px solid #eee;
+    background-color: #fafafa;
+    height: 40px;
+    width: 200px;
+    margin: 0 8px 16px;
+    padding: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
+    line-height: 24px;
+  }
+
+  .card-container .card:not(:last-child) {
+    margin-right: 0;
+  }
+
+  .card.card-small {
+    height: 16px;
+    width: 168px;
+  }
+
+  .card-container .card:not(.highlight-card) {
+    cursor: pointer;
+  }
+
+  .card-container .card:not(.highlight-card):hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 17px rgba(black, 0.35);
+  }
+
+  .card-container .card:not(.highlight-card):hover .material-icons path {
+    fill: rgb(105, 103, 103);
+  }
+
+  .card.highlight-card {
+    background-color: #1976d2;
+    color: white;
+    font-weight: 600;
+    border: none;
+    width: auto;
+    min-width: 30%;
+    position: relative;
+  }
+
+  .card.card.highlight-card span {
+    margin-left: 60px;
+  }
+
+  svg#rocket {
+    width: 80px;
+    position: absolute;
+    left: -10px;
+    top: -24px;
+  }
+
+  svg#rocket-smoke {
+    height: 100vh;
+    position: absolute;
+    top: 10px;
+    right: 180px;
+    z-index: -10;
+  }
+
+  a,
+  a:visited,
+  a:hover {
+    color: #1976d2;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: #125699;
+  }
+
+  .terminal {
+    position: relative;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 6px;
+    padding-top: 45px;
+    margin-top: 8px;
+    overflow: hidden;
+    background-color: rgb(15, 15, 16);
+  }
+
+  .terminal::before {
+    content: "\2022 \2022 \2022";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 4px;
+    background: rgb(58, 58, 58);
+    color: #c2c3c4;
+    width: 100%;
+    font-size: 2rem;
+    line-height: 0;
+    padding: 14px 0;
+    text-indent: 4px;
+  }
+
+  .terminal pre {
+    font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
+    color: white;
+    padding: 0 1rem 1rem;
+    margin: 0;
+  }
+
+  .circle-link {
+    height: 40px;
+    width: 40px;
+    border-radius: 40px;
+    margin: 8px;
+    background-color: white;
+    border: 1px solid #eeeeee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: 1s ease-out;
+  }
+
+  .circle-link:hover {
+    transform: translateY(-0.25rem);
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  footer {
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    line-height: 20px;
+  }
+
+  footer a {
+    display: flex;
+    align-items: center;
+  }
+
+  .github-star-badge {
+    color: #24292e;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    padding: 3px 10px;
+    border: 1px solid rgba(27, 31, 35, .2);
+    border-radius: 3px;
+    background-image: linear-gradient(-180deg, #fafbfc, #eff3f6 90%);
+    margin-left: 4px;
+    font-weight: 600;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+  }
+
+  .github-star-badge:hover {
+    background-image: linear-gradient(-180deg, #f0f3f6, #e6ebf1 90%);
+    border-color: rgba(27, 31, 35, .35);
+    background-position: -.5em;
+  }
+
+  .github-star-badge .material-icons {
+    height: 16px;
+    width: 16px;
+    margin-right: 4px;
+  }
+
+  svg#clouds {
+    position: fixed;
+    bottom: -160px;
+    left: -230px;
+    z-index: -10;
+    width: 1920px;
+  }
+
+
+  /* Responsive Styles */
+  @media screen and (max-width: 767px) {
+
+    .card-container > *:not(.circle-link),
+    .terminal {
+      width: 100%;
+    }
+
+    .card:not(.highlight-card) {
+      height: 16px;
+      margin: 8px 0;
+    }
+
+    .card.highlight-card span {
+      margin-left: 72px;
+    }
+
+    svg#rocket-smoke {
+      right: 120px;
+      transform: rotate(-5deg);
+    }
+  }
+
+  @media screen and (max-width: 575px) {
+    svg#rocket-smoke {
+      display: none;
+      visibility: hidden;
+    }
+  }
+</style>
+
+<!-- Toolbar -->
+<div class="toolbar" role="banner">
+  <img
+    width="40"
+    alt="Angular Logo"
+    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg=="
+  />
+  <span>@angular-material-extensions/password-strength</span>
+  <div class="spacer"></div>
+  <a aria-label="Github repository" href="https://github.com/angular-material-extensions" rel="noopener"
+     target="_blank">
+    <svg height="24" version="1.1" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M12,2C6.48,2 2,6.48 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12C22,6.48 17.52,2 12,2Z"/>
+    </svg>
+  </a>
+  <a aria-label="Angular on twitter" href="https://twitter.com/ngAnthonyy" rel="noopener" target="_blank"
+     title="Twitter">
+
+    <svg data-name="Logo — FIXED" height="24" id="twitter-logo" viewBox="0 0 400 400"
+         xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <style>
+          .cls-1 {
+            fill: none;
+          }
+
+          .cls-2 {
+            fill: #ffffff;
+          }
+        </style>
+      </defs>
+      <rect class="cls-1" height="400" width="400"/>
+      <path class="cls-2"
+            d="M153.62,301.59c94.34,0,145.94-78.16,145.94-145.94,0-2.22,0-4.43-.15-6.63A104.36,104.36,0,0,0,325,122.47a102.38,102.38,0,0,1-29.46,8.07,51.47,51.47,0,0,0,22.55-28.37,102.79,102.79,0,0,1-32.57,12.45,51.34,51.34,0,0,0-87.41,46.78A145.62,145.62,0,0,1,92.4,107.81a51.33,51.33,0,0,0,15.88,68.47A50.91,50.91,0,0,1,85,169.86c0,.21,0,.43,0,.65a51.31,51.31,0,0,0,41.15,50.28,51.21,51.21,0,0,1-23.16.88,51.35,51.35,0,0,0,47.92,35.62,102.92,102.92,0,0,1-63.7,22A104.41,104.41,0,0,1,75,278.55a145.21,145.21,0,0,0,78.62,23"
+      />
+    </svg>
+
+  </a>
+</div>
+
+<div class="content" role="main">
+
+  <!-- Highlight Card -->
+  <div class="card highlight-card card-small">
+
+    <svg alt="Rocket Ship" height="101.678" id="rocket" viewBox="0 0 101.678 101.678" width="101.678"
+         xmlns="http://www.w3.org/2000/svg">
+      <g data-name="Group 83" id="Group_83" transform="translate(-141 -696)">
+        <circle cx="50.839" cy="50.839" data-name="Ellipse 8" fill="#dd0031" id="Ellipse_8" r="50.839"
+                transform="translate(141 696)"/>
+        <g data-name="Group 47" id="Group_47" transform="translate(165.185 720.185)">
+          <path
+            d="M3.4,42.615a3.084,3.084,0,0,0,3.553,3.553,21.419,21.419,0,0,0,12.215-6.107L9.511,30.4A21.419,21.419,0,0,0,3.4,42.615Z"
+            data-name="Path 33"
+            fill="#fff"
+            id="Path_33" transform="translate(0.371 3.363)"/>
+          <path
+            d="M53.3,3.221A3.09,3.09,0,0,0,50.081,0,48.227,48.227,0,0,0,18.322,13.437c-6-1.666-14.991-1.221-18.322,7.218A33.892,33.892,0,0,1,9.439,25.1l-.333.666a3.013,3.013,0,0,0,.555,3.553L23.985,43.641a2.9,2.9,0,0,0,3.553.555l.666-.333A33.892,33.892,0,0,1,32.647,53.3c8.55-3.664,8.884-12.326,7.218-18.322A48.227,48.227,0,0,0,53.3,3.221ZM34.424,9.772a6.439,6.439,0,1,1,9.106,9.106,6.368,6.368,0,0,1-9.106,0A6.467,6.467,0,0,1,34.424,9.772Z"
+            data-name="Path 34"
+            fill="#fff"
+            id="Path_34" transform="translate(0 0.005)"/>
+        </g>
+      </g>
+    </svg>
+
+    <span>{{ title }} demo app is running!</span>
+
+    <svg alt="Rocket Ship Smoke" height="1083.632" id="rocket-smoke" viewBox="0 0 516.119 1083.632" width="516.119"
+         xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M644.6,141S143.02,215.537,147.049,870.207s342.774,201.755,342.774,201.755S404.659,847.213,388.815,762.2c-27.116-145.51-11.551-384.124,271.9-609.1C671.15,139.365,644.6,141,644.6,141Z"
+        data-name="Path 40"
+        fill="#f5f5f5"
+        id="Path_40" transform="translate(-147.025 -140.939)"/>
+    </svg>
+
+  </div>
+
+  <!-- Resources -->
+  <h2>Resources</h2>
+  <p>Here are some links to help you get started:</p>
+
+  <div class="card-container">
+    <a class="card" href="https://github.com/angular-material-extensions/password-strength" rel="noopener"
+       target="_blank">
+      <svg height="24" version="1.1" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M12,2C6.48,2 2,6.48 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12C22,6.48 17.52,2 12,2Z"/>
+      </svg>
+
+      <span>Github repository</span>
+
+      <svg class="material-icons" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+      </svg>
+    </a>
+
+    <a class="card" href="doc/index.html" rel="noopener" target="_blank">
+      <svg height="24" version="1.1" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M12,8C13.66,8 15,6.66 15,5C15,3.34 13.66,2 12,2C10.34,2 9,3.34 9,5C9,6.66 10.34,8 12,8M12,11.54C9.64,9.35 6.5,8 3,8V19C6.5,19 9.64,20.35 12,22.54C14.36,20.35 17.5,19 21,19V8C17.5,8 14.36,9.35 12,11.54Z"/>
+      </svg>
+
+      <span>Library Documentation</span>
+
+      <svg class="material-icons" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+      </svg>
+    </a>
+
+    <a class="card" href="https://www.npmjs.com/package/@angular-material-extensions/password-strength" rel="noopener"
+       target="_blank">
+      <svg height="24" version="1.1" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M3,3V21H21V3H3M6,6H18V18H15V9H12V18H6V6Z"/>
+      </svg>
+
+      <span>npm</span>
+
+      <svg class="material-icons" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+      </svg>
+    </a>
+
+  </div>
+
+  <!-- Install -->
+  <h2>Install</h2>
+  <p>run the following command in your favorite terminal to install the library</p>
+
+  <!-- Terminal -->
+  <div class="terminal">
+    <pre>ng add @angular-material-extensions/password-strength</pre>
+  </div>
+
+  <!--  <div class="text-center">-->
+
+  <!-- Usage -->
+  <h2>Usage</h2>
+
+  <div class="password-container" fxLayout="column">
+    <mat-toolbar *ngIf="true" style="max-width: 100%">
+      <span class="toolbar-title">@angular-material-extensions/password-strength</span>
+      <span fxFlex></span>
+
+      <button mat-icon-button
+              color="accent"
+              matTooltip="view source"
+              (click)="viewSource2 = !viewSource2">
+        <mat-icon>code</mat-icon>
+      </button>
+    </mat-toolbar>
+    <mat-card>
+      <mat-card-subtitle>
+        stand alone password component
+      </mat-card-subtitle>
+
+
+      <mat-card-content *ngIf="viewSource2">
+        <mat-tab-group>
+          <!--tab 1-->
+          <mat-tab>
+            <ng-template mat-tab-label>HTML</ng-template>
+            <markdown src="assets/md/home/e1/html.md"></markdown>
+          </mat-tab>
+
+          <mat-tab>
+            <ng-template mat-tab-label>TS</ng-template>
+            <markdown src="assets/md/home/e1/ts.md"></markdown>
+          </mat-tab>
+        </mat-tab-group>
+      </mat-card-content>
+
+      <mat-card-subtitle>
+        <mat-slide-toggle [(ngModel)]="showDetails">Show Password Details</mat-slide-toggle>
+      </mat-card-subtitle>
+
+      <mat-card-content>
+        <!--password input filed-->
+        <mat-form-field appearance="outline" style="width: 100%" [color]="passwordComponent.color">
+          <mat-label>Password</mat-label>
+          <mat-pass-toggle-visibility #toggle matSuffix></mat-pass-toggle-visibility>
+          <input matInput #password
+                 [type]="toggle.type"
+                 required
+                 placeholder="Password">
+          <mat-hint align="end" aria-live="polite">
+            {{password.value.length}} / {{passwordComponent.max}}
+          </mat-hint>
+        </mat-form-field>
+
+        <!--@angular-material-extensions/password-strength's main component-->
+        <mat-password-strength #passwordComponent
+                               (onStrengthChanged)="onStrengthChanged($event)"
+                               [password]="password.value">
+        </mat-password-strength>
+
+        <!--Password's strength info-->
+        <mat-password-strength-info
+          *ngIf="showDetails"
+          [passwordComponent]="passwordComponent">
+        </mat-password-strength-info>
+
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <!--NGX-MATERIAL-PASSWORD-STRENGTH WITH VALIDATION AND FORM CONTROLLER-->
+  <div class="password-container" fxLayout="column">
+    <mat-toolbar>
+      <span class="toolbar-title">@angular-material-extensions/password-strength</span>
+      <span fxFlex></span>
+
+      <button mat-icon-button
+              color="accent"
+              matTooltip="view source"
+              (click)="viewSource = !viewSource">
+        <mat-icon>code</mat-icon>
+      </button>
+    </mat-toolbar>
+    <mat-card>
+      <mat-card-subtitle>
+        client side password validation with angular built in form controller
+      </mat-card-subtitle>
+      <mat-card-subtitle>
+        <mat-slide-toggle [(ngModel)]="showDetails2">Show Password Details</mat-slide-toggle>
+      </mat-card-subtitle>
+
+      <mat-card-content *ngIf="viewSource">
+        <mat-tab-group>
+          <!--tab 1-->
+          <mat-tab>
+            <ng-template mat-tab-label>HTML</ng-template>
+            <markdown src="assets/md/home/e2/html.md"></markdown>
+          </mat-tab>
+
+          <mat-tab>
+            <ng-template mat-tab-label>TS</ng-template>
+            <markdown src="assets/md/home/e2/ts.md"></markdown>
+          </mat-tab>
+        </mat-tab-group>
+      </mat-card-content>
+
+      <mat-card-content>
+
+        <!--password input filed-->
+        <mat-form-field appearance="outline" [color]="passwordComponentWithValidation.color" style="width: 100%">
+          <mat-label>Password</mat-label>
+          <mat-pass-toggle-visibility #toggle2 matSuffix></mat-pass-toggle-visibility>
+          <input matInput #passwordWithValidation
+                 [type]="toggle2.type"
+                 required
+                 [formControl]="passwordComponentWithValidation.passwordFormControl"
+                 placeholder="Password">
+
+          <!--password hint-->
+          <mat-hint align="end" aria-live="polite">
+            {{passwordWithValidation.value.length}} / {{passwordComponentWithValidation.max}}
+          </mat-hint>
+
+          <!--password error msgs-->
+          <mat-error *ngIf="passwordComponentWithValidation.passwordFormControl.hasError('required')">
+            Password is required
+          </mat-error>
+          <mat-error *ngIf="passwordComponentWithValidation.passwordFormControl.hasError('pattern')">
+            Password is not valid
+          </mat-error>
+
+        </mat-form-field>
+
+        <!--@angular-material-extensions/password-strength's main component-->
+        <mat-password-strength #passwordComponentWithValidation
+                               (onStrengthChanged)="onStrengthChanged($event)"
+                               [password]="passwordWithValidation.value">
+        </mat-password-strength>
+
+        <!--Password's strength info-->
+        <mat-password-strength-info
+          *ngIf="showDetails2"
+          [passwordComponent]="passwordComponentWithValidation">
+        </mat-password-strength-info>
+
+      </mat-card-content>
+
+    </mat-card>
+  </div>
+
+  <!--    CONFIRM PASSWORD-->
+  <div class="password-container" fxLayout="column">
+    <mat-toolbar>
+      <span class="toolbar-title">@angular-material-extensions/password-strength</span>
+      <span fxFlex></span>
+
+      <button mat-icon-button
+              color="accent"
+              matTooltip="view source"
+              (click)="viewSource3 = !viewSource3">
+        <mat-icon>code</mat-icon>
+      </button>
+    </mat-toolbar>
+
+    <mat-card>
+      <mat-card-subtitle>
+        confirm your password with angular form group
+      </mat-card-subtitle>
+      <mat-card-subtitle>
+        <mat-slide-toggle [(ngModel)]="showDetails3"
+                          [ngModelOptions]="{standalone: true}">
+          Show Password Details
+        </mat-slide-toggle>
+      </mat-card-subtitle>
+
+      <mat-card-content *ngIf="viewSource3">
+        <mat-tab-group>
+          <!--tab 1-->
+          <mat-tab>
+            <ng-template mat-tab-label>HTML</ng-template>
+            <markdown src="assets/md/home/e1/html.md"></markdown>
+          </mat-tab>
+
+          <mat-tab>
+            <ng-template mat-tab-label>TS</ng-template>
+            <markdown src="assets/md/home/e1/ts.md"></markdown>
+          </mat-tab>
+        </mat-tab-group>
+      </mat-card-content>
+
+      <mat-card-content>
+
+        <!--password input filed-->
+        <mat-form-field appearance="outline" [color]="passwordComponentWithConfirmation.color" style="width: 100%">
+          <mat-label>Password</mat-label>
+          <mat-pass-toggle-visibility #toggle3 matSuffix></mat-pass-toggle-visibility>
+          <input matInput #passwordWithConfirmation
+                 [type]="toggle3.type"
+                 [formControl]="passwordComponentWithConfirmation.passwordFormControl"
+                 placeholder="Password"
+                 required>
+
+          <!--password hint-->
+          <mat-hint align="end" aria-live="polite">
+            {{passwordWithConfirmation.value.length}} / {{passwordComponentWithConfirmation.max}}
+          </mat-hint>
+
+          <mat-error *ngIf="passwordComponentWithConfirmation.passwordFormControl.hasError('required')">
+            Password is required
+          </mat-error>
+          <mat-error *ngIf="passwordComponentWithConfirmation.passwordFormControl.hasError('pattern')">
+            Password is not valid
+          </mat-error>
+
+        </mat-form-field>
+
+        <!--@angular-material-extensions/password-strength's main component-->
+        <mat-password-strength #passwordComponentWithConfirmation
+                               (onStrengthChanged)="onStrengthChanged($event)"
+                               [password]="passwordWithConfirmation.value">
+        </mat-password-strength>
+
+        <!--Password's strength info-->
+        <mat-password-strength-info
+          *ngIf="showDetails3"
+          [passwordComponent]="passwordComponentWithConfirmation">
+        </mat-password-strength-info>
+
+        <!--password input field for confirmation-->
+        <mat-form-field appearance="outline" class="mt-3" style="width: 100%">
+          <mat-label>Confirm Password</mat-label>
+          <mat-pass-toggle-visibility #toggleConfirmPassword matSuffix></mat-pass-toggle-visibility>
+          <input matInput #passwordToConfirm
+                 [type]="toggleConfirmPassword.type"
+                 [formControl]="passwordComponentWithConfirmation.passwordConfirmationFormControl"
+                 placeholder="Password">
+
+          <!-- password hint-->
+          <mat-hint align="end" aria-live="polite">
+            {{passwordToConfirm.value.length}} / {{passwordComponentWithConfirmation.max}}
+          </mat-hint>
+
+          <!-- password error msgs-->
+          <mat-error *ngIf="passwordComponentWithConfirmation.passwordConfirmationFormControl.hasError('required')">
+            Password confirmation is required
+          </mat-error>
+          <mat-error
+            *ngIf="passwordComponentWithConfirmation.passwordConfirmationFormControl.hasError('notConfirmed')">
+            Password is not the same
+          </mat-error>
+
+        </mat-form-field>
+
+      </mat-card-content>
+
+    </mat-card>
+  </div>
+
+  <p>For more info, please read the official readme - see the links above GITHUB - DOCS - NPM</p>
+
+  <router-outlet></router-outlet>
+
+  <!--  </div>-->
+
+  <!-- Next Steps -->
+  <h2 style="margin-top: 4rem">Next Steps</h2>
+  <p>What do you want to do next with your app? Here are some awesome suggested libraries for you!</p>
+
+  <input #selection type="hidden">
+
+  <div class="card-container">
+    <div (click)="selection.value = 'component'" class="card card-small" tabindex="0">
+      <svg class="material-icons" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+      </svg>
+
+      <span>ngx-auth-firebaseui</span>
+    </div>
+
+    <div (click)="selection.value = 'material'" class="card card-small" tabindex="0">
+      <svg class="material-icons" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+      </svg>
+
+      <span>fab-menu</span>
+    </div>
+
+    <div (click)="selection.value = 'dependency'" class="card card-small" tabindex="0">
+      <svg class="material-icons" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+      </svg>
+
+      <span>google-maps-autocomplete</span>
+    </div>
+
+    <div (click)="selection.value = 'test'" class="card card-small" tabindex="0">
+      <svg class="material-icons" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+      </svg>
+
+      <span>pages</span>
+    </div>
+
+    <div (click)="selection.value = 'build'" class="card card-small" tabindex="0">
+      <svg class="material-icons" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+      </svg>
+
+      <span>links-preview</span>
+    </div>
+  </div>
+
+  <!-- Terminal -->
+  <div [ngSwitch]="selection.value" class="terminal">
+    <pre *ngSwitchDefault>ng add ngx-auth-firebaseui</pre>
+    <pre *ngSwitchCase="'material'">ng add @angular-material-extensions/fab-menu</pre>
+    <pre *ngSwitchCase="'dependency'">ng add @angular-material-extensions/google-maps-autocomplete </pre>
+    <pre *ngSwitchCase="'test'">ng add @angular-material-extensions/pages</pre>
+    <pre *ngSwitchCase="'build'">ng add @angular-material-extensions/links-preview </pre>
+  </div>
+
+  <!-- Links -->
+  <div class="card-container">
+    <a class="circle-link" href="https://github.com/angular-material-extensions" rel="noopener"
+       target="_blank"
+       title="Other awesome libraries">
+      <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+        <path
+          d="M12,2.5L20.84,5.65L19.5,17.35L12,21.5L4.5,17.35L3.16,5.65L12,2.5M12,4.6L6.47,17H8.53L9.64,14.22H14.34L15.45,17H17.5L12,4.6M13.62,12.5H10.39L12,8.63L13.62,12.5Z"
+          fill="rgb(40,53,147)"/>
+      </svg>
+    </a>
+
+    <a class="circle-link" href="https://twitter.com/ngAnthonyy" rel="noopener"
+       target="_blank" title="Anthony Nahas on Twitter">
+      <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+        <path
+          d="M22.46,6C21.69,6.35 20.86,6.58 20,6.69C20.88,6.16 21.56,5.32 21.88,4.31C21.05,4.81 20.13,5.16 19.16,5.36C18.37,4.5 17.26,4 16,4C13.65,4 11.73,5.92 11.73,8.29C11.73,8.63 11.77,8.96 11.84,9.27C8.28,9.09 5.11,7.38 3,4.79C2.63,5.42 2.42,6.16 2.42,6.94C2.42,8.43 3.17,9.75 4.33,10.5C3.62,10.5 2.96,10.3 2.38,10C2.38,10 2.38,10 2.38,10.03C2.38,12.11 3.86,13.85 5.82,14.24C5.46,14.34 5.08,14.39 4.69,14.39C4.42,14.39 4.15,14.36 3.89,14.31C4.43,16 6,17.26 7.89,17.29C6.43,18.45 4.58,19.13 2.56,19.13C2.22,19.13 1.88,19.11 1.54,19.07C3.44,20.29 5.7,21 8.12,21C16,21 20.33,14.46 20.33,8.79C20.33,8.6 20.33,8.42 20.32,8.23C21.16,7.63 21.88,6.87 22.46,6Z"
+          fill="#1DA1F2"/>
+      </svg>
+    </a>
+
+    <a class="circle-link" href="https://www.xing.com/profile/Anthony_Nahas2" rel="noopener"
+       target="_blank" title="Anthony Nahas on Xing">
+      <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+        <path
+          d="M17.67,2C17.24,2 17.05,2.27 16.9,2.55C16.9,2.55 10.68,13.57 10.5,13.93L14.58,21.45C14.72,21.71 14.94,22 15.38,22H18.26C18.44,22 18.57,21.93 18.64,21.82C18.72,21.69 18.72,21.53 18.64,21.37L14.57,13.92L20.96,2.63C21.04,2.47 21.04,2.31 20.97,2.18C20.89,2.07 20.76,2 20.58,2M5.55,5.95C5.38,5.95 5.23,6 5.16,6.13C5.08,6.26 5.09,6.41 5.18,6.57L7.12,9.97L4.06,15.37C4,15.53 4,15.69 4.06,15.82C4.13,15.94 4.26,16 4.43,16H7.32C7.75,16 7.96,15.72 8.11,15.45C8.11,15.45 11.1,10.16 11.22,9.95L9.24,6.5C9.1,6.24 8.88,5.95 8.43,5.95"
+          fill="#026466"/>
+      </svg>
+    </a>
+
+    <a class="circle-link" href="https://www.reddit.com/user/anthonynahas" rel="noopener"
+       target="_blank" title="Anthony Nahas on Reddit">
+      <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+        <path
+          d="M22,12.14C22,10.92 21,9.96 19.81,9.96C19.22,9.96 18.68,10.19 18.29,10.57C16.79,9.5 14.72,8.79 12.43,8.7L13.43,4L16.7,4.71C16.73,5.53 17.41,6.19 18.25,6.19C19.11,6.19 19.81,5.5 19.81,4.63C19.81,3.77 19.11,3.08 18.25,3.08C17.65,3.08 17.11,3.43 16.86,3.95L13.22,3.18C13.11,3.16 13,3.18 12.93,3.24C12.84,3.29 12.79,3.38 12.77,3.5L11.66,8.72C9.33,8.79 7.23,9.5 5.71,10.58C5.32,10.21 4.78,10 4.19,10C2.97,10 2,10.96 2,12.16C2,13.06 2.54,13.81 3.29,14.15C3.25,14.37 3.24,14.58 3.24,14.81C3.24,18.18 7.16,20.93 12,20.93C16.84,20.93 20.76,18.2 20.76,14.81C20.76,14.6 20.75,14.37 20.71,14.15C21.46,13.81 22,13.04 22,12.14M7,13.7C7,12.84 7.68,12.14 8.54,12.14C9.4,12.14 10.1,12.84 10.1,13.7A1.56,1.56 0 0,1 8.54,15.26C7.68,15.28 7,14.56 7,13.7M15.71,17.84C14.63,18.92 12.59,19 12,19C11.39,19 9.35,18.9 8.29,17.84C8.13,17.68 8.13,17.43 8.29,17.27C8.45,17.11 8.7,17.11 8.86,17.27C9.54,17.95 11,18.18 12,18.18C13,18.18 14.47,17.95 15.14,17.27C15.3,17.11 15.55,17.11 15.71,17.27C15.85,17.43 15.85,17.68 15.71,17.84M15.42,15.28C14.56,15.28 13.86,14.58 13.86,13.72A1.56,1.56 0 0,1 15.42,12.16C16.28,12.16 17,12.86 17,13.72C17,14.56 16.28,15.28 15.42,15.28Z"
+          fill="#ff4500"/>
+      </svg>
+    </a>
+
+    <a class="circle-link" href="https://www.linkedin.com/in/anthony-nahas-926245119/" rel="noopener" target="_blank"
+       title="LinkedIn">
+      <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+        <path
+          d="M21,21H17V14.25C17,13.19 15.81,12.31 14.75,12.31C13.69,12.31 13,13.19 13,14.25V21H9V9H13V11C13.66,9.93 15.36,9.24 16.5,9.24C19,9.24 21,11.28 21,13.75V21M7,21H3V9H7V21M5,3A2,2 0 0,1 7,5A2,2 0 0,1 5,7A2,2 0 0,1 3,5A2,2 0 0,1 5,3Z"
+          fill="#2867B2"/>
+      </svg>
+    </a>
+
+    <a class="circle-link" href="https://github.com/AnthonyNahas" rel="noopener"
+       target="_blank" title="See Author Github Profile">
+      <svg height="24" version="1.1" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M12,2C6.48,2 2,6.48 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12C22,6.48 17.52,2 12,2Z"/>
+      </svg>
+    </a>
+
+    <a class="circle-link" href="https://gitter.im/angular-material-extensions/Lobby"
+       rel="noopener"
+       target="_blank" title="Join the Conversation on Gitter">
+      <svg alt="Gitter Logo" height="19.447" viewBox="0 0 19.447 19.447" width="19.447"
+           xmlns="http://www.w3.org/2000/svg">
+        <g data-name="Group 40" id="Group_40" transform="translate(-1612 -405)">
+          <rect data-name="Rectangle 19" fill="#e60257" height="19.447" id="Rectangle_19"
+                transform="translate(1612 405)" width="19.447"/>
+          <g id="gitter" transform="translate(1617.795 408.636)">
+            <g data-name="Group 33" id="Group_33" transform="translate(0 0)">
+              <rect data-name="Rectangle 15" fill="#fff" height="9.601" id="Rectangle_15"
+                    transform="translate(2.304 2.324)" width="1.04"/>
+              <rect data-name="Rectangle 16" fill="#fff" height="9.601" id="Rectangle_16"
+                    transform="translate(4.607 2.324)" width="1.04"/>
+              <rect data-name="Rectangle 17" fill="#fff" height="4.648" id="Rectangle_17"
+                    transform="translate(6.91 2.324)" width="1.04"/>
+              <rect data-name="Rectangle 18" fill="#fff" height="6.971" id="Rectangle_18" transform="translate(0 0)"
+                    width="1.04"/>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </a>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    Love this library?&nbsp;
+    <a href="https://github.com/angular-material-extensions/password-strength" rel="noopener" target="_blank"> Give our
+      repo a star.
+      <div class="github-star-badge">
+        <svg class="material-icons" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 0h24v24H0z" fill="none"/>
+          <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+        </svg>
+        Star
+      </div>
+    </a>
+    <a href="https://github.com/angular-material-extensions/password-strength" rel="noopener" target="_blank">
+      <svg class="material-icons" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" fill="#1976d2"/>
+        <path d="M0 0h24v24H0z" fill="none"/>
+      </svg>
+    </a>
+  </footer>
+
+  <svg alt="Gray Clouds Background" height="485.677" id="clouds" viewBox="0 0 2611.084 485.677" width="2611.084"
+       xmlns="http://www.w3.org/2000/svg">
+    <path
+      d="M2379.709,863.793c10-93-77-171-168-149-52-114-225-105-264,15-75,3-140,59-152,133-30,2.83-66.725,9.829-93.5,26.25-26.771-16.421-63.5-23.42-93.5-26.25-12-74-77-130-152-133-39-120-212-129-264-15-54.084-13.075-106.753,9.173-138.488,48.9-31.734-39.726-84.4-61.974-138.487-48.9-52-114-225-105-264,15a162.027,162.027,0,0,0-103.147,43.044c-30.633-45.365-87.1-72.091-145.206-58.044-52-114-225-105-264,15-75,3-140,59-152,133-53,5-127,23-130,83-2,42,35,72,70,86,49,20,106,18,157,5a165.625,165.625,0,0,0,120,0c47,94,178,113,251,33,61.112,8.015,113.854-5.72,150.492-29.764a165.62,165.62,0,0,0,110.861-3.236c47,94,178,113,251,33,31.385,4.116,60.563,2.495,86.487-3.311,25.924,5.806,55.1,7.427,86.488,3.311,73,80,204,61,251-33a165.625,165.625,0,0,0,120,0c51,13,108,15,157-5a147.188,147.188,0,0,0,33.5-18.694,147.217,147.217,0,0,0,33.5,18.694c49,20,106,18,157,5a165.625,165.625,0,0,0,120,0c47,94,178,113,251,33C2446.709,1093.793,2554.709,922.793,2379.709,863.793Z"
+      data-name="Path 39"
+      fill="#eee"
+      id="Path_39" transform="translate(142.69 -634.312)"/>
+  </svg>
+
+</div>
+
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+

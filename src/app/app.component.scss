@@ -1,0 +1,10 @@
+.password-container {
+  max-width: 100%;
+  margin-bottom: 1rem;
+}
+
+.toolbar-title {
+  overflow: hidden;
+  white-space: nowrap; /* Don't forget this one */
+  text-overflow: ellipsis;
+}
