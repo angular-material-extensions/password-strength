@@ -690,6 +690,74 @@
     </mat-card>
   </div>
 
+  <div class="reactive-forms-container" fxLayout="column">
+    <mat-toolbar *ngIf="true" style="max-width: 100%">
+      <span class="toolbar-title">@angular-material-extensions/password-strength</span>
+      <span fxFlex></span>
+
+      <button mat-icon-button
+              color="accent"
+              matTooltip="view source"
+              (click)="viewSource4 = !viewSource4">
+        <mat-icon>code</mat-icon>
+      </button>
+    </mat-toolbar>
+    <mat-card>
+      <mat-card-subtitle>
+        Password Strength with reactive forms
+      </mat-card-subtitle>
+
+
+      <mat-card-content *ngIf="viewSource4">
+        <mat-tab-group>
+          <!--tab 1-->
+          <mat-tab>
+            <ng-template mat-tab-label>HTML</ng-template>
+            <markdown src="assets/md/home/e4/html.md"></markdown>
+          </mat-tab>
+
+          <mat-tab>
+            <ng-template mat-tab-label>TS</ng-template>
+            <markdown src="assets/md/home/e4/ts.md"></markdown>
+          </mat-tab>
+        </mat-tab-group>
+      </mat-card-content>
+
+      <mat-card-subtitle>
+        <mat-slide-toggle [(ngModel)]="showDetails4">Show Password Details</mat-slide-toggle>
+      </mat-card-subtitle>
+
+
+      <mat-card-content>
+        <!--password input filed-->
+        <form [formGroup]="passwordFormGroup">
+          <mat-form-field appearance="outline" style="width: 100%" [color]="reactiveForms.color">
+            <mat-label>Password</mat-label>
+            <mat-pass-toggle-visibility #toggle4 matSuffix></mat-pass-toggle-visibility>
+            <input matInput #passwordRF
+                   [type]="toggle4.type"
+                   placeholder="Password">
+            <mat-hint align="end" aria-live="polite">
+              {{passwordRF.value.length}} / {{reactiveForms.max}}
+            </mat-hint>
+          </mat-form-field>
+
+          <!--@angular-material-extensions/password-strength's main component-->
+          <mat-password-strength #reactiveForms
+                                 formControlName="password"
+                                 [password]="passwordRF.value">
+          </mat-password-strength>
+
+          <!--Password's strength info-->
+          <mat-password-strength-info
+            *ngIf="showDetails4"
+            [passwordComponent]="reactiveForms">
+          </mat-password-strength-info>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
   <p>For more info, please read the official readme - see the links above GITHUB - DOCS - NPM</p>
 
   <router-outlet></router-outlet>

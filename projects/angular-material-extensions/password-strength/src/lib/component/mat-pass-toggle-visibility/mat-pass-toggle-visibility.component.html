@@ -1,8 +1,12 @@
-<button (click)="isVisible = !isVisible"
-        type="button"
-        class="mat-icon-button cdk-focused cdk-mouse-focused" mat-icon-button
-        matRippleCentered="true"
-        matRipple>
-  <mat-icon>{{isVisible ? 'visibility' : 'visibility_off' }}</mat-icon>
+<button
+  (click)="isVisible = !isVisible"
+  class="mat-icon-button cdk-focused cdk-mouse-focused"
+  mat-icon-button
+  matRipple
+  matRippleCentered="true"
+  matRipple
+  [attr.tabindex]="tabindex ? tabindex : null"
+  type="button"
+>
+  <mat-icon>{{ isVisible ? "visibility" : "visibility_off" }}</mat-icon>
 </button>
-

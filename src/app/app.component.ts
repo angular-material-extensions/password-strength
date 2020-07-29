@@ -1,5 +1,6 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {MatPasswordStrengthComponent} from '@angular-material-extensions/password-strength';
+import {FormControl, FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -17,11 +18,15 @@ export class AppComponent implements OnInit {
   showDetails: boolean;
   showDetails2: boolean;
   showDetails3: boolean;
+  showDetails4: boolean;
 
   viewSource: boolean;
   viewSource2: boolean;
   viewSource3: boolean;
+  viewSource4: boolean;
   color = '';
+
+  passwordFormGroup: FormGroup;
 
   ngOnInit() {
     console.log('home on init');
@@ -34,6 +39,15 @@ export class AppComponent implements OnInit {
       console.log('passwordFormControl form control = ', this.passwordComponentWithConfirmation.passwordConfirmationFormControl);
     });
 
+    this.passwordFormGroup = new FormGroup({
+      password: new FormControl()
+    });
+
+
+    this.passwordFormGroup
+      .get('password')
+      .valueChanges
+      .subscribe(value => console.log('Reactive Forms --> password value (strength 0-100) -->', value));
   }
 
   onStrengthChanged(strength: number) {

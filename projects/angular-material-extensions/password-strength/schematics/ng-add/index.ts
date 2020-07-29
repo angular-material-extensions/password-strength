@@ -78,7 +78,7 @@ export function getPackageVersionFromPackageJson(tree: Tree, name: string): stri
   return null;
 }
 
-export default function(options: any): Rule {
+export default function (options: any): Rule {
   return chain([
     options && options.skipPackageJson ? noop() : addPackageJsonDependencies(),
     options && options.skipPackageJson ? noop() : installPackageJsonDependencies(),

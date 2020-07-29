@@ -12,6 +12,8 @@ export class MatPassToggleVisibilityComponent {
 
   @Input()
   isVisible: boolean;
+  @Input()
+  tabindex?: string;
 
   _type: Type = 'text';
 
