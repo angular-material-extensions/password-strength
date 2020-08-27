@@ -18,7 +18,6 @@
     "test": "jest",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "serve:prerender": "cd dist/browser && http-server",
     "release": "release-it",
     "test:watch": "jest --watch",
     "compile:server_bak": "webpack --config webpack.server.config.js --progress --colors",
@@ -28,8 +27,9 @@
     "dev:ssr": "ng run password-strength:serve-ssr",
     "serve:ssr": "node dist/server/main.js",
     "build:ssr": "ng build --prod && ng run password-strength:server:production",
-    "prerender": "ng run password-strength:prerender",
-    "bundle-report": "webpack-bundle-analyzer dist/browser/stats-es2015.json"
+    "bundle-report": "webpack-bundle-analyzer dist/browser/stats-es2015.json",
+    "serve:prerender": "cd dist/password-strength/browser && http-server",
+    "prerender": "ng run password-strength:prerender"
   },
   "dependencies": {
     "@angular-material-extensions/pages": "^4.0.0",
@@ -70,6 +70,7 @@
     "@types/node": "^12.12.54",
     "angular-cli-ghpages": "^0.6.2",
     "codelyzer": "^5.2.2",
+    "http-server": "^0.12.3",
     "jasmine-core": "~3.5.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~4.3.0",
