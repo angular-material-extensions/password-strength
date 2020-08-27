@@ -51,9 +51,8 @@
     "@angular/core": "^9.0.0",
     "@angular/forms": "^9.0.0",
     "@angular/cdk": "^9.0.0",
-    "@angular/material": "^9.0.0",
-    "tslib": "^1.10.0"
-  },
+    "@angular/material": "^9.0.0"
+},
   "engines": {
     "node": ">=10.13"
   },
@@ -142,5 +141,8 @@
       "demo"
     ],
     "scope": "\\S+.*"
+  },
+  "dependencies": {
+    "tslib": "^2.0.0"
   }
 }
