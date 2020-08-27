@@ -18,6 +18,7 @@
     "test": "jest",
     "lint": "ng lint",
     "e2e": "ng e2e",
+    "postinstall": "ngcc",
     "release": "release-it",
     "test:watch": "jest --watch",
     "compile:server_bak": "webpack --config webpack.server.config.js --progress --colors",
