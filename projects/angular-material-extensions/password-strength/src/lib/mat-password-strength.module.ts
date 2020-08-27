@@ -41,7 +41,7 @@ export {RegExpValidator} from './validator/regexp.class';
   entryComponents: [MatPassToggleVisibilityComponent]
 })
 export class MatPasswordStrengthModule {
-  static forRoot(): ModuleWithProviders {
+  static forRoot(): ModuleWithProviders<MatPasswordStrengthModule> {
     return {
       ngModule: MatPasswordStrengthModule,
       providers: []
