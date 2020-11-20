@@ -4,7 +4,7 @@
    src="https://cdn.jsdelivr.net/gh/angular-material-extensions/password-strength@master/assets/angular-material-extensions-logo.svg">
 </p>
 
-# @angular-material-extensions/password-strength - Material password strength meter to indicate how secure is the provided password - Angular V9 supported incl. schematics
+# @angular-material-extensions/password-strength - Material password strength meter to indicate how secure is the provided password - Angular V11 supported incl. schematics
 
 [![npm version](https://badge.fury.io/js/%40angular-material-extensions%2Fpassword-strength.svg)](https://badge.fury.io/js/%40angular-material-extensions%2Fpassword-strength)
 [![npm demo](https://img.shields.io/badge/demo-online-ed1c46.svg)](https://angular-material-extensions.github.io/password-strength)
@@ -19,8 +19,6 @@
 [![license](https://img.shields.io/github/license/angular-material-extensions/password-strength.svg?style=flat-square)](https://github.com/angular-material-extensions/password-strength/blob/master/LICENSE)
 [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/gdi2290/awesome-angular)
 
-> Please use the latest version of this library --> V6 which is supporting angular V9
-> @angular-material-extensions/password-strength@5.0.0 should be skipped --> @angular-material-extensions/password-strength@5.1.0 ---> @angular-material-extensions/password-strength@6.0.0 is better
 
 <p align="center">
   <img alt="@angular-material-extensions/password-strength demonstration" style="text-align: center;"
@@ -99,7 +97,7 @@ View all the directives and components in action at [https://angular-material-ex
 <a name="dependencies"/>
 
 ## Dependencies
-* [Angular](https://angular.io) developed and tested with `9.x`
+* [Angular](https://angular.io) developed and tested with `11.x`
 
 ---
 
@@ -458,9 +456,9 @@ or follow the official [tutorial](https://angular-material-extensions.github.io/
 ## Other Angular Libraries
 - [ngx-auth-firebaseui](https://github.com/AnthonyNahas/ngx-auth-firebaseui)
 - [ngx-linkifyjs](https://github.com/AnthonyNahas/ngx-linkifyjs)
-- [@firebaseui/ng-bootstrap](https://github.com/firebaseui/ng-bootstrap)
 - [@angular-material-extensions/google-maps-autocomplete](https://github.com/angular-material-extensions/google-maps-autocomplete)
 - [@angular-material-extensions/select-country](https://github.com/angular-material-extensions/select-country)
+- [@angular-material-extensions/select-icon](https://github.com/angular-material-extensions/select-icon)
 - [@angular-material-extensions/fab-menu](https://github.com/angular-material-extensions/fab-menu)
 - [@angular-material-extensions/link-preview](https://github.com/angular-material-extensions/link-preview)
 - [@angular-material-extensions/pages](https://github.com/angular-material-extensions/pages)
@@ -491,5 +489,5 @@ This project is supported by [jetbrains](https://www.jetbrains.com/) with 1 ALL 
 
 ## License
 
-Copyright (c) 2019 [Anthony Nahas](https://github.com/AnthonyNahas). Licensed under the MIT License (MIT)
+Copyright (c) 2019-2020 [Anthony Nahas](https://github.com/AnthonyNahas). Licensed under the MIT License (MIT)
 
