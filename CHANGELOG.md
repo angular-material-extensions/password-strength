@@ -1,3 +1,12 @@
+* fix(lib): solved issues related to the schematics (387cffe2)
+* feat(lib): upgraded rxjs (34f2ae81)
+* feat(lib): upgraded nguniversal to v11 (95e0ec1c)
+* fix(package): upgraded angular material to v11 (e587b64f)
+* fix(package): upgraded angular to v11 (27f9978e)
+* Merge remote-tracking branch 'origin/master' (a166ee93)
+* Merge pull request #305 from yerevin/patch-1 (b9d5ee3c)
+* Update to Angular10 (0b69e049)
+
 * fix(package): updated the peer dependencies of the library (a1286312)
 * fix(package): minor (9734ea12)
 * fix(package): updated @nguniversal/express-engine (6602952b)
