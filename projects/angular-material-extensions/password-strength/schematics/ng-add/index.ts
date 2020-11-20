@@ -53,6 +53,7 @@ export function installPackageJsonDependencies(): Rule {
 export function addModuleToImports(options: any): Rule {
   return (host: Tree, context: SchematicContext) => {
     const workspace = getWorkspace(host);
+    // @ts-ignore
     const project = getProjectFromWorkspace(workspace, options.project);
     const moduleName = 'MatPasswordStrengthModule';
 
