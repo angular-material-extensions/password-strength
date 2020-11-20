@@ -1,3 +1,5 @@
+* docs(project): updated the README.md (59409558)
+
 * fix(lib): solved issues related to the schematics (387cffe2)
 * feat(lib): upgraded rxjs (34f2ae81)
 * feat(lib): upgraded nguniversal to v11 (95e0ec1c)
