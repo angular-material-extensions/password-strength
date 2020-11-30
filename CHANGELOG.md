@@ -1,3 +1,10 @@
+* fix(project): upgraded angular cdk and angular material to v11.0.1 (a62aad5b)
+* docs(project): updated the README.md (53e69be5)
+* Merge pull request #311 from LiorCorp/feature/custom-mat-icon (7ccca45a)
+* add custom mat-icon in mat-password-strenght-info (da8d0eb7)
+* Merge pull request #297 from LakMoore/patch-1 (a7ca5718)
+* Add svgIcon attributes (32a0e3bc)
+
 * docs(project): updated the README.md (59409558)
 
 * fix(lib): solved issues related to the schematics (387cffe2)
