@@ -98,6 +98,12 @@ export class MatPasswordStrengthInfoComponent implements OnInit {
   @Input()
   minCharsCriteriaMsg: string;
 
+  @Input()
+  matIconDone = "done";
+
+  @Input()
+  matIconError = "error";
+
   ngOnInit(): void {
     if (!this.minCharsCriteriaMsg) {
       this.minCharsCriteriaMsg = `contains at least ${this.passwordComponent.min} characters`
