@@ -99,10 +99,10 @@ export class MatPasswordStrengthInfoComponent implements OnInit {
   minCharsCriteriaMsg: string;
 
   @Input()
-  matIconDone = "done";
+  matIconDone = 'done';
 
   @Input()
-  matIconError = "error";
+  matIconError = 'error';
 
   ngOnInit(): void {
     if (!this.minCharsCriteriaMsg) {

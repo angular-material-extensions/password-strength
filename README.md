@@ -455,6 +455,7 @@ or follow the official [tutorial](https://angular-material-extensions.github.io/
 
 ## Other Angular Libraries
 - [ngx-auth-firebaseui](https://github.com/AnthonyNahas/ngx-auth-firebaseui)
+- [ngx-mailto](https://github.com/AnthonyNahas/ngx-mailto)
 - [ngx-linkifyjs](https://github.com/AnthonyNahas/ngx-linkifyjs)
 - [@angular-material-extensions/google-maps-autocomplete](https://github.com/angular-material-extensions/google-maps-autocomplete)
 - [@angular-material-extensions/select-country](https://github.com/angular-material-extensions/select-country)
