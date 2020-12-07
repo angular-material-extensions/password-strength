@@ -1,3 +1,5 @@
+* fix(project): updated angular and other dependencies (d9269172)
+
 * fix(project): upgraded angular cdk and angular material to v11.0.1 (a62aad5b)
 * docs(project): updated the README.md (53e69be5)
 * Merge pull request #311 from LiorCorp/feature/custom-mat-icon (7ccca45a)
