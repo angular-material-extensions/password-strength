@@ -1,3 +1,11 @@
+* Merge pull request #304 from msenosiain/add-tabindex-attribute-toggle-visibility (9892c80f)
+* Merge pull request #318 from AndriiNeverov/schematics-angular11-support (96424510)
+* Upgraded Schematics to 11.1.2 (d5744a13)
+* Merge branch 'master' into add-tabindex-attribute-toggle-visibility (84eb5b79)
+* fix(project): upgraded angulat to v11.1.2 (920cfc2c)
+* Merge branch 'master' into add-tabindex-attribute-toggle-visibility (ad73e28e)
+* Toggle visibility: Add option input for tabindex value (ea84d761)
+
 * fix(project): updated angular and other dependencies (d9269172)
 
 * fix(project): upgraded angular cdk and angular material to v11.0.1 (a62aad5b)
