@@ -1,7 +1,7 @@
 {
   "name": "@angular-material-extensions/password-strength",
   "description": "Material password strength meter to indicate how secure is the provided password",
-  "version": "8.1.1",
+  "version": "8.2.0",
   "homepage": "https://github.com/angular-material-extensions/password-strength",
   "author": {
     "name": "anthonynahas",
@@ -41,7 +41,7 @@
     "release:patch": "../../../node_modules/.bin/release-it --patch --ci",
     "release:minor": "../../../node_modules/.bin/release-it --minor --ci",
     "release:major": "../../../node_modules/.bin/release-it --major --ci --no-git.requireCleanWorkingDir --dry-run",
-    "release:custom": "../../../node_modules/.bin/release-it 8.1.2 --ci --no-git.requireCleanWorkingDir",
+    "release:custom": "../../../node_modules/.bin/release-it 8.2.0 --ci --no-git.requireCleanWorkingDir",
     "ng:test": "../../../node_modules/.bin/ng test @angular-material-extensions/password-strength",
     "test": "../../../node_modules/.bin/jest --coverage",
     "test:watch": "../../../node_modules/.bin/jest --coverage --watch"
