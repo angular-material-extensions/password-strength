@@ -1,3 +1,5 @@
+* fix(lib): updated the dependencies (923f112a)
+
 * Merge pull request #304 from msenosiain/add-tabindex-attribute-toggle-visibility (9892c80f)
 * Merge pull request #318 from AndriiNeverov/schematics-angular11-support (96424510)
 * Upgraded Schematics to 11.1.2 (d5744a13)
