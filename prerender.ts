@@ -1,5 +1,5 @@
 // Load zone.js for the server.
-import 'zone.js/dist/zone-node';
+import 'zone.js/node';
 import 'reflect-metadata';
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'fs';
 import { join } from 'path';
