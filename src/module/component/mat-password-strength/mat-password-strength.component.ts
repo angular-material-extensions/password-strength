@@ -71,10 +71,10 @@ export class MatPasswordStrengthComponent implements OnInit, OnChanges {
       this._color = Colors.warn;
       return;
     } else if (changes.password.previousValue === changes.password.currentValue && !changes.password.firstChange) {
-      this.calculatePasswordStrength();
+      this.checkPassword();
     } else {
       this.password && this.password.length > 0 ?
-        this.calculatePasswordStrength() : this.reset();
+      this.checkPassword() : this.reset();
     }
   }
 
@@ -136,6 +136,11 @@ export class MatPasswordStrengthComponent implements OnInit, OnChanges {
         .get(Criteria.at_custom_chars)
         .test(this.password);
     return this.containAtCustomChars;
+  }
+
+  private checkPassword(): void {
+    this.calculatePasswordStrength();
+    this.passwordConfirmationFormControl.updateValueAndValidity();
   }
 
   parseCustomValidatorsRegex(value: string | RegExp = this.customValidator) {
