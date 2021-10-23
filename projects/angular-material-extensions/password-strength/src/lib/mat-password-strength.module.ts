@@ -5,18 +5,16 @@ import {MatRippleModule} from '@angular/material/core';
 import {MatCardModule} from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
 
-import {MatPasswordStrengthComponent} from './component/mat-password-strength/mat-password-strength.component';
-import {MatPasswordStrengthInfoComponent} from './component/mat-password-strength-info/mat-password-strength-info.component';
-import {MatPassToggleVisibilityComponent} from './component/mat-pass-toggle-visibility/mat-pass-toggle-visibility.component';
+import {MatPassToggleVisibilityComponent, MatPasswordStrengthComponent, MatPasswordStrengthInfoComponent} from './component';
 
 
 // Export module's public API
-export {MatPasswordStrengthComponent} from './component/mat-password-strength/mat-password-strength.component';
-export {
-  MatPasswordStrengthInfoComponent
-} from './component/mat-password-strength-info/mat-password-strength-info.component';
-export {MatPassToggleVisibilityComponent} from './component/mat-pass-toggle-visibility/mat-pass-toggle-visibility.component';
-export {MatPasswordStrengthValidator} from './validator/mat-password-strength-validator';
+// export {MatPasswordStrengthComponent} from './component/mat-password-strength/mat-password-strength.component';
+// export {
+//   MatPasswordStrengthInfoComponent
+// } from './component/mat-password-strength-info/mat-password-strength-info.component';
+// export {MatPassToggleVisibilityComponent} from './component/mat-pass-toggle-visibility/mat-pass-toggle-visibility.component';
+// export {MatPasswordStrengthValidator} from './validator/mat-password-strength-validator';
 // validator
 export {RegExpValidator} from './validator/regexp.class';
 
@@ -37,8 +35,7 @@ export {RegExpValidator} from './validator/regexp.class';
     MatPasswordStrengthComponent,
     MatPasswordStrengthInfoComponent,
     MatPassToggleVisibilityComponent
-  ],
-  entryComponents: [MatPassToggleVisibilityComponent]
+  ]
 })
 export class MatPasswordStrengthModule {
   static forRoot(): ModuleWithProviders<MatPasswordStrengthModule> {

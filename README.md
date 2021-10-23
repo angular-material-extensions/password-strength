@@ -4,7 +4,7 @@
    src="https://cdn.jsdelivr.net/gh/angular-material-extensions/password-strength@master/assets/angular-material-extensions-logo.svg">
 </p>
 
-# @angular-material-extensions/password-strength - Material password strength meter to indicate how secure is the provided password - Angular V11 supported incl. schematics
+# @angular-material-extensions/password-strength - Material password strength meter to indicate how secure is the provided password - Angular V12 supported incl. schematics
 
 [![npm version](https://badge.fury.io/js/%40angular-material-extensions%2Fpassword-strength.svg)](https://badge.fury.io/js/%40angular-material-extensions%2Fpassword-strength)
 [![npm demo](https://img.shields.io/badge/demo-online-ed1c46.svg)](https://angular-material-extensions.github.io/password-strength)
@@ -99,7 +99,7 @@ View all the directives and components in action at [https://angular-material-ex
 <a name="dependencies"/>
 
 ## Dependencies
-* [Angular](https://angular.io) developed and tested with `11.x`
+* [Angular](https://angular.io) developed and tested with `12.x`
 
 ---
 
@@ -542,4 +542,4 @@ This project is supported by [jetbrains](https://www.jetbrains.com/) with 1 ALL 
 
 ## License
 
-Copyright (c) 2019-2020 [Anthony Nahas](https://github.com/AnthonyNahas). Licensed under the MIT License (MIT)
+Copyright (c) 2019-2021 [Anthony Nahas](https://github.com/AnthonyNahas). Licensed under the MIT License (MIT)

@@ -47,14 +47,14 @@
     "test:watch": "../../../node_modules/.bin/jest --coverage --watch"
   },
   "peerDependencies": {
-    "@angular/common": "^11.0.2",
-    "@angular/core": "^11.0.2",
-    "@angular/forms": "^11.0.2",
-    "@angular/cdk": "^11.0.0",
-    "@angular/material": "^11.0.0"
+    "@angular/common": "^12.x",
+    "@angular/core": "^12.x",
+    "@angular/forms": "^12.x",
+    "@angular/cdk": "^12.x",
+    "@angular/material": "^12.x"
   },
   "engines": {
-    "node": ">=10.13"
+    "node": ">=12"
   },
   "release-it": {
     "github": {
