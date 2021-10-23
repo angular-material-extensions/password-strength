@@ -1,3 +1,14 @@
+* fix(lib): updated angular flex layout (8ad9541c)
+* fix(lib): minor (2b1da578)
+* fix(lib): upgraded nguniversal (5cafc1ff)
+* fix(lib): minor (3e75594f)
+* fix(lib): upgraded angular material to v12 (3841f9f5)
+* Merge remote-tracking branch 'origin/master' (3372be84)
+* Merge pull request #330 from marvinosswald/fix/229 (baf0365f)
+* fix: confirm form validation needs to be reevaluated on changes on the password form (ed24d724)
+* fix(lib): upgraded angular material to v12 (d2844be0)
+* fix(lib): upgraded the lib to v12 (481a3c98)
+
 * fix(lib): updated the dependencies (923f112a)
 
 * Merge pull request #304 from msenosiain/add-tabindex-attribute-toggle-visibility (9892c80f)
