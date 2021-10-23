@@ -8,4 +8,3 @@ export * from './ng-ast-utils';
 export * from './parse-name';
 export * from './paths';
 export * from './validation';
-export * from './workspace-models';
