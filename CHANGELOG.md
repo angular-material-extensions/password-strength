@@ -1,3 +1,12 @@
+# [10.0.0](https://github.com/angular-material-extensions/password-strength/compare/9.0.0...10.0.0) (2021-11-05)
+
+
+### Bug Fixes
+
+* **lib:** upgraded angular cdk and material deps ([1e4a55c](https://github.com/angular-material-extensions/password-strength/commit/1e4a55ca4ffafe0584264eda2124e2aa8fbfa794))
+* **lib:** upgraded angular deps ([3e76824](https://github.com/angular-material-extensions/password-strength/commit/3e7682459d69a638f697172cffb91a99487e6447))
+* **lib:** upgraded angular to the latest version ([a5d3605](https://github.com/angular-material-extensions/password-strength/commit/a5d36057c4173591bbaa7ca5b144d2d5fcf51a86))
+
 * fix(lib): updated angular flex layout (8ad9541c)
 * fix(lib): minor (2b1da578)
 * fix(lib): upgraded nguniversal (5cafc1ff)
