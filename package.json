@@ -70,7 +70,7 @@
     "@types/jasmine": "^3.6.10",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "^12.20.10",
-    "angular-cli-ghpages": "^0.6.2",
+    "angular-cli-ghpages": "^1.0.0",
     "codelyzer": "^6.0.1",
     "http-server": "^14.0.0",
     "jasmine-core": "~3.5.0",
