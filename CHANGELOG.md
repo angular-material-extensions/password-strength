@@ -1,3 +1,17 @@
+# [10.1.0](https://github.com/angular-material-extensions/password-strength/compare/10.0.1...10.1.0) (2022-01-11)
+
+
+### Bug Fixes
+
+* **lib:** minor ([6082fb1](https://github.com/angular-material-extensions/password-strength/commit/6082fb1c0b70b0e0f42874a29ad4148231ddf806))
+* **lib:** updated the dependencies ([d062fd3](https://github.com/angular-material-extensions/password-strength/commit/d062fd38b8960622edbccc20341a3c2711ab2e6b))
+* **lib:** updated the dependencies ([f5d330a](https://github.com/angular-material-extensions/password-strength/commit/f5d330a2e2e6466dab380bd6a6576a209375d3f4))
+* **lib:** updated the dependencies ([1d521bd](https://github.com/angular-material-extensions/password-strength/commit/1d521bdb667fea509eed0ef1e4daaf26c2911151))
+* **lib:** upgraded angular flex layout ([2b28d5a](https://github.com/angular-material-extensions/password-strength/commit/2b28d5af7f03941df0435bd8f120783bd45871db))
+* **lib:** upgraded angular flex layout ([8bbef8e](https://github.com/angular-material-extensions/password-strength/commit/8bbef8ecd3a6ae7e98e85c72b92950f85e65f56f))
+* **lib:** upgraded angular to v13.1.1 ([8e5b1c0](https://github.com/angular-material-extensions/password-strength/commit/8e5b1c07449daf04e4d5ad467c31bfd6360dbc08))
+* **lib:** upgraded angular to v13.1.1 ([12eb805](https://github.com/angular-material-extensions/password-strength/commit/12eb8058efd9dac569805ceb5793216b6aab892c))
+
 ## [10.0.1](https://github.com/angular-material-extensions/password-strength/compare/10.0.0...10.0.1) (2021-12-04)
 
 
