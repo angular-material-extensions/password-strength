@@ -1,3 +1,11 @@
+## [10.1.1](https://github.com/angular-material-extensions/password-strength/compare/10.1.0...10.1.1) (2022-02-15)
+
+
+### Bug Fixes
+
+* **lib:** minor ([006ab27](https://github.com/angular-material-extensions/password-strength/commit/006ab270c6fe0cabab6ec2c7dc070b86d68e8836))
+* **lib:** upgraded angular to the latest version ([fe15c3d](https://github.com/angular-material-extensions/password-strength/commit/fe15c3dc03b0497e539d765ba588226082fc254b))
+
 # [10.1.0](https://github.com/angular-material-extensions/password-strength/compare/10.0.1...10.1.0) (2022-01-11)
 
 
