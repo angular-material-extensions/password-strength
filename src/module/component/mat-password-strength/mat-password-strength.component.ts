@@ -1,5 +1,5 @@
 import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
-import {FormControl, ValidatorFn, Validators} from '@angular/forms';
+import {UntypedFormControl, ValidatorFn, Validators} from '@angular/forms';
 import {ThemePalette} from '@angular/material';
 import {Criteria} from '../../enum/criteria.enum';
 import {Colors} from '../../enum/colors.enum';
@@ -45,8 +45,8 @@ export class MatPasswordStrengthComponent implements OnInit, OnChanges {
   containAtCustomChars: boolean;
 
   // TO ACCESS VIA CONTENT CHILD
-  passwordFormControl: FormControl = new FormControl();
-  passwordConfirmationFormControl: FormControl = new FormControl();
+  passwordFormControl: UntypedFormControl = new UntypedFormControl();
+  passwordConfirmationFormControl: UntypedFormControl = new UntypedFormControl();
 
   validatorsArray: ValidatorFn[] = [];
 

@@ -207,7 +207,6 @@
       }
     }
   },
-  "defaultProject": "password-strength",
   "cli": {
     "analytics": "80a8e7b5-ce29-40b8-a31c-aa518596a68a"
   }
