@@ -29,7 +29,7 @@
     "url": "https://github.com/angular-material-extensions/password-strength/issues"
   },
   "scripts": {
-    "build": "ng build @angular-material-extensions/password-strength --prod",
+    "build": "ng build @angular-material-extensions/password-strength --configuration=production",
     "build:watch": "../../../node_modules/.bin/ng build @angular-material-extensions/password-strength --watch",
     "build:schematics": "../../../node_modules/.bin/tsc -p tsconfig.schematics.json",
     "clean": "rm -rf ../../../dist",
