@@ -10,7 +10,7 @@ import {
   Output,
   SimpleChanges
 } from '@angular/core';
-import {ControlValueAccessor, FormControl, NG_VALUE_ACCESSOR, ValidatorFn, Validators} from '@angular/forms';
+import {ControlValueAccessor, UntypedFormControl, NG_VALUE_ACCESSOR, ValidatorFn, Validators} from '@angular/forms';
 import {Colors, Criteria} from '../../enum';
 import {MatPasswordStrengthValidator} from '../../validator';
 import {RegExpValidator} from '../../validator/regexp.class';
@@ -62,8 +62,8 @@ export class MatPasswordStrengthComponent implements OnInit, OnChanges, AfterCon
   containAtCustomChars: boolean;
 
   // TO ACCESS VIA CONTENT CHILD
-  passwordFormControl: FormControl = new FormControl();
-  passwordConfirmationFormControl: FormControl = new FormControl();
+  passwordFormControl: UntypedFormControl = new UntypedFormControl();
+  passwordConfirmationFormControl: UntypedFormControl = new UntypedFormControl();
 
   validatorsArray: ValidatorFn[] = [];
   Validators: ValidatorFn;
