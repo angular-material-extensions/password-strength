@@ -542,4 +542,4 @@ This project is supported by [jetbrains](https://www.jetbrains.com/) with 1 ALL 
 
 ## License
 
-Copyright (c) 2019-2021 [Anthony Nahas](https://github.com/AnthonyNahas). Licensed under the MIT License (MIT)
+Copyright (c) 2019-2022 [Anthony Nahas](https://github.com/AnthonyNahas). Licensed under the MIT License (MIT)
