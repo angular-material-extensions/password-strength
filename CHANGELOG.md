@@ -1,3 +1,22 @@
+# [11.0.0](https://github.com/angular-material-extensions/password-strength/compare/10.1.1...11.0.0) (2022-07-05)
+
+
+### Bug Fixes
+
+* **demo:** minor ([6742585](https://github.com/angular-material-extensions/password-strength/commit/67425855f2ad644387e0634204aee4006b10f2d4))
+* **demo:** minor ([c2730e7](https://github.com/angular-material-extensions/password-strength/commit/c2730e72db943bfa1d6254645734fab4cdfa62fb))
+* **docs:** minor ([7ba7edb](https://github.com/angular-material-extensions/password-strength/commit/7ba7edb180145956900791c2ebcda8ea3738d954))
+* **lib:** minor ([9148de0](https://github.com/angular-material-extensions/password-strength/commit/9148de0f450b78872a5c860cc3b802294aa087cf))
+* **lib:** minor ([ec1590a](https://github.com/angular-material-extensions/password-strength/commit/ec1590a0ffe87512a149dfcd46194aaa291c20b8))
+* **lib:** minor ([f0563a5](https://github.com/angular-material-extensions/password-strength/commit/f0563a52bea6177b18a0d76243321e395165f36a))
+* **lib:** updated tsconfig file ([44de506](https://github.com/angular-material-extensions/password-strength/commit/44de506f6991e4ae64d021f7b4bde9b0f4c98406))
+* **lib:** upgraded angular deps ([f3d22e9](https://github.com/angular-material-extensions/password-strength/commit/f3d22e9d9e3abd18c19fe42c4325bec8bba98346))
+* **lib:** upgraded angular deps ([94c1d2d](https://github.com/angular-material-extensions/password-strength/commit/94c1d2d90c204e2cd2f0336c75b60c2b8ad5a36b))
+* **lib:** upgraded angular material deps ([da4cb97](https://github.com/angular-material-extensions/password-strength/commit/da4cb97e1b9b15cf24b47f4364e94f9478ba43d5))
+* **lib:** upgraded angular universal ([4293308](https://github.com/angular-material-extensions/password-strength/commit/429330842546921e96b41c34ee8732531c361833))
+* **lib:** upgraded deps ([ca4ee28](https://github.com/angular-material-extensions/password-strength/commit/ca4ee28b1f8b6292f0eb32a1037397b5d6492bc5))
+* **lib:** upgraded deps ([225c2a0](https://github.com/angular-material-extensions/password-strength/commit/225c2a094c1016c1ba9b42b1b215b92cb368fb2e))
+
 ## [10.1.1](https://github.com/angular-material-extensions/password-strength/compare/10.1.0...10.1.1) (2022-02-15)
 
 
