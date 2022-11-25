@@ -4,21 +4,21 @@ import {NgModule} from '@angular/core';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatLegacyCardModule as MatCardModule} from '@angular/material/legacy-card';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
-import {MatLegacyTabsModule as MatTabsModule} from '@angular/material/legacy-tabs';
-import {MatLegacySlideToggleModule as MatSlideToggleModule} from '@angular/material/legacy-slide-toggle';
 import {MatPasswordStrengthModule} from '@angular-material-extensions/password-strength';
-import {MatLegacyInputModule as MatInputModule} from '@angular/material/legacy-input';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {MatLegacyButtonModule as MatButtonModule} from '@angular/material/legacy-button';
 import {MarkdownModule} from 'ngx-markdown';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {InitExampleComponent} from './init-example/init-example.component';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatCardModule} from '@angular/material/card';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatInputModule} from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
