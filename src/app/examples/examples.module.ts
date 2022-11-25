@@ -5,12 +5,12 @@ import {ExamplesRoutingModule} from './examples-routing.module';
 import {MarkdownModule} from 'ngx-markdown';
 import {InfoCompExampleComponent} from './info-comp-example/info-comp-example.component';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
-import {MatRadioModule} from '@angular/material/radio';
+import {MatLegacyRadioModule as MatRadioModule} from '@angular/material/legacy-radio';
 import {HttpClient} from '@angular/common/http';
 import {createTranslateLoader} from '../app.module';
-import {MatCardModule} from '@angular/material/card';
-import {MatSlideToggleModule} from '@angular/material/slide-toggle';
-import {MatInputModule} from '@angular/material/input';
+import {MatLegacyCardModule as MatCardModule} from '@angular/material/legacy-card';
+import {MatLegacySlideToggleModule as MatSlideToggleModule} from '@angular/material/legacy-slide-toggle';
+import {MatLegacyInputModule as MatInputModule} from '@angular/material/legacy-input';
 import {MatPasswordStrengthModule} from '@angular-material-extensions/password-strength';
 import {FormsModule} from '@angular/forms';
 
