@@ -355,7 +355,7 @@ e.g:
 
 3. bind the form controller of the mat-password-strength to the input element
 
-- you can access the form controller of @angular-material-extensions/password-strength using the chile view --> `passwordComponentWithValidation.passwordFormControl`
+- you can access the form controller of @angular-material-extensions/password-strength using the child view --> `passwordComponentWithValidation.passwordFormControl`
 - bind the form controller to an input element --> `[formControl]="passwordComponentWithValidation.passwordFormControl"`
 
 4. Full example - see below
