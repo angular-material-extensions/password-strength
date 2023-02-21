@@ -65,12 +65,12 @@ export class MatPasswordStrengthComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if ((changes.externalError && changes.externalError.firstChange) || changes.password.isFirstChange()) {
+    if ((changes.externalError && changes.externalError.firstChange) || (changes.password && changes.password.firstChange)) {
       return;
     } else if (changes.externalError && changes.externalError.currentValue) {
       this._color = Colors.warn;
       return;
-    } else if (changes.password.previousValue === changes.password.currentValue && !changes.password.firstChange) {
+    } else if (changes.password && changes.password.previousValue === changes.password.currentValue && !changes.password.firstChange) {
       this.checkPassword();
     } else {
       this.password && this.password.length > 0 ?
