@@ -1,27 +1,18 @@
-# Javascript Node CircleCI 2.0 configuration file
+# Javascript Node CircleCI 2.1 configuration file
 #
-# Check https://circleci.com/docs/2.0/language-javascript/ for more details
+# Check https://circleci.com/docs/language-javascript/ for more details
 #
-version: 2
+version: 2.1
 jobs:
   build:
     docker:
       # specify the version you desire here
-      - image: circleci/node:8.9.4-browsers
-
-      # Specify service dependencies here if necessary
-      # CircleCI maintains a library of pre-built images
-      # documented at https://circleci.com/docs/2.0/circleci-images/
-      # - image: circleci/mongo:3.4.4
-
-    working_directory: ~/repo
-
-    environment:
-      CHROME_BIN: "chromium-browser"
+      # https://circleci.com/developer/images/image/cimg/node
+      # use "cimg/node:lts-browsers" if you need a browser
+      - image: cimg/node:lts
 
     steps:
       - checkout
-
       # Download and cache dependencies
       - restore_cache:
           keys:
@@ -31,8 +22,7 @@ jobs:
       - run: ls -la && pwd
       - run: git --version
       - run: npm install
-      - run: npm install --only=dev
-      - run: npm run build
+      - run: npm run build:lib
       - run: ls -la && pwd
 
       - save_cache:
