@@ -1,7 +1,7 @@
 <p align="center">
   <img alt="angular-material-extensions's logo"
    height="256px" width="256px" style="text-align: center;" 
-   src="https://cdn.jsdelivr.net/gh/angular-material-extensions/password-strength@master/assets/angular-material-extensions-logo.svg">
+   src="https://cdn.rawgit.com/angular-material-extensions/password-strength/master/assets/angular-material-extensions-logo.svg">
 </p>
 
 # @angular-material-extensions/password-strength - Material password strength meter to indicate how secure is the provided password
