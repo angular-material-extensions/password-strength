@@ -1,4 +1,3 @@
-import { MatPagesModule } from '@angular-material-extensions/pages';
 import { MatPasswordStrengthModule } from '@angular-material-extensions/password-strength';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
@@ -21,7 +20,6 @@ import { GettingStartedComponent } from './getting-started.component';
     GettingStartedRoutingModule,
     HighlightModule,
     MatPasswordStrengthModule,
-    MatPagesModule,
     ClipboardModule,
     MatCardModule,
     MatIconModule,
