@@ -1,13 +1,12 @@
 // Load zone.js for the server.
-import 'zone.js/node';
-import 'reflect-metadata';
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'fs';
 import { join } from 'path';
+import 'reflect-metadata';
+import 'zone.js/node';
 
 import { enableProdMode } from '@angular/core';
 // Import module map for lazy loading
-import { provideModuleMap } from '@nguniversal/module-map-ngfactory-loader';
-import { renderModuleFactory } from '@angular/platform-server';
+import { renderModule } from '@angular/platform-server';
 import { ROUTES } from './static.paths';
 
 // (global as any).WebSocket = require('ws');
@@ -17,7 +16,7 @@ import { ROUTES } from './static.paths';
 enableProdMode();
 
 // * NOTE :: leave this as require() since this file is built Dynamically from webpack
-const { AppServerModuleNgFactory, LAZY_MODULE_MAP } = require('./dist/server/main');
+const { AppServerModule } = require('./dist/server/main');
 
 const BROWSER_FOLDER = join(process.cwd(), 'browser');
 
@@ -38,10 +37,9 @@ ROUTES.forEach(route => {
   // Writes rendered HTML to index.html, replacing the file if it already exists.
   previousRender = previousRender
     .then(_ =>
-      renderModuleFactory(AppServerModuleNgFactory, {
+      renderModule(AppServerModule, {
         document: index,
         url: route,
-        extraProviders: [provideModuleMap(LAZY_MODULE_MAP)]
       })
     )
     .then(html => writeFileSync(join(fullPath, 'index.html'), html));
