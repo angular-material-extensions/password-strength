@@ -22,7 +22,7 @@ jobs:
       - run: ls -la && pwd
       - run: git --version
       - run: npm install
-      - run: npm run build:lib
+      - run: npm run build:lib:prod
       - run: ls -la && pwd
 
       - save_cache:
