@@ -3,17 +3,17 @@ import {CommonModule} from '@angular/common';
 import {GettingStartedComponent} from './getting-started.component';
 import {GettingStartedRoutingModule} from './getting-started-routing.module';
 import {ClipboardModule} from 'ngx-clipboard';
-import {MatLegacyCardModule as MatCardModule} from '@angular/material/legacy-card';
 import {MatIconModule} from '@angular/material/icon';
 import {MatPagesModule} from '@angular-material-extensions/pages';
 import {HIGHLIGHT_OPTIONS, HighlightModule} from 'ngx-highlightjs';
 import {MatPasswordStrengthModule} from '@angular-material-extensions/password-strength';
-import {MatLegacyListModule as MatListModule} from '@angular/material/legacy-list';
-import {MatLegacySlideToggleModule as MatSlideToggleModule} from '@angular/material/legacy-slide-toggle';
-import {MatLegacyInputModule as MatInputModule} from '@angular/material/legacy-input';
 import {FormsModule} from '@angular/forms';
-import {MatLegacySnackBarModule as MatSnackBarModule} from '@angular/material/legacy-snack-bar';
-import {MatLegacyButtonModule as MatButtonModule} from '@angular/material/legacy-button';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatCardModule} from '@angular/material/card';
+import {MatListModule} from '@angular/material/list';
+import {MatInputModule} from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 /**
