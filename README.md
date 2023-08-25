@@ -535,7 +535,7 @@ Built by and for developers :heart: we will help you :punch:
 
 ## Who is using ngx-mailto? Awesome apps?
 
-1. [Nahaus.de](https://nahaus.de)
+1. [Nahaus.de - Digitale und automatisierte Immobilienverwaltung Software für privat Vermieter und Hausverwaltungen](https://nahaus.de)
 
 
 Are you missing your project or you app? PR me to publish it on the README
@@ -554,4 +554,4 @@ This project is supported by [jetbrains](https://www.jetbrains.com/) with 1 ALL 
 
 ## License
 
-Copyright (c) 2019-2022 [Anthony Nahas](https://github.com/AnthonyNahas). Licensed under the MIT License (MIT)
+Copyright (c) 2019-2023 [Anthony Nahas](https://github.com/AnthonyNahas). Licensed under the MIT License (MIT)
