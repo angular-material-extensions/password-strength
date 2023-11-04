@@ -533,7 +533,7 @@ Built by and for developers :heart: we will help you :punch:
 ---
 
 
-## Who is using ngx-mailto? Awesome apps?
+## Who is using this library? Awesome apps?
 
 1. [Nahaus.de - Digitale und automatisierte Immobilienverwaltung Software für privat Vermieter und Hausverwaltungen](https://nahaus.de)
 
