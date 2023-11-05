@@ -1,7 +1,7 @@
 {
   "name": "@angular-material-extensions/password-strength",
   "description": "Material password strength meter to indicate how secure is the provided password",
-  "version": "13.0.0",
+  "version": "16.0.0",
   "homepage": "https://github.com/angular-material-extensions/password-strength",
   "author": {
     "name": "anthonynahas",
@@ -41,17 +41,17 @@
     "release:patch": "../../../node_modules/.bin/release-it --patch --ci",
     "release:minor": "../../../node_modules/.bin/release-it --minor --ci",
     "release:major": "../../../node_modules/.bin/release-it --major --ci --no-git.requireCleanWorkingDir --dry-run",
-    "release:custom": "../../../node_modules/.bin/release-it 13.0.0 --ci --no-git.requireCleanWorkingDir",
+    "release:custom": "../../../node_modules/.bin/release-it 16.0.0 --ci --no-git.requireCleanWorkingDir",
     "ng:test": "../../../node_modules/.bin/ng test @angular-material-extensions/password-strength",
     "test": "../../../node_modules/.bin/jest --coverage",
     "test:watch": "../../../node_modules/.bin/jest --coverage --watch"
   },
   "peerDependencies": {
-    "@angular/common": "^15.x",
-    "@angular/core": "^15.x",
-    "@angular/forms": "^15.x",
-    "@angular/cdk": "^15.x",
-    "@angular/material": "^15.x"
+    "@angular/common": "^16.x",
+    "@angular/core": "^16.x",
+    "@angular/forms": "^16.x",
+    "@angular/cdk": "^16.x",
+    "@angular/material": "^16.x"
   },
   "engines": {
     "node": ">=14"
