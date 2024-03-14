@@ -78,18 +78,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "password-strength:build"
+            "buildTarget": "password-strength:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "password-strength:build:production"
+              "buildTarget": "password-strength:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "password-strength:build"
+            "buildTarget": "password-strength:build"
           }
         },
         "test": {
@@ -149,7 +149,7 @@
           "defaultConfiguration": ""
         },
         "serve-ssr": {
-          "builder": "@nguniversal/builders:ssr-dev-server",
+          "builder": "@angular-devkit/build-angular:ssr-dev-server",
           "options": {
             "browserTarget": "password-strength:build",
             "serverTarget": "password-strength:server"
@@ -162,7 +162,7 @@
           }
         },
         "prerender": {
-          "builder": "@nguniversal/builders:prerender",
+          "builder": "@angular-devkit/build-angular:prerender",
           "options": {
             "browserTarget": "password-strength:build:production",
             "serverTarget": "password-strength:server:production",
