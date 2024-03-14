@@ -22,7 +22,6 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "aot": true,
             "assets": [
               "src/favicon.ico",
               "src/assets"
@@ -33,11 +32,17 @@
               "./node_modules/prismjs/themes/prism-okaidia.css"
             ],
             "scripts": [
-              "./node_modules/marked/lib/marked.js",
+              "./node_modules/marked/marked.min.js",
               "./node_modules/prismjs/prism.js",
               "./node_modules/prismjs/components/prism-typescript.min.js",
               "./node_modules/prismjs/components/prism-css.min.js"
-            ]
+            ],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -50,7 +55,6 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "extractLicenses": true,
               "vendorChunk": false,
@@ -68,23 +72,24 @@
                 }
               ]
             }
-          }
+          },
+          "defaultConfiguration": ""
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "password-strength:build"
+            "buildTarget": "password-strength:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "password-strength:build:production"
+              "buildTarget": "password-strength:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "password-strength:build"
+            "buildTarget": "password-strength:build"
           }
         },
         "test": {
@@ -105,19 +110,6 @@
             "scripts": []
           }
         },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "tsconfig.app.json",
-              "tsconfig.spec.json",
-              "e2e/tsconfig.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        },
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
@@ -135,7 +127,10 @@
           "options": {
             "outputPath": "dist/password-strength/server",
             "main": "server.ts",
-            "tsConfig": "tsconfig.server.json"
+            "tsConfig": "tsconfig.server.json",
+            "sourceMap": true,
+            "optimization": false,
+            "buildOptimizer": false
           },
           "configurations": {
             "production": {
@@ -147,12 +142,14 @@
                 }
               ],
               "sourceMap": false,
-              "optimization": true
+              "optimization": true,
+              "buildOptimizer": true
             }
-          }
+          },
+          "defaultConfiguration": ""
         },
         "serve-ssr": {
-          "builder": "@nguniversal/builders:ssr-dev-server",
+          "builder": "@angular-devkit/build-angular:ssr-dev-server",
           "options": {
             "browserTarget": "password-strength:build",
             "serverTarget": "password-strength:server"
@@ -165,7 +162,7 @@
           }
         },
         "prerender": {
-          "builder": "@nguniversal/builders:prerender",
+          "builder": "@angular-devkit/build-angular:prerender",
           "options": {
             "browserTarget": "password-strength:build:production",
             "serverTarget": "password-strength:server:production",
@@ -208,23 +205,10 @@
             "tsConfig": "projects/angular-material-extensions/password-strength/tsconfig.spec.json",
             "karmaConfig": "projects/angular-material-extensions/password-strength/karma.conf.js"
           }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/angular-material-extensions/password-strength/tsconfig.lib.json",
-              "projects/angular-material-extensions/password-strength/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
         }
       }
     }
   },
-  "defaultProject": "password-strength",
   "cli": {
     "analytics": "80a8e7b5-ce29-40b8-a31c-aa518596a68a"
   }

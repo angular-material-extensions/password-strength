@@ -1,4 +1,4 @@
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import {MatPasswordStrengthComponent} from './mat-password-strength.component';
 import {MatProgressBarModule} from '@angular/material';
@@ -11,7 +11,7 @@ describe('PasswordStrengthComponent', () => {
   let fixture: ComponentFixture<MatPasswordStrengthComponent>;
   const generator = new NgxCombinationGeneratorService();
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       imports: [MatProgressBarModule],
       declarations: [MatPasswordStrengthComponent]

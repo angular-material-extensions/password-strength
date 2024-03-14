@@ -10,7 +10,7 @@ import {
   Output,
   SimpleChanges
 } from '@angular/core';
-import {ControlValueAccessor, FormControl, NG_VALUE_ACCESSOR, ValidatorFn, Validators} from '@angular/forms';
+import {ControlValueAccessor, UntypedFormControl, NG_VALUE_ACCESSOR, ValidatorFn, Validators} from '@angular/forms';
 import {Colors, Criteria} from '../../enum';
 import {MatPasswordStrengthValidator} from '../../validator';
 import {RegExpValidator} from '../../validator/regexp.class';
@@ -62,8 +62,8 @@ export class MatPasswordStrengthComponent implements OnInit, OnChanges, AfterCon
   containAtCustomChars: boolean;
 
   // TO ACCESS VIA CONTENT CHILD
-  passwordFormControl: FormControl = new FormControl();
-  passwordConfirmationFormControl: FormControl = new FormControl();
+  passwordFormControl: UntypedFormControl = new UntypedFormControl();
+  passwordConfirmationFormControl: UntypedFormControl = new UntypedFormControl();
 
   validatorsArray: ValidatorFn[] = [];
   Validators: ValidatorFn;
@@ -96,12 +96,12 @@ export class MatPasswordStrengthComponent implements OnInit, OnChanges, AfterCon
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if ((changes.externalError && changes.externalError.firstChange) || changes.password.isFirstChange()) {
+    if ((changes.externalError && changes.externalError.firstChange) || (changes.password && changes.password.firstChange)) {
       return;
     } else if (changes.externalError && changes.externalError.currentValue) {
       this._color = Colors.warn;
       return;
-    } else if (changes.password.previousValue === changes.password.currentValue && !changes.password.firstChange) {
+    } else if (changes.password && changes.password.previousValue === changes.password.currentValue && !changes.password.firstChange) {
       this.calculatePasswordStrength();
     } else {
       this.password && this.password.length > 0 ?

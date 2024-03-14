@@ -1,5 +1,5 @@
 import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
-import {FormControl, ValidatorFn, Validators} from '@angular/forms';
+import {UntypedFormControl, ValidatorFn, Validators} from '@angular/forms';
 import {ThemePalette} from '@angular/material';
 import {Criteria} from '../../enum/criteria.enum';
 import {Colors} from '../../enum/colors.enum';
@@ -45,8 +45,8 @@ export class MatPasswordStrengthComponent implements OnInit, OnChanges {
   containAtCustomChars: boolean;
 
   // TO ACCESS VIA CONTENT CHILD
-  passwordFormControl: FormControl = new FormControl();
-  passwordConfirmationFormControl: FormControl = new FormControl();
+  passwordFormControl: UntypedFormControl = new UntypedFormControl();
+  passwordConfirmationFormControl: UntypedFormControl = new UntypedFormControl();
 
   validatorsArray: ValidatorFn[] = [];
 
@@ -65,16 +65,16 @@ export class MatPasswordStrengthComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if ((changes.externalError && changes.externalError.firstChange) || changes.password.isFirstChange()) {
+    if ((changes.externalError && changes.externalError.firstChange) || (changes.password && changes.password.firstChange)) {
       return;
     } else if (changes.externalError && changes.externalError.currentValue) {
       this._color = Colors.warn;
       return;
-    } else if (changes.password.previousValue === changes.password.currentValue && !changes.password.firstChange) {
-      this.calculatePasswordStrength();
+    } else if (changes.password && changes.password.previousValue === changes.password.currentValue && !changes.password.firstChange) {
+      this.checkPassword();
     } else {
       this.password && this.password.length > 0 ?
-        this.calculatePasswordStrength() : this.reset();
+      this.checkPassword() : this.reset();
     }
   }
 
@@ -136,6 +136,11 @@ export class MatPasswordStrengthComponent implements OnInit, OnChanges {
         .get(Criteria.at_custom_chars)
         .test(this.password);
     return this.containAtCustomChars;
+  }
+
+  private checkPassword(): void {
+    this.calculatePasswordStrength();
+    this.passwordConfirmationFormControl.updateValueAndValidity();
   }
 
   parseCustomValidatorsRegex(value: string | RegExp = this.customValidator) {

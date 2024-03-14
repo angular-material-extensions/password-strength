@@ -1,6 +1,6 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {MatPasswordStrengthComponent} from '@angular-material-extensions/password-strength';
-import {FormControl, FormGroup} from '@angular/forms';
+import {UntypedFormControl, UntypedFormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -26,7 +26,7 @@ export class AppComponent implements OnInit {
   viewSource4: boolean;
   color = '';
 
-  passwordFormGroup: FormGroup;
+  passwordFormGroup: UntypedFormGroup;
 
   ngOnInit() {
     console.log('home on init');
@@ -39,8 +39,8 @@ export class AppComponent implements OnInit {
       console.log('passwordFormControl form control = ', this.passwordComponentWithConfirmation.passwordConfirmationFormControl);
     });
 
-    this.passwordFormGroup = new FormGroup({
-      password: new FormControl()
+    this.passwordFormGroup = new UntypedFormGroup({
+      password: new UntypedFormControl()
     });
 
 

@@ -1,22 +1,12 @@
 import {CommonModule} from '@angular/common';
 import {ModuleWithProviders, NgModule} from '@angular/core';
-import {MatProgressBarModule} from '@angular/material/progress-bar';
-import {MatRippleModule} from '@angular/material/core';
-import {MatCardModule} from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import {MatCardModule} from '@angular/material/card';
+import {MatPassToggleVisibilityComponent, MatPasswordStrengthComponent, MatPasswordStrengthInfoComponent} from './component';
+import {MatRippleModule} from '@angular/material/core';
+import {MatButtonModule} from '@angular/material/button';
 
-import {MatPasswordStrengthComponent} from './component/mat-password-strength/mat-password-strength.component';
-import {MatPasswordStrengthInfoComponent} from './component/mat-password-strength-info/mat-password-strength-info.component';
-import {MatPassToggleVisibilityComponent} from './component/mat-pass-toggle-visibility/mat-pass-toggle-visibility.component';
-
-
-// Export module's public API
-export {MatPasswordStrengthComponent} from './component/mat-password-strength/mat-password-strength.component';
-export {
-  MatPasswordStrengthInfoComponent
-} from './component/mat-password-strength-info/mat-password-strength-info.component';
-export {MatPassToggleVisibilityComponent} from './component/mat-pass-toggle-visibility/mat-pass-toggle-visibility.component';
-export {MatPasswordStrengthValidator} from './validator/mat-password-strength-validator';
 // validator
 export {RegExpValidator} from './validator/regexp.class';
 
@@ -24,6 +14,7 @@ export {RegExpValidator} from './validator/regexp.class';
   imports: [
     CommonModule,
     MatProgressBarModule,
+    MatButtonModule,
     MatCardModule,
     MatIconModule,
     MatRippleModule
@@ -37,8 +28,7 @@ export {RegExpValidator} from './validator/regexp.class';
     MatPasswordStrengthComponent,
     MatPasswordStrengthInfoComponent,
     MatPassToggleVisibilityComponent
-  ],
-  entryComponents: [MatPassToggleVisibilityComponent]
+  ]
 })
 export class MatPasswordStrengthModule {
   static forRoot(): ModuleWithProviders<MatPasswordStrengthModule> {

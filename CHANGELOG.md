@@ -1,3 +1,173 @@
+
+
+# [16.0.0](https://github.com/angular-material-extensions/password-strength/compare/13.0.0...16.0.0) (2023-11-05)
+
+
+### Bug Fixes
+
+* **project:** upgraded angular material ([0df88ff](https://github.com/angular-material-extensions/password-strength/commit/0df88ffd7fd0dbb9c30bf80649b75e4cde49779f))
+* **project:** upgraded angular to v16 ([b3ef2b8](https://github.com/angular-material-extensions/password-strength/commit/b3ef2b87ea88a5418c2df99f9669ca0a7b7e481a))
+* **project:** upgraded release it ([fc38487](https://github.com/angular-material-extensions/password-strength/commit/fc384872ccd035c1fdcac7f7ce163a3424cd8c3c))
+
+# [13.0.0](https://github.com/angular-material-extensions/password-strength/compare/12.1.0...13.0.0) (2023-08-25)
+
+
+### Bug Fixes
+
+* **docs:** minor ([53c471e](https://github.com/angular-material-extensions/password-strength/commit/53c471ed4b8c7810b0b0f3f38be58e770064f3f0))
+* **project:** upgraded angular to v16 ([405e08a](https://github.com/angular-material-extensions/password-strength/commit/405e08ac4b85540e18314492b8ae2ef839673359))
+* **project:** upgraded angular universal to v16 ([0fabcba](https://github.com/angular-material-extensions/password-strength/commit/0fabcba23028e2c3d3485cc238f3fa5dc9657d7f))
+* **project:** upgraded angular universal to v16 ([287d8bd](https://github.com/angular-material-extensions/password-strength/commit/287d8bd8062478158b2500068308af6038bc83fd))
+
+# [12.1.0](https://github.com/angular-material-extensions/password-strength/compare/12.0.2...12.1.0) (2023-02-21)
+
+
+### Bug Fixes
+
+* **project:** upgraded angular ([abaa7e4](https://github.com/angular-material-extensions/password-strength/commit/abaa7e44f46eac5c2c05072b15a50165c6866185))
+* **project:** upgraded material ([eebcb88](https://github.com/angular-material-extensions/password-strength/commit/eebcb881e1c6e7244e7d45be4e6bc904dce64d50))
+* **project:** upgraded universal ([ab75239](https://github.com/angular-material-extensions/password-strength/commit/ab75239a2e23b59b794b82c99691fe035d2a2421))
+
+## [12.0.2](https://github.com/angular-material-extensions/password-strength/compare/12.0.1...12.0.2) (2022-11-25)
+
+## [12.0.1](https://github.com/angular-material-extensions/password-strength/compare/11.0.1...12.0.1) (2022-11-25)
+
+
+### Bug Fixes
+
+* **project:** upgraded angular cli and core to v15 ([4729ebd](https://github.com/angular-material-extensions/password-strength/commit/4729ebd9e84b32a85dafd59d928e8c3d441558aa))
+* **project:** upgraded angular cli and core to v15 ([7d13eda](https://github.com/angular-material-extensions/password-strength/commit/7d13eda5587f7054c27e9b565b577f02d530cee6))
+* **project:** upgraded angular material imports ([9a37063](https://github.com/angular-material-extensions/password-strength/commit/9a370632485612ed1feaee4e7386c2ae0a7d8a5b))
+* **project:** upgraded angular material imports ([dd65273](https://github.com/angular-material-extensions/password-strength/commit/dd652736722860e79e9ca477e7be2600e3f734d4))
+* **project:** upgraded angular material to v15 ([863886c](https://github.com/angular-material-extensions/password-strength/commit/863886ce9953033a02914834c0c11493a5ccb44c))
+* **project:** upgraded angular universal to v15 ([4452fea](https://github.com/angular-material-extensions/password-strength/commit/4452feac65e2dad4ba1c0fd75595405d04b92ec0))
+* **project:** upgraded deps ([43be3b8](https://github.com/angular-material-extensions/password-strength/commit/43be3b85e1c7c18360eaf2b33132ef23c1ef8959))
+* **project:** upgraded release it and adapted the readme ([dcaca95](https://github.com/angular-material-extensions/password-strength/commit/dcaca953a2539470cceb93e9ab08ea480717cec5))
+
+# [12.0.0](https://github.com/angular-material-extensions/password-strength/compare/11.0.1...12.0.0) (2022-11-25)
+
+
+### Bug Fixes
+
+* **project:** upgraded angular cli and core to v15 ([4729ebd](https://github.com/angular-material-extensions/password-strength/commit/4729ebd9e84b32a85dafd59d928e8c3d441558aa))
+* **project:** upgraded angular cli and core to v15 ([7d13eda](https://github.com/angular-material-extensions/password-strength/commit/7d13eda5587f7054c27e9b565b577f02d530cee6))
+* **project:** upgraded angular material imports ([9a37063](https://github.com/angular-material-extensions/password-strength/commit/9a370632485612ed1feaee4e7386c2ae0a7d8a5b))
+* **project:** upgraded angular material imports ([dd65273](https://github.com/angular-material-extensions/password-strength/commit/dd652736722860e79e9ca477e7be2600e3f734d4))
+* **project:** upgraded angular material to v15 ([863886c](https://github.com/angular-material-extensions/password-strength/commit/863886ce9953033a02914834c0c11493a5ccb44c))
+* **project:** upgraded angular universal to v15 ([4452fea](https://github.com/angular-material-extensions/password-strength/commit/4452feac65e2dad4ba1c0fd75595405d04b92ec0))
+* **project:** upgraded deps ([43be3b8](https://github.com/angular-material-extensions/password-strength/commit/43be3b85e1c7c18360eaf2b33132ef23c1ef8959))
+* **project:** upgraded release it and adapted the readme ([dcaca95](https://github.com/angular-material-extensions/password-strength/commit/dcaca953a2539470cceb93e9ab08ea480717cec5))
+
+## [11.0.1](https://github.com/angular-material-extensions/password-strength/compare/11.0.0...11.0.1) (2022-10-15)
+
+
+### Bug Fixes
+
+* **docs:** minor ([2a1dc54](https://github.com/angular-material-extensions/password-strength/commit/2a1dc546149f652b8f6f55d539f91c44e422a661))
+* **project:** upgraded angular and material ([e0db4ca](https://github.com/angular-material-extensions/password-strength/commit/e0db4caecebca2772fc7c08708cd9f9302995ebf))
+* **project:** upgraded deps ([ab53db4](https://github.com/angular-material-extensions/password-strength/commit/ab53db4195c2c5936c954f3cae1c8323c72f49ae))
+* **project:** upgraded deps ([7c23455](https://github.com/angular-material-extensions/password-strength/commit/7c234551846803cdad88f062c1dd9d5f325836f1))
+
+# [11.0.0](https://github.com/angular-material-extensions/password-strength/compare/10.1.1...11.0.0) (2022-07-05)
+
+
+### Bug Fixes
+
+* **demo:** minor ([6742585](https://github.com/angular-material-extensions/password-strength/commit/67425855f2ad644387e0634204aee4006b10f2d4))
+* **demo:** minor ([c2730e7](https://github.com/angular-material-extensions/password-strength/commit/c2730e72db943bfa1d6254645734fab4cdfa62fb))
+* **docs:** minor ([7ba7edb](https://github.com/angular-material-extensions/password-strength/commit/7ba7edb180145956900791c2ebcda8ea3738d954))
+* **lib:** minor ([9148de0](https://github.com/angular-material-extensions/password-strength/commit/9148de0f450b78872a5c860cc3b802294aa087cf))
+* **lib:** minor ([ec1590a](https://github.com/angular-material-extensions/password-strength/commit/ec1590a0ffe87512a149dfcd46194aaa291c20b8))
+* **lib:** minor ([f0563a5](https://github.com/angular-material-extensions/password-strength/commit/f0563a52bea6177b18a0d76243321e395165f36a))
+* **lib:** updated tsconfig file ([44de506](https://github.com/angular-material-extensions/password-strength/commit/44de506f6991e4ae64d021f7b4bde9b0f4c98406))
+* **lib:** upgraded angular deps ([f3d22e9](https://github.com/angular-material-extensions/password-strength/commit/f3d22e9d9e3abd18c19fe42c4325bec8bba98346))
+* **lib:** upgraded angular deps ([94c1d2d](https://github.com/angular-material-extensions/password-strength/commit/94c1d2d90c204e2cd2f0336c75b60c2b8ad5a36b))
+* **lib:** upgraded angular material deps ([da4cb97](https://github.com/angular-material-extensions/password-strength/commit/da4cb97e1b9b15cf24b47f4364e94f9478ba43d5))
+* **lib:** upgraded angular universal ([4293308](https://github.com/angular-material-extensions/password-strength/commit/429330842546921e96b41c34ee8732531c361833))
+* **lib:** upgraded deps ([ca4ee28](https://github.com/angular-material-extensions/password-strength/commit/ca4ee28b1f8b6292f0eb32a1037397b5d6492bc5))
+* **lib:** upgraded deps ([225c2a0](https://github.com/angular-material-extensions/password-strength/commit/225c2a094c1016c1ba9b42b1b215b92cb368fb2e))
+
+## [10.1.1](https://github.com/angular-material-extensions/password-strength/compare/10.1.0...10.1.1) (2022-02-15)
+
+
+### Bug Fixes
+
+* **lib:** minor ([006ab27](https://github.com/angular-material-extensions/password-strength/commit/006ab270c6fe0cabab6ec2c7dc070b86d68e8836))
+* **lib:** upgraded angular to the latest version ([fe15c3d](https://github.com/angular-material-extensions/password-strength/commit/fe15c3dc03b0497e539d765ba588226082fc254b))
+
+# [10.1.0](https://github.com/angular-material-extensions/password-strength/compare/10.0.1...10.1.0) (2022-01-11)
+
+
+### Bug Fixes
+
+* **lib:** minor ([6082fb1](https://github.com/angular-material-extensions/password-strength/commit/6082fb1c0b70b0e0f42874a29ad4148231ddf806))
+* **lib:** updated the dependencies ([d062fd3](https://github.com/angular-material-extensions/password-strength/commit/d062fd38b8960622edbccc20341a3c2711ab2e6b))
+* **lib:** updated the dependencies ([f5d330a](https://github.com/angular-material-extensions/password-strength/commit/f5d330a2e2e6466dab380bd6a6576a209375d3f4))
+* **lib:** updated the dependencies ([1d521bd](https://github.com/angular-material-extensions/password-strength/commit/1d521bdb667fea509eed0ef1e4daaf26c2911151))
+* **lib:** upgraded angular flex layout ([2b28d5a](https://github.com/angular-material-extensions/password-strength/commit/2b28d5af7f03941df0435bd8f120783bd45871db))
+* **lib:** upgraded angular flex layout ([8bbef8e](https://github.com/angular-material-extensions/password-strength/commit/8bbef8ecd3a6ae7e98e85c72b92950f85e65f56f))
+* **lib:** upgraded angular to v13.1.1 ([8e5b1c0](https://github.com/angular-material-extensions/password-strength/commit/8e5b1c07449daf04e4d5ad467c31bfd6360dbc08))
+* **lib:** upgraded angular to v13.1.1 ([12eb805](https://github.com/angular-material-extensions/password-strength/commit/12eb8058efd9dac569805ceb5793216b6aab892c))
+
+## [10.0.1](https://github.com/angular-material-extensions/password-strength/compare/10.0.0...10.0.1) (2021-12-04)
+
+
+### Bug Fixes
+
+* **lib:** upgraded angular material to the latest version ([2f53ac8](https://github.com/angular-material-extensions/password-strength/commit/2f53ac899144fe0460eb1fc451448b9e83c97bb0))
+* **lib:** upgraded angular to the latest version ([576aeab](https://github.com/angular-material-extensions/password-strength/commit/576aeab5b8ae5dbc545e117b82cb74452582b2d5))
+* **lib:** upgraded angular to the latest version ([404c730](https://github.com/angular-material-extensions/password-strength/commit/404c73062bd1fe35e3733553fb254f7d0d066728))
+
+# [10.0.0](https://github.com/angular-material-extensions/password-strength/compare/9.0.0...10.0.0) (2021-11-05)
+
+
+### Bug Fixes
+
+* **lib:** upgraded angular cdk and material deps ([1e4a55c](https://github.com/angular-material-extensions/password-strength/commit/1e4a55ca4ffafe0584264eda2124e2aa8fbfa794))
+* **lib:** upgraded angular deps ([3e76824](https://github.com/angular-material-extensions/password-strength/commit/3e7682459d69a638f697172cffb91a99487e6447))
+* **lib:** upgraded angular to the latest version ([a5d3605](https://github.com/angular-material-extensions/password-strength/commit/a5d36057c4173591bbaa7ca5b144d2d5fcf51a86))
+
+* fix(lib): updated angular flex layout (8ad9541c)
+* fix(lib): minor (2b1da578)
+* fix(lib): upgraded nguniversal (5cafc1ff)
+* fix(lib): minor (3e75594f)
+* fix(lib): upgraded angular material to v12 (3841f9f5)
+* Merge remote-tracking branch 'origin/master' (3372be84)
+* Merge pull request #330 from marvinosswald/fix/229 (baf0365f)
+* fix: confirm form validation needs to be reevaluated on changes on the password form (ed24d724)
+* fix(lib): upgraded angular material to v12 (d2844be0)
+* fix(lib): upgraded the lib to v12 (481a3c98)
+
+* fix(lib): updated the dependencies (923f112a)
+
+* Merge pull request #304 from msenosiain/add-tabindex-attribute-toggle-visibility (9892c80f)
+* Merge pull request #318 from AndriiNeverov/schematics-angular11-support (96424510)
+* Upgraded Schematics to 11.1.2 (d5744a13)
+* Merge branch 'master' into add-tabindex-attribute-toggle-visibility (84eb5b79)
+* fix(project): upgraded angulat to v11.1.2 (920cfc2c)
+* Merge branch 'master' into add-tabindex-attribute-toggle-visibility (ad73e28e)
+* Toggle visibility: Add option input for tabindex value (ea84d761)
+
+* fix(project): updated angular and other dependencies (d9269172)
+
+* fix(project): upgraded angular cdk and angular material to v11.0.1 (a62aad5b)
+* docs(project): updated the README.md (53e69be5)
+* Merge pull request #311 from LiorCorp/feature/custom-mat-icon (7ccca45a)
+* add custom mat-icon in mat-password-strenght-info (da8d0eb7)
+* Merge pull request #297 from LakMoore/patch-1 (a7ca5718)
+* Add svgIcon attributes (32a0e3bc)
+
+* docs(project): updated the README.md (59409558)
+
+* fix(lib): solved issues related to the schematics (387cffe2)
+* feat(lib): upgraded rxjs (34f2ae81)
+* feat(lib): upgraded nguniversal to v11 (95e0ec1c)
+* fix(package): upgraded angular material to v11 (e587b64f)
+* fix(package): upgraded angular to v11 (27f9978e)
+* Merge remote-tracking branch 'origin/master' (a166ee93)
+* Merge pull request #305 from yerevin/patch-1 (b9d5ee3c)
+* Update to Angular10 (0b69e049)
+
 * fix(package): updated the peer dependencies of the library (a1286312)
 * fix(package): minor (9734ea12)
 * fix(package): updated @nguniversal/express-engine (6602952b)
@@ -493,4 +663,3 @@
 
 * **project:** added prerender support ([b23df85](https://github.com/angular-material-extensions/password-strength/commit/b23df85794682a4aa6d4c7743fc422f260c5d1e9))
 * **project:** improved the new demo app ([2736639](https://github.com/angular-material-extensions/password-strength/commit/2736639c142b782709a188b370b60ebe6b01115a))
-
