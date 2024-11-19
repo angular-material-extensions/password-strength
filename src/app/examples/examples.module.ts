@@ -33,6 +33,9 @@ import {MatRadioModule} from '@angular/material/radio';
     MatInputModule,
     MatRadioModule
   ],
+  exports: [
+    MatCardModule
+  ],
   declarations: [ExamplesComponent, InfoCompExampleComponent]
 })
 export class ExamplesModule {

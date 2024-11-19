@@ -1,0 +1,131 @@
+{
+  "name": "@angular-material-extensions/password-strength",
+  "description": "Material password strength meter to indicate how secure is the provided password",
+  "version": "18.0.0",
+  "homepage": "https://github.com/angular-material-extensions/password-strength",
+  "author": {
+    "name": "anthonynahas",
+    "url": "https://github.com/anthonynahas"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/angular-material-extensions/password-strength.git"
+  },
+  "license": "MIT",
+  "schematics": "./schematics/collection.json",
+  "keywords": [
+    "ngx",
+    "library",
+    " angular",
+    " material",
+    " password",
+    " confirm password",
+    " password validation",
+    " password-strength",
+    " password-strength info",
+    " strength-meter"
+  ],
+  "bugs": {
+    "url": "https://github.com/angular-material-extensions/password-strength/issues"
+  },
+  "peerDependencies": {
+    "@angular/common": "^18.x",
+    "@angular/core": "^18.x",
+    "@angular/forms": "^18.x",
+    "@angular/material": "^16.x",
+    "@angular/cdk": "^18.x"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "release-it": {
+    "github": {
+      "release": true
+    },
+    "npm": {
+      "publish": true,
+      "publishPath": "../../../dist/angular-material-extensions/password-strength"
+    },
+    "publishConfig": {
+      "access": "public"
+    },
+    "plugins": {
+      "@release-it/conventional-changelog": {
+        "preset": "angular",
+        "infile": "../../../CHANGELOG.md"
+      }
+    },
+    "hooks": {
+      "before:init": [
+        "npm run clean"
+      ],
+      "after:bump": "echo \"building lib v${version}... \" && npm run build",
+      "before:git:release": "echo \"Updating CHANGELOG.md for v${version} \" && git commit -m \"Updating CHANGELOG.md for v${version} \" ../../../CHANGELOG.md",
+      "after:release": "echo Successfully released ${name} v${version} to ${repo.repository}.",
+      "before:npm": "echo building the library..."
+    }
+  },
+  "greenkeeper": {
+    "ignore": [
+      "@angular/core",
+      "@angular/common",
+      "@angular/compiler",
+      "@angular/cdk",
+      "@angular/material",
+      "@angular/platform-server",
+      "@angular/platform-browser",
+      "@angular/platform-browser-dynamic",
+      "@angular/compiler-cli",
+      "webpack",
+      "zone.js",
+      "rxjs",
+      "tslint",
+      "gulp-tslint",
+      "typescript",
+      "awesome-typescript-loader",
+      "codelyzer",
+      "@angular/animations",
+      "@types/jasmine",
+      "@types/jest",
+      "@types/node",
+      "conventional-github-releaser",
+      "rollup-plugin-uglify"
+    ]
+  },
+  "commitplease": {
+    "style": "angular",
+    "types": [
+      "feat",
+      "fix",
+      "docs",
+      "style",
+      "refactor",
+      "perf",
+      "test",
+      "chore",
+      "revert",
+      "demo"
+    ],
+    "scope": "\\S+.*"
+  },
+  "dependencies": {
+    "tslib": "^2.4.1"
+  },
+  "module": "fesm2022/angular-material-extensions-password-strength.mjs",
+  "typings": "index.d.ts",
+  "exports": {
+    "./package.json": {
+      "default": "./package.json"
+    },
+    ".": {
+      "types": "./index.d.ts",
+      "esm2022": "./esm2022/angular-material-extensions-password-strength.mjs",
+      "esm": "./esm2022/angular-material-extensions-password-strength.mjs",
+      "default": "./fesm2022/angular-material-extensions-password-strength.mjs"
+    }
+  },
+  "sideEffects": false,
+  "scripts": {
+    "prepublishOnly": "node --eval \"console.error('ERROR: Trying to publish a package that has been compiled by Ivy in full compilation mode. This is not allowed.\\nPlease delete and rebuild the package with Ivy partial compilation mode, before attempting to publish.\\n')\" && exit 1"
+  }
+}
