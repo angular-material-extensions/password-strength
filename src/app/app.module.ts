@@ -19,6 +19,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
+import {CommonModule} from "@angular/common";
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -30,6 +31,7 @@ export function createTranslateLoader(http: HttpClient) {
     InitExampleComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule.withServerTransition({appId: 'serverApp'}),
     AppRoutingModule,
     BrowserAnimationsModule,

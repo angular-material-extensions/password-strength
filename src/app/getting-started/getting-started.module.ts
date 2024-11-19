@@ -4,9 +4,8 @@ import {GettingStartedComponent} from './getting-started.component';
 import {GettingStartedRoutingModule} from './getting-started-routing.module';
 import {ClipboardModule} from 'ngx-clipboard';
 import {MatIconModule} from '@angular/material/icon';
-import {MatPagesModule} from '@angular-material-extensions/pages';
+// import {MatPagesModule} from '@angular-material-extensions/pages';
 import {HIGHLIGHT_OPTIONS, HighlightModule} from 'ngx-highlightjs';
-import {MatPasswordStrengthModule} from '@angular-material-extensions/password-strength';
 import {FormsModule} from '@angular/forms';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatCardModule} from '@angular/material/card';
@@ -14,6 +13,8 @@ import {MatListModule} from '@angular/material/list';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatPasswordStrengthModule} from "../../module/mat-password-strength.module";
+// import {MatPagesModule} from "@angular-material-extensions/pages";
 
 
 /**
@@ -34,7 +35,7 @@ export function getHighlightLanguages() {
     GettingStartedRoutingModule,
     HighlightModule,
     MatPasswordStrengthModule,
-    MatPagesModule,
+    // MatPagesModule,
     ClipboardModule,
     MatCardModule,
     MatIconModule,

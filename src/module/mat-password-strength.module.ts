@@ -1,10 +1,13 @@
 import {CommonModule} from '@angular/common';
 import {ModuleWithProviders, NgModule} from '@angular/core';
-import {MatCardModule, MatIconModule, MatProgressBarModule, MatRippleModule} from '@angular/material';
 
 import {MatPasswordStrengthComponent} from './component/mat-password-strength/mat-password-strength.component';
 import {MatPasswordStrengthInfoComponent} from './component/mat-password-strength-info/mat-password-strength-info.component';
 import {MatPassToggleVisibilityComponent} from './component/mat-pass-toggle-visibility/mat-pass-toggle-visibility.component';
+import {MatProgressBarModule} from "@angular/material/progress-bar";
+import {MatCardModule} from "@angular/material/card";
+import {MatIconModule} from "@angular/material/icon";
+import {MatRippleModule} from "@angular/material/core";
 
 // Export module's public API
 export {MatPasswordStrengthComponent} from './component/mat-password-strength/mat-password-strength.component';
@@ -34,7 +37,7 @@ export {RegExpValidator} from './validator/regexp.class';
     MatPasswordStrengthInfoComponent,
     MatPassToggleVisibilityComponent
   ],
-  entryComponents: [MatPassToggleVisibilityComponent]
+  // entryComponents: [MatPassToggleVisibilityComponent]
 })
 export class MatPasswordStrengthModule {
   static forRoot(): ModuleWithProviders<MatPasswordStrengthModule> {
